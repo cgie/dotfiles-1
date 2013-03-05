@@ -1,0 +1,1048 @@
+
+
+    About This Site
+
+Good Stuff Ahead!
+Curated Collections of Excellent Products for Subreddits
+visit r/ruby
+Ruby
+
+Books to become a better Rubyist, including OOP and FP titles
+The Ruby Programming Language
+David Flanagan, Yukihiro Matsumoto
+Buy on Amazon
+$22.70
+
+Co-authored by Matz, Ruby's creator, this book is great at getting you
+started and going into the nuts and bolts of how Ruby works. It also
+works well as a reference. The #1 book any Rubyist should own.
+
+The Ruby Programming Language is the authoritative guide to Ruby and
+provides comprehensive coverage of versions 1.8 and 1.9 of the language.
+It was written (and illustrated!) by an all-star team:
+
+    David Flanagan, bestselling author of programming language "bibles"
+(including JavaScript: The Definitive Guide and Java in a Nutshell) and
+committer to the Ruby Subversion repository.
+    Yukihiro "Matz" Matsumoto, creator, designer and lead developer of
+Ruby and author of Ruby in a Nutshell, which has been expanded and
+revised to become this book.
+    why the lucky stiff, artist and Ruby programmer extraordinaire.
+
+This book begins with a quick-start tutorial to the language, and then
+explains the language in detail from the bottom up: from lexical and
+syntactic structure to datatypes to expressions and statements and on
+through methods, blocks, lambdas, closures, classes and modules.
+
+The book also includes a long and thorough introduction to the rich API
+of the Ruby platform, demonstrating -- with heavily-commented example
+code -- Ruby's facilities for text processing, numeric manipulation,
+collections, input/output, networking, and concurrency. An entire
+chapter is devoted to Ruby's metaprogramming capabilities.
+
+The Ruby Programming Language documents the Ruby language definitively
+but without the formality of a language specification. It is written for
+experienced programmers who are new to Ruby, and for current Ruby
+programmers who want to challenge their understanding and increase their
+mastery of the language.
+Programming Ruby 1.9: The Pragmatic Programmers' Guide
+Dave Thomas, Chad Fowler, Andy Hunt
+Buy on Amazon
+$25.79
+
+The "pickaxe book" is a Ruby classic. It might not be necessary if you
+get The Ruby Programming Language, but many Rubyists have begun their
+Ruby journey with this tome.
+
+Would you like to go from first idea to working code much, much faster?
+Do you currently spend more time satisfying the compiler instead of your
+clients or end users? Are you frustrated with demanding languages that
+seem to get in your way, instead of getting the work done? Are you using
+Rails, and want to dig deeper into the underlying Ruby language? If so,
+then we've got a language and book for you!
+
+Ruby 1.9 is the latest version of Ruby. It has many compelling features,
+including multinationalization support, new block scoping, and better
+performance. At the same time, the current Ruby 1.8 is still being
+maintained and is widely used. We're therefore releasing both the Ruby
+1.9 version of the PickAxe (this book) alongside the 1.8 version of the
+PickAxe. Readers can choose the book that matches their environment.
+
+Ruby is a fully object-oriented language, much like the classic
+object-oriented language, Smalltalk. Like Smalltalk, it is dynamically
+typed (as opposed to Java or C++), but unlike Smalltalk, Ruby features
+the same conveniences found in modern scripting languages, making Ruby a
+favorite tool of intelligent, forward-thinking programmers and the basis
+for the Rails web framework.
+
+This is the reference manual for Ruby, including a description of all
+the standard library modules, a complete reference to all built-in
+classes and modules (including all the new and changed methods
+introduced by Ruby 1.9). It also includes all the new and changed syntax
+and semantics introduced since Ruby 1.8. Learn about the new parameter
+passing rules, local variable scoping in blocks, fibers,
+multinationalization, and the new block declaration syntax, among other
+exciting new features.
+Metaprogramming Ruby: Program Like the Ruby Pros
+Paolo Perrotta
+Buy on Amazon
+$17.48
+
+Metaprogramming is probably the most difficult subject for new Rubyists.
+Luckily, Metaprogramming Ruby breaks it down in a manner that's easy to
+understand. This is probably a good second book on Ruby. Understanding
+it will vastly increase your enjoyment of and facility with the
+language.
+
+This book describes metaprogramming as an essential component of Ruby.
+Once you understand the principles of Ruby, including the object model,
+scopes, and eigenclasses, you're on your way to applying metaprogramming
+both in your daily work and in your fun, after-hours projects.
+
+Learning metaprogramming doesn't have to be difficult or boring. By
+taking you on a Monday-through-Friday workweek adventure with a pair of
+programmers, Paolo Perrotta helps make mastering the art of
+metaprogramming both straightforward and entertaining.
+
+The book is packed with:
+
+Pragmatic examples of metaprogramming in action, many of which come
+straight from popular libraries or frameworks, such as Rails.
+Programming challenges that let you experiment and play with some of the
+most fun, "out-there" metaprogramming concepts. Metaprogramming
+spells--34 practical recipes and idioms that you can study and apply
+right now, to write code that is sure to impress.
+
+Whether you're a Ruby apprentice on the path to mastering the language
+or a Ruby wiz in search of new tips, this book is for you.
+Eloquent Ruby
+Russ Olsen
+Buy on Amazon
+$28.90
+
+Learn to write Ruby that looks like Ruby, and not Java or C# or PHP or
+whatever.
+
+It's easy to write correct Ruby code, but to gain the fluency needed to
+write great Ruby code, you must go beyond syntax and absorb the "Ruby
+way" of thinking and problem solving. In Eloquent Ruby, Russ Olsen helps
+you write Ruby like true Rubyists do - so you can leverage its immense,
+surprising power.
+
+Olsen draws on years of experience internalizing the Ruby culture and
+teaching Ruby to other programmers. He guides you to the "Ah Ha!"
+moments when it suddenly becomes clear why Ruby works the way it does,
+and how you can take advantage of this language's elegance and
+expressiveness.
+
+Eloquent Ruby starts small, answering tactical questions focused on a
+single statement, method, test, or bug. You'll learn how to write code
+that actually looks like Ruby (not Java or C#); why Ruby has so many
+control structures; how to use strings, expressions, and symbols; and
+what dynamic typing is really good for.
+
+Next, the book addresses bigger questions related to building methods
+and classes. You?ll discover why Ruby classes contain so many tiny
+methods, when to use operator overloading, and when to avoid it. Olsen
+explains how to write Ruby code that writes its own code?and why you?ll
+want to. He concludes with powerful project-level features and
+techniques ranging from gems to Domain Specific Languages.
+
+A part of the renowned Addison-Wesley Professional Ruby Series, Eloquent
+Ruby will help you "put on your Ruby-colored glasses" and get results
+that make you a true believer.
+Practical Object-Oriented Design in Ruby: An Agile Primer
+Sandi Metz
+Buy on Amazon
+$26.76
+
+Ruby is an object-oriented language, so it's essential for you to
+understand OOP fundamentals to make full use of it. This book does a
+good job of explaining OOP concepts and how to implement them in Ruby.
+
+Ruby's widely admired ease of use has a downside: Too many Ruby and
+Rails applications have been created without concern for their long-term
+maintenance or evolution. The Web is awash in Ruby code that is now
+virtually impossible to change or extend. This text helps you solve that
+problem by using powerful real-world object-oriented design techniques,
+which it thoroughly explains using simple and practical Ruby examples.
+
+Sandi Metz has distilled a lifetime of conversations and presentations
+about object-oriented design into a set of Ruby-focused practices for
+crafting manageable, extensible, and pleasing code. She shows you how to
+build new applications that can survive success and repair existing
+applications that have become impossible to change. Each technique is
+illustrated with extended examples, all downloadable from the companion
+Web site, poodr.info.
+
+The first title to focus squarely on object-oriented Ruby application
+design, Practical Object-Oriented Design in Ruby will guide you to
+superior outcomes, whatever your previous Ruby experience. Novice Ruby
+programmers will find specific rules to live by; intermediate Ruby
+programmers will find valuable principles they can flexibly interpret
+and apply; and advanced Ruby programmers will find a common language
+they can use to lead development and guide their colleagues.
+
+This guide will help you
+
+    Understand how object-oriented programming can help you craft Ruby
+code that is easier to maintain and upgrade
+    Decide what belongs in a single Ruby class
+    Avoid entangling objects that should be kept separate
+    Define flexible interfaces among objects
+    Reduce programming overhead costs with duck typing
+    Successfully apply inheritance
+    Build objects via composition
+    Design cost-effective tests
+    Solve common problems associated with poorly designed Ruby code
+
+Object Thinking
+David West
+Buy on Amazon
+$29.07
+
+This is a fantastic book for really digging into OOP. There's no other
+book like it. Whereas beginning OOP books discuss ideas like
+inheritance, polymorphism, and so forth, this book goes into the
+object-oriented mindset.
+
+In OBJECT THINKING, esteemed object technologist David West contends
+that the mindset makes the programmer -- not the tools and techniques.
+Delving into the history, philosophy, and even politics of
+object-oriented programming, West reveals how the best programmers rely
+on analysis and conceptualization -- on thinking -- rather than formal
+process and methods. Both provocative and pragmatic, this book gives
+form to what's primarily been an oral tradition among the field's
+revolutionary thinkers -- and it illustrates specific object-behavior
+practices that you can adopt for true object design and superior
+results.
+
+Gain an in-depth understanding of:
+
+    Prerequisites and principles of object thinking.
+    Object knowledge implicit in eXtreme Programming (XP) and Agile
+software development.
+    Object conceptualization and modeling.
+    Metaphors, vocabulary, and design for object development.
+
+Learn viable techniques for:
+
+    Decomposing complex domains in terms of objects.
+    Identifying object relationships, interactions, and constraints.
+    Relating object behavior to internal structure and implementation
+design.
+    Incorporating object thinking into XP and Agile practice.
+
+Elemental Design Patterns
+Jason McC. Smith
+Buy on Amazon
+$29.62
+
+All Rubyists eventually become exposed to design patterns. Like, say,
+MVC (model, view, controller), which is at the heart of Rails. This book
+advances the field of design patterns by providing them with an
+"elemental" foundation, allowing you to understand patterns in the same
+way that the periodic table of elements advanced the understanding of
+chemicals.
+
+Official description:
+
+After fifteen years, the field of design patterns is still missing a
+critical element: a foundation.
+
+By definition, the content of design patterns is abstract. As a result,
+design patterns are difficult for many to grasp well - especially for
+inexperienced programmers and students. While many professionals who
+could benefit from patterns admit that they don't fully understand them,
+many others don't understand patterns nearly as well as they imagine
+they do - resulting in systems that aren't designed as well as they
+should be.
+
+In Elemental Design Patterns, researcher Jason McC. Smith offers the
+missing foundation that software practitioners need to utilize patterns
+far more effectively. Smith introduces a foundational layer of patterns
+terminology: a collection of core patterns that can't be decomposed
+further. He presents these underlying basic concepts of programming
+clearly and concisely, in the same format as the classic "Gang of Four"
+patterns - thereby offering a taxonomy that virtually any developer can
+understand and apply.
+
+Elemental Design Patterns helps practitioners grasp the context of
+patterns, comprehend their true power, and map them to actual software
+implementations more cleanly and directly. Part tutorial, part
+example-rich cookbook, it will help developers gain a deeper
+appreciation for what they do - and successfully utilize patterns with a
+wide variety of languages, environments, and domains
+Design Patterns in Ruby
+Russ Olsen
+Buy on Amazon
+$35.16
+
+Praise for Design Patterns in Ruby
+
+" Design Patterns in Ruby documents smart ways to resolve many problems
+that Ruby developers commonly encounter. Russ Olsen has done a great job
+of selecting classic patterns and augmenting these with newer patterns
+that have special relevance for Ruby. He clearly explains each idea,
+making a wealth of experience available to Ruby developers for their own
+daily work."
+
+-- Steve Metsker, Managing Consultant with Dominion Digital, Inc.
+
+"This book provides a great demonstration of the key 'Gang of Four'
+design patterns without resorting to overly technical explanations.
+Written in a precise, yet almost informal style, this book covers enough
+ground that even those without prior exposure to design patterns will
+soon feel confident applying them using Ruby. Olsen has done a great job
+to make a book about a classically 'dry' subject into such an engaging
+and even occasionally humorous read."
+
+-- Peter Cooper
+
+"This book renewed my interest in understanding patterns after a decade
+of good intentions. Russ picked the most useful patterns for Ruby and
+introduced them in a straightforward and logical manner, going beyond
+the GoF's patterns. This book has improved my use of Ruby, and
+encouraged me to blow off the dust covering the GoF book."
+
+-- Mike Stok
+
+" Design Patterns in Ruby is a great way for programmers from statically
+typed objectoriented languages to learn how design patterns appear in a
+more dynamic, flexible language like Ruby."
+
+-- Rob Sanheim, Ruby Ninja, Relevance
+
+Most design pattern books are based on C++ and Java. But Ruby is
+different?and the language's unique qualities make design patterns
+easier to implement and use. In this book, Russ Olsen demonstrates how
+to combine Ruby's power and elegance with patterns, and write more
+sophisticated, effective software with far fewer lines of code.
+
+After reviewing the history, concepts, and goals of design patterns,
+Olsen offers a quick tour of the Ruby language?enough to allow any
+experienced software developer to immediately utilize patterns with
+Ruby. The book especially calls attention to Ruby features that simplify
+the use of patterns, including dynamic typing, code closures, and
+"mixins" for easier code reuse.
+
+Fourteen of the classic "Gang of Four" patterns are considered from the
+Ruby point of view, explaining what problems each pattern solves,
+discussing whether traditional implementations make sense in the Ruby
+environment, and introducing Ruby-specific improvements. You'll discover
+opportunities to implement patterns in just one or two lines of code,
+instead of the endlessly repeated boilerplate that conventional
+languages often require.
+
+Design Patterns in Ruby also identifies innovative new patterns that
+have emerged from the Ruby community. These include ways to create
+custom objects with metaprogramming, as well as the ambitious
+Rails-based "Convention Over Configuration" pattern, designed to help
+integrate entire applications and frameworks.
+
+Engaging, practical, and accessible, Design Patterns in Ruby will help
+you build better software while making your Ruby programming experience
+more rewarding.
+To Mock a Mockingbird
+Smullyan
+Buy on Amazon
+$10.93
+
+What's this now? It looks like it doesn't have anything to do with Ruby!
+
+In fact, this book is a great introduction to combinatory logic. See
+@raganwald's blog posts
+(https://github.com/raganwald/homoiconic/blob/master/2008-10-29/kestrel.markdown#readme)
+on the subject to see how fun it can be to implement combinatory logic
+within Ruby.
+
+In this entertaining and challenging collection of logic puzzles,
+Raymond Smullyan - author of Forever Undecided - continues to delight
+and astonish us with his gift for making available, in the thoroughly
+pleasurable form of puzzles, some of the most important mathematical
+thinking of our time. In the first part of the book, he transports us
+once again to that wonderful realm where knights, knaves, twin sisters,
+quadruplet brothers, gods, demons, and mortals either always tell the
+truth or always lie, and where truth-seekers are set a variety of
+fascinating problems. The section culminates in an enchanting and
+profound metapuzzle in which Inspector Craig of Scotland Yard gets
+involved in a search for the Fountain of Youth on the Island of Knights
+and Knaves. In the second part of To Mock a Mockingbird, we accompany
+the Inspector on a summer-long adventure into the field of combinatory
+logic (a branch of logic that plays an important role in computer
+science and artificial intelligence). His adventure, which includes
+enchanted forests, talking birds, bird sociologists, and a classic
+quest, provides for us along the way the pleasure of solving puzzles of
+increasing complexity until we reach the Master Forest and - thanks to
+Godel's famous theorem - the final revelation.
+The Design of the UNIX Operating System
+Maurice J. Bach
+Buy on Amazon
+$34.85
+
+This book does a great job of explaining fundamental UNIX concepts that
+you're always bumping into in Ruby land. You'll learn:
+
+    Just what exactly a process is
+    The difference between user mode and kernel mode
+    What a file descriptor is
+
+...and much, much more.
+
+This is one the best technical books I've read in that the writing is
+concise without being boring, and its ample illustrations do a good job
+of aiding comprehension. By reading this book, you'll gain a much deeper
+understanding of how your OS works, and it will make you a better
+Rubyist.
+
+Official description:
+
+Classic description of the internal algorithms and the structures that
+form the basis of the UNIX operating system and their relationship to
+programmer interface. The leading selling UNIX internals book on the
+market.
+Ruby Cookbook
+Lucas Carlson, Leonard Richardson
+Buy on Amazon
+$28.97
+
+In my early days as a Rubyist I found myself reaching for this book over
+and over. The cookbook style makes it a great reference. One of my
+favorite tricks was creating a hash with default values, like so:
+
+Hash.new{|h, k| h[k] = []}
+
+Official description:
+
+Do you want to push Ruby to its limits? The Ruby Cookbook is the most
+comprehensive problem-solving guide to today's hottest programming
+language. It gives you hundreds of solutions to real-world problems,
+with clear explanations and thousands of lines of code you can use in
+your own projects.
+
+From data structures and algorithms, to integration with cutting-edge
+technologies, the Ruby Cookbook has something for every programmer.
+Beginners and advanced Rubyists alike will learn how to program with:
+
+    Strings and numbers
+    Arrays and hashes
+    Classes, modules, and namespaces
+    Reflection and metaprogramming
+    XML and HTML processing
+    Ruby on Rails (including Ajax integration)
+    Databases
+    Graphics
+    Internet services like email, SSH, and BitTorrent
+    Web services
+    Multitasking
+    Graphical and terminal interfaces
+
+If you need to write a web application, this book shows you how to get
+started with Rails. If you're a system administrator who needs to rename
+thousands of files, you'll see how to use Ruby for this and other
+everyday tasks. You'll learn how to read and write Excel spreadsheets,
+classify text with Bayesian filters, and create PDF files. We've even
+included a few silly tricks that were too cool to leave out, like how to
+blink the lights on your keyboard.
+
+The Ruby Cookbook is the most useful book yet written about Ruby. When
+you need to solve a problem, don't reinvent the wheel: look it up in the
+Cookbook.
+The RSpec Book: Behaviour Driven Development with Rspec, Cucumber, and
+Friends
+David Chelimsky, Dave Astels, Bryan Helmkamp, Dan North, Zach Dennis,
+Aslak Hellesoy
+Buy on Amazon
+$21.00
+
+This is a great book for learning about all of RSpecs many, many, maaany
+details. It also explains BDD and RSpec's philosophy well. RSpec is
+pretty much the standard for Ruby testing, and this book is a great way
+to learn it.
+
+Behaviour-Driven Development (BDD) gives you the best of Test Driven
+Development, Domain Driven Design, and Acceptance Test Driven Planning
+techniques, so you can create better software with self-documenting,
+executable tests that bring users and developers together with a common
+language.
+
+Get the most out of BDD in Ruby with The RSpec Book, written by the lead
+developer of RSpec, David Chelimsky.
+
+You'll get started right away with RSpec 2 and Cucumber by developing a
+simple game, using Cucumber to express high-level requirements in
+language your customer understands, and RSpec to express more granular
+requirements that focus on the behavior of individual objects in the
+system. You'll learn how to use test doubles (mocks and stubs) to
+control the environment and focus the RSpec examples on one object at a
+time, and how to customize RSpec to "speak" in the language of your
+domain.
+
+You'll develop Rails 3 applications and use companion tools such as
+Webrat and Selenium to express requirements for web applications both in
+memory and in the browser. And you'll learn to specify Rails views,
+controllers, and models, each in complete isolation from the other.
+
+Whether you're developing applications, frameworks, or the libraries
+that power them, The RSpec Book will help you write better code, better
+tests, and deliver better software to happier users.
+The Cucumber Book: Behaviour-Driven Development for Testers and
+Developers
+Matt Wynne, Aslak Hellesoy
+Buy on Amazon
+$22.14
+
+Cucumber is a somewhat controversial testing framework. But if you want
+to get past the brouhaha and actually learn this powerful tool, this
+book is the best place to start.
+
+Your customers want rock-solid, bug-free software that does exactly what
+they expect it to do. Yet they can't always articulate their ideas
+clearly enough for you to turn them into code. The Cucumber Book dives
+straight into the core of the problem: communication between people.
+Cucumber saves the day; it's a testing, communication, and requirements
+tool - all rolled into one.
+
+We'll show you how to express your customers' wild ideas as a set of
+clear, executable specifications that everyone on the team can read.
+You'll learn how to feed those examples into Cucumber and let it guide
+your development. You'll build just the right code to keep your
+customers happy, and not a line more.
+
+The first part of the book teaches you how to use the core features of
+Cucumber. You'll learn how to use Cucumber's Gherkin DSL to describe--
+in plain language - the behavior your customers want from the system.
+You'll learn how to write Ruby code that interprets those plain language
+specifications and checks them against your application. In Part 2,
+you'll consolidate the knowledge you just gained with a worked example.
+
+Although it was born in the Ruby community, you can use Cucumber to test
+almost any system, from a simple shell script or a Perl script, to
+enterprise PHP or a Java web application. In Part 3, you'll find a
+selection of recipes for some of the most common situations you'll
+encounter using Cucumber in the wild. You'll learn how to test
+Ajax-heavy web applications with Capybara and Selenium, REST web
+services, Ruby on Rails applications, command-line applications, legacy
+applications and lots more!
+
+Written by the creator of Cucumber and one of its most experienced users
+and contributors, The Cucumber Book is an authoritative guide that will
+give you and your team all the knowledge you need to start using
+Cucumber with confidence.
+
+What You Need:
+
+Windows, Mac OS X (with XCode) or Linux
+
+Ruby 1.9.2 and upwards
+Domain-Driven Design: Tackling Complexity in the Heart of Software
+Eric Evans
+Buy on Amazon
+$45.00
+
+DHH recently listed this book as one of the top 5 programming books that
+meant most to him. The ideas introduced in it are at the core of
+Behavior Driven Development, which is at the core of RSpec and Cucumber.
+The ideas in this book will help you think more clearly about software
+analysis and your development process.
+
+"Eric Evans has written a fantastic book on how you can make the design
+of your software match your mental model of the problem domain you are
+addressing.
+
+"His book is very compatible with XP. It is not about drawing pictures
+of a domain; it is about how you think of it, the language you use to
+talk about it, and how you organize your software to reflect your
+improving understanding of it. Eric thinks that learning about your
+problem domain is as likely to happen at the end of your project as at
+the beginning, and so refactoring is a big part of his technique.
+
+"The book is a fun read. Eric has lots of interesting stories, and he
+has a way with words. I see this book as essential reading for software
+developers?it is a future classic.?
+
+-- Ralph Johnson, author of Design Patterns
+
+"If you don't think you are getting value from your investment in
+object-oriented programming, this book will tell you what you've
+forgotten to do.
+
+"Eric Evans convincingly argues for the importance of domain modeling as
+the central focus of development and provides a solid framework and set
+of techniques for accomplishing it. This is timeless wisdom, and will
+hold up long after the methodologies du jour have gone out of fashion.?
+
+-- Dave Collins, author of Designing Object-Oriented User Interfaces
+
+"Eric weaves real-world experience modeling?and building?business
+applications into a practical, useful book. Written from the perspective
+of a trusted practitioner, Eric?s descriptions of ubiquitous language,
+the benefits of sharing models with users, object life-cycle management,
+logical and physical application structuring, and the process and
+results of deep refactoring are major contributions to our field.?
+
+-- Luke Hohmann, author of Beyond Software Architecture ---
+
+"This book belongs on the shelf of every thoughtful software developer."
+
+--Kent Beck
+
+"What Eric has managed to capture is a part of the design process that
+experienced object designers have always used, but that we have been
+singularly unsuccessful as a group in conveying to the rest of the
+industry. We've given away bits and pieces of this knowledge...but we've
+never organized and systematized the principles of building domain
+logic. This book is important."
+
+--Kyle Brown, author of Enterprise Java -- Programming with IBM ®
+WebSphere ®
+
+The software development community widely acknowledges that domain
+modeling is central to software design. Through domain models, software
+developers are able to express rich functionality and translate it into
+a software implementation that truly serves the needs of its users. But
+despite its obvious importance, there are few practical resources that
+explain how to incorporate effective domain modeling into the software
+development process.
+
+Domain-Driven Design fills that need. This is not a book about specific
+technologies. It offers readers a systematic approach to domain-driven
+design, presenting an extensive set of design best practices,
+experience-based techniques, and fundamental principles that facilitate
+the development of software projects facing complex domains.
+Intertwining design and development practice, this book incorporates
+numerous examples based on actual projects to illustrate the application
+of domain-driven design to real-world software development.
+
+Readers learn how to use a domain model to make a complex development
+effort more focused and dynamic. A core of best practices and standard
+patterns provides a common language for the development team. A shift in
+emphasis--refactoring not just the code but the model underlying the
+code--in combination with the frequent iterations of Agile development
+leads to deeper insight into domains and enhanced communication between
+domain expert and programmer.
+Refactoring: Improving the Design of Existing Code
+Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts
+Buy on Amazon
+$40.99
+
+Another classic OOP book. This is a useful book for any programmer, not
+just a Rubyist or OOP programmer.
+
+Refactoring is about improving the design of existing code. It is the
+process of changing a software system in such a way that it does not
+alter the external behavior of the code, yet improves its internal
+structure. With refactoring you can even take a bad design and rework it
+into a good one. This book offers a thorough discussion of the
+principles of refactoring, including where to spot opportunities for
+refactoring, and how to set up the required tests. There is also a
+catalog of more than 40 proven refactorings with details as to when and
+why to use the refactoring, step by step instructions for implementing
+it, and an example illustrating how it works The book is written using
+Java as its principle language, but the ideas are applicable to any OO
+language.
+Land of Lisp: Learn to Program in Lisp, One Game at a Time!
+Conrad Barski
+Buy on Amazon
+$26.90
+
+"What's this?!", you're asking. "A Lisp book on a page for Rubyists?!
+Nonsense!"
+
+Well hold on just a minute there, OK? A lesser-known fact is that Matz,
+Ruby's creator, was deeply influenced by Emacs Lisp. Additionally, Ruby
+has many functional programming capabilities, and there's no better way
+to learn about functional programming than by actually learning the
+great-great-grandaddy of all FP languages, Lisp.
+
+And luckily for you, this book is a great way to learn. You learn by
+building a number of games, and there are fun, goofy comics throughout -
+kind of like _why's popular book. You can read about my own experience
+with Lisp here:
+http://www.flyingmachinestudios.com/programming/chunky-bacon-lisp/
+
+Official description: Lisp has been hailed as the world's most powerful
+programming language, but its cryptic syntax and academic reputation can
+be enough to scare off even experienced programmers. Those dark days are
+finally over? Land of Lisp brings the power of functional programming to
+the people!
+
+With his brilliantly quirky comics and out-of-this-world games, longtime
+Lisper Conrad Barski teaches you the mysteries of Common Lisp. You'll
+start with the basics, like list manipulation, I/O, and recursion, then
+move on to more complex topics like macros, higher order programming,
+and domain-specific languages. Then, when your brain overheats, you can
+kick back with an action-packed comic book interlude!
+
+Along the way you'll create (and play) games like Wizard Adventure, a
+text adventure with a whiskey-soaked twist, and Grand Theft Wumpus, the
+most violent version of Hunt the Wumpus the world has ever seen.
+
+You'll learn to:
+
+    Master the quirks of Lisp's syntax and semantics
+    Write concise and elegant functional programs
+    Use macros, create domain-specific languages, and learn other
+advanced Lisp techniques
+    Create your own web server, and use it to play browser-based games
+    Put your Lisp skills to the test by writing brain-melting games like
+Dice of Doom and Orc Battle
+
+With Land of Lisp, the power of functional programming is yours to
+wield.
+Learn You a Haskell for Great Good!: A Beginner's Guide
+Miran Lipovaca
+Buy on Amazon
+free online
+
+Why should a Rubyist read a Haskell book? Besides being enormously
+entertaining, Learn You a Haskell goes over vital functional programming
+concepts. Additionally, Haskell is used in other seminal functional
+programming books which Rubyists might enjoy. Plus! It's free online:
+http://learnyouahaskell.com/
+
+It's all in the name: Learn You a Haskell for Great Good! is a
+hilarious, illustrated guide to this complex functional language. Packed
+with the author's original artwork, pop culture references, and most
+importantly, useful example code, this book teaches functional
+fundamentals in a way you never thought possible.
+
+You'll start with the kid stuff: basic syntax, recursion, types and type
+classes. Then once you've got the basics down, the real black belt
+master-class begins: you'll learn to use applicative functors, monads,
+zippers, and all the other mythical Haskell constructs you've only read
+about in storybooks.
+
+As you work your way through the author's imaginative (and occasionally
+insane) examples, you'll learn to:
+
+    Laugh in the face of side effects as you wield purely functional
+programming techniques
+    Use the magic of Haskell's "laziness" to play with infinite sets of
+data
+    Organize your programs by creating your own types, type classes, and
+modules
+    Use Haskell's elegant input/output system to share the genius of
+your programs with the outside world
+
+Short of eating the author's brain, you will not find a better way to
+learn this powerful language than reading Learn You a Haskell for Great
+Good!
+
+Excerpt from the Introduction Haskell is fun, and that?s what it?s all
+about!
+
+This book is aimed at people who have experience programming in
+imperative languages -- such as C++, Java, and Python -- and now want to
+try out Haskell. But even if you don't have any significant programming
+experience, I'll bet a smart person like you will be able to follow
+along and learn Haskell.
+
+My first reaction to Haskell was that the language was just too weird.
+But after getting over that initial hurdle, it was smooth sailing. Even
+if Haskell seems strange to you at first, don?t give up. Learning
+Haskell is almost like learning to program for the first time all over
+again. It's fun, and it forces you to think differently.
+
+NOTE
+
+If you ever get really stuck, the IRC channel #haskell on the freenode
+network is a great place to ask questions. The people there tend to be
+nice, patient, and understanding. They're a great resource for Haskell
+newbies.
+
+So, What's Haskell?
+
+Haskell is a purely functional programming language.
+
+In imperative programming languages, you give the computer a sequence of
+tasks, which it then executes. While executing them, the computer can
+change state. For instance, you can set the variable a to 5 and then do
+some stuff that might change the value of a. There are also flow-control
+structures for executing instructions several times, such as for and
+while loops.
+
+Purely functional programming is different. You don't tell the computer
+what to do -- you tell it what stuff is. For instance, you can tell the
+computer that the factorial of a number is the product of every integer
+from 1 to that number or that the sum of a list of numbers is the first
+number plus the sum of the remaining numbers. You can express both of
+these operations as functions.
+Practical Ruby for System Administration (Expert's Voice in Open Source)
+André Ben Hamou
+Buy on Amazon
+$13.46
+
+A lesser-known Ruby book, this text is great for those who want to use
+Ruby for something other than making web sites.
+
+Ruby has set the world on fire, proving itself a serious challenger to
+Perl and Python in all spheres. In particular, more and more people are
+discovering that Ruby's flexibility, superb feature set, and gentle
+learning curve make it a natural choice for system administration tasks,
+from the humblest server to the largest enterprise deployment.
+
+Within the pages of Practical Ruby for System Administration, you'll
+learn the Ruby way to construct files, tap into clouds of data, build
+domain-specific languages, perform network traffic analysis, and more.
+
+Based on author André Ben Hamou's own experiences working as a system
+administrator, this book will help you pick up practical tips on Ruby
+coding style, learn how to analyze and improve script performance, and
+make use of no-nonsense advice on scripting workflow, including testing
+and documentation.
+
+Above all, you'll come to appreciate the sheer power of Ruby and the
+hundreds of benefits it offers for system administration.
+
+    This book places equal emphasis on fundamental Ruby concepts as well
+as practical how-tos.
+    It uses examples from other languages to ease the transition to
+Ruby.
+    The book is concise, entertaining, and informative -- unlike many
+books aimed at system administrators, which can be overly long and
+stodgy.
+
+Exploring Everyday Things with R and Ruby: Learning About Everyday
+Things
+Sau Sheong Chang
+Buy on Amazon
+$16.07
+
+Another lesser-known Ruby title for those who want to venture off the
+beaten path.
+
+If you're curious about how things work, this fun and intriguing guide
+will help you find real answers to everyday problems. By using
+fundamental math and doing simple programming with the Ruby and R
+languages, you'll learn how to model a problem and work toward a
+solution.
+
+All you need is a basic understanding of programming. After a quick
+introduction to Ruby and R, you'll explore a wide range of questions by
+learning how to assemble, process, simulate, and analyze the available
+data. You'll learn to see everyday things in a different perspective
+through simple programs and common sense logic. Once you finish this
+book, you can begin your own journey of exploration and discovery.
+
+Here are some of the questions you'll explore:
+
+    Determine how many restroom stalls can accommodate an office with 70
+employees
+    Mine your email to understand your particular emailing habits
+    Use simple audio and video recording devices to calculate your heart
+rate
+    Create an artificial society?and analyze its behavioral patterns to
+learn how specific factors affect our real society
+
+Java Concurrency in Practice
+Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes,
+Doug Lea
+Buy on Amazon
+$25.00
+
+Yes, it's a Java book, but it should be approachable by Rubyists. The
+book on concurrency, an ongoing issue for Ruby.
+
+"I was fortunate indeed to have worked with a fantastic team on the
+design and implementation of the concurrency features added to the Java
+platform in Java 5.0 and Java 6. Now this same team provides the best
+explanation yet of these new features, and of concurrency in general.
+Concurrency is no longer a subject for advanced users only. Every Java
+developer should read this book." --Martin Buchholz JDK Concurrency
+Czar, Sun Microsystems
+
+"For the past 30 years, computer performance has been driven by Moore's
+Law; from now on, it will be driven by Amdahl's Law. Writing code that
+effectively exploits multiple processors can be very challenging. Java
+Concurrency in Practice provides you with the concepts and techniques
+needed to write safe and scalable Java programs for today's--and
+tomorrow's--systems." --Doron Rajwan Research Scientist, Intel Corp
+
+"This is the book you need if you're writing--or designing, or
+debugging, or maintaining, or contemplating--multithreaded Java
+programs. If you've ever had to synchronize a method and you weren't
+sure why, you owe it to yourself and your users to read this book, cover
+to cover." --Ted Neward Author of Effective Enterprise Java
+
+"Brian addresses the fundamental issues and complexities of concurrency
+with uncommon clarity. This book is a must-read for anyone who uses
+threads and cares about performance." --Kirk Pepperdine CTO,
+JavaPerformanceTuning.com
+
+"This book covers a very deep and subtle topic in a very clear and
+concise way, making it the perfect Java Concurrency reference manual.
+Each page is filled with the problems (and solutions!) that programmers
+struggle with every day. Effectively exploiting concurrency is becoming
+more and more important now that Moore's Law is delivering more cores
+but not faster cores, and this book will show you how to do it." --Dr.
+Cliff Click Senior Software Engineer, Azul Systems
+
+"I have a strong interest in concurrency, and have probably written more
+thread deadlocks and made more synchronization mistakes than most
+programmers. Brian's book is the most readable on the topic of threading
+and concurrency in Java, and deals with this difficult subject with a
+wonderful hands-on approach. This is a book I am recommending to all my
+readers of The Java Specialists' Newsletter, because it is interesting,
+useful, and relevant to the problems facing Java developers today."
+--Dr. Heinz Kabutz The Java Specialists' Newsletter
+
+"I've focused a career on simplifying simple problems, but this book
+ambitiously and effectively works to simplify a complex but critical
+subject: concurrency. Java Concurrency in Practice is revolutionary in
+its approach, smooth and easy in style, and timely in its delivery--it's
+destined to be a very important book." --Bruce Tate Author of Beyond
+Java
+
+" Java Concurrency in Practice is an invaluable compilation of threading
+know-how for Java developers. I found reading this book intellectually
+exciting, in part because it is an excellent introduction to Java's
+concurrency API, but mostly because it captures in a thorough and
+accessible way expert knowledge on threading not easily found
+elsewhere." --Bill Venners Author of Inside the Java Virtual Machine
+
+Threads are a fundamental part of the Java platform. As multicore
+processors become the norm, using concurrency effectively becomes
+essential for building high-performance applications. Java SE 5 and 6
+are a huge step forward for the development of concurrent applications,
+with improvements to the Java Virtual Machine to support
+high-performance, highly scalable concurrent classes and a rich set of
+new concurrency building blocks. In Java Concurrency in Practice , the
+creators of these new facilities explain not only how they work and how
+to use them, but also the motivation and design patterns behind them.
+
+However, developing, testing, and debugging multithreaded programs can
+still be very difficult; it is all too easy to create concurrent
+programs that appear to work, but fail when it matters most: in
+production, under heavy load. Java Concurrency in Practice arms readers
+with both the theoretical underpinnings and concrete techniques for
+building reliable, scalable, maintainable concurrent applications.
+Rather than simply offering an inventory of concurrency APIs and
+mechanisms, it provides design rules, patterns, and mental models that
+make it easier to build concurrent programs that are both correct and
+performant.
+
+This book covers:
+
+    Basic concepts of concurrency and thread safety
+    Techniques for building and composing thread-safe classes
+    Using the concurrency building blocks in java.util.concurrent
+    Performance optimization dos and don'ts
+    Testing concurrent programs
+    Advanced topics such as atomic variables, nonblocking algorithms,
+and the Java Memory Model
+
+The dRuby Book: Distributed and Parallel Computing with Ruby
+Masatoshi Seki
+Buy on Amazon
+$19.00
+
+Learn from legendary Japanese Ruby hacker Masatoshi Seki in this first
+English-language book on his own Distributed Ruby library. You'll find
+out about distributed computing, advanced Ruby concepts and techniques,
+and the philosophy of the Ruby way---straight from the source.
+
+dRuby has been part of the Ruby standard library for more than a decade,
+yet few know the true power of the gem. Completely written in Ruby,
+dRuby enables you to communicate between distributed Ruby processes as
+if there were no boundaries between processes. This is one of the few
+books that covers distributed and parallel programming for Ruby
+developers.
+
+The dRuby Book has been completely updated and expanded from its
+Japanese version, with three new chapters written by Masatoshi-san.
+You'll find out about the design concepts of the dRuby library, and walk
+through step-by-step tutorial examples. By building various distributed
+applications, you'll master distributed programming as well as advanced
+Ruby techniques such as multithreading, object references, garbage
+collection, and security. Then you'll graduate to advanced techniques
+for using dRuby with Masatoshi-san's other libraries, such as eRuby and
+Rinda---the Ruby version of the Linda distributed tuplespace system. In
+the three new chapters, you'll see how to integrate dRuby and eRuby, get
+a thorough grounding in parallel programming concepts with Rinda, and
+create a full text search system using Drip.
+
+Step by step, you'll gain mastery of dRuby and distributed computing.
+
+What You Need:
+
+Ruby 1.9.2 or above. All exercises were run on OS X, though it should
+work on any operating system. You are expected to be comfortable reading
+Ruby code, as we do not explain basic syntax.
+Introducing Regular Expressions
+Michael Fitzgerald
+Buy on Amazon
+$15.93
+
+If you're a programmer new to regular expressions, this easy-to-follow
+guide is a great place to start. You'll learn the fundamentals
+step-by-step with the help of numerous examples, discovering first-hand
+how to match, extract, and transform text by matching specific words,
+characters, and patterns.
+
+Regular expressions are an essential part of a programmer's toolkit,
+available in various Unix utlilities as well as programming languages
+such as Perl, Java, JavaScript, and C#. When you've finished this book,
+you'll be familiar with the most commonly used syntax in regular
+expressions, and you'll understand how using them will save you
+considerable time.
+
+    Discover what regular expressions are and how they work
+    Learn many of the differences between regular expressions used with
+command-line tools and in various programming languages
+    Apply simple methods for finding patterns in text, including digits,
+letters, Unicode characters, and string literals
+    Learn how to use zero-width assertions and lookarounds
+    Work with groups, backreferences, character classes, and quantifiers
+    Use regular expressions to mark up plain text with HTML5
+
+Practical Vim: Edit Text at the Speed of Thought
+Drew Neil
+Buy on Amazon
+$21.52
+
+Vim is a fast and efficient text editor that will make you a faster and
+more efficient developer. It's available on almost every OS--if you
+master the techniques in this book, you'll never need another text
+editor. Practical Vim shows you 120 vim recipes so you can quickly learn
+the editor's core functionality and tackle your trickiest editing and
+writing tasks.
+
+Vim, like its classic ancestor vi, is a serious tool for programmers,
+web developers, and sysadmins. No other text editor comes close to Vim
+for speed and efficiency; it runs on almost every system imaginable and
+supports most coding and markup languages.
+
+Learn how to edit text the "Vim way:" complete a series of repetitive
+changes with The Dot Formula, using one keystroke to strike the target,
+followed by one keystroke to execute the change. Automate complex tasks
+by recording your keystrokes as a macro. Run the same command on a
+selection of lines, or a set of files.
+
+Discover the "very magic" switch, which makes Vim's regular expression
+syntax more like Perl's. Build complex patterns by iterating on your
+search history. Search inside multiple files, then run Vim's substitute
+command on the result set for a project-wide search and replace. All
+without installing a single plugin!
+
+You'll learn how to navigate text documents as fast as the eye
+moves--with only a few keystrokes. Jump from a method call to its
+definition with a single command. Use Vim's jumplist, so that you can
+always follow the breadcrumb trail back to the file you were working on
+before. Discover a multilingual spell-checker that does what it's told.
+
+Practical Vim will show you new ways to work with Vim more efficiently,
+whether you're a beginner or an intermediate Vim user.
+
+All this, without having to touch the mouse.
+
+What You Need:
+
+Vim version 7
+
+---
+
+http://goodstuffahead.com/t/ruby
+http://www.flyingmachinestudios.com/
+
+
