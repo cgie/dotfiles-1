@@ -1,0 +1,9 @@
+git clean -f
+git reset --hard origin/master
+git pull origin master
+git remote add <other> <repo>
+git pull <other> <branch>
+git branch -r
+git fetch origin
+git diff master origin/master
+
