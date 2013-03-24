@@ -1,0 +1,8 @@
+
+iptables -A OUTPUT -p tcp --dport 4100 --syn -m state --state NEW -j ACCEPT -v
+#ACCEPT  tcp opt -- in * out *  0.0.0.0/0  -> 0.0.0.0/0  tcp dpt:4100 flags:0x17/0x02 state NEW 
+iptables -A INPUT -i eth0 -p tcp -s 91.121.120.47  -j ACCEPT -v
+#ACCEPT  tcp opt -- in eth0 out *  91.121.120.47  -> 0.0.0.0/0  
+
+
+exit

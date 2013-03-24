@@ -1,0 +1,13 @@
+${filename##*.}
+
+if file "${CWD}/${SRC_FILENAME}" | grep "bzip2" ; then
+    tar xjvf "${CWD}/${SRC_FILENAME}" || exit 1
+elif file "${CWD}/${SRC_FILENAME}" | grep "gzip" ; then
+    tar xzvf "${CWD}/${SRC_FILENAME}" || exit 1
+elif file "${CWD}/${SRC_FILENAME}" | grep "Zip" ; then
+    unzip "${CWD}/${SRC_FILENAME}" || exit 1
+else
+    echo "ERROR"
+    echo "Archive file-type unknown"
+    exit 1
+fi

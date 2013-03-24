@@ -1,0 +1,1 @@
+for x in $(seq 1 10); do echo $((RANDOM %10)); done;

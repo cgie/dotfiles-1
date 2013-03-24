@@ -1,0 +1,7 @@
+At the server console:
+
+$ nc -v -w 30 -p 5600 l- > filename.back
+
+and on the client side:
+
+$ nc -v -w 2 10.0.1.1 5600 < filename

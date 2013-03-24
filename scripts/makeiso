@@ -1,0 +1,44 @@
+# Copy an existing CDROM into a new ISO-9660 image:
+mkisofs -r -o /fully-qualified-file-name-of-iso-image.iso /dev/cdrom
+
+# Copy a directory tree from the hard drive into an ISO image (but probably not compatible with MS DOS): (Better for Linux backup as hidden files beginning with "." and long file names are preserved.)
+mkisofs -r -R -J -l -L -o /fully-qualified-file-name-of-iso-image.iso /name-of-directory-containing-files-to-format-into-iso-image
+
+# mkisofs options:
+
+    Command Option 	Description
+    -b 	Specifies the path and filename of the boot image to be used when making an "El Torito" bootable CD.
+    The pathname must be relative to the source path specified to mkisofs.
+    Required to make a bootable CD. The boot image must be exactly the size of either a 1.2, 1.44, or a 2.88 meg floppy.
+    -c 	Specifies the path and filename of the boot catalog to be used when making a bootable CD.
+    The pathname must be relative to the source path specified to mkisofs.
+    -l 	Allow 31 character file names. CD will not be 8.3 DOS compatible. (Who cares! Thus use this option.)
+    -o 	Name of iso9660 output image file
+    -r 	Set file permissions on CD to be publicly readable
+    -v 	Verbose execution.
+    -x 	Exclude given path from being written to CDROM.
+    -A 	Text string that will be written into the volume header
+    -J 	Generate Joliet directory records in addition to regular iso9660 file names.
+    This preserves the case (upper/lower) of file and directory names. Useful for use with MS/Windows environments.
+    -L
+    -allow-leading-dots 	Allows files to begin with "." (period). Use this option to write Unix/Linux hidden files. CD will not be DOS compatible. (Who cares! Thus use this option.)
+    -allow-multidot 	Allows files to contain multiple "."s (periods). Use this option to write Unix/Linux files which may contain more than one period. CD will not be DOS compatible. (Who cares! Thus use this option.)
+    -R 	Add Rock Ridge records to further describe the files. Preserves filename length and case.
+    -V 	Specifies the volume ID to be written into the master block.
+    -T 	Generate a file TRANS.TBL in each directory.
+    -graft-points 	Translate a directory to the root ("/") of the CD. See examples. (i.e.: -graft-points "/=DirectoryName/")
+    -pad 	Default (not necessary to specify this option). Pads the end of the whole image by 150 sectors (300 kB). Avoids read ahead errors on last file.
+
+
+$ mkisofs -o test.iso -Jrv -V test_disk /home/test/
+
+In this example:
+
+    * -o names the new .iso image file (test.iso)
+    * -J uses Joliet naming records, for Windows compatibility
+    * -r uses Rock Ridge naming conventions for UNIX/Linux compatibility, and makes all files publicly readable
+    * -v sets verbose mode, for a running commentary as the image is created
+    * -V provides a volume ID (test_disk); this is the disk name that shows up in Windows Explorer
+    * Last in the list are the files selected for packaging into the .iso (everything in /home/carla/)
+date +%Y%m%d
+mkisofs -o docs.iso -J -r -R -l -v -V doc Documents/

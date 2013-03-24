@@ -1,0 +1,3 @@
+#!/bin/sh
+rdate -ncv it.pool.ntp.org
+echo "done"

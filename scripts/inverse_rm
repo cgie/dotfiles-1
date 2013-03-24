@@ -1,0 +1,1 @@
+mr `ls | grep -v ".*pattern_to_keep"`

@@ -1,0 +1,2 @@
+man $(ls /bin | sed -n $((RANDOM % $(ls /bin | wc -l) + 1))p)
+# When the "-n" option is used, the "p" flag will cause the modified line to be printed.

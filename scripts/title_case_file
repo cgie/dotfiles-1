@@ -1,0 +1,1 @@
+rename 's/\b((?!(a|of|that|to)\b)[a-z]+)/\u$1/g' *

@@ -1,0 +1,4 @@
+# xrandr usage
+xrandr -q
+xrandr --output LVDS --auto --output VGA --auto --same-as LVDS
+

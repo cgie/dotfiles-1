@@ -1,0 +1,1 @@
+shuf -i 1-49 -n 6 | sort -n | xargs

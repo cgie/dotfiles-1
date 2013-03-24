@@ -1,0 +1,2 @@
+zero@turtle [~/testfield]$ ls -l | grep ".*\.a"
+zero@turtle [~/testfield]$ ls -l | grep -v ".*\.a"

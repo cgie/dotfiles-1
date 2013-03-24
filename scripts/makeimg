@@ -1,0 +1,16 @@
+First we need to create the container file. The following command creates a file 10 MB in size. You can make larger containers by increasing the number after the "count" parameter.
+
+     dd if=/dev/zero of=myloop.img bs=1024 count=10240
+
+Next we need to format the container, as we would a regular disk partition. In this example, the container is being formatted with the ext2 file system. The "mkfs" command will probably warn you that the device is really a file, but then allow you to proceed.
+
+     mkfs.ext2 myloop.img
+
+We now have a container that has been formatted. The next step is to mount it so we may access the new file system. First we will make a directory to act as the mount point, then attach our container to that point.
+
+     mkdir mydisk
+     mount -o loop myloop.img mydisk
+
+From here on, we can explore the container in the "mydisk" directory. When we are done with the container, we can remove it by running
+
+     umount mydisk

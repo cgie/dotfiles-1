@@ -1,0 +1,2 @@
+#for directly from the console
+for x in $(seq 1 10); do ls -la > test_$x; done
