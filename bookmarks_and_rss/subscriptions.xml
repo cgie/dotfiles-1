@@ -4,6 +4,8 @@
         <title>Google Reader</title>
     </head>
     <body>
+        <outline text="Slashdot" title="Slashdot" type="rss"
+            xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
         <outline title="Ruby" text="Ruby">
             <outline text="A Fresh Cup" title="A Fresh Cup" type="rss"
                 xmlUrl="http://afreshcup.com/home/rss.xml" htmlUrl="http://afreshcup.com/home/"/>
@@ -53,6 +55,9 @@
             <outline text="Adventures with Ruby"
                 title="Adventures with Ruby" type="rss"
                 xmlUrl="http://iain.nl/feed" htmlUrl="http://iain.nl"/>
+            <outline text="Automate All the Things!"
+                title="Automate All the Things!" type="rss"
+                xmlUrl="http://dougireton.com/atom.xml" htmlUrl="http://dougireton.github.com/"/>
             <outline text="benhoskin.gs" title="benhoskin.gs" type="rss"
                 xmlUrl="http://benhoskin.gs/index.atom" htmlUrl="http://benhoskin.gs"/>
             <outline text="Caius Theory" title="Caius Theory" type="rss"
@@ -67,9 +72,6 @@
                 type="rss" xmlUrl="http://code.dblock.org/RssBlog.aspx" htmlUrl="http://code.dblock.org/"/>
             <outline text="Debian News" title="Debian News" type="rss"
                 xmlUrl="http://www.debian.org/News/news" htmlUrl="http://www.debian.org/News/"/>
-            <outline text="Engine Yard Developer Blog"
-                title="Engine Yard Developer Blog" type="rss"
-                xmlUrl="https://blog.engineyard.com/feed" htmlUrl="https://blog.engineyard.com"/>
             <outline text="Ernie Miller" title="Ernie Miller" type="rss"
                 xmlUrl="http://erniemiller.org/feed.xml" htmlUrl="http://erniemiller.org"/>
             <outline text="Giles Bowkett" title="Giles Bowkett"
@@ -99,6 +101,11 @@
             <outline text="journal.stuffwithstuff.com"
                 title="journal.stuffwithstuff.com" type="rss"
                 xmlUrl="http://journal.stuffwithstuff.com/rss.xml" htmlUrl="http://journal.stuffwithstuff.com/"/>
+            <outline text="Literate Programming"
+                title="Literate Programming" type="rss"
+                xmlUrl="http://feeds.feedburner.com/SteveKlabnik" htmlUrl="http://www.google.com/reader/view/feed%2Fhttp%3A%2F%2Ffeeds.feedburner.com%2FSteveKlabnik"/>
+            <outline text="Matt Aimonetti" title="Matt Aimonetti"
+                type="rss" xmlUrl="http://matt.aimonetti.net/atom.xml" htmlUrl="http://matt.aimonetti.net/"/>
             <outline text="Matthew Bass" title="Matthew Bass" type="rss"
                 xmlUrl="http://www.matthewbass.com/feed/" htmlUrl="http://www.matthewbass.com"/>
             <outline text="Mislav's blog" title="Mislav's blog"
@@ -115,6 +122,8 @@
             <outline text="RailsTips by John Nunemaker"
                 title="RailsTips by John Nunemaker" type="rss"
                 xmlUrl="http://feeds.feedburner.com/railstips" htmlUrl="http://railstips.org/blog/"/>
+            <outline text="Rake Routes" title="Rake Routes" type="rss"
+                xmlUrl="http://feeds.feedburner.com/RakeRoutes" htmlUrl="http://rakeroutes.com/"/>
             <outline text="Ruby Kitchen : Ruby Kitchen | Blog"
                 title="Ruby Kitchen : Ruby Kitchen | Blog" type="rss"
                 xmlUrl="http://rubykitchen.in/blog/articles.atom" htmlUrl="http://rubykitchen.in"/>
@@ -134,6 +143,8 @@
             <outline text="Stevey's Blog Rants"
                 title="Stevey's Blog Rants" type="rss"
                 xmlUrl="http://steve-yegge.blogspot.com/feeds/posts/default" htmlUrl="http://steve-yegge.blogspot.com/"/>
+            <outline text="The GitHub Blog" title="The GitHub Blog"
+                type="rss" xmlUrl="https://github.com/blog.atom" htmlUrl="https://github.com/blog"/>
             <outline text="The Minimalists" title="The Minimalists"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/theminimalists/Hztx" htmlUrl="http://www.theminimalists.com"/>
@@ -148,8 +159,6 @@
             <outline text="Virtuous Code" title="Virtuous Code"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/VirtuousCode" htmlUrl="http://devblog.avdi.org"/>
-            <outline text="zenhabits" title="zenhabits" type="rss"
-                xmlUrl="http://feeds.feedburner.com/zenhabits" htmlUrl="http://zenhabits.net"/>
         </outline>
     </body>
 </opml>
