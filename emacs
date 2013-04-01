@@ -1,4 +1,4 @@
->;; -*- Mode: Emacs-Lisp -*-
+;; -*- Mode: Emacs-Lisp -*-
 
 ;;; This is a sample .emacs file.
 ;;;
