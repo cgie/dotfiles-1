@@ -1,4 +1,4 @@
-;; -*- Mode: Emacs-Lisp -*-
+>;; -*- Mode: Emacs-Lisp -*-
 
 ;;; This is a sample .emacs file.
 ;;;
@@ -39,7 +39,11 @@
 		  (line-beginning-position (+ 1 arg)))
   (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
 
-(show-paren-mode 1)
-(linum-mode 1)
+(require 'linum)
+(global-linum-mode 1)
+(require 'paren)
+(setq show-paren-style 'parenthesis)
+(show-paren-mode +1)
+
 ;; Goto-line short-cut key
 (global-set-key "\C-l" 'goto-line)
