@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
-        <title>Google Reader</title>
+        <title>Iscrizioni di Eddie in Google Reader</title>
     </head>
     <body>
+        <outline text="Emacs Redux" title="Emacs Redux" type="rss"
+            xmlUrl="http://emacsredux.com/atom.xml" htmlUrl="http://emacsredux.com/"/>
         <outline text="Slashdot" title="Slashdot" type="rss"
             xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
         <outline title="Ruby" text="Ruby">
