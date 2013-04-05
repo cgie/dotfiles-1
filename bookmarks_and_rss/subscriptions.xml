@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
-        <title>from Google Reader</title>
+        <title>Iscrizioni di Eddie in Google Reader</title>
     </head>
     <body>
-        <outline text="Emacs Redux" title="Emacs Redux" type="rss"
-            xmlUrl="http://emacsredux.com/atom.xml" htmlUrl="http://emacsredux.com/"/>
         <outline text="Slashdot" title="Slashdot" type="rss"
             xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
         <outline title="Ruby" text="Ruby">
@@ -27,6 +25,9 @@
             <outline text="Practicing Ruby" title="Practicing Ruby"
                 type="rss"
                 xmlUrl="http://blog.rubybestpractices.com/feed.xml" htmlUrl="http://blog.rubybestpractices.com/"/>
+            <outline text="reddit for ruby hackers"
+                title="reddit for ruby hackers" type="rss"
+                xmlUrl="http://www.reddit.com/r/ruby/.rss" htmlUrl="http://www.reddit.com/r/ruby/"/>
             <outline text="Riding Rails" title="Riding Rails" type="rss"
                 xmlUrl="http://weblog.rubyonrails.org/feed/atom.xml" htmlUrl="http://weblog.rubyonrails.org/"/>
             <outline text="Ruby Freelancers" title="Ruby Freelancers"
@@ -52,6 +53,12 @@
             <outline text="The Ruby Reflector"
                 title="The Ruby Reflector" type="rss"
                 xmlUrl="http://rubyreflector.com/feed.xml" htmlUrl="http://rubyreflector.com"/>
+        </outline>
+        <outline title="Emacs" text="Emacs">
+            <outline text="Emacs Redux" title="Emacs Redux" type="rss"
+                xmlUrl="http://emacsredux.com/atom.xml" htmlUrl="http://emacsredux.com/"/>
+            <outline text="Mastering Emacs" title="Mastering Emacs"
+                type="rss" xmlUrl="http://www.masteringemacs.org/feed/" htmlUrl="http://www.masteringemacs.org"/>
         </outline>
         <outline title="Blogs" text="Blogs">
             <outline text="Adventures with Ruby"
@@ -153,6 +160,8 @@
             <outline text="The timeless repository"
                 title="The timeless repository" type="rss"
                 xmlUrl="http://feeds.feedburner.com/TimelessRepo" htmlUrl="http://timeless.judofyr.net/"/>
+            <outline text="(think)" title="(think)" type="rss"
+                xmlUrl="http://batsov.com/atom.xml" htmlUrl="http://bbatsov.github.com/"/>
             <outline text="Tony Arcieri" title="Tony Arcieri" type="rss"
                 xmlUrl="http://tonyarcieri.com/feed" htmlUrl="http://tonyarcieri.com"/>
             <outline text="Victor Savkin's Blog About Software Design"
