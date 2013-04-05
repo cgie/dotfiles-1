@@ -1,0 +1,8 @@
+total 256
+-rw-r--r-- 1 eddie eddie   3279 Aug 24  2012 clojure.vim
+-rw-r--r-- 1 eddie eddie  12853 Feb 21 19:38 closetag.vim
+-rw-rw-r-- 1 eddie eddie 126233 Dec 28  2011 NERD_tree.vim
+-rw-r--r-- 1 eddie eddie  11729 Feb 19 19:10 pathogen.vim
+-rw-r--r-- 1 eddie eddie  57547 Oct 13  2006 project.vim
+-rw-r--r-- 1 eddie eddie   5610 Jan  2 08:39 rsense.vim
+-rw-r--r-- 1 eddie eddie  30075 Jun 11  2012 vimclojure.vim
