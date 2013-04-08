@@ -1,54 +1,55 @@
-actionmailer (3.2.13, 3.2.12)
+actionmailer (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Email composition, delivery, and receiving framework (part of
     Rails).
 
-actionpack (3.2.13, 3.2.12)
+actionpack (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Web-flow and rendering framework putting the VC in MVC (part of
     Rails).
 
-activemodel (3.2.13, 3.2.12)
+activemodel (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A toolkit for building modeling frameworks (part of Rails).
 
-activerecord (3.2.13, 3.2.12, 1.6.0)
+activerecord (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
-                 (1.6.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Object-relational mapper framework (part of Rails).
 
-activeresource (3.2.13, 3.2.12)
+activeresource (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     REST modeling framework (part of Rails).
 
-activesupport (3.2.13, 3.2.12)
+activesupport (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A toolkit of support libraries and Ruby core extensions extracted
     from the Rails framework.
+
+addressable (2.3.3)
+    Author: Bob Aman
+    Homepage: http://addressable.rubyforge.org/
+    License: Apache License 2.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    URI Implementation
 
 andand (1.3.3)
     Author: Reg Braithwaite
@@ -64,11 +65,10 @@ arel (3.0.2)
 
     Arel is a SQL AST manager for Ruby
 
-backports (3.1.1, 3.1.0, 2.6.7)
-    Author: Marc-André Lafortune
+backports (3.3.0, 2.6.7)
+    Author: Marc-AndrÃ© Lafortune
     Homepage: http://github.com/marcandre/backports
-    Installed at (3.1.1): /usr/local/lib/ruby/gems/2.0.0
-                 (3.1.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (3.3.0): /usr/local/lib/ruby/gems/2.0.0
                  (2.6.7): /usr/local/lib/ruby/gems/2.0.0
 
     Backports of Ruby features for older Ruby.
@@ -80,27 +80,14 @@ bigdecimal (1.2.0)
 
     Arbitrary-precision decimal floating-point number library.
 
-bson (1.8.4, 1.8.3, 1.8.2)
+bson (1.8.4)
     Authors: Tyler Brock, Gary Murakami, Emily Stolfo, Brandon Black,
     Durran Jordan
     Homepage: http://www.mongodb.org
     License: Apache License Version 2.0
-    Installed at (1.8.4): /usr/local/lib/ruby/gems/2.0.0
-                 (1.8.3): /usr/local/lib/ruby/gems/2.0.0
-                 (1.8.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Ruby implementation of BSON
-
-bson_ext (1.8.4, 1.8.3, 1.8.2)
-    Authors: Tyler Brock, Gary Murakami, Emily Stolfo, Brandon Black,
-    Durran Jordan
-    Homepage: http://www.mongodb.org
-    License: Apache License Version 2.0
-    Installed at (1.8.4): /usr/local/lib/ruby/gems/2.0.0
-                 (1.8.3): /usr/local/lib/ruby/gems/2.0.0
-                 (1.8.2): /usr/local/lib/ruby/gems/2.0.0
-
-    C extensions for Ruby BSON.
 
 builder (3.2.0, 3.0.4)
     Author: Jim Weirich
@@ -118,25 +105,36 @@ bundle (0.0.1)
 
     s/bundle/bundler
 
-bundler (1.3.4, 1.3.2, 1.3.1, 1.3.0)
+bundler (1.3.5)
     Authors: André Arko, Terence Lee, Carl Lerche, Yehuda Katz
     Homepage: http://gembundler.com
     License: MIT
-    Installed at (1.3.4): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.2): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     The best way to manage your application's dependencies
 
-capybara (2.0.3, 2.0.2)
+capistrano (2.14.2)
+    Authors: Jamis Buck, Lee Hambley
+    Homepage: http://github.com/capistrano/capistrano
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Capistrano - Welcome to easy deployment with Ruby over SSH
+
+capybara (2.0.3)
     Author: Jonas Nicklas
     Homepage: http://github.com/jnicklas/capybara
-    Installed at (2.0.3): /usr/local/lib/ruby/gems/2.0.0
-                 (2.0.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Capybara aims to simplify the process of integration testing Rack
     applications, such as Rails, Sinatra or Merb
+
+chef (11.4.0)
+    Author: Adam Jacob
+    Homepage: http://wiki.opscode.com/display/chef
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A systems integration framework, built to bring the benefits of
+    configuration management to your entire infrastructure.
 
 childprocess (0.3.9)
     Author: Jari Bakken
@@ -155,28 +153,6 @@ classifier (1.3.3)
     A general classifier module to allow Bayesian and other types of
     classifications.
 
-coderay (1.0.9)
-    Author: Kornelius Kalnbach
-    Homepage: http://coderay.rubychan.de
-    License: MIT
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    Fast syntax highlighting for selected languages.
-
-cookiejar (0.3.0)
-    Author: David Waite
-    Homepage: http://alkaline-solutions.com
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    Client-side HTTP Cookie library
-
-daemons (1.1.9)
-    Author: Thomas Uehlinger
-    Homepage: http://daemons.rubyforge.org
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    A toolkit to create and control daemons in different ways
-
 descendants_tracker (0.0.1)
     Authors: Dan Kubb, Piotr Solnica, Markus Schirp
     Homepage: https://github.com/dkubb/descendants_tracker
@@ -184,21 +160,18 @@ descendants_tracker (0.0.1)
 
     Module that adds descendant tracking to a class
 
-diff-lcs (1.2.2, 1.2.1, 1.1.3)
+diff-lcs (1.2.2)
     Author: Austin Ziegler
     Homepage: http://diff-lcs.rubyforge.org/
-    Installed at (1.2.2): /usr/local/lib/ruby/gems/2.0.0
-                 (1.2.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.1.3): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Diff::LCS computes the difference between two Enumerable sequences
     using the McIlroy-Hunt longest common subsequence (LCS) algorithm
 
-directory_watcher (1.5.1, 1.4.1)
+directory_watcher (1.5.1)
     Authors: Tim Pease, Jeremy Hinegardner
     Homepage: http://rubygems.org/gems/directory_watcher
-    Installed at (1.5.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.4.1): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A class for watching files within a directory and generating events
     when those files change
@@ -211,22 +184,21 @@ erubis (2.7.0)
     a fast and extensible eRuby implementation which supports
     multi-language
 
-eventmachine (1.0.3, 1.0.1)
-    Authors: Francis Cianfrocca, Aman Gupta
-    Homepage: http://rubyeventmachine.com
-    Installed at (1.0.3): /usr/local/lib/ruby/gems/2.0.0
-                 (1.0.1): /usr/local/lib/ruby/gems/2.0.0
-
-    Ruby/EventMachine library
-
-excon (0.20.1, 0.20.0)
+excon (0.20.1)
     Authors: dpiddy (Dan Peterson), geemus (Wesley Beary), nextmat (Matt
     Sanders)
     Homepage: https://github.com/geemus/excon
-    Installed at (0.20.1): /usr/local/lib/ruby/gems/2.0.0
-                 (0.20.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     speed, persistence, http(s)
+
+facets (2.9.3)
+    Author: Thomas Sawyer
+    Homepage: http://rubyworks.github.com/facets
+    License: Ruby
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Premium Ruby Extensions
 
 fast-stemmer (1.0.2)
     Author: Roman Shterenzon
@@ -235,28 +207,26 @@ fast-stemmer (1.0.2)
 
     Fast Porter stemmer based on a C version of algorithm
 
-ffi (1.6.0, 1.5.0)
+ffi (1.6.0)
     Author: Wayne Meissner
     Homepage: http://wiki.github.com/ffi/ffi
     License: LGPL-3
-    Installed at (1.6.0): /usr/local/lib/ruby/gems/2.0.0
-                 (1.5.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Ruby FFI
 
-fog (1.10.0)
+fog (1.10.1)
     Author: geemus (Wesley Beary)
     Homepage: http://github.com/fog/fog
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     brings clouds to you
 
-foreman (0.62.0, 0.61.0)
+foreman (0.62.0)
     Author: David Dollar
     Homepage: http://github.com/ddollar/foreman
     License: MIT
-    Installed at (0.62.0): /usr/local/lib/ruby/gems/2.0.0
-                 (0.61.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Process manager for applications with multiple components
 
@@ -276,70 +246,28 @@ git (1.2.5)
     manipulate Git repositories by wrapping system calls to the git
     binary
 
-github-markup (0.7.5)
-    Author: Chris Wanstrath
-    Homepage: https://github.com/github/markup
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    The code GitHub uses to render README.markup
-
-grape (0.4.1, 0.4.0, 0.3.2)
+grape (0.4.1)
     Author: Michael Bleigh
     Homepage: https://github.com/intridea/grape
     License: MIT
-    Installed at (0.4.1): /usr/local/lib/ruby/gems/2.0.0
-                 (0.4.0): /usr/local/lib/ruby/gems/2.0.0
-                 (0.3.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A simple Ruby framework for building REST-like APIs.
 
-grape-entity (0.3.0, 0.2.0)
+grape-entity (0.3.0)
     Author: Michael Bleigh
     Homepage: https://github.com/intridea/grape-entity
     License: MIT
-    Installed at (0.3.0): /usr/local/lib/ruby/gems/2.0.0
-                 (0.2.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A simple facade for managing the relationship between your model and
     API.
 
-growl (1.0.3)
-    Author: TJ Holowaychuk
-    Homepage: http://github.com/visionmedia/growl
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    growlnotify bindings
-
-guard (1.7.0, 1.6.2)
-    Author: Thibaud Guillaume-Gentil
-    Homepage: https://github.com/guard/guard
-    Installed at (1.7.0): /usr/local/lib/ruby/gems/2.0.0
-                 (1.6.2): /usr/local/lib/ruby/gems/2.0.0
-
-    Guard keeps an eye on your file modifications
-
-guard-bundler (1.0.0)
-    Author: Yann Lugrin
-    Homepage: http://rubygems.org/gems/guard-bundler
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    Guard gem for Bundler
-
-guard-rspec (2.5.1, 2.5.0, 2.4.1)
-    Author: Thibaud Guillaume-Gentil
-    Homepage: http://rubygems.org/gems/guard-rspec
-    Installed at (2.5.1): /usr/local/lib/ruby/gems/2.0.0
-                 (2.5.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.4.1): /usr/local/lib/ruby/gems/2.0.0
-
-    Guard gem for RSpec
-
-haml (4.0.1, 4.0.0)
+haml (4.0.2)
     Authors: Nathan Weizenbaum, Hampton Catlin, Norman Clarke
     Homepage: http://haml.info/
     License: MIT
-    Installed at (4.0.1): /usr/local/lib/ruby/gems/2.0.0
-                 (4.0.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     An elegant, structured (X)HTML/XML templating engine.
 
@@ -350,14 +278,36 @@ hamster (0.4.3)
 
     Efficient, Immutable, Thread-Safe Collection classes for Ruby
 
-hashie (2.0.3, 2.0.2)
+hashie (2.0.3)
     Authors: Michael Bleigh, Jerry Cheung
     Homepage: https://github.com/intridea/hashie
     License: MIT
-    Installed at (2.0.3): /usr/local/lib/ruby/gems/2.0.0
-                 (2.0.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Your friendly neighborhood hash toolkit.
+
+heroku (2.37.2)
+    Author: Heroku
+    Homepage: http://heroku.com/
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Client library and CLI to deploy apps on Heroku.
+
+heroku-api (0.3.9)
+    Author: geemus (Wesley Beary)
+    Homepage: http://github.com/heroku/heroku.rb
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Ruby Client for the Heroku API
+
+highline (1.6.16)
+    Author: James Edward Gray II
+    Homepage: http://highline.rubyforge.org
+    License: Ruby
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    HighLine is a high-level command-line IO library.
 
 hike (1.2.1)
     Author: Sam Stephenson
@@ -365,22 +315,6 @@ hike (1.2.1)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Find files in a set of paths
-
-hoe (3.5.2, 3.5.1)
-    Author: Ryan Davis
-    Homepage: http://www.zenspider.com/projects/hoe.html
-    License: MIT
-    Installed at (3.5.2): /usr/local/lib/ruby/gems/2.0.0
-                 (3.5.1): /usr/local/lib/ruby/gems/2.0.0
-
-    Hoe is a rake/rubygems helper for project Rakefiles
-
-html2md (0.1.3)
-    Author: Paul Morton
-    Homepage: http://github.com/pmorton/html2md
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    A library for converting basic html to markdown
 
 i18n (0.6.4, 0.6.1)
     Authors: Sven Fuchs, Joshua Harvey, Matt Aimonetti, Stephan Soller,
@@ -400,6 +334,13 @@ io-console (0.4.2)
 
     Console interface
 
+ipaddress (0.8.0)
+    Author: Marco Ceresa
+    Homepage: http://github.com/bluemonk/ipaddress
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    IPv4/IPv6 addresses manipulation library
+
 jekyll (0.12.1)
     Author: Tom Preston-Werner
     Homepage: http://github.com/mojombo/jekyll
@@ -407,6 +348,14 @@ jekyll (0.12.1)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A simple, blog aware, static site generator.
+
+jeweler (1.8.4)
+    Author: Josh Nichols
+    Homepage: http://github.com/technicalpickles/jeweler
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Opinionated tool for creating and managing RubyGem projects
 
 journey (1.0.4)
     Author: Aaron Patterson
@@ -421,55 +370,35 @@ json (1.7.7)
 
     This json is bundled with Ruby
 
-kaminari (0.14.1, 0.11.0)
-    Author: Akira Matsuda
-    Homepage: https://github.com/amatsuda/kaminari
-    License: MIT
-    Installed at (0.14.1): /usr/local/lib/ruby/gems/2.0.0
-                 (0.11.0): /usr/local/lib/ruby/gems/2.0.0
-
-    A pagination engine plugin for Rails 3 or other modern frameworks
-
-kramdown (1.0.1, 1.0.0, 0.14.2)
+kramdown (1.0.1, 0.14.2)
     Author: Thomas Leitner
     Homepage: http://kramdown.rubyforge.org
     License: MIT
     Installed at (1.0.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.0.0): /usr/local/lib/ruby/gems/2.0.0
                  (0.14.2): /usr/local/lib/ruby/gems/2.0.0
 
     kramdown is a fast, pure-Ruby Markdown-superset converter.
 
-liquid (2.5.0, 2.4.1)
+launchy (2.2.0)
+    Author: Jeremy Hinegardner
+    Homepage: http://github.com/copiousfreetime/launchy
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Launchy is helper class for launching cross-platform applications in
+    a fire and forget manner.
+
+liquid (2.5.0)
     Author: Tobias Luetke
     Homepage: http://www.liquidmarkup.org
-    Installed at (2.5.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.4.1): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A secure, non-evaling end user template engine with aesthetic
     markup.
 
-listen (0.7.3)
-    Authors: Thibaud Guillaume-Gentil, Maher Sallam
-    Homepage: https://github.com/guard/listen
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    Listen to file modifications
-
-lumberjack (1.0.3, 1.0.2)
-    Author: Brian Durand
-    Homepage: http://github.com/bdurand/lumberjack
-    Installed at (1.0.3): /usr/local/lib/ruby/gems/2.0.0
-                 (1.0.2): /usr/local/lib/ruby/gems/2.0.0
-
-    A simple, powerful, and very fast logging utility that can be a drop
-    in replacement for Logger or ActiveSupport::BufferedLogger.
-
-mail (2.5.3, 2.4.4)
+mail (2.5.3)
     Author: Mikel Lindsaar
     Homepage: http://github.com/mikel/mail
-    Installed at (2.5.3): /usr/local/lib/ruby/gems/2.0.0
-                 (2.4.4): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Mail provides a nice Ruby DSL for making, sending and reading
     emails.
@@ -482,49 +411,66 @@ maruku (0.6.1)
 
     Maruku is a Markdown-superset interpreter written in Ruby.
 
-method_source (0.8.1)
-    Author: John Mair (banisterfiend)
-    Homepage: http://banisterfiend.wordpress.com
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    retrieve the sourcecode for a method
-
-mime-types (1.22, 1.21)
+mime-types (1.22)
     Author: Austin Ziegler
     Homepage: http://mime-types.rubyforge.org/
-    Installed at (1.22): /usr/local/lib/ruby/gems/2.0.0
-                 (1.21): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     This library allows for the identification of a file's likely MIME
     content type
 
-minitest (4.7.0, 4.6.2, 4.3.2)
+minitest (4.7.0, 4.3.2)
     Author: Ryan Davis
     Homepage: https://github.com/seattlerb/minitest
     Installed at (4.7.0): /usr/local/lib/ruby/gems/2.0.0
-                 (4.6.2): /usr/local/lib/ruby/gems/2.0.0
                  (4.3.2, default): /usr/local/lib/ruby/gems/2.0.0
 
     minitest provides a complete suite of testing facilities supporting
     TDD, BDD, mocking, and benchmarking
 
-mongo (1.8.4, 1.8.3)
+mixlib-authentication (1.3.0)
+    Author: Opscode, Inc.
+    Homepage: http://www.opscode.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Mixes in simple per-request authentication
+
+mixlib-cli (1.3.0)
+    Author: Opscode, Inc.
+    Homepage: http://www.opscode.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A simple mixin for CLI interfaces, including option parsing
+
+mixlib-config (1.1.2)
+    Author: Opscode, Inc.
+    Homepage: http://www.opscode.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A class based config mixin, similar to the one found in Chef.
+
+mixlib-log (1.6.0)
+    Author: Opscode, Inc.
+    Homepage: http://www.opscode.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A gem that provides a simple mixin for log functionality
+
+mixlib-shellout (1.1.0)
+    Author: Opscode
+    Homepage: http://wiki.opscode.com/
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Run external commands on Unix or Windows
+
+mongo (1.8.4)
     Authors: Tyler Brock, Gary Murakami, Emily Stolfo, Brandon Black,
     Durran Jordan
     Homepage: http://www.mongodb.org
     License: Apache License Version 2.0
-    Installed at (1.8.4): /usr/local/lib/ruby/gems/2.0.0
-                 (1.8.3): /usr/local/lib/ruby/gems/2.0.0
-
-    Ruby driver for MongoDB
-
-mongobox (0.0.1)
-    Author: zeroed
-    Homepage: https://github.com/zeroed/mongobox
-    License: GPL-3
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
-    Yet another gem for Mongo and Mongolab
+    Ruby driver for MongoDB
 
 mongoid (3.1.2)
     Author: Durran Jordan
@@ -542,23 +488,19 @@ mono_logger (1.0.0)
 
     A lock-free logger compatible with Ruby 2.0.
 
-moped (1.4.5, 1.4.4, 1.4.3)
+moped (1.4.5)
     Author: Bernerd Schaefer
     Homepage: http://mongoid.org/en/moped
-    Installed at (1.4.5): /usr/local/lib/ruby/gems/2.0.0
-                 (1.4.4): /usr/local/lib/ruby/gems/2.0.0
-                 (1.4.3): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A MongoDB driver for Ruby.
 
-multi_json (1.7.2, 1.7.1, 1.6.1)
+multi_json (1.7.2)
     Authors: Michael Bleigh, Josh Kalderimis, Erik Michaels-Ober, Pavel
     Pravosud
     Homepage: http://github.com/intridea/multi_json
     License: MIT
-    Installed at (1.7.2): /usr/local/lib/ruby/gems/2.0.0
-                 (1.7.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.6.1): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A gem to provide swappable JSON backends.
 
@@ -569,14 +511,6 @@ multi_xml (0.5.3)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A generic swappable back-end for XML parsing
-
-narray (0.6.0.8)
-    Author: Masahiro Tanaka
-    Homepage: http://narray.rubyforge.org/
-    License: Ruby
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    N-dimensional Numerical Array class for Ruby
 
 net-scp (1.1.0)
     Authors: Jamis Buck, Delano Mandelbaum
@@ -594,23 +528,52 @@ net-sftp (2.1.1)
 
     A pure Ruby implementation of the SFTP client protocol
 
-net-ssh (2.6.6, 2.6.5)
+net-ssh (2.6.6)
     Authors: Jamis Buck, Delano Mandelbaum
     Homepage: https://github.com/net-ssh/net-ssh
     License: MIT
-    Installed at (2.6.6): /usr/local/lib/ruby/gems/2.0.0
-                 (2.6.5): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Net::SSH: a pure-Ruby implementation of the SSH2 client protocol.
 
-nokogiri (1.5.9, 1.5.7, 1.5.6)
+net-ssh-gateway (1.2.0)
+    Authors: Jamis Buck, Delano Mandelbaum
+    Homepage: https://github.com/net-ssh/net-scp
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A simple library to assist in establishing tunneled Net::SSH
+    connections
+
+net-ssh-multi (1.2.0, 1.1)
+    Authors: Jamis Buck, Delano Mandelbaum
+    Homepage: https://github.com/net-ssh/net-scp
+    License: MIT
+    Installed at (1.2.0): /usr/local/lib/ruby/gems/2.0.0
+                 (1.1): /usr/local/lib/ruby/gems/2.0.0
+
+    Control multiple Net::SSH connections via a single interface.
+
+netrc (0.7.7)
+    Authors: Keith Rarick, geemus (Wesley Beary)
+    Homepage: https://github.com/geemus/netrc
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Library to read and write netrc files.
+
+nokogiri (1.5.9)
     Authors: Aaron Patterson, Mike Dalessio, Yoko Harada, Tim Elliott
     Homepage: http://nokogiri.org
-    Installed at (1.5.9): /usr/local/lib/ruby/gems/2.0.0
-                 (1.5.7): /usr/local/lib/ruby/gems/2.0.0
-                 (1.5.6): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Nokogiri (é¸) is an HTML, XML, SAX, and Reader parser
+
+ohai (6.16.0)
+    Author: Adam Jacob
+    Homepage: http://wiki.opscode.com/display/chef/Ohai
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Ohai profiles your system and emits JSON
 
 origin (1.0.11)
     Author: Durran Jordan
@@ -618,16 +581,6 @@ origin (1.0.11)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Simple DSL for MongoDB query generation
-
-paginater (0.0.5, 0.0.4, 0.0.3)
-    Author: zeroed
-    Homepage: https://github.com/zeroed/paginater
-    License: MIT
-    Installed at (0.0.5): /usr/local/lib/ruby/gems/2.0.0
-                 (0.0.4): /usr/local/lib/ruby/gems/2.0.0
-                 (0.0.3): /usr/local/lib/ruby/gems/2.0.0
-
-    YAPG: yet another pagination gem
 
 permutation (0.1.8)
     Author: Florian Frank
@@ -650,13 +603,6 @@ posix-spawn (0.3.6)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     posix_spawnp(2) for ruby
-
-pry (0.9.12)
-    Authors: John Mair (banisterfiend), Conrad Irwin, Ryan Fitzgerald
-    Homepage: http://pry.github.com
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    An IRB alternative and runtime developer console
 
 psych (2.0.0)
     Author: Aaron Patterson
@@ -696,13 +642,6 @@ rack-cache (1.2)
 
     HTTP Caching for Rack
 
-rack-contrib (1.1.0)
-    Author: rack-devel
-    Homepage: http://github.com/rack/rack-contrib/
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    Contributed Rack Middleware and Utilities
-
 rack-mount (0.8.3)
     Author: Joshua Peek
     Homepage: https://github.com/josh/rack-mount
@@ -710,14 +649,13 @@ rack-mount (0.8.3)
 
     Stackable dynamic tree based Rack router
 
-rack-protection (1.5.0, 1.4.0)
+rack-protection (1.5.0)
     Authors: Konstantin Haase, Alex Rodionov, Chris Heald, Chris Mytton,
     Corey Ward, David Kellum, Egor Homakov, Florian Gilcher, Fojas, Mael
     Clerambault, Martin Mauch, SAKAI, Kazuaki, Stanislav Savulchik,
     Steve Agalloco, Akzhan Abdulin, TOBY, Bjørge Næss
     Homepage: http://github.com/rkh/rack-protection
-    Installed at (1.5.0): /usr/local/lib/ruby/gems/2.0.0
-                 (1.4.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     You should use protection!
 
@@ -735,38 +673,37 @@ rack-test (0.6.2)
 
     Simple testing API built on Rack
 
-rails (3.2.13, 3.2.12)
+rails (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Full-stack web application framework.
 
-railties (3.2.13, 3.2.12)
+railties (3.2.13)
     Author: David Heinemeier Hansson
     Homepage: http://www.rubyonrails.org
-    Installed at (3.2.13): /usr/local/lib/ruby/gems/2.0.0
-                 (3.2.12): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Tools for creating, working with, and running Rails applications.
 
-rake (10.0.4, 10.0.3, 0.9.6)
+rake (10.0.4, 0.9.6)
     Author: Jim Weirich
     Homepage: http://rake.rubyforge.org
     License: MIT
     Installed at (10.0.4): /usr/local/lib/ruby/gems/2.0.0
-                 (10.0.3): /usr/local/lib/ruby/gems/2.0.0
                  (0.9.6, default): /usr/local/lib/ruby/gems/2.0.0
 
     Ruby based make-like utility.
 
-rb-fsevent (0.9.3)
-    Authors: Thibaud Guillaume-Gentil, Travis Tilley
-    Homepage: http://rubygems.org/gems/rb-fsevent
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+rb-readline (0.5.0.pre.1, 0.4.2)
+    Authors: Park Heesob, Daniel Berger, Luis Lavena
+    Homepage: http://github.com/luislavena/rb-readline
+    License: BSD
+    Installed at (0.5.0.pre.1): /usr/local/lib/ruby/gems/2.0.0
+                 (0.4.2): /usr/local/lib/ruby/gems/2.0.0
 
-    Very simple & usable FSEvents API
+    Pure-Ruby Readline Implementation
 
 rdoc (4.0.1, 4.0.0, 3.12.2)
     Authors: Eric Hodel, Dave Thomas, Phil Hagelberg, Tony Strauss
@@ -794,70 +731,68 @@ redis-namespace (1.2.1)
 
     Namespaces Redis commands.
 
-resque (1.24.1, 1.24.0, 1.23.1)
+resque (1.24.1)
     Authors: Chris Wanstrath, Terence Lee
     Homepage: http://github.com/defunkt/resque
-    Installed at (1.24.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.24.0): /usr/local/lib/ruby/gems/2.0.0
-                 (1.23.1): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Resque is a Redis-backed queueing system.
 
-rouge (0.3.2, 0.3.0, 0.2.14)
+rest-client (1.6.7)
+    Authors: Adam Wiggins, Julien Kirch
+    Homepage: http://github.com/archiloque/rest-client
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Simple HTTP and REST client for Ruby, inspired by microframework
+    syntax for specifying actions.
+
+rouge (0.3.2)
     Author: Jay Adkisson
     Homepage: http://github.com/jayferd/rouge
-    Installed at (0.3.2): /usr/local/lib/ruby/gems/2.0.0
-                 (0.3.0): /usr/local/lib/ruby/gems/2.0.0
-                 (0.2.14): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A pure-ruby colorizer based on pygments
 
-rspec (2.13.0, 2.1.0)
+rspec (2.13.0)
     Authors: Steven Baker, David Chelimsky
     Homepage: http://github.com/rspec
     License: MIT
-    Installed at (2.13.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.1.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     rspec-2.13.0
 
-rspec-core (2.13.1, 2.13.0, 2.1.0)
+rspec-core (2.13.1)
     Authors: Steven Baker, David Chelimsky, Chad Humphries
     Homepage: http://github.com/rspec/rspec-core
     License: MIT
-    Installed at (2.13.1): /usr/local/lib/ruby/gems/2.0.0
-                 (2.13.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.1.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     rspec-core-2.13.1
 
-rspec-expectations (2.13.0, 2.1.0)
+rspec-expectations (2.13.0)
     Authors: Steven Baker, David Chelimsky
     Homepage: http://github.com/rspec/rspec-expectations
     License: MIT
-    Installed at (2.13.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.1.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     rspec-expectations-2.13.0
 
-rspec-mocks (2.13.0, 2.1.0)
+rspec-mocks (2.13.1, 2.13.0)
     Authors: Steven Baker, David Chelimsky
     Homepage: http://github.com/rspec/rspec-mocks
     License: MIT
-    Installed at (2.13.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.1.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (2.13.1): /usr/local/lib/ruby/gems/2.0.0
+                 (2.13.0): /usr/local/lib/ruby/gems/2.0.0
 
-    rspec-mocks-2.13.0
+    rspec-mocks-2.13.1
 
-rspec-rails (2.13.0, 2.1.0, 1.3.2)
-    Author: David Chelimsky
-    Homepage: http://github.com/rspec/rspec-rails
+rubocop (0.3.2)
+    Author: Bozhidar Batsov
+    Homepage: http://github.com/bbatsov/rubocop
     License: MIT
-    Installed at (2.13.0): /usr/local/lib/ruby/gems/2.0.0
-                 (2.1.0): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
-    rspec-rails-2.13.0
+    Automatic Ruby code style checking tool.
 
 ruby-hmac (0.4.0)
     Authors: Daiki Ueno, Geoffrey Grosenbach
@@ -866,11 +801,10 @@ ruby-hmac (0.4.0)
 
     This module provides common interface to HMAC functionality
 
-rubygems-update (2.0.3, 2.0.2)
+rubygems-update (2.0.3)
     Authors: Jim Weirich, Chad Fowler, Eric Hodel
     Homepage: http://rubygems.org
-    Installed at (2.0.3): /usr/local/lib/ruby/gems/2.0.0
-                 (2.0.2): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     RubyGems is a package management framework for Ruby
 
@@ -889,23 +823,28 @@ selenium-webdriver (2.31.0)
     The next generation developer focused tool for automated testing of
     webapps
 
-sinatra (1.4.2, 1.4.1, 1.3.5)
+simplecov (0.7.1)
+    Author: Christoph Olszowka
+    Homepage: http://github.com/colszowka/simplecov
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Code coverage for Ruby 1.9 with a powerful configuration library and
+    automatic merging of coverage across test suites
+
+simplecov-html (0.7.1)
+    Author: Christoph Olszowka
+    Homepage: https://github.com/colszowka/simplecov-html
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Default HTML formatter for SimpleCov code coverage tool for ruby
+    1.9+
+
+sinatra (1.4.2)
     Authors: Blake Mizerany, Ryan Tomayko, Simon Rozet, Konstantin Haase
     Homepage: http://www.sinatrarb.com/
-    Installed at (1.4.2): /usr/local/lib/ruby/gems/2.0.0
-                 (1.4.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.5): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Classy web-development dressed in a DSL
-
-slop (3.4.4, 3.4.3)
-    Author: Lee Jarvis
-    Homepage: http://github.com/injekt/slop
-    License: MIT
-    Installed at (3.4.4): /usr/local/lib/ruby/gems/2.0.0
-                 (3.4.3): /usr/local/lib/ruby/gems/2.0.0
-
-    Simple Lightweight Option Parsing
 
 sprockets (2.9.0, 2.2.2)
     Authors: Sam Stephenson, Joshua Peek
@@ -916,26 +855,26 @@ sprockets (2.9.0, 2.2.2)
 
     Rack-based asset packaging system
 
-sqlite3 (1.3.7)
-    Authors: Jamis Buck, Luis Lavena, Aaron Patterson
-    Homepage: http://github.com/luislavena/sqlite3-ruby
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
-
-    This module allows Ruby programs to interface with the SQLite3
-    database engine (http://www.sqlite.org)
-
 syntax (1.0.0)
     Author: Jamis Buck
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Syntax is Ruby library for performing simple syntax highlighting.
 
-terminal-table (1.4.5)
-    Authors: TJ Holowaychuk, Scott J. Goldman
-    Homepage: http://github.com/visionmedia/terminal-table
+systemu (2.5.2)
+    Author: Ara T. Howard
+    Homepage: https://github.com/ahoward/systemu
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
-    Simple, feature rich ascii table generation library
+    systemu
+
+term-ansicolor (1.1.4)
+    Author: Florian Frank
+    Homepage: http://flori.github.com/term-ansicolor
+    License: GPL-2
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Ruby library that colors strings using ANSI escape sequences
 
 test-unit (2.5.4, 2.0.0.0)
     Authors: Kouhei Sutou, Haruka Yoshihara
@@ -946,32 +885,19 @@ test-unit (2.5.4, 2.0.0.0)
 
     test-unit - Improved version of Test::Unit bundled in Ruby 1.8.x.
 
-thin (1.5.1, 1.5.0)
-    Author: Marc-Andre Cournoyer
-    Homepage: http://code.macournoyer.com/thin/
-    License: Ruby
-    Installed at (1.5.1): /usr/local/lib/ruby/gems/2.0.0
-                 (1.5.0): /usr/local/lib/ruby/gems/2.0.0
-
-    A thin and fast web server
-
-thor (0.18.1, 0.18.0, 0.17.0)
+thor (0.18.1)
     Authors: Yehuda Katz, José Valim
     Homepage: http://whatisthor.com/
     License: MIT
-    Installed at (0.18.1): /usr/local/lib/ruby/gems/2.0.0
-                 (0.18.0): /usr/local/lib/ruby/gems/2.0.0
-                 (0.17.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A scripting framework that replaces rake, sake and rubigen
 
-tilt (1.3.6, 1.3.5, 1.3.4)
+tilt (1.3.6)
     Author: Ryan Tomayko
     Homepage: http://github.com/rtomayko/tilt/
     License: MIT
-    Installed at (1.3.6): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.5): /usr/local/lib/ruby/gems/2.0.0
-                 (1.3.4): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Generic interface to multiple Ruby template engines
 
@@ -983,12 +909,10 @@ treetop (1.4.12)
 
     A Ruby-based text parsing and interpretation DSL
 
-tzinfo (0.3.37, 0.3.36, 0.3.35)
+tzinfo (0.3.37)
     Author: Philip Ross
     Homepage: http://tzinfo.rubyforge.org/
-    Installed at (0.3.37): /usr/local/lib/ruby/gems/2.0.0
-                 (0.3.36): /usr/local/lib/ruby/gems/2.0.0
-                 (0.3.35): /usr/local/lib/ruby/gems/2.0.0
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Daylight-savings aware timezone library
 
