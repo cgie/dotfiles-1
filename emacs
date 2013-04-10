@@ -27,8 +27,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(display-battery-mode t)
- '(fancy-splash-image "/home/eddie/Pictures/emacs_splash_image.png")
+ '(fancy-splash-image "nil")
  '(show-paren-mode t))
 
 (custom-set-faces
@@ -37,6 +38,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+
+(setq fancy-splash-image (expand-file-name "~/Pictures/emacs_splash_image.xpm"))
 
 (defun copy-line (arg)
   "Copy lines (as many as prefix argument) in the kill ring"
@@ -71,9 +74,24 @@
   (forward-line -1)
   (indent-according-to-mode))
 
-; (add-to-list 'load-path "/path/to/color-theme.el/file")
-; (require 'color-theme)
-; (eval-after-load "color-theme"
-;   '(progn
-;      (color-theme-initialize)
-;      (color-theme-hober)))
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                  ;; (abbreviate-file-name (buffer-file-name))
+                 (buffer-file-name)
+                 "%b"))))
+
+;; (add-to-list 'load-path "/path/to/color-theme.el/file")
+;; (require 'color-theme)
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-initialize)
+;;      (color-theme-hober)))
+
+(add-to-list 'load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+
+(global-set-key (kbd "S-<f1>")
+  (lambda ()
+    (interactive)
+    (dired "~/")))
+;;
