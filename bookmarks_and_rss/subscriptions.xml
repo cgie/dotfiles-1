@@ -30,10 +30,15 @@
                 xmlUrl="http://www.reddit.com/r/ruby/.rss" htmlUrl="http://www.reddit.com/r/ruby/"/>
             <outline text="Riding Rails" title="Riding Rails" type="rss"
                 xmlUrl="http://weblog.rubyonrails.org/feed/atom.xml" htmlUrl="http://weblog.rubyonrails.org/"/>
+            <outline text="Ruby Flow" title="Ruby Flow" type="rss"
+                xmlUrl="http://feeds.feedburner.com/Rubyflow" htmlUrl="http://www.rubyflow.com/"/>
             <outline text="Ruby Freelancers" title="Ruby Freelancers"
                 type="rss" xmlUrl="http://rubyfreelancers.com/feed/" htmlUrl="http://rubyfreelancers.com"/>
             <outline text="Ruby Inside" title="Ruby Inside" type="rss"
                 xmlUrl="http://feeds.feedburner.com/RubyInside" htmlUrl="http://www.rubyinside.com/"/>
+            <outline text="Ruby Learning Blog"
+                title="Ruby Learning Blog" type="rss"
+                xmlUrl="http://feeds.feedburner.com/LearningRubyBlog" htmlUrl="http://rubylearning.com/blog"/>
             <outline text="Ruby News" title="Ruby News" type="rss"
                 xmlUrl="http://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="http://www.ruby-lang.org/en/feeds/news.rss/"/>
             <outline text="Ruby Quicktips" title="Ruby Quicktips"
@@ -41,15 +46,10 @@
                 xmlUrl="http://feeds.feedburner.com/RubyQuicktips" htmlUrl="http://rubyquicktips.com/"/>
             <outline text="Ruby Rogues" title="Ruby Rogues" type="rss"
                 xmlUrl="http://feeds.feedburner.com/RubyRogues" htmlUrl="http://rubyrogues.com"/>
+            <outline text="Ruby Source" title="Ruby Source" type="rss"
+                xmlUrl="http://rubysource.com/feed/" htmlUrl="http://rubysource.com"/>
             <outline text="Ruby5" title="Ruby5" type="rss"
                 xmlUrl="http://feeds.feedburner.com/Ruby5" htmlUrl="http://ruby5.envylabs.com/"/>
-            <outline text="RubyFlow" title="RubyFlow" type="rss"
-                xmlUrl="http://feeds.feedburner.com/Rubyflow" htmlUrl="http://www.rubyflow.com/"/>
-            <outline text="RubyLearning Blog" title="RubyLearning Blog"
-                type="rss"
-                xmlUrl="http://feeds.feedburner.com/LearningRubyBlog" htmlUrl="http://rubylearning.com/blog"/>
-            <outline text="RubySource" title="RubySource" type="rss"
-                xmlUrl="http://rubysource.com/feed/" htmlUrl="http://rubysource.com"/>
             <outline text="The Ruby Reflector"
                 title="The Ruby Reflector" type="rss"
                 xmlUrl="http://rubyreflector.com/feed.xml" htmlUrl="http://rubyreflector.com"/>
