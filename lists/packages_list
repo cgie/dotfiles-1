@@ -127,7 +127,12 @@ ii  debconf-i18n                              1.5.46ubuntu1                     
 ii  debianutils                               4.3.4                                     i386         Miscellaneous utilities specific to Debian
 ii  deja-dup                                  24.0-0ubuntu2                             i386         Back up your files
 ii  desktop-file-utils                        0.20-0.1ubuntu1                           i386         Utilities for .desktop files
+ii  dict                                      1.12.0+dfsg-5                             i386         dictionary client
+ii  dict-jargon                               4.4.7-2ubuntu1                            all          dict package for The Jargon Lexicon
+ii  dict-moby-thesaurus                       1.0-6.2                                   all          Largest and most comprehensive thesaurus
+ii  dictd                                     1.12.0+dfsg-5                             i386         dictionary server
 ii  dictionaries-common                       1.12.10                                   all          Common utilities for spelling dictionary tools
+ii  dictzip                                   1.12.0+dfsg-5                             i386         compression utility for dictionary databases
 ii  diffstat                                  1.55-3                                    i386         produces graph of changes introduced by a diff file
 ii  diffutils                                 1:3.2-6ubuntu1                            i386         File comparison utilities
 ii  discover                                  2.1.2-5.2                                 i386         hardware identification system
@@ -212,6 +217,7 @@ ii  ftp                                       0.17-27                           
 ii  fuse                                      2.9.0-1ubuntu2                            i386         Filesystem in Userspace
 ii  g++                                       4:4.7.2-1ubuntu2                          i386         GNU C++ compiler
 ii  g++-4.7                                   4.7.2-2ubuntu1                            i386         GNU C++ compiler
+ii  gawk                                      1:4.0.1+dfsg-2                            i386         GNU awk, a pattern scanning and processing language
 ii  gcalctool                                 6.6.0-0ubuntu1                            i386         GNOME desktop calculator
 ii  gcc                                       4:4.7.2-1ubuntu2                          i386         GNU C compiler
 ii  gcc-4.7                                   4.7.2-2ubuntu1                            i386         GNU C compiler
@@ -817,6 +823,7 @@ ii  liblwp-protocol-https-perl                6.03-1                            
 ii  liblwres80                                1:9.8.1.dfsg.P1-4.2ubuntu3.2              i386         Lightweight Resolver Library used by BIND
 ii  liblzma5:i386                             5.1.1alpha+20120614-1                     i386         XZ-format compression library
 ii  libm17n-0                                 1.6.3-2                                   i386         multilingual text processing library - runtime
+ii  libmaa3                                   1.3.1-1build1                             i386         maa programming library
 ii  libmagic1:i386                            5.11-2                                    i386         File type determination library using "magic" numbers
 ii  libmagickcore5:i386                       8:6.7.7.10-2ubuntu4                       i386         low-level image manipulation library
 ii  libmagickwand5:i386                       8:6.7.7.10-2ubuntu4                       i386         image manipulation library
@@ -970,6 +977,7 @@ ii  librdf0                                   1.0.15-1                          
 ii  libreadline-dev:i386                      6.2-9                                     i386         GNU readline and history libraries, development files
 ii  libreadline6:i386                         6.2-9                                     i386         GNU readline and history libraries, run-time libraries
 ii  libreadline6-dev:i386                     6.2-9                                     i386         GNU readline and history libraries, development files
+ii  librecode0:i386                           3.6-20                                    i386         Shared library on which recode is based
 ii  libreoffice-base-core                     1:3.6.2~rc2-0ubuntu4                      i386         office productivity suite -- shared library
 ii  libreoffice-calc                          1:3.6.2~rc2-0ubuntu4                      i386         office productivity suite -- spreadsheet
 ii  libreoffice-common                        1:3.6.2~rc2-0ubuntu4                      all          office productivity suite -- arch-independent files
@@ -1018,6 +1026,7 @@ ii  libsignon-extension1                      8.43-0ubuntu1                     
 ii  libsignon-glib1                           1.6-0ubuntu1                              i386         library for signond
 ii  libsignon-plugins-common1                 8.43-0ubuntu1                             i386         Single Sign On framework
 ii  libsignon-qt1                             8.43-0ubuntu1                             i386         Single Sign On framework
+ii  libsigsegv2                               2.9-4ubuntu3                              i386         Library for handling page faults in a portable way
 ii  libslang2:i386                            2.2.4-15ubuntu1                           i386         S-Lang programming library - runtime version
 ii  libsm6:i386                               2:1.2.1-2                                 i386         X11 Session Management library
 ii  libsmbclient:i386                         2:3.6.6-3ubuntu5                          i386         shared library for communication with SMB/CIFS servers
@@ -1448,6 +1457,7 @@ ii  qt-at-spi:i386                            0.3.1-0ubuntu1                    
 ii  radeontool                                1.6.2-1.1build1                           i386         utility to control ATI Radeon backlight functions on laptops
 ii  rarian-compat                             0.8.1-5build1                             i386         Documentation meta-data library (compatibility tools)
 ii  readline-common                           6.2-9                                     all          GNU readline and history libraries, common files
+ii  recode                                    3.6-20                                    i386         Character set conversion utility
 ii  remmina                                   1.0.0-1ubuntu8                            i386         remote desktop client for GNOME desktop environment
 ii  remmina-common                            1.0.0-1ubuntu8                            all          common files for remmina remote desktop client
 ii  remmina-plugin-rdp                        1.0.0-1ubuntu8                            i386         RDP plugin for remmina remote desktop client
@@ -1620,7 +1630,9 @@ ii  vim-runtime                               2:7.3.547-4ubuntu1.1              
 ii  vim-tiny                                  2:7.3.547-4ubuntu1.1                      i386         Vi IMproved - enhanced vi editor - compact version
 ii  vino                                      3.6.0-0ubuntu1.1                          i386         VNC server for GNOME
 ii  wamerican                                 7.1-1                                     all          American English dictionary words for /usr/share/dict
+ii  wamerican-insane                          7.1-1                                     all          American English dictionary words for /usr/share/dict
 ii  wbritish                                  7.1-1                                     all          British English dictionary words for /usr/share/dict
+ii  wbritish-insane                           7.1-1                                     all          British English dictionary words for /usr/share/dict
 ii  wget                                      1.13.4-3ubuntu1                           i386         retrieves files from the web
 ii  whiptail                                  0.52.11-2ubuntu11                         i386         Displays user-friendly dialog boxes from shell scripts
 ii  whoopsie                                  0.2.7.1                                   i386         Ubuntu error tracker submission
@@ -1653,9 +1665,9 @@ ii  xkb-data                                  2.5-1ubuntu7                      
 ii  xml-core                                  0.13+nmu1                                 all          XML infrastructure and XML catalog file support
 ii  xorg                                      1:7.7+1ubuntu4                            i386         X.Org X Window System
 ii  xorg-docs-core                            1:1.6-1ubuntu2                            all          Core documentation for the X.org X Window System
-ii  xserver-common                            2:1.13.0-0ubuntu6.1                       all          common files used by various X servers
+ii  xserver-common                            2:1.13.0-0ubuntu6.2                       all          common files used by various X servers
 ii  xserver-xorg                              1:7.7+1ubuntu4                            i386         X.Org X server
-ii  xserver-xorg-core                         2:1.13.0-0ubuntu6.1                       i386         Xorg X server - core server
+ii  xserver-xorg-core                         2:1.13.0-0ubuntu6.2                       i386         Xorg X server - core server
 ii  xserver-xorg-input-all                    1:7.7+1ubuntu4                            i386         X.Org X server -- input driver metapackage
 ii  xserver-xorg-input-evdev                  1:2.7.3-0ubuntu2                          i386         X.Org X server -- evdev input driver
 ii  xserver-xorg-input-mouse                  1:1.7.2-2build1                           i386         X.Org X server -- mouse input driver

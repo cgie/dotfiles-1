@@ -59,10 +59,11 @@ andand (1.3.3)
 
     The Maybe Monad in idiomatic Ruby
 
-arel (3.0.2)
+arel (4.0.0, 3.0.2)
     Authors: Aaron Patterson, Bryan Halmkamp, Emilio Tagua, Nick Kallen
     Homepage: http://github.com/rails/arel
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+    Installed at (4.0.0): /usr/local/lib/ruby/gems/2.0.0
+                 (3.0.2): /usr/local/lib/ruby/gems/2.0.0
 
     Arel is a SQL AST manager for Ruby
 
@@ -437,10 +438,11 @@ kramdown (1.0.1, 0.14.2)
 
     kramdown is a fast, pure-Ruby Markdown-superset converter.
 
-launchy (2.2.0)
+launchy (2.3.0, 2.2.0)
     Author: Jeremy Hinegardner
     Homepage: http://github.com/copiousfreetime/launchy
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+    Installed at (2.3.0): /usr/local/lib/ruby/gems/2.0.0
+                 (2.2.0): /usr/local/lib/ruby/gems/2.0.0
 
     Launchy is helper class for launching cross-platform applications in
     a fire and forget manner.
@@ -484,10 +486,11 @@ mime-types (1.22)
     This library allows for the identification of a file's likely MIME
     content type
 
-minitest (4.7.1, 4.7.0, 4.3.2)
+minitest (4.7.2, 4.7.1, 4.7.0, 4.3.2)
     Author: Ryan Davis
     Homepage: https://github.com/seattlerb/minitest
-    Installed at (4.7.1): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (4.7.2): /usr/local/lib/ruby/gems/2.0.0
+                 (4.7.1): /usr/local/lib/ruby/gems/2.0.0
                  (4.7.0): /usr/local/lib/ruby/gems/2.0.0
                  (4.3.2, default): /usr/local/lib/ruby/gems/2.0.0
 
@@ -553,11 +556,12 @@ mongo (1.8.5, 1.8.4)
 
     Ruby driver for MongoDB
 
-mongoid (3.1.2)
+mongoid (3.1.3, 3.1.2)
     Author: Durran Jordan
     Homepage: http://mongoid.org
     License: MIT
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+    Installed at (3.1.3): /usr/local/lib/ruby/gems/2.0.0
+                 (3.1.2): /usr/local/lib/ruby/gems/2.0.0
 
     Elegant Persistance in Ruby for MongoDB.
 
@@ -906,11 +910,12 @@ rspec-mocks (2.13.1, 2.13.0)
 
     rspec-mocks-2.13.1
 
-rubocop (0.4.6, 0.4.0, 0.3.2)
+rubocop (0.5.0, 0.4.6, 0.4.0, 0.3.2)
     Author: Bozhidar Batsov
     Homepage: http://github.com/bbatsov/rubocop
     License: MIT
-    Installed at (0.4.6): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (0.5.0): /usr/local/lib/ruby/gems/2.0.0
+                 (0.4.6): /usr/local/lib/ruby/gems/2.0.0
                  (0.4.0): /usr/local/lib/ruby/gems/2.0.0
                  (0.3.2): /usr/local/lib/ruby/gems/2.0.0
 
@@ -1037,11 +1042,12 @@ systemu (2.5.2)
 
     systemu
 
-term-ansicolor (1.1.4)
+term-ansicolor (1.1.5, 1.1.4)
     Author: Florian Frank
     Homepage: http://flori.github.com/term-ansicolor
     License: GPL-2
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+    Installed at (1.1.5): /usr/local/lib/ruby/gems/2.0.0
+                 (1.1.4): /usr/local/lib/ruby/gems/2.0.0
 
     Ruby library that colors strings using ANSI escape sequences
 
@@ -1138,11 +1144,12 @@ yajl-ruby (1.1.0)
     Ruby C bindings to the excellent Yajl JSON stream-based parser
     library.
 
-yard (0.8.6.1, 0.8.5.2)
+yard (0.8.6.1, 0.8.6, 0.8.5.2)
     Author: Loren Segal
     Homepage: http://yardoc.org
     License: MIT
     Installed at (0.8.6.1): /usr/local/lib/ruby/gems/2.0.0
+                 (0.8.6): /usr/local/lib/ruby/gems/2.0.0
                  (0.8.5.2): /usr/local/lib/ruby/gems/2.0.0
 
     Documentation tool for consistent and usable documentation in Ruby.
