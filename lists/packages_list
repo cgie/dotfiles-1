@@ -170,6 +170,7 @@ ii  evolution-data-server                     3.6.2-0ubuntu0.1                  
 ii  evolution-data-server-common              3.6.2-0ubuntu0.1                          all          architecture independent files for Evolution Data Server
 ii  example-content                           46                                        all          Ubuntu example content
 ii  fakeroot                                  1.18.4-2                                  i386         tool for simulating superuser privileges
+ii  fbreader                                  0.12.10dfsg-7                             i386         e-book reader
 ii  file                                      5.11-2                                    i386         Determines file type using "magic" numbers
 ii  file-roller                               3.6.1.1-0ubuntu1.1                        i386         archive manager for GNOME
 ii  filezilla                                 3.5.3-2ubuntu1                            i386         Full-featured graphical FTP/FTPS/SFTP client
@@ -331,7 +332,9 @@ ii  gnome-tweak-tool                          3.6.0-0ubuntu2                    
 ii  gnome-user-guide                          3.4.2-1                                   all          GNOME user's guide
 ii  gnome-user-share                          3.0.4-0ubuntu1                            i386         User level public file sharing via WebDAV or ObexFTP
 rc  gnomine                                   1:3.6.0.2-0ubuntu1.2                      i386         popular minesweeper puzzle game for GNOME
+ii  gnugo                                     3.8-5                                     i386         play the game of Go
 ii  gnupg                                     1.4.11-3ubuntu4.1                         i386         GNU privacy guard - a free PGP replacement
+ii  gnushogi                                  1.3.2-9                                   i386         program to play shogi, the Japanese version of chess
 ii  gparted                                   0.12.1-1                                  i386         GNOME partition editor
 ii  gpgv                                      1.4.11-3ubuntu4.1                         i386         GNU privacy guard - signature verification tool
 ii  grep                                      2.12-2                                    i386         GNU grep, egrep and fgrep
@@ -807,6 +810,7 @@ ii  libldap-2.4-2:i386                        2.4.31-1ubuntu2                   
 ii  liblightdm-gobject-1-0                    1.4.0-0ubuntu2                            i386         LightDM GObject client library
 ii  liblinear-tools                           1.8+dfsg-1ubuntu1                         i386         Standalone applications for LIBLINEAR
 ii  liblinear1                                1.8+dfsg-1ubuntu1                         i386         Library for Large Linear Classification
+ii  liblinebreak2                             2.1-1                                     i386         line breaking library for Unicode (shared library)
 ii  liblircclient0                            0.9.0-0ubuntu3                            i386         infra-red remote control support - client library
 ii  libllvm3.1:i386                           3.1-2ubuntu1                              i386         Low-Level Virtual Machine (LLVM), runtime library
 ii  liblocale-gettext-perl                    1.05-7build2                              i386         module using libc functions for internationalization in Perl
@@ -1195,6 +1199,11 @@ ii  libyaml-tiny-perl                         1.51-1                            
 ii  libyelp0                                  3.6.0-0ubuntu1                            i386         Library for the GNOME help browser
 ii  libzeitgeist-1.0-1                        0.3.18-1ubuntu1                           i386         library to access Zeitgeist - shared library
 ii  libzephyr4                                3.0.2-2                                   i386         Project Athena's notification service - non-Kerberos libraries
+ii  libzlcore-data                            0.12.10dfsg-7                             all          ZLibrary cross-platform development library (support files)
+ii  libzlcore0.12                             0.12.10dfsg-7                             i386         ZLibrary cross-platform development library (shared library)
+ii  libzltext-data                            0.12.10dfsg-7                             all          ZLibrary text model/viewer part (support files)
+ii  libzltext0.12                             0.12.10dfsg-7                             i386         ZLibrary text model/viewer part (shared library)
+ii  libzlui-qt4                               0.12.10dfsg-7                             i386         Qt4 interface module for ZLibrary
 ii  light-themes                              0.1.93                                    all          Light Themes (Ambiance and Radiance)
 ii  lightdm                                   1.4.0-0ubuntu2                            i386         Display Manager
 ii  lightdm-remote-session-freerdp            1.0-0ubuntu2                              i386         Session and configuration to login with FreeRDP
