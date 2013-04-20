@@ -286,6 +286,21 @@ formatador (0.2.4)
 
     Ruby STDOUT text formatting
 
+fundler (0.1.0)
+    Author: zeroed
+    Homepage: https://github.com/zeroed/fundler
+    License: GPL3
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    find rename utility
+
+gemcutter (0.7.1)
+    Author: Nick Quaranto
+    Homepage: http://rubygems.org
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Provides additional commands to interact with RubyGems.org
+
 git (1.2.5)
     Author: Scott Chacon
     Homepage: http://github.com/schacon/ruby-git

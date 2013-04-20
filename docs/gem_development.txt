@@ -1,0 +1,376 @@
+by Mitchell Hashimoto
+
+Basic RubyGem Development
+
+If you've used Ruby for any period a time, you've probably used a
+RubyGem before. RubyGems are those things installed with gem install,
+and can contain libraries or applications written using Ruby. This
+tutorial will teach you how to make your own RubyGem, the standard
+practices associated with it, and how to upload it so that others can
+install it using gem install.
+
+It's assumed that you have basic knowledge of the Ruby programming
+language already. This is a necessary prerequisite to writing and
+packaging reusable libraries or applications using RubyGems.
+
+What are RubyGems?
+
+RubyGems can refer to two different things: the software that installs
+and manages gems, or a gem itself. The software itself ships with Ruby
+and is what you're interacting with when you use the gem command.
+
+Gems, on the other hand, are packages of Ruby code (and sometimes C
+code, if you have C extensions in the Gem, but that is beyond the
+scope of this tutorial). Gems allow library authors to package and
+distribute versions of a library, and allow application developers to
+declare dependencies to certain versions of libraries.
+
+Instead of finding a library and copying that source code into your
+own project, Ruby developers can instead depend on a RubyGem, and
+RubyGems the software manages installing and setting up the
+dependencies. This allows library authors to update the library, fix
+bugs, etc.
+
+Why Would I Write a RubyGem?
+
+If you're new to Ruby, I'd avoid writing a RubyGem as long as possible
+and focus on just programming Ruby. However, there comes a point in
+time where it is just better to pull out some code into a RubyGem.
+
+Additionally, there is no requirement to ever write a RubyGem. When I
+first started using Ruby, I went over a year of working with Ruby full
+time before ever writing a RubyGem. I didn't avoid writing one, it
+just was never necessary.
+
+But, there are times when writing a RubyGem makes sense.
+
+First, if you're repeatably copying and pasting similar code across
+multiple projects, it may make sense to move that into a RubyGem. If
+the code is useful for others, you can package that code into a
+publicly reusable RubyGem. If the code is only useful for yourself or
+your company, you can still package the code into RubyGem and just use
+it privately.
+
+Packaging re-usable code into a RubyGem is beneficial because it
+allows you to maintain only one copy of the code. Multiple
+applications can depend on different versions of the RubyGem, so you
+don't need to be afraid of iterating on the code either.
+
+In addition to reusable libraries, RubyGems are useful for packaging
+an application you may have written. For example, if you wrote a
+Twitter client in Ruby, it is much easier to tell people to just gem
+install your project, rather than sending them an archive full of Ruby
+files.
+
+Your First RubyGem
+
+Writing RubyGems used to be a tedious and manual process. Today,
+however, there are fantastic tools available that automate away a lot
+of the pain to the point where writing RubyGems is almost trivial.
+
+The best tool for getting started with RubyGem development is Bundler.
+Bunder itself is an entire topic for a tutorial, so we won't go into
+much detail about it, but it plays a key role in developing gems. You
+don't need Bundler knowledge to continue.
+
+Over the past decade, the Ruby community has settled on a set of best
+practices for developing RubyGems. These best practices are in the
+form of directory layout, class/module naming schemes, testing, etc.
+Bundler sets up an idiomatic RubyGem development environment via
+bundle gem.
+
+For the purpose of this tutorial, we'll create a gem that is both a
+library and an application, and has basic math functions available.
+We'll call the library RedundantMath, because the library itself is
+redundant; you could always just use the built-in math primitives in
+Ruby. But for the purpose of a tutorial, the example will do nicely.
+
+Before we get started, install Bundler. Bundler can be installed via
+RubyGems by running gem install bundler. Note that you may need to
+sudo that if you're using your system's Ruby on a Unix-like operating
+system.
+
+In a directory where you want to work, run bundle gem redundant_math.
+You'll see something like the following:
+
+$ bundle gem redundant_math
+      create  redundant_math/Gemfile
+      create  redundant_math/Rakefile
+      create  redundant_math/LICENSE.txt
+      create  redundant_math/README.md
+      create  redundant_math/.gitignore
+      create  redundant_math/redundant_math.gemspec
+      create  redundant_math/lib/redundant_math.rb
+      create  redundant_math/lib/redundant_math/version.rb
+Initializating git repo in /private/tmp/gemdev/redundant_math
+
+The "redundant_math" folder now contains all the initial files you
+need to get started with RubyGem development.
+
+Your First Library Function
+
+Before explaining what the various files do, let's experience some
+instant gratification by adding a function to our library and
+immediately using it as if it came from a RubyGem.
+
+Modify the "lib/redundant_math.rb" file to look like the following:
+
+require "redundant_math/version"
+
+module RedundantMath
+  def self.add(x, y)
+    x + y
+  end
+end
+
+Then, run bundle console and see if it is available:
+
+$ bundle console
+irb(main):001:0> RedundantMath.add(1,2)
+=> 3
+
+Awesome! That was easy enough.
+
+bundle console drops you into an interactive Ruby console with the gem
+(and any dependencies) preloaded so you can just use them. It is an
+easy way to manually test your RubyGem while you're developing.
+
+The Gem Specification
+
+One of the core components of a RubyGem is the Gem Specification, also
+called the "gem spec" for short. This is a Ruby file with the
+"gemspec" extension that describes some metadata about the RubyGem.
+
+You can find the gem spec created for you already in
+"redundant_math.gemspec". Open this file and take a look at it. It
+should be pretty standard Ruby, so study it for a moment.
+
+Take a second and modify the authors, email, description, and summary
+of the RubyGem. RubyGems actually won't let you package your library
+into a gem if the description or summary contain "TODO", so be sure to
+replace those with a real description. These fields are used for
+displaying information on sites like RubyGems.org, but are otherwise
+not too important for the function of the gem itself. Other fields
+are.
+
+The files, executables, testfiles, and requirepaths settings are very
+important for the function of the RubyGem. The purpose should be
+self-explanatory: they describe the set of files necessary for certain
+functions. For example, if a file is not listed in the "files"
+configuration, then it will not be packaged into the RubyGem, and will
+be missing if a user of the gem attempts to look for it. If you
+package executables with your RubyGem, they must be listed in the
+"executables" section, and so on.
+
+Look at how Bundler setup the gem specification. It uses Git to get
+the list of files, then parses that list for the executables, tests,
+etc. This is clever, because Git is pretty standard in the Ruby
+community today, and lets you develop gems without manually managing
+the nitty-gritty of a file listing for the gem.
+
+In addition to the setup fields, the gem specification is used most
+commonly for specifying dependencies for the RubyGem. We won't cover
+dependencies now, but this is where they go.
+
+If you're too lazy to edit the file manually and just want to follow
+along, you can copy and paste the contents below into the gemspec
+file.
+
+# -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'redundant_math/version'
+
+Gem::Specification.new do |gem|
+  gem.name          = "redundant_math"
+  gem.version       = RedundantMath::VERSION
+  gem.authors       = ["John Doe"]
+  gem.email         = ["john.doe@gmail.com"]
+  gem.description   = %q{Redundant math library.}
+  gem.summary       = %q{Redundant math library.}
+  gem.homepage      = ""
+
+  gem.files         = `git ls-files`.split($/)
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.require_paths = ["lib"]
+end
+
+Packaging Your First RubyGem
+
+With the gem specification setup and our fancy RedundantMath.add
+function added to the library, let's package up and use our first
+RubyGem.
+
+Once again, Bundler can do this for us. As part of setting up the
+directory structure, Bundler also setup a "Rakefile" that contains
+some basic tasks for managing the gem:
+
+$ rake -T
+rake build    # Build redundant_math-0.0.1.gem into the pkg directory
+rake install  # Build and install redundant_math-0.0.1.gem into system gems
+rake release  # Create tag v0.0.1 and build and push
+redundant_math-0.0.1.gem to Rubygems
+
+Run rake build to build your first gem:
+
+$ rake build
+redundant_math 0.0.1 built to pkg/redundant_math-0.0.1.gem
+
+That easy! If you look in the "pkg" folder you'll see your RubyGem.
+
+Next, run rake install to both package and install the RubyGem locally
+to your system gems. This is the equivalent of running gem install
+against your own RubyGem. It is just a shortcut.
+
+$ rake install
+redundant_math 0.0.1 built to pkg/redundant_math-0.0.1.gem
+redundant_math (0.0.1) installed
+
+With the gem installed, go to any folder in your system, and use irb
+to actually verify that the gem works:
+
+$ irb
+irb(main):001:0> require 'redundant_math'
+=> true
+irb(main):002:0> RedundantMath.add(1,2)
+=> 3
+
+BOOM! SUCCESS! Your first RubyGem in action. I don't know about you,
+but the first time I saw this work, I was pretty happy. I felt like a
+reached a new level of Ruby programming skills. And you have. You've
+gone from being purely a consumer, to also being a producer of Ruby
+things. Congratulations.
+
+Versioning Your RubyGem
+
+The Ruby community is very opinionated about how versions work and
+what version numbers mean. Ruby users expect gems to follow semantic
+versioning rules. Today, almost every major RubyGem you interact with
+follows SemVer to some extent.
+
+In a nutshell, semantic versioning gives developers the ability to
+reason about a RubyGem based solely on the version number. If a
+developer sees a version "0.5.0" and "0.5.1," that developer can
+assume there are no backwards incompatible changes, and that there are
+only bug fixes. Likewise, if the number changes from "0.5.0" to
+"0.6.0", that developer can continue to assume that there are no
+backwards incompatible changes, but that there are new features.
+Finally, if the version goes from "0.5.0" to "1.5.0", the developer
+knows that the versions are backwards incompatible (or can be).
+
+This ability to make these assumptions is critical in being able to
+loosely define dependencies for an application. If you follow SemVer,
+any developer using your library can safely depend on any version
+"x.y.z" of your library, as long as the "x" doesn't change. Within
+Ruby, this is called a "pessimistic" constraint on a library.
+
+Bundler sets up your gem specification so that is reads the version
+from RedundantMath::VERSION. The camel casing of "redundant_math" is
+again a best practice and represents idiomatic Ruby code.
+
+The initial version is setup in "lib/redundant_math/version.rb". By
+modifying this file, you can create new versions of your gem. For
+example, let's change the version to "0.2.0" and rebuild the library:
+
+$ rake build
+redundant_math 0.2.0 built to pkg/redundant_math-0.2.0.gem
+
+As you can see, version 0.2.0 is now built. Easy.
+
+Adding an Executable to Your RubyGem
+
+In addition to library code, RubyGems can contain executables written
+in Ruby. For example, after installing Bundler above, the bundle
+command was suddenly available to us. This command is actually written
+in Ruby and distributed as part of the RubyGem.
+
+For our RubyGem, let's add a redundant_add executable that just adds
+together two arguments given on the command line.
+
+Create the file "bin/redundant_add" with the following contents:
+
+require "redundant_math"
+puts RedundantMath.add(ARGV[0].to_i, ARGV[1].to_i)
+
+Note that if you take a look at the gem spec again, Bundler made it so
+that any files in the "bin/" folder are executables packages with the
+gem.
+
+Since the gem spec uses git ls-files to determine what files to
+package, make sure the files are in the git index by running git add
+.. There is no need to commit them.
+
+After that, package and install the RubyGem using rake install, and
+test out the command:
+
+$ redundant_add 1 2
+3
+
+That's all there is to it.
+
+Depending on Other RubyGems
+
+It is very rare for a RubyGem to not have any dependencies. The Ruby
+community is so strong and active that there are hundreds of thousands
+of libraries to leverage while creating your own. And you should,
+instead of reinventing the wheel.
+
+Dependencies are added within the gem spec. It looks like this:
+
+gem.add_runtime_dependency "thor", "~> 0.18.1"
+
+The first argument is the name of the RubyGem you depend on, and the
+second argument is the version constraint. In the case above, I am
+depending on Thor version 0.18.1 up to but not including 0.19.0. The
+~> operator is known as the "pessimistic constraint" operator, and is
+possible because of the SemVer assumptions we talked about above.
+
+Multiple dependencies can be added through multiple calls to
+gem.add_runtime_dependency.
+
+When installing your gem, RubyGems will automatically resolve
+dependencies and install those onto the system, if they're needed as
+well.
+
+When developing a RubyGem with dependencies, Bundler really shines. By
+default, Bundler is setup to automatically get all dependencies of the
+RubyGem being developed. After saving the dependency on "thor" above,
+run bundle:
+
+$ bundle
+Fetching gem metadata from https://rubygems.org/..
+Installing thor (0.18.1)
+Using redundant_math (0.2.0) from source at .
+Using bundler (1.2.3)
+Your bundle is complete! Use `bundle show [gemname]` to see where a
+bundled gem is installed.
+
+As you can see, "thor" was installed into the Bundler environment.
+This means that if you use bundle console or write automated tests,
+thor (and any other dependencies you may define) are installed and
+available for development. Quite nifty.
+
+Distributing Your RubyGem
+
+Now that we've packaged a RubyGem, the next step of course is to allow
+other people to use the RubyGem in some way.
+
+For publicly available gems, the easiest way to do this is to use rake
+release, another Rake task that Bundler created. This will
+automatically package your gem and upload it to RubyGems.org. To use
+this, you'll need to sign up for an account on RubyGems.org. After
+that, you're ready to go.
+
+If the gem you're making is meant to be only used in private, then the
+easiest thing to do is to just distribute the actual "gem" file
+around. Additionally, there are private gem hosts available such as
+GemFury that let you upload and protect your private gems. These hosts
+contain instructions for how to push your gem file to their system.
+
+Congratulations! At this point, you know how to create a new gem,
+package it, test it manually, and upload it. At the most basic level,
+this is the entire cycle of gem management, and you're ready to go off
+and build your own gems.
+
+source: http://tech.pro/tutorial/1226/basic-rubygem-development
