@@ -187,6 +187,21 @@ classifier (1.3.3)
     A general classifier module to allow Bayesian and other types of
     classifications.
 
+coderay (1.0.9)
+    Author: Kornelius Kalnbach
+    Homepage: http://coderay.rubychan.de
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Fast syntax highlighting for selected languages.
+
+cookiejar (0.3.0)
+    Author: David Waite
+    Homepage: http://alkaline-solutions.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Client-side HTTP Cookie library
+
 descendants_tracker (0.0.1)
     Authors: Dan Kubb, Piotr Solnica, Markus Schirp
     Homepage: https://github.com/dkubb/descendants_tracker
@@ -314,6 +329,13 @@ git (1.2.5)
     manipulate Git repositories by wrapping system calls to the git
     binary
 
+github-markup (0.7.5)
+    Author: Chris Wanstrath
+    Homepage: https://github.com/github/markup
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    The code GitHub uses to render README.markup
+
 grape (0.4.1)
     Author: Michael Bleigh
     Homepage: https://github.com/intridea/grape
@@ -330,6 +352,34 @@ grape-entity (0.3.0)
 
     A simple facade for managing the relationship between your model and
     API.
+
+growl (1.0.3)
+    Author: TJ Holowaychuk
+    Homepage: http://github.com/visionmedia/growl
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    growlnotify bindings
+
+guard (1.8.0)
+    Author: Thibaud Guillaume-Gentil
+    Homepage: https://github.com/guard/guard
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Guard keeps an eye on your file modifications
+
+guard-bundler (1.0.0)
+    Author: Yann Lugrin
+    Homepage: http://rubygems.org/gems/guard-bundler
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Guard gem for Bundler
+
+guard-rspec (2.5.4)
+    Author: Thibaud Guillaume-Gentil
+    Homepage: http://rubygems.org/gems/guard-rspec
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Guard gem for RSpec
 
 haml (4.0.2)
     Authors: Nathan Weizenbaum, Hampton Catlin, Norman Clarke
@@ -483,6 +533,21 @@ liquid (2.5.0)
     A secure, non-evaling end user template engine with aesthetic
     markup.
 
+listen (1.0.2)
+    Authors: Thibaud Guillaume-Gentil, Maher Sallam
+    Homepage: https://github.com/guard/listen
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Listen to file modifications
+
+lumberjack (1.0.3)
+    Author: Brian Durand
+    Homepage: http://github.com/bdurand/lumberjack
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A simple, powerful, and very fast logging utility that can be a drop
+    in replacement for Logger or ActiveSupport::BufferedLogger.
+
 mail (2.5.3)
     Author: Mikel Lindsaar
     Homepage: http://github.com/mikel/mail
@@ -505,6 +570,13 @@ metaclass (0.0.1)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Adds a metaclass method to all Ruby objects
+
+method_source (0.8.1)
+    Author: John Mair (banisterfiend)
+    Homepage: http://banisterfiend.wordpress.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    retrieve the sourcecode for a method
 
 mime-types (1.23, 1.22)
     Author: Austin Ziegler
@@ -757,6 +829,13 @@ posix-spawn (0.3.6)
 
     posix_spawnp(2) for ruby
 
+pry (0.9.12.1)
+    Authors: John Mair (banisterfiend), Conrad Irwin, Ryan Fitzgerald
+    Homepage: http://pry.github.com
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    An IRB alternative and runtime developer console
+
 psych (2.0.0)
     Author: Aaron Patterson
     Homepage: http://github.com/tenderlove/psych
@@ -795,6 +874,13 @@ rack-cache (1.2)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     HTTP Caching for Rack
+
+rack-contrib (1.1.0)
+    Author: rack-devel
+    Homepage: http://github.com/rack/rack-contrib/
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Contributed Rack Middleware and Utilities
 
 rack-mount (0.8.3)
     Author: Joshua Peek
@@ -850,6 +936,27 @@ rake (10.0.4, 0.9.6)
 
     Ruby based make-like utility.
 
+rb-fsevent (0.9.3)
+    Authors: Thibaud Guillaume-Gentil, Travis Tilley
+    Homepage: http://rubygems.org/gems/rb-fsevent
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Very simple & usable FSEvents API
+
+rb-inotify (0.9.0)
+    Author: Nathan Weizenbaum
+    Homepage: http://github.com/nex3/rb-inotify
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A Ruby wrapper for Linux's inotify, using FFI
+
+rb-kqueue (0.2.0)
+    Authors: Mathieu Arnold, Nathan Weizenbaum
+    Homepage: http://github.com/mat813/rb-kqueue
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    A Ruby wrapper for BSD's kqueue, using FFI
+
 rb-readline (0.5.0.pre.1, 0.4.2)
     Authors: Park Heesob, Daniel Berger, Luis Lavena
     Homepage: http://github.com/luislavena/rb-readline
@@ -868,6 +975,13 @@ rdoc (4.0.1, 4.0.0, 3.12.2)
                  (3.12.2): /usr/local/lib/ruby/gems/2.0.0
 
     RDoc produces HTML and command-line documentation for Ruby projects
+
+redcarpet (2.2.2)
+    Authors: Natacha PortÃ©, Vicent MartÃ­
+    Homepage: http://github.com/vmg/redcarpet
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Markdown that smells nice
 
 redis (3.0.4, 3.0.3)
     Authors: Ezra Zygmuntowicz, Taylor Weibley, Matthew Clark, Brian
@@ -1052,6 +1166,14 @@ sinatra (1.4.2)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     Classy web-development dressed in a DSL
+
+slop (3.4.4)
+    Author: Lee Jarvis
+    Homepage: http://github.com/injekt/slop
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Simple Lightweight Option Parsing
 
 sprockets (2.9.3, 2.9.2, 2.9.0, 2.2.2)
     Authors: Sam Stephenson, Joshua Peek

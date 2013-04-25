@@ -348,11 +348,13 @@ ii  grub2-common                              2.00-7ubuntu11                    
 ii  gsettings-desktop-schemas                 3.6.0-0ubuntu3                             all          GSettings deskop-wide schemas
 ii  gsfonts                                   1:8.11+urwcyr1.0.7~pre44-4.2ubuntu1        all          Fonts for the Ghostscript interpreter(s)
 ii  gstreamer0.10-alsa:i386                   0.10.36-1ubuntu1.1                         i386         GStreamer plugin for ALSA
+ii  gstreamer0.10-fluendo-mp3:i386            0.10.15.debian-1ubuntu1                    i386         Fluendo mp3 decoder GStreamer plugin
 ii  gstreamer0.10-gconf:i386                  0.10.31-3ubuntu1.2                         i386         GStreamer plugin for getting the sink/source information from GConf
 ii  gstreamer0.10-nice:i386                   0.1.2-1                                    i386         ICE library (GStreamer plugin)
 ii  gstreamer0.10-plugins-base:i386           0.10.36-1ubuntu1.1                         i386         GStreamer plugins from the "base" set
 ii  gstreamer0.10-plugins-base-apps           0.10.36-1ubuntu1.1                         i386         GStreamer helper programs from the "base" set
 ii  gstreamer0.10-plugins-good:i386           0.10.31-3ubuntu1.2                         i386         GStreamer plugins from the "good" set
+ii  gstreamer0.10-plugins-ugly:i386           0.10.19-2                                  i386         GStreamer plugins from the "ugly" set
 ii  gstreamer0.10-pulseaudio:i386             0.10.31-3ubuntu1.2                         i386         GStreamer plugin for PulseAudio
 ii  gstreamer0.10-tools                       0.10.36-1ubuntu2                           i386         Tools for use with GStreamer
 ii  gstreamer0.10-x:i386                      0.10.36-1ubuntu1.1                         i386         GStreamer plugins for X11 and Pango
@@ -439,6 +441,7 @@ ii  language-selector-common                  0.90                              
 ii  language-selector-gnome                   0.90                                       all          Language selector for Ubuntu
 ii  laptop-detect                             0.13.7ubuntu2                              i386         attempt to detect a laptop
 ii  less                                      444-4ubuntu1                               i386         pager program similar to more
+ii  liba52-0.7.4                              0.7.4-16build1                             i386         library for decoding ATSC A/52 streams
 ii  libaa1:i386                               1.4p5-40                                   i386         ASCII art library
 ii  libaacs0:i386                             0.5.0-2                                    i386         free-and-libre implementation of AACS
 ii  libaccount-plugin-1.0-0                   0.0.18-0ubuntu1                            i386         libaccount-plugin for GNOME Control Center
@@ -837,6 +840,7 @@ ii  liblwres80                                1:9.8.1.dfsg.P1-4.2ubuntu3.2      
 ii  liblzma5:i386                             5.1.1alpha+20120614-1                      i386         XZ-format compression library
 ii  libm17n-0                                 1.6.3-2                                    i386         multilingual text processing library - runtime
 ii  libmaa3                                   1.3.1-1build1                              i386         maa programming library
+ii  libmad0:i386                              0.15.1b-7ubuntu1                           i386         MPEG audio decoder library
 ii  libmagic1:i386                            5.11-2                                     i386         File type determination library using "magic" numbers
 ii  libmagickcore5:i386                       8:6.7.7.10-2ubuntu4                        i386         low-level image manipulation library
 ii  libmagickwand5:i386                       8:6.7.7.10-2ubuntu4                        i386         image manipulation library
@@ -849,6 +853,7 @@ ii  libminiupnpc8                             1.6-3ubuntu2                      
 ii  libmission-control-plugins0               1:5.13.1-0ubuntu3                          i386         management daemon for Telepathy (library for plugins)
 ii  libmng1:i386                              1.0.10-3build1                             i386         Multiple-image Network Graphics library
 ii  libmount1:i386                            2.20.1-5.1ubuntu2                          i386         block device id library
+ii  libmp3lame0:i386                          3.99.5+repack1-3                           i386         MP3 encoding library
 ii  libmpc2:i386                              0.9-4build1                                i386         multiple precision complex floating-point library
 ii  libmpeg2-4:i386                           0.5.1-5                                    i386         MPEG1 and MPEG2 video decoder library
 ii  libmpfr4:i386                             3.1.0-3ubuntu3                             i386         multiple precision floating-point computation
@@ -897,10 +902,13 @@ ii  libnux-3.0-0                              3.10.0-0ubuntu1                   
 ii  libnux-3.0-common                         3.10.0-0ubuntu1                            all          Visual rendering toolkit for real-time applications - common files
 ii  liboauth0:i386                            0.9.7-0ubuntu1                             i386         C library for implementing OAuth 1.0
 ii  libogg0:i386                              1.3.0-4                                    i386         Ogg bitstream library
+ii  liboil0.3:i386                            0.3.17-2ubuntu3                            i386         Library of Optimized Inner Loops
 ii  liboobs-1-5                               3.0.0-1                                    i386         GObject based interface to system-tools-backends - shared library
 ii  libopenal-data                            1:1.14-4ubuntu1                            all          Software implementation of the OpenAL API (data files)
 ii  libopenal1:i386                           1:1.14-4ubuntu1                            i386         Software implementation of the OpenAL API (shared library)
 ii  libopencc1:i386                           0.3.0-3                                    i386         simplified-traditional chinese conversion library - runtime
+ii  libopencore-amrnb0:i386                   0.1.3-2                                    i386         Adaptive Multi Rate speech codec - shared library
+ii  libopencore-amrwb0:i386                   0.1.3-2                                    i386         Adaptive Multi-Rate - Wideband speech codec - shared library
 ii  libopenobex1                              1.5-2build2                                i386         OBEX protocol library
 ii  liborbit2:i386                            1:2.14.19-0.1ubuntu1                       i386         libraries for ORBit2 - a CORBA ORB
 ii  liborc-0.4-0:i386                         1:0.4.16-2                                 i386         Library of Optimized Inner Loops Runtime Compiler
@@ -1038,6 +1046,7 @@ ii  libselinux1:i386                          2.1.9-5ubuntu1                    
 ii  libsensors4:i386                          1:3.3.1-2ubuntu2                           i386         library to read temperature/voltage/fan sensors
 ii  libsgutils2-2                             1.33-1build1                               i386         utilities for devices using the SCSI command set (shared libraries)
 ii  libshout3:i386                            2.3.1-1ubuntu2                             i386         MP3/Ogg Vorbis broadcast streaming library
+ii  libsidplay1                               1.36.59-5                                  i386         SID (MOS 6581) emulation library
 ii  libsigc++-2.0-0c2a:i386                   2.2.10-0.2                                 i386         type-safe Signal Framework for C++ - runtime
 ii  libsignon-extension1                      8.43-0ubuntu1                              i386         Single Sign On framework
 ii  libsignon-glib1                           1.6-0ubuntu1                               i386         library for signond
@@ -1101,6 +1110,7 @@ ii  libtinyxml2.6.2                           2.6.2-1build1                     
 ii  libtotem-plparser17                       3.4.3-0ubuntu1                             i386         Totem Playlist Parser library - runtime files
 ii  libtotem0                                 3.4.3-0ubuntu5                             i386         Main library for the Totem media player
 ii  libts-0.0-0:i386                          1.0-11                                     i386         touch screen library
+ii  libtwolame0                               0.3.13-1build1                             i386         MPEG Audio Layer 2 encoding library
 ii  libtxc-dxtn-s2tc0:i386                    0~git20110809-3                            i386         Texture compression library for Mesa
 ii  libubuntuoneui-3.0-1                      4.0.0-0ubuntu1                             i386         Ubuntu One widget library
 ii  libudev0:i386                             175-0ubuntu13                              i386         udev library
@@ -1162,6 +1172,7 @@ ii  libx11-data                               2:1.5.0-1                         
 ii  libx11-dev:i386                           2:1.5.0-1                                  i386         X11 client-side library (development headers)
 ii  libx11-doc                                2:1.5.0-1                                  all          X11 client-side library (development documentation)
 ii  libx11-xcb1:i386                          2:1.5.0-1                                  i386         Xlib/XCB interface library
+ii  libx264-123:i386                          2:0.123.2189+git35cf912-1                  i386         x264 video coding library
 ii  libx86-1:i386                             1.1+ds1-10                                 i386         x86 real-mode library
 ii  libxapian22                               1.2.12-1                                   i386         Search engine library
 ii  libxatracker1:i386                        9.0.3-0ubuntu0.1                           i386         X acceleration library -- runtime
@@ -1508,6 +1519,7 @@ ii  python3-xkit                              0.5.0                             
 ii  python3.2                                 3.2.3-6ubuntu3.1                           i386         Interactive high-level object-oriented language (version 3.2)
 ii  python3.2-minimal                         3.2.3-6ubuntu3.1                           i386         Minimal subset of the Python language (version 3.2)
 ii  qdbus                                     4:4.8.3+dfsg-0ubuntu3.1                    i386         Qt 4 D-Bus tool
+ii  qgo                                       2~svn764-1                                 i386         Go client and full featured SGF editor
 ii  qpdf                                      3.0.2-1                                    i386         tools for and transforming and inspecting PDF files
 ii  qt-at-spi:i386                            0.3.1-0ubuntu1                             i386         accessibility plugin for Qt
 ii  radeontool                                1.6.2-1.1build1                            i386         utility to control ATI Radeon backlight functions on laptops
