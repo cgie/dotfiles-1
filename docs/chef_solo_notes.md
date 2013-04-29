@@ -2,6 +2,7 @@
 # Getting Started with Chef Solo.
 
 > author: Alexey Vasiliev
+
 > twitter: @leopard_me
 
 Today we will talk about Chef and usage Chef Solo like a Pro. All example code you can find here: https://github.com/le0pard/chef-solo-example/tree/1.0
@@ -59,6 +60,9 @@ Next I will use [bundler](http://gembundler.com/) to get some useful gems:
 
 ```
 $ cat Gemfile
+```
+
+```ruby
   source :rubygems
 
   gem 'knife-solo'
@@ -66,7 +70,9 @@ $ cat Gemfile
   gem 'ffi', '~> 1.2.0'
   gem 'vagrant', "~> 1.0.5"
   gem 'multi_json'
+```
 
+```
 $ bundle
 ```
 
@@ -123,6 +129,9 @@ And add to Cheffile nginx cookbook. More cookbooks you can find at (http://commu
 
 ```
 $ cat Cheffile
+```
+
+```ruby
   #!/usr/bin/env ruby
   #^syntax detection
 
@@ -130,7 +139,9 @@ $ cat Cheffile
 
   cookbook 'runit'
   cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+```
 
+```
 $ librarian-chef install
 ```
 
@@ -166,6 +177,9 @@ Let’s for test call our node file “vagrant”:
 
 ```
 $ cat nodes/vagrant.json
+```
+
+```json
 {
   "nginx": {
     "version": "1.2.3",
@@ -327,7 +341,7 @@ And you should see in your browser:
 
 > nginx
 
-After change something in your kitchen, you should run command “vagrant provision”:
+After change something in your kitchen, you should run command `vagrant provision`:
 
 ```
 $ vagrant provision
@@ -391,7 +405,7 @@ drwxr-xr-x   3 leo  staff    102 Jan  4 19:24 test
 
 Cookbook can have:
 
-- `metadata.rb` - the file, which contain all information about cookbook (name, dependencies).
+- `metadata.rb` - the file, which contains all information about cookbook (name, dependencies).
 
 ```ruby
 name              "nginx"
@@ -452,7 +466,7 @@ define :nginx_site, :enable => true do
 end
 ```
 
-The helper “nginx_site” can enable/disable configuration from folder “site-available” and reload nginx. I will show how to use this helper.
+The helper `nginx_site` can enable/disable configuration from folder “site-available” and reload nginx. I will show how to use this helper.
 
 - `files` - folder, which contain files and this files just need to copy on server in the right place (it can be ssl keys, static configs, etc.)
 - `recipes` - folder, which contain all recipes of this cookbook. Each recipe is in a separate Ruby file:
@@ -484,7 +498,7 @@ drwxr-xr-x  16 leo  staff   544 Jan  4 19:24 ..
 
 As you remember we added to run_list:
 
-```
+```ruby
 "run_list": [
   "recipe[nginx::source]"
 ]
@@ -492,7 +506,7 @@ As you remember we added to run_list:
 
 This is run source.rb recipe from nginx cookbook. If you change by this:
 
-```
+```ruby
 "run_list": [
   "recipe[nginx]"
 ]
@@ -508,9 +522,8 @@ This is run default recipe from nginx cookbook (file default.rb in recipes folde
 Let’s create our first cookbook. Our custom cookbooks should be in folder `site-cookbooks` (folder `cookbooks` using for vendor cookbooks and managed by librarian, so we add this folder in `gitignore`). If you look in `solo.rb`, you can see such settings:
 
 ```ruby
-file_cache_path           "/tmp/chef-solo"
-cookbook_path             [ "/tmp/chef-solo/site-cookbooks",
-                            "/tmp/chef-solo/cookbooks" ]
+file_cache_path "/tmp/chef-solo"
+cookbook_path [ "/tmp/chef-solo/site-cookbooks","/tmp/chef-solo/cookbooks" ]
 ```
 
 This mean what Chef will search needed cookbook first in folder site-cookbooks and if no found will try to search in folder cookbooks. So if you create in site-cookbooks nginx cookbook, Chef will try use it first.
@@ -534,9 +547,9 @@ And create file `default.rb` in recipes folder with content:
 package "git"
 ```
 
-Command “package” is used to manage packages in the server. This command will install on server git package. More info about this command you can read here: http://docs.opscode.com/chef/resources.html#package. Next, add to our `vagrant.json` node file in run list new recipe:
+Command `package` is used to manage packages in the server. This command will install on server git package. More info about this command you can read here: http://docs.opscode.com/chef/resources.html#package. Next, add to our `vagrant.json` node file in run list new recipe:
 
-```
+```ruby
 "run_list": [
   "recipe[nginx::source]",
   "recipe[tomatoes]"
@@ -593,7 +606,7 @@ All works fine.
 
 Let’s configure nginx for our application. First of all add new attributes in vagrant node (file “nodes/vagrant.json”):
 
-```
+```json
 {
   "app": {
     "name": "tomatoes",
@@ -616,9 +629,9 @@ Let’s configure nginx for our application. First of all add new attributes in 
 }
 ```
 
-Next, create nginx template (“tomatoes/templates/default/nginx.conf.erb”):
+Next, create nginx template `tomatoes/templates/default/nginx.conf.erb`:
 
-```
+```erb
 server {
     listen 80 default;
     
@@ -629,7 +642,7 @@ server {
 }
 ```
 
-And create file index.html in directory “tomatoes/files/default” (create this directory before) with content:
+And create file `index.html` in directory `tomatoes/files/default` (create this directory before) with content:
 
 ```html
 <h1>Hello from Chef Solo</h1>
@@ -682,9 +695,10 @@ As you can see in recipe node attributes available for us in “node” variable
 
 This all ways will give you the same value from `app.web_dir` attribute.
 
-As you can see in recipe code we created 3 directories, created new config for nginx, enabled this config by “nginx_site” helper (this helper automatically reload nginx) and put “index.html” into server directory. After launch command “vagrant provision” you should see this in your browser by url “http://localhost:8085/”:
+As you can see in recipe code we created 3 directories, created new config for nginx, enabled this config by “nginx_site” helper (this helper automatically reload nginx) and put “index.html” into server directory. After launch command `vagrant provision` you should see this in your browser by url “http://localhost:8085/”:
 
 > nginx
+
 > Ruby Power!
 
 As you can see in our recipe we created 3 directories by 3 command. Better DRY this code. But how to do this? Simple! This is all Ruby code, so you can use it to do your recipe more powerful (and beautiful, of course):
@@ -718,7 +732,7 @@ We collect all subfolders in Ruby array and create its in one cycle.
 
 ## Summary
 
-In the current article we have learn the Chef cookbook structure and write simple Chef cookbook. In the next article we will look at the usage of roles in your Chef kitchen.
+In the current article we have learn the Chef cookbook structure and write simple Chef cookbook. In the next article we will look at the usage of `roles` in your Chef kitchen.
 
 All example code you can find here: https://github.com/le0pard/chef-solo-example/tree/2.0.
 
@@ -732,13 +746,17 @@ In the previous article we learned Chef cookbook structure and wrote own Chef co
 
 ## Create your cloud
 
-We learned how to successfully use the Chef to setup servers. In most cases you cloud contain several servers with the same configuration. For example, you can have several web servers and one load balancer, which balance on this web servers. Or you can have several database or queue servers with identical configuration. In this case, it is very hard way to clone each server by nodes, because you need copy all attributes from one node to another. Maintain a system with such nodes also will be hard: you will have to modify the “n” number of nodes to change some attribute value. In this case we need to use the DRY. What we can do? We can use role! A role provides a means of grouping similar features of similar nodes, providing a mechanism for easily composing sets of functionality.
+We learned how to successfully use the Chef to setup servers. In most cases you cloud contain several servers with the same configuration. For example, you can have several web servers and one load balancer, which balance on this web servers. Or you can have several database or queue servers with identical configuration. In this case, it is very hard way to clone each server by nodes, because you need copy all attributes from one node to another. Maintain a system with such nodes also will be hard: you will have to modify the “n” number of nodes to change some attribute value. In this case we need to use the DRY. What we can do? We can use role! 
+
+A role provides a means of grouping similar features of similar nodes, providing a mechanism for easily composing sets of functionality.
 
 In Chef kitchen we can create roles: web, database and queue roles. Nodes may use one or more roles with recipes. Let’s look at an example.
-Roles
 
-Let’s create in our kitchen web role. Create in folder “roles” role “web.json”:
+## Roles
 
+Let’s create in our kitchen web role. Create in folder `roles` role `web.json`:
+
+```json
 {
   "name": "web",
   "chef_type": "role",
@@ -766,26 +784,36 @@ Let’s create in our kitchen web role. Create in folder “roles” role “web
     "recipe[tomatoes]"
   ]
 }
+```
 
 The role require such attributes:
 
-    “chef_type” - should be “role”
-    “json_class” - should be “Chef::Role”
-    “name” - name of role, in our case “web”
-    “run_list” - list of recipes, like in node. We just moved run_list from “vagrant.json” node to “web.json”
+- `chef_type` - should be `role`
+- `json_class` - should be `Chef::Role`
+- `name` - name of role, in our case `web`
+- `run_list` - list of recipes, like in node. We just moved run_list from `vagrant.json` node to `web.json`
 
-Also Chef role can have “default_attributes” and “override_attributes”. What’s the difference? “default_attributes” an optional set of attributes that should be applied to all nodes with this role, assuming the node does not already have a value for that attribute. You can override this attributes values in node, which use this role. “override_attributes” an optional set of attributes that should be applied to all nodes with this role, regardless of whether a node already has a value for that attribute. Useful for setting site-wide values that will always be set, because even node attributes cannot override this attributes values. In our case I moved node attributes in “default_attributes” (and update nginx version).
+Also Chef role can have `default_attributes` and `override_attributes`. 
+
+What’s the difference? 
+
+`default_attributes` is an optional set of attributes that should be applied to all nodes with this role, assuming the node does not already have a value for that attribute. You can override this attributes values in node, which use this role. 
+
+`override_attributes` an optional set of attributes that should be applied to all nodes with this role, regardless of whether a node already has a value for that attribute. Useful for setting site-wide values that will always be set, because even node attributes cannot override this attributes values. In our case I moved node attributes in `default_attributes` (and update nginx version).
 
 Next, I edited the node for the usage web role:
 
+```ruby
 {
   "run_list": [
     "role[web]"
   ]
 }
+```
 
 And do not forget to specify vagrant that we had Chef roles:
 
+```ruby
 VAGRANT_JSON = MultiJson.load(Pathname(__FILE__).dirname.join('nodes', 'vagrant.json').read)
 
 config.vm.provision :chef_solo do |chef|
@@ -804,9 +832,11 @@ config.vm.provision :chef_solo do |chef|
      chef.add_role(role)
    end
 end
+```
 
 Now we can test Chef kitchen with web role:
 
+```
 $ vagrant provision
 [default] Running provisioner: Vagrant::Provisioners::ChefSolo...
 [default] Generating chef JSON and uploading...
@@ -827,15 +857,19 @@ stdin: is not a tty
 [Mon, 07 Jan 2013 14:58:12 +0000] INFO: Chef Run complete in 11.615968 seconds
 [Mon, 07 Jan 2013 14:58:12 +0000] INFO: Running report handlers
 [Mon, 07 Jan 2013 14:58:12 +0000] INFO: Report handlers complete
+```
 
 We should have see the same in your browser by this url “http://localhost:8085/”:
-nginx
+
+> nginx
 
 But nginx successfully updated:
-nginx
 
-Chef very flexible, because your node can use several roles and/or a several recipes simultaneously. For example:
+> nginx
 
+Chef is very flexible, because your node can use several roles and/or a several recipes simultaneously. For example:
+
+```ruby
 {
   "run_list": [
     "role[web]",
@@ -843,46 +877,39 @@ Chef very flexible, because your node can use several roles and/or a several rec
     "recipe[monit]"
   ]
 }
+```
 
-Summary
+## Summary
 
 In the current article we have learn the Chef roles. In the next article we will learn more about Chef cookbooks.
 
 All example code you can find here: github.com/le0pard/chef-solo-example/tree/3.0.
 
-That’s all folks! Thank you for reading till the end.
+> source: http://leopard.in.ua/2013/01/07/chef-solo-getting-started-part-3/
 
-Published: January 07 2013
+# Getting Started with Chef Solo. Part 4
 
-    category:
-    chef 7
-
-    tags:
-    chef 7
-    solo 6
-
-    Tweet
-
-http://leopard.in.ua/2013/01/07/chef-solo-getting-started-part-3/
-
-
-Getting Started with Chef Solo. Part 4
-
-Hello my dear friends. Today we will continue talk about Chef Solo. All example code you can find here: github.com/le0pard/chef-solo-example/tree/4.0.
+All example code you can find here: github.com/le0pard/chef-solo-example/tree/4.0.
 
 In the previous article we learned Chef roles. In this article we will learn more about knife and cookbooks.
+
+```
 WARNING: No knife configuration file found
+```
 
-Knife also used to communicate with Chef Server, but in our case we don’t have Chef Server. To fix this warning you should create “knife.rb” file (knife configuration file) and add this content:
+Knife also used to communicate with Chef Server, but in our case we don’t have Chef Server. To fix this warning you should create `knife.rb` file (knife configuration file) and add this content:
 
-cookbook_path             [ "/tmp/chef-solo/site-cookbooks",
-                            "/tmp/chef-solo/cookbooks" ]
+```ruby
+cookbook_path [ "/tmp/chef-solo/site-cookbooks","/tmp/chef-solo/cookbooks" ]
+```
 
 In this case knife will automatically found this configuration and will not show this warning.
-Node.js recipe
 
-Let’s create node.js recipe in our tomatoes cookbook. Add this content in created file “tomatoes/recipes/node_js.rb”:
+## Node.js recipe
 
+Let’s create node.js recipe in our tomatoes cookbook. Add this content in created file `tomatoes/recipes/node_js.rb`:
+
+```ruby
 case node['platform_family']
   when 'rhel','fedora'
     package "openssl-devel"
@@ -928,6 +955,7 @@ execute "nodejs make install" do
   cwd "/usr/local/src/node-v#{node['nodejs']['version']}"
   not_if {File.exists?("#{node['nodejs']['dir']}/bin/node") && `#{node['nodejs']['dir']}/bin/node --version`.chomp == "v#{node['nodejs']['version']}" }
 end
+```
 
 Next, we should add default attributes for this recipe. You should create file “tomatoes/attributes/node_js.rb” with content:
 
