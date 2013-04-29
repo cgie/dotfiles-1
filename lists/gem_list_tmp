@@ -115,10 +115,11 @@ camping (2.1.532)
 
     minature rails for stay-at-home moms
 
-capistrano (2.15.3)
+capistrano (2.15.4, 2.15.3)
     Authors: Jamis Buck, Lee Hambley
     Homepage: http://github.com/capistrano/capistrano
-    Installed at: /usr/local/lib/ruby/gems/2.0.0
+    Installed at (2.15.4): /usr/local/lib/ruby/gems/2.0.0
+                 (2.15.3): /usr/local/lib/ruby/gems/2.0.0
 
     Capistrano - Welcome to easy deployment with Ruby over SSH
 
@@ -251,11 +252,12 @@ formatador (0.2.4)
 
     Ruby STDOUT text formatting
 
-fundler (0.2.0, 0.1.0)
+fundler (0.2.1, 0.2.0, 0.1.0)
     Author: zeroed
     Homepage: https://github.com/zeroed/fundler
     License: GPL3
-    Installed at (0.2.0): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (0.2.1): /usr/local/lib/ruby/gems/2.0.0
+                 (0.2.0): /usr/local/lib/ruby/gems/2.0.0
                  (0.1.0): /usr/local/lib/ruby/gems/2.0.0
 
     find rename utility
@@ -414,6 +416,13 @@ mail (2.5.3)
 
     Mail provides a nice Ruby DSL for making, sending and reading
     emails.
+
+map (6.5.0)
+    Author: Ara T. Howard
+    Homepage: https://github.com/ahoward/map
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    map
 
 maruku (0.6.1)
     Authors: Andrea Censi, Nathan Weizenbaum
@@ -830,12 +839,36 @@ rubocop (0.6.1, 0.6.0)
 
     Automatic Ruby code style checking tool.
 
+ruby2ruby (2.0.5)
+    Author: Ryan Davis
+    Homepage: https://github.com/seattlerb/ruby2ruby
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    ruby2ruby provides a means of generating pure ruby code easily from
+    RubyParser compatible Sexps
+
+ruby_parser (3.1.3)
+    Author: Ryan Davis
+    Homepage: https://github.com/seattlerb/ruby_parser
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    ruby_parser (RP) is a ruby parser written in pure ruby (utilizing
+    racc--which does by default use a C extension)
+
 rubygems-update (2.0.3)
     Authors: Jim Weirich, Chad Fowler, Eric Hodel
     Homepage: http://rubygems.org
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     RubyGems is a package management framework for Ruby
+
+sexp_processor (4.2.1)
+    Author: Ryan Davis
+    Homepage: https://github.com/seattlerb/sexp_processor
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    sexp_processor branches from ParseTree bringing all the generic sexp
+    processing tools with it
 
 simplecov (0.7.1)
     Author: Christoph Olszowka
@@ -975,3 +1008,11 @@ yajl-ruby (1.1.0)
 
     Ruby C bindings to the excellent Yajl JSON stream-based parser
     library.
+
+yard (0.8.6.1)
+    Author: Loren Segal
+    Homepage: http://yardoc.org
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Documentation tool for consistent and usable documentation in Ruby.

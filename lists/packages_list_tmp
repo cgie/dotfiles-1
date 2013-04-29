@@ -856,7 +856,7 @@ ii  liblangtag1                               0.4.0-6                           
 ii  liblcms1:i386                             1.19.dfsg-1.2ubuntu2                   i386         Little CMS color management library
 ii  liblcms2-2:i386                           2.4-0ubuntu3                           i386         Little CMS 2 color management library
 ii  libldap-2.4-2:i386                        2.4.31-1ubuntu2                        i386         OpenLDAP libraries
-ii  liblightdm-gobject-1-0                    1.6.0-0ubuntu2                         i386         LightDM GObject client library
+ii  liblightdm-gobject-1-0                    1.6.0-0ubuntu2.1                       i386         LightDM GObject client library
 ii  liblinear-tools                           1.8+dfsg-1ubuntu1                      i386         Standalone applications for LIBLINEAR
 ii  liblinear1                                1.8+dfsg-1ubuntu1                      i386         Library for Large Linear Classification
 ii  liblinebreak2                             2.1-1                                  i386         line breaking library for Unicode (shared library)
@@ -982,7 +982,7 @@ ii  libperl5.14                               5.14.2-21                         
 ii  libpipeline1:i386                         1.2.2-2                                i386         pipeline manipulation library
 ii  libpixman-1-0:i386                        0.28.2-0ubuntu1                        i386         pixel-manipulation library for X and cairo
 ii  libplist1                                 1.8-2                                  i386         Library for handling Apple binary and XML property lists
-ii  libplymouth2:i386                         0.8.8-0ubuntu6                         i386         graphical boot animation and logger - shared libraries
+ii  libplymouth2:i386                         0.8.8-0ubuntu6.1                       i386         graphical boot animation and logger - shared libraries
 ii  libpng12-0:i386                           1.2.49-1ubuntu2                        i386         PNG library - runtime
 ii  libpolkit-agent-1-0:i386                  0.105-1ubuntu1                         i386         PolicyKit Authentication Agent API
 ii  libpolkit-backend-1-0:i386                0.105-1ubuntu1                         i386         PolicyKit backend API
@@ -1291,7 +1291,7 @@ ii  libzltext-data                            0.12.10dfsg-8                     
 ii  libzltext0.12                             0.12.10dfsg-8                          i386         ZLibrary text model/viewer part (shared library)
 ii  libzlui-qt4                               0.12.10dfsg-8                          i386         Qt4 interface module for ZLibrary
 ii  light-themes                              13.04daily13.04.12-0ubuntu1            all          Light Themes (Ambiance and Radiance)
-ii  lightdm                                   1.6.0-0ubuntu2                         i386         Display Manager
+ii  lightdm                                   1.6.0-0ubuntu2.1                       i386         Display Manager
 ii  lightdm-remote-session-freerdp            1.0-0ubuntu2                           i386         Session and configuration to login with FreeRDP
 ii  lightdm-remote-session-uccsconfigure      1.1-0ubuntu2                           i386         Session and configuration to login to configure UCCS
 ii  lintian                                   2.5.11ubuntu13                         all          Debian package checker
@@ -1392,10 +1392,10 @@ ii  perl                                      5.14.2-21                         
 ii  perl-base                                 5.14.2-21                              i386         minimal Perl system
 ii  perl-modules                              5.14.2-21                              all          Core Perl modules
 ii  pkg-config                                0.26-1ubuntu3                          i386         manage compile and link flags for libraries
-ii  plymouth                                  0.8.8-0ubuntu6                         i386         graphical boot animation and logger - main package
-ii  plymouth-label                            0.8.8-0ubuntu6                         i386         graphical boot animation and logger - label control
-ii  plymouth-theme-ubuntu-logo                0.8.8-0ubuntu6                         i386         graphical boot animation and logger - ubuntu-logo theme
-ii  plymouth-theme-ubuntu-text                0.8.8-0ubuntu6                         i386         graphical boot animation and logger - ubuntu-logo theme
+ii  plymouth                                  0.8.8-0ubuntu6.1                       i386         graphical boot animation and logger - main package
+ii  plymouth-label                            0.8.8-0ubuntu6.1                       i386         graphical boot animation and logger - label control
+ii  plymouth-theme-ubuntu-logo                0.8.8-0ubuntu6.1                       i386         graphical boot animation and logger - ubuntu-logo theme
+ii  plymouth-theme-ubuntu-text                0.8.8-0ubuntu6.1                       i386         graphical boot animation and logger - ubuntu-logo theme
 ii  pm-utils                                  1.4.1-9git1                            all          utilities and scripts for power management
 ii  policykit-1                               0.105-1ubuntu1                         i386         framework for managing administrative policies and privileges
 ii  policykit-1-gnome                         0.105-1ubuntu4                         i386         GNOME authentication agent for PolicyKit-1
@@ -1768,7 +1768,7 @@ ii  xcursor-themes                            1.0.3-1                           
 ii  xdg-user-dirs                             0.14-0ubuntu5                          i386         tool to manage well known user directories
 ii  xdg-user-dirs-gtk                         0.10-0ubuntu1                          i386         tool to manage well known user directories (Gtk extension)
 ii  xdg-utils                                 1.1.0~rc1-2ubuntu7                     all          desktop integration utilities from freedesktop.org
-ii  xdiagnose                                 3.5                                    all          X.org diagnosis tool
+ii  xdiagnose                                 3.5.1                                  all          X.org diagnosis tool
 ii  xfonts-base                               1:1.0.3                                all          standard fonts for X
 ii  xfonts-encodings                          1:1.0.4-1ubuntu1                       all          Encodings for X.Org fonts
 ii  xfonts-mathml                             6ubuntu1                               all          Type1 Symbol font for MathML
