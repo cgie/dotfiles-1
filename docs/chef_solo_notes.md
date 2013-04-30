@@ -5,7 +5,7 @@
 
 > twitter: @leopard_me
 
-Today we will talk about Chef and usage Chef Solo like a Pro. All example code you can find here: https://github.com/le0pard/chef-solo-example/tree/1.0
+All example code you can find here: https://github.com/le0pard/chef-solo-example/tree/1.0
 
 ## What is Chef?
 
@@ -957,23 +957,28 @@ execute "nodejs make install" do
 end
 ```
 
-Next, we should add default attributes for this recipe. You should create file “tomatoes/attributes/node_js.rb” with content:
+Next, we should add default attributes for this recipe. You should create file `tomatoes/attributes/node_js.rb` with content:
 
+```ruby
 default['nodejs']['version'] = '0.8.6'
 default['nodejs']['checksum'] = 'dbd42800e69644beff5c2cf11a9d4cf6dfbd644a9a36ffdd5e8c6b8db9240854'
 default['nodejs']['dir'] = '/usr/local'
 default['nodejs']['src_url'] = "http://nodejs.org/dist"
+```
 
-And add this in role “web” run_list:
+And add this in role `web` run_list:
 
+```ruby
 "run_list": [
   "recipe[nginx::source]",
   "recipe[tomatoes]",
   "recipe[tomatoes::node_js]"
 ]
+```
 
-Now you can test this new recipe by “vagrant provision” command. After running this command, the server will node.js:
+Now you can test this new recipe by `vagrant provision` command. After running this command, the server will node.js:
 
+```
 $ vagrant ssh
 Welcome to Ubuntu 12.04.1 LTS (GNU/Linux 3.2.0-23-generic x86_64)
 
@@ -982,28 +987,36 @@ Welcome to your Vagrant-built virtual machine.
 Last login: Mon Aug 20 19:28:45 2012 from 10.0.2.2
 vagrant@precise64:~$ node -v
 v0.8.6
+```
 
-Сorrect dependencies
+## Сorrect dependencies
 
-This node.js recipe will fail on new server, because to install node.js on server should be installed g++ and gcc before running this recipe. For this exist “build-essential” cookbook with recipes. We should add this in top of our node.js recipe:
+This `node.js recipe` will fail on new server, because to install node.js on server should be installed g++ and gcc before running this recipe. For this exist `build-essential` cookbook with recipes. We should add this in top of our node.js recipe:
 
+```ruby
 include_recipe "build-essential"
+```
 
-This cookbook automatically downloaded by nginx cookbook (it is added as dependency in “metadata.rb”).
+This cookbook is automatically downloaded by nginx cookbook (it is added as dependency in `metadata.rb`).
 
-Now we can use command “include_recipe” in default.rb recipe:
+Now we can use command `include_recipe` in `default.rb` recipe:
 
+```ruby
 include_recipe "tomatoes::node_js"
+```
 
 And rollback last run_list (without node_js recipe, default recipe from tomatoes cookbook automatically will execute node_js recipe):
 
+```ruby
 "run_list": [
   "recipe[nginx::source]",
   "recipe[tomatoes]"
 ]
+```
 
-You can also create “metadata.rb” file for your cookbook and add some info about this cookbook:
+You can also create `metadata.rb` file for your cookbook and add some info about this cookbook:
 
+```ruby
 name              "tomatoes"
 maintainer        "Someone"
 maintainer_email  "your_email@example.com"
@@ -1015,33 +1028,21 @@ recipe "tomatoes", "Installs nginx configuration, git and node.js"
 recipe "tomatoes::node_js", "Installs only node.js"
 
 depends "build-essential"
+```
 
-Summary
+## Summary
 
 In the current article we have learn more about Chef cookbooks. In the next article we will learn more about Ohai and how to write Ohai plugin.
 
 All example code you can find here: github.com/le0pard/chef-solo-example/tree/4.0.
 
-That’s all folks! Thank you for reading till the end.
+# Getting Started with Chef Solo. Part 5
 
-Published: January 12 2013
-
-    category:
-    chef 7
-
-    tags:
-    chef 7
-    solo 6
-
-    Tweet
-
-
-Getting Started with Chef Solo. Part 5
-
-Hello my dear friends. Today we will continue talk about Chef Solo. All example code you can find here: github.com/le0pard/chef-solo-example/tree/5.0.
+Today we will continue talk about Chef Solo. All example code you can find here: github.com/le0pard/chef-solo-example/tree/5.0.
 
 In the previous article we learned more about Chef cookbooks. In this article we will learn what is Ohai and how to write Ohai plugin.
-Ohai
+
+## Ohai
 
 Ohai detects data about your operating system. It can be used standalone, but its primary purpose is to provide node data to Chef.
 
@@ -1049,16 +1050,19 @@ When invoked, it collects detailed, extensible information about the machine it�
 
 When Chef configures the node object during each Chef run, these attributes are used by the chef-client to ensure that certain properties remain unchanged. These properties are also referred to as automatic attributes. In our case (in Chef Solo), this attributes available in node object. For example:
 
+```ruby
 node['platform'] # The platform on which a node is running. This attribute helps determine which providers will be used.
 node['platform_version']	# The version of the platform. This attribute helps determine which providers will be used.
 node['hostname']	# The host name for the node.
+```
 
-Ohai plugin
+## Ohai plugin
 
 In our cookbook “tomatoes” we already have node.js recipe. Let’s create ohai plugin, which will provide for us information about already installed on system node.js. We will use this information to check if we need install node.js on server.
 
-First of all create in “tomatoes” new recipe “ohai_plugin.rb” with content:
+First of all create in “tomatoes” new recipe `ohai_plugin.rb` with content:
 
+```ruby
 template "#{node['ohai']['plugin_path']}/system_node_js.rb" do
   source "plugins/system_node_js.rb.erb"
   owner "root"
@@ -1070,9 +1074,11 @@ template "#{node['ohai']['plugin_path']}/system_node_js.rb" do
 end
 
 include_recipe "ohai"
+```
 
-This recipe will generate ohai plugin from template “system_node_js.rb”. Next we should create this template in folder “tomatoes/templates/default/plugins”:
+This recipe will generate ohai plugin from template `system_node_js.rb`. Next we should create this template in folder `tomatoes/templates/default/plugins`:
 
+```ruby
 provides "system_node_js"
 provides "system_node_js/version"
 
@@ -1082,6 +1088,7 @@ system_node_js[:version] = nil unless system_node_js[:version]
 status, stdout, stderr = run_command(:no_status_check => true, :command => "<%= @node_js_bin %> --version")
 
 system_node_js[:version] = stdout[1..-1] if 0 == status
+```
 
 In first two lines we set by method “provides” automatic attributes, which will provide for us this plugin.
 
@@ -1089,14 +1096,17 @@ Most of the information we want to lookup would be nested in some way, and ohai 
 
 In the end of code, plugin set the version of node.js, if node.js installed on server. That’s it!
 
-Next, let’s try this plugin by adding “default.rb” recipe this content:
+Next, let’s try this plugin by adding `default.rb` recipe this content:
 
+```ruby
 include_recipe "tomatoes::ohai_plugin"
 # remove this in your prod recipe
 puts "Node version: #{node.system_node_js.version}" if node['system_node_js']
+```
 
-Now test it by running the command “vagrant provision”. When you first start, you will not see anything, as the plugin will be delivered later chef-client launched. But the second time, you should see a similar picture in the log:
+Now test it by running the command `vagrant provision`. When you first start, you will not see anything, as the plugin will be delivered later chef-client launched. But the second time, you should see a similar picture in the log:
 
+```
 [Sat, 26 Jan 2013 18:42:16 +0000] INFO: ohai plugins will be at: /etc/chef/ohai_plugins
 [Sat, 26 Jan 2013 18:42:16 +0000] INFO: Processing remote_directory[/etc/chef/ohai_plugins] action create (ohai::default line 27)
 [Sat, 26 Jan 2013 18:42:16 +0000] INFO: Processing cookbook_file[/etc/chef/ohai_plugins/README] action create (dynamically defined)
@@ -1107,25 +1117,31 @@ Node version: 0.8.6
 [Sat, 26 Jan 2013 18:42:17 +0000] INFO: Processing template[/etc/chef/ohai_plugins/nginx.rb] action create (nginx::ohai_plugin line 27)
 [Sat, 26 Jan 2013 18:42:17 +0000] INFO: Processing remote_directory[/etc/chef/ohai_plugins] action nothing (ohai::default line 27)
 [Sat, 26 Jan 2013 18:42:17 +0000] INFO: Processing ohai[custom_plugins] action nothing (ohai::default line 42)
+```
 
 In this case we can little change our node.js recipe:
 
+```ruby
 execute "nodejs make install" do
   environment({"PATH" => "/usr/local/bin:/usr/bin:/bin:$PATH"})
   command "make install"
   cwd "/usr/local/src/node-v#{node['nodejs']['version']}"
   not_if {node['system_node_js'] && node['system_node_js']['version'] == node['nodejs']['version'] }
 end
+```
 
-Let’s try to change node.js version in role “web.json”:
+Let’s try to change node.js version in role `web.json`:
 
+```ruby
 "nodejs": {
   "version": "0.8.18",
   "checksum": "e3bc9b64f60f76a32b7d9b35bf86b5d1b8166717"
 }
+```
 
-And restart “vagrant provision”:
+And restart `vagrant provision`:
 
+```
 [Sat, 26 Jan 2013 19:09:32 +0000] INFO: Processing remote_file[/usr/local/src/node-v0.8.18.tar.gz] action create_if_missing (tomatoes::node_js line 16)
 [Sat, 26 Jan 2013 19:10:17 +0000] INFO: remote_file[/usr/local/src/node-v0.8.18.tar.gz] updated
 [Sat, 26 Jan 2013 19:10:17 +0000] INFO: remote_file[/usr/local/src/node-v0.8.18.tar.gz] mode changed to 644
@@ -1135,9 +1151,10 @@ And restart “vagrant provision”:
 [Sat, 26 Jan 2013 19:18:16 +0000] INFO: bash[compile node.js] ran successfully
 [Sat, 26 Jan 2013 19:18:16 +0000] INFO: Processing execute[nodejs make install] action run (tomatoes::node_js line 40)
 [Sat, 26 Jan 2013 19:18:19 +0000] INFO: execute[nodejs make install] ran successfully
+```
 
 And after some time, the server will have a new node.js:
-
+```
 $ vagrant ssh
 Welcome to Ubuntu 12.04.1 LTS (GNU/Linux 3.2.0-23-generic x86_64)
 
@@ -1146,9 +1163,11 @@ Welcome to your Vagrant-built virtual machine.
 Last login: Sat Jan 26 19:19:00 2013 from 10.0.2.2
 vagrant@precise64:~$ node -v
 v0.8.18
+```
 
 And on next launch of chef solo you should see new version of node.js:
 
+```
 [Sat, 26 Jan 2013 19:20:22 +0000] INFO: Processing remote_directory[/etc/chef/ohai_plugins] action create (ohai::default line 27)
 [Sat, 26 Jan 2013 19:20:22 +0000] INFO: Processing cookbook_file[/etc/chef/ohai_plugins/README] action create (dynamically defined)
 [Sat, 26 Jan 2013 19:20:22 +0000] INFO: Processing ohai[custom_plugins] action reload (ohai::default line 42)
@@ -1156,26 +1175,14 @@ And on next launch of chef solo you should see new version of node.js:
 Node version: 0.8.18
 [Sat, 26 Jan 2013 19:20:23 +0000] INFO: Processing ohai[reload_nginx] action nothing (nginx::ohai_plugin line 22)
 [Sat, 26 Jan 2013 19:20:23 +0000] INFO: Processing template[/etc/chef/ohai_plugins/nginx.rb] action create (nginx::ohai_plugin line 27)
+```
 
-Summary
+## Summary
 
 In the current article we have learn Ohai and how to write Ohai plugin.
 
 All example code you can find here: github.com/le0pard/chef-solo-example/tree/5.0.
 
-That’s all folks! Thank you for reading till the end.
-
-Published: January 26 2013
-
-    category:
-    chef 7
-
-    tags:
-    chef 7
-    solo 6
-
-    Tweet
-
-http://leopard.in.ua/2013/01/26/chef-solo-getting-started-part-5/
+> source: http://leopard.in.ua/2013/01/26/chef-solo-getting-started-part-5/
 
 -----
