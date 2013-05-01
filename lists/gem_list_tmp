@@ -230,6 +230,14 @@ facets (2.9.3)
 
     Premium Ruby Extensions
 
+factory_girl (4.2.0)
+    Authors: Josh Clayton, Joe Ferris
+    Homepage: https://github.com/thoughtbot/factory_girl
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    factory_girl provides a framework and DSL for defining and using
+    model instance factories.
+
 fast-stemmer (1.0.2)
     Author: Roman Shterenzon
     Homepage: http://github.com/romanbsd/fast-stemmer
@@ -331,6 +339,14 @@ hobbit (0.0.3)
     Installed at: /usr/local/lib/ruby/gems/2.0.0
 
     A minimalistic microframework built on top of rack
+
+hoe (3.6.0)
+    Author: Ryan Davis
+    Homepage: http://www.zenspider.com/projects/hoe.html
+    License: MIT
+    Installed at: /usr/local/lib/ruby/gems/2.0.0
+
+    Hoe is a rake/rubygems helper for project Rakefiles
 
 i18n (0.6.4, 0.6.1)
     Authors: Sven Fuchs, Joshua Harvey, Matt Aimonetti, Stephan Soller,
@@ -448,10 +464,11 @@ mime-types (1.23)
     This library allows for the identification of a file's likely MIME
     content type
 
-minitest (4.7.3, 4.3.2)
+minitest (5.0.0, 4.7.3, 4.3.2)
     Author: Ryan Davis
     Homepage: https://github.com/seattlerb/minitest
-    Installed at (4.7.3): /usr/local/lib/ruby/gems/2.0.0
+    Installed at (5.0.0): /usr/local/lib/ruby/gems/2.0.0
+                 (4.7.3): /usr/local/lib/ruby/gems/2.0.0
                  (4.3.2, default): /usr/local/lib/ruby/gems/2.0.0
 
     minitest provides a complete suite of testing facilities supporting
