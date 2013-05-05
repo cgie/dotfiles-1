@@ -37,7 +37,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 75 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
 (setq fancy-splash-image (expand-file-name "~/Pictures/emacs_splash_image.xpm"))
 
@@ -58,6 +58,7 @@
 (global-set-key "\C-l" 'goto-line)
 
 (global-hl-line-mode +1)
+(column-number-mode 1)
 
 (defun move-line-up ()
   "Move up the current line."
@@ -116,5 +117,11 @@
 
 ;; enable for all programming modes
 (add-hook 'prog-mode-hook 'subword-mode)
+
+;; http://www.emacswiki.org/emacs/BackupDirectory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 ;;
