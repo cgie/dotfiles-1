@@ -4,8 +4,6 @@
         <title>Iscrizioni di Eddie in Google Reader</title>
     </head>
     <body>
-        <outline text="Slashdot" title="Slashdot" type="rss"
-            xmlUrl="http://rss.slashdot.org/Slashdot/slashdot" htmlUrl="http://slashdot.org/"/>
         <outline title="Ruby" text="Ruby">
             <outline text="A Fresh Cup" title="A Fresh Cup" type="rss"
                 xmlUrl="http://afreshcup.com/home/rss.xml" htmlUrl="http://afreshcup.com/home/"/>
@@ -20,6 +18,8 @@
                 title="giant robots smashing into other giant robots"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots" htmlUrl="http://robots.thoughtbot.com/"/>
+            <outline text="Opscode Blog" title="Opscode Blog" type="rss"
+                xmlUrl="http://www.opscode.com/blog/feed/" htmlUrl="http://www.opscode.com/blog"/>
             <outline text="Planet Ruby" title="Planet Ruby" type="rss"
                 xmlUrl="http://planetruby.0x42.net/rss20.xml" htmlUrl="http://planetruby.0x42.net/"/>
             <outline text="Practicing Ruby" title="Practicing Ruby"
@@ -33,14 +33,14 @@
             <outline text="Ruby Flow" title="Ruby Flow" type="rss"
                 xmlUrl="http://feeds.feedburner.com/Rubyflow" htmlUrl="http://www.rubyflow.com/"/>
             <outline text="Ruby Freelancers" title="Ruby Freelancers"
-                type="rss" xmlUrl="http://rubyfreelancers.com/feed/" htmlUrl="http://rubyfreelancers.com"/>
+                type="rss" xmlUrl="http://rubyfreelancers.com/feed/" htmlUrl="http://freelancersshow.com"/>
             <outline text="Ruby Inside" title="Ruby Inside" type="rss"
                 xmlUrl="http://feeds.feedburner.com/RubyInside" htmlUrl="http://www.rubyinside.com/"/>
             <outline text="Ruby Learning Blog"
                 title="Ruby Learning Blog" type="rss"
                 xmlUrl="http://feeds.feedburner.com/LearningRubyBlog" htmlUrl="http://rubylearning.com/blog"/>
             <outline text="Ruby News" title="Ruby News" type="rss"
-                xmlUrl="http://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="http://www.ruby-lang.org/en/feeds/news.rss/"/>
+                xmlUrl="http://www.ruby-lang.org/en/feeds/news.rss" htmlUrl="http://www.ruby-lang.org/en/feeds/news.rss"/>
             <outline text="Ruby Quicktips" title="Ruby Quicktips"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/RubyQuicktips" htmlUrl="http://rubyquicktips.com/"/>
@@ -136,6 +136,8 @@
             <outline text="Ruby Kitchen : Ruby Kitchen | Blog"
                 title="Ruby Kitchen : Ruby Kitchen | Blog" type="rss"
                 xmlUrl="http://rubykitchen.in/blog/articles.atom" htmlUrl="http://rubykitchen.in"/>
+            <outline text="Ruby Red Bricks" title="Ruby Red Bricks"
+                type="rss" xmlUrl="http://rubyredbricks.com/atom.xml" htmlUrl="http://rubyredbricks.com/"/>
             <outline text="Schneems" title="Schneems" type="rss"
                 xmlUrl="http://schneems.com/rss" htmlUrl="http://schneems.com/"/>
             <outline text="Send More Paramedics"
