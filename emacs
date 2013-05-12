@@ -125,6 +125,7 @@
       `((".*" ,temporary-file-directory t)))
 
 ;; http://jblevins.org/projects/markdown-mode/
+(add-to-list 'load-path "~/.emacs.d/scripts/")
 (autoload 'markdown-mode "markdown-mode"
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
