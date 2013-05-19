@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
-        <title>Iscrizioni di Eddie in Google Reader</title>
+        <title>Zeroed's RSS</title>
     </head>
     <body>
         <outline title="Ruby" text="Ruby">
@@ -33,7 +33,7 @@
             <outline text="Ruby Flow" title="Ruby Flow" type="rss"
                 xmlUrl="http://feeds.feedburner.com/Rubyflow" htmlUrl="http://www.rubyflow.com/"/>
             <outline text="Ruby Freelancers" title="Ruby Freelancers"
-                type="rss" xmlUrl="http://rubyfreelancers.com/feed/" htmlUrl="http://freelancersshow.com"/>
+                type="rss" xmlUrl="http://rubyfreelancers.com/feed/" htmlUrl="http://www.freelancersshow.com"/>
             <outline text="Ruby Inside" title="Ruby Inside" type="rss"
                 xmlUrl="http://feeds.feedburner.com/RubyInside" htmlUrl="http://www.rubyinside.com/"/>
             <outline text="Ruby Learning Blog"
@@ -71,6 +71,9 @@
                 xmlUrl="http://benhoskin.gs/index.atom" htmlUrl="http://benhoskin.gs"/>
             <outline text="Caius Theory" title="Caius Theory" type="rss"
                 xmlUrl="http://caiustheory.com/atom/1" htmlUrl="http://caiustheory.com/"/>
+            <outline text="Civet: Controlling the Spice"
+                title="Civet: Controlling the Spice" type="rss"
+                xmlUrl="http://www.civet.ws/feed/" htmlUrl="http://www.civet.ws"/>
             <outline text="Coding Horror" title="Coding Horror"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/codinghorror/" htmlUrl="http://www.codinghorror.com/blog/"/>
@@ -156,6 +159,9 @@
                 xmlUrl="http://steve-yegge.blogspot.com/feeds/posts/default" htmlUrl="http://steve-yegge.blogspot.com/"/>
             <outline text="The GitHub Blog" title="The GitHub Blog"
                 type="rss" xmlUrl="https://github.com/blog.atom" htmlUrl="https://github.com/blog"/>
+            <outline text="The Life of a Radar"
+                title="The Life of a Radar" type="rss"
+                xmlUrl="http://feeds.feedburner.com/ryanbigg" htmlUrl="http://ryanbigg.com"/>
             <outline text="The Minimalists" title="The Minimalists"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/theminimalists/Hztx" htmlUrl="http://www.theminimalists.com"/>
