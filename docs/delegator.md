@@ -1,269 +1,112 @@
-﻿# Ruby delegate.rb secrets
-> by Jim Gay
+﻿# Getting to Know the Ruby Standard Library – Delegator
 
-You've seen `SimpleDelegator` in action and used it a bit yourself. The
-delegate library is more than just a fancy `method_missing` wrapper.
-
-## Easy Wrappers
-
-First and foremost, `SimpleDelegator` is a fancy `method_missing` wrapper.
-I know I said the library was more than that, just bear with me.
-
-Here's some sample code:
+Today we will examine ruby’s implementation of the Proxy pattern, with the `Delegator class`. We have already seen and example of it in use with WeakRef. A Delegator can be used when you want to intercept calls to some object without concerning the caller. For example we can use a Delegator to hide the latency from http calls or other slow code:
 
 ```ruby
-jim = Person.new # some object
+  require 'delegate'
 
-class Displayer < SimpleDelegator
-  def name_with_location
-    "#{__getobj__.name} of #{__getobj__.city}"
+  class Future < SimpleDelegator
+    def initialize(&block)
+      @_thread = Thread.start(&block)
+    end
+
+    def __getobj__
+      __setobj__(@_thread.value) if @_thread.alive?
+
+      super
+    end
   end
-end
+``` 
 
-displayer = Displayer.new(jim)
-
-puts displayer.name_with_location #=> "Jim of Some City"
-```
-
-That `Displayer` class initializes with an object and automatically sets
-it as `@delegate_sd_obj`. You'll also get both a `__getobj__` and a
-`__setobj__` method to handle the assignment of the `@delegate_sd_obj`.
-
-You may want to alias those methods so they won't be so ugly when you
-use them: `alias_method :__getobj__, :object`.
-
-## Method Missing
-
-Here's an expanded view of how it handles `method_missing`:
+The `Future` will invoke whatever is passed to it without blocking the rest of your code until you try to access the result. You could use it to issue several http requests and then process them later:
 
 ```ruby
-target = self.__getobj__ # Get the target object
-if target.respond_to?(the_missing_method)
-  target.__send__(the_missing_method, *arguments, &block)
-else
-  super
-end
+  require 'net/http'
+  
+  # These will each execute immediately
+  google = Future.new{ Net::HTTP.get_response(URI('http://www.google.com')).body  }
+  yahoo  = Future.new{ Net::HTTP.get_response(URI('http://www.yahoo.com')).body  }
+
+  # These will block until their requests have loaded
+  puts google
+  puts yahoo
 ```
 
-The actual code is a bit more compact than that, but it's that simple.
-`SimpleDelegator` is so simple, in fact, that you can create your own
-implementation just like this:
+In this example, `google` and `yahoo` will both spawn threads, however when we try to print them, the `Future` instance will block until the thread is done, and then pass on method calls to the result of our http call. You can grab the code from github and give it try yourself. Lets take a look at how `Delegator` works. Open up the source, and follow along, if you have Qwandry installed qw delegate will do the trick.
+
+The file `delegate.rb` defines two classes, `Delegator`, an abstract class, and `SimpleDelegator` which implements the missing methods in `Delegator`. Let’s look at the first few lines of `Delegator`:
 
 ```ruby
-class MyWrapper
-  def initialize(target)
-    @target = target
+  class Delegator
+    [:to_s,:inspect,:=~,:!~,:===].each do |m|
+      undef_method m
+    end
+    ...
+```
+
+You will notice that a block of code is being executed as part of the ruby class definition. This is entirely valid, and will be executed in the scope of the `Delegator` class. `undef_method` is called to remove the default implementations of some common methods defined by `Object`. We will see why in a little bit. Next up is the initializer:
+
+```ruby
+  def initialize(obj)
+    __setobj__(obj)
   end
-  attr_reader :target
-
-  def method_missing(method_name, *args, &block)
-    target.respond_to?(method_name) ? target.__send__(method_name,
-*args, &block) : super
-  end
-end
 ```
 
-That's not everything, but if all you need is simple use of
-`method_missing`, this is how it works.
-
-## SimpleDelegator Methods
-
-`SimpleDelegator` adds some convenient ways to see what methods are
-available. For example, if we have our `jim` object wrapped by
-`displayer`, what can we do with it? Well if we call `displayer.methods`
-we'll get back a unique collection of both the object's and wrapper's
-methods.
-
-Here's what it does:
+The method `__setobj__` might look strange, but it is just a normal method with an obscure name. When a `Delegator` is instantiated, the object it is delegating to is stored away with `__setobj__`. 
+Next look at how `Delegator` implements `method_missing`, and you’ll see what all the prep work was for:
 
 ```ruby
-def methods(all=true)
-  __getobj__.methods(all) | super
-end
+  def method_missing(m, *args, &block)
+    ...
+      target = self.__getobj__
+      unless target.respond_to?(m)
+        super(m, *args, &block)
+      else
+        target.__send__(m, *args, &block)
+      end
+    ...
 ```
 
-It defines the methods method and uses the union method “|” from `Array`
-to make a unique collection. The object's methods are combined with
-those of the wrapper.
+`method_missing` is defined on `Object`, and will be called any time that you try to call method that is not defined. 
+This is the key to how `Delegator` works, any methods not defined on `Delegator` are handled by this method. Before we dive into this, we should be aware of what the arguments to `method_missing` are. The `m` is the missing method’s name as a symbol. The `args` are zero or more arguments that would have been passed to that method. The `&block` is the block that the method was called with, or `nil` if no block was given.
 
-```
-['a','b'] | ['c','b'] #=> ['a','b','c']
-```
+The first thing `method_missing` does here is call `__getobj__`. 
+We've already seen `__setobj__`, it sets the object that `Delegator` wraps, so we can reason that `__getobj__` gets it. 
+Once the wrapped object has been obtained, it checks to see if that object implements the method we want to call. If not, then we call `Object#method_missing`, which is going to raise an exception. If the wrapped object does implement our method, then it passes it on. 
 
-The same behavior is implemented for `public_methods` and
-`protected_methods` but not `private_methods`. Private methods are
-private, so you probably shouldn't be accessing those from the outside
-anyway.
+The methods that were undefined earlier are guaranteed to be passed on to the wrapped object, and the odd looking `__getobj__` and `__setobj__` are unlikely to collide with any other object’s methods. 
 
-Why does it do this? Don't we want to know that the main object and
-the SimpleDelegator object have methods of the same name?
+Ruby’s flexibility really shines in this example, in just a few lines of code, we get a very useful class that can be used to implement advanced behavior.
 
-Not really.
-
-From the outside all we care to know is what messages we can send to
-an object. If both your main object and your wrapper have methods of
-the same name, the wrapper will intercept the message and handle it.
-What you choose to do inside your wrapper is up to you, but all these
-methods lists need to provide is that the wrapper can receive any of
-those messages.
-
-## Handling clone and dup
-
-`SimpleDelegator` will also prepare `clones` and `dups` for your target object.
+Now let's figure out why there are two classes defined here. If you look down at `Delegator#__setobj__` and `Delegator#__getobj__` we'll see something interesting:
 
 ```ruby
-def initialize_clone(obj) # :nodoc:
-  self.__setobj__(obj.__getobj__.clone)
-end
-def initialize_dup(obj) # :nodoc:
-  self.__setobj__(obj.__getobj__.dup)
-end
-```
-
-Read Jon Leighton's post about `initialize_clone`, `initialize_dup` and
-`initialize_copy` in Ruby for more details about when those methods are
-called.
-
-## Making your own SimpleDelegator
-
-`SimpleDelegator` actually inherits almost all of this from `Delegator`.
-In fact, the only changes that `SimpleDelegator` makes is 2 convenience
-methods.
-
-```ruby
-class SimpleDelegator < Delegator
   def __getobj__
-    @delegate_sd_obj
+    raise NotImplementedError, "need to define `__getobj__'"
   end
+  ...
   def __setobj__(obj)
-    raise ArgumentError, "cannot delegate to self" if self.equal?(obj)
-    @delegate_sd_obj = obj
+    raise NotImplementedError, "need to define `__setobj__'"
   end
-end
 ```
 
-Subtracting all the comments around what those methods mean, that's
-the entirety of the class definition as it is in the standard library.
-If you prefer to use your own and call it `SuperFantasticDelegator`, you
-only need to make these same getter and setter methods and you've got
-all that you need to replace `SimpleDelegator`.
-
-Keep in mind, however, that the `__setobj__` method has some protection
-in there against setting the target object to the wrapper itself.
-You'll need to do that too unless you want to get stuck in an endless
-method_missing loop.
-
-## Using DelegateClass
-
-The `delegate library` also provides a method called `DelegateClass` which
-returns a new class.
-
-Here's how you might use it:
+Neither of these methods are implemented, effectively making `Delegator` an <b>abstract class</b>. For connivence, `SimpleDelegator` implements them in a reasonable manner. There are a few other special methods defined on `Delegator` as well:
 
 ```ruby
-class Tempfile < DelegateClass(File)
-  def initialize(basename, tmpdir=Dir::tmpdir)
-    @tmpfile = File.open(tmpname, File::RDWR|File::CREAT|File::EXCL, 0600)
-    super(@tmpfile)
+  def ==(obj)
+    return true if obj.equal?(self)
+    self.__getobj__ == obj
   end
-
-  # more methods here...
-end
 ```
 
-This creates a `Tempfile` class that has all the methods defined on `File`
-but it automatically sets up the message forwarding with `method_missing`.
+First `Delegator` checks for equality against itself, then it checks it against the wrapped object. This way `==` will return `true` if you pass in either the wrapped object, or the delegate itself. In this same manner you can intercept calls to specific methods, or override `Delegator#method_missing` to intercept all calls.
 
-Inside the `DelegateClass` method it creates a new class with 
+We have learned about a powerful design pattern that is easily implemented in ruby. We also saw a very good use for ruby’s `method_missing`. How have you used `Delegator` or found similar proxy patterns in ruby?
 
-`klass = Class.new(Delegator)`
+> Filed under ruby, stdlib
 
-Then it gathers a collection of methods to define on this new class.
+> January 18, 2011 · 8:53 pm
 
-```ruby
-methods = superclass.instance_methods
-methods -= ::Delegator.public_api
-methods -= [:to_s,:inspect,:=~,:!~,:===]
-```
+> http://endofline.wordpress.com/2011/01/18/ruby-standard-library-delegator/
 
-It gets the `instance_methods` from the superclass and subtracts and
-methods already in the `Delegator.public_api` (which is just the
-`public_instance_methods`). Then it removes some special string and
-comparison methods (probably because you'll want to control these
-yourself and not have any surprises).
-
-Next it opens up the klass that it created and defines all the leftover methods.
-
-```ruby
-klass.module_eval do
-  def __getobj__  # :nodoc:
-    @delegate_dc_obj
-  end
-  def __setobj__(obj)  # :nodoc:
-    raise ArgumentError, "cannot delegate to self" if self.equal?(obj)
-    @delegate_dc_obj = obj
-  end
-  methods.each do |method|
-    define_method(method, Delegator.delegating_block(method))
-  end
-end
-```
-
-The code is sure to define the `__getobj__` and `__setobj__ methods` so
-that it will behave like `SimpleDelegator`. Remember, it's copying
-methods from `Delegator` which doesn't define `__getobj__` or `__setobj__`.
-
-What's interesting here is that it's using
-`Delegator.delegating_block(method)` to create each of the methods. That
-`delegating_block` returns a lambda that is used as the block for the
-method definition. As it defines each of those methods in the methods
-collection, it creates a forwarding call to the target object. Here's
-the equivalent of what each of those methods will do:
-
-```ruby
-target = self.__getobj__
-target.__send__(method_name, *arguments, &block)
-```
-
-For every method that it gathers to define on this new `DelegateClass`
-it forwards the message to the target object as defined by `__getobj__`.
-Pay close attention to that. Remember that I pointed out how you can
-make your own `SimpleDelegator` and create your own getter and setter
-methods? Well `DelegateClass` creates methods that expect `__getobj__`
-specifically. So if you want to use `DelegateClass` but don't want to
-use that method explicitly, you'll need to rely on `alias_method` to
-name it something else. All of your automatically defined methods rely
-on `__getobj__`.
-
-Lastly, before returning the klass, the `public_instance_methods` and
-`protected_instance_methods` are defined. There's some interesting
-things going on in those method definitions, but I'll keep the
-explanation simple for now.
-
-This `Tempfile` class that we created is actually exactly how the
-standard library's `Tempfile` is defined.
-
-If you're not familiar with it, you can use it like this:
-
-```ruby
-require 'tempfile'
-file = Tempfile.new('foo')
-# then do whatever you need with a tempfile
-```
-
-If you dive into that library you'll see:
-
-```ruby
-class Tempfile < DelegateClass(File)
-```
-
-The tempfile library relies on the `delegate` library, but not in the
-way that you might find in the wild. Often I see developers using only
-the SimpleDelegator class, but as you can see there's a handful of
-other ways to make use of delegate to handle message forwarding for
-you.
-
-
-> 1999 - 2013 © Saturn Flyer LLC 2321 S. Buchanan St. Arlington, VA 22206
-> http://www.saturnflyer.com/blog/jim/2013/03/21/ruby-delegate-rb-secrets/
-
+> http://twitter.com/adamsanderson
