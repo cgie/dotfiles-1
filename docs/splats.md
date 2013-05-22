@@ -107,6 +107,7 @@ If for some reason the previous examples seemed like great ideas to you, you’l
   "Hello".to_a  #=> NoMethodError: undefined method `to_a' for "Hello":String
   a = *(1..3)   #=> [1, 2, 3]
   a = *[1,2,3]  #=> [1, 2, 3]
+```
 
 This can be a nice way to make sure that a value is always an array, especially since it will handle objects that do not implement `to_a`.
 
