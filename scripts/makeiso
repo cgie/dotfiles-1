@@ -42,3 +42,6 @@ In this example:
     * Last in the list are the files selected for packaging into the .iso (everything in /home/carla/)
 date +%Y%m%d
 mkisofs -o docs.iso -J -r -R -l -v -V doc Documents/
+genisoimage -o documents.iso -J -r -R -l -v -V documents Documents/
+
+_
