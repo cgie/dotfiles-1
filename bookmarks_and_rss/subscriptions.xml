@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="1.0">
     <head>
-        <title>Zeroed's RSS</title>
+        <title>Google Reader</title>
     </head>
     <body>
         <outline title="Ruby" text="Ruby">
@@ -25,6 +25,9 @@
             <outline text="Practicing Ruby" title="Practicing Ruby"
                 type="rss"
                 xmlUrl="http://blog.rubybestpractices.com/feed.xml" htmlUrl="http://blog.rubybestpractices.com/"/>
+            <outline text="Reddit for Rails hackers"
+                title="Reddit for Rails hackers" type="rss"
+                xmlUrl="http://reddit.com/r/rails/.rss" htmlUrl="http://www.reddit.com/r/rails/"/>
             <outline text="reddit for ruby hackers"
                 title="reddit for ruby hackers" type="rss"
                 xmlUrl="http://www.reddit.com/r/ruby/.rss" htmlUrl="http://www.reddit.com/r/ruby/"/>
@@ -66,7 +69,7 @@
                 xmlUrl="http://iain.nl/feed" htmlUrl="http://iain.nl"/>
             <outline text="Automate All the Things!"
                 title="Automate All the Things!" type="rss"
-                xmlUrl="http://dougireton.com/atom.xml" htmlUrl="http://dougireton.github.com/"/>
+                xmlUrl="http://dougireton.com/atom.xml" htmlUrl="http://dougireton.github.io/"/>
             <outline text="benhoskin.gs" title="benhoskin.gs" type="rss"
                 xmlUrl="http://benhoskin.gs/index.atom" htmlUrl="http://benhoskin.gs"/>
             <outline text="Caius Theory" title="Caius Theory" type="rss"
@@ -107,7 +110,7 @@
                 xmlUrl="http://feeds.feedburner.com/rbJL" htmlUrl="http://rbjl.net"/>
             <outline text="Jesse Storimer" title="Jesse Storimer"
                 type="rss"
-                xmlUrl="http://feedproxy.google.com/jstorimer" htmlUrl="http://jstorimer.com/"/>
+                xmlUrl="http://feedproxy.google.com/jstorimer" htmlUrl="http://www.jstorimer.com/blogs/workingwithcode"/>
             <outline text="john pignata" title="john pignata" type="rss"
                 xmlUrl="http://feeds.feedburner.com/jpignata" htmlUrl="http://tx.pignata.com/"/>
             <outline text="journal.stuffwithstuff.com"
