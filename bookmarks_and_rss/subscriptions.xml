@@ -4,6 +4,12 @@
         <title>Google Reader</title>
     </head>
     <body>
+        <outline text="StarCast: The StarCraft Podcast"
+            title="StarCast: The StarCraft Podcast" type="rss"
+            xmlUrl="http://feeds.feedburner.com/starcast_rss" htmlUrl="http://starcastshow.blogspot.com/"/>
+        <outline text="Starcraft 2 Strategy : Day[9]TV"
+            title="Starcraft 2 Strategy : Day[9]TV" type="rss"
+            xmlUrl="http://day9.tv/d/b/starcraft-2-strategy/rss/" htmlUrl="http://day9.tv/d/b/starcraft-2-strategy/"/>
         <outline title="Ruby" text="Ruby">
             <outline text="A Fresh Cup" title="A Fresh Cup" type="rss"
                 xmlUrl="http://afreshcup.com/home/rss.xml" htmlUrl="http://afreshcup.com/home/"/>
