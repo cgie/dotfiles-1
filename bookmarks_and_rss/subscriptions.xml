@@ -31,6 +31,8 @@
             <outline text="Practicing Ruby" title="Practicing Ruby"
                 type="rss"
                 xmlUrl="http://blog.rubybestpractices.com/feed.xml" htmlUrl="http://blog.rubybestpractices.com/"/>
+            <outline text="RailsCasts" title="RailsCasts" type="rss"
+                xmlUrl="http://feeds.feedburner.com/railscasts" htmlUrl="http://railscasts.com"/>
             <outline text="Reddit for Rails hackers"
                 title="Reddit for Rails hackers" type="rss"
                 xmlUrl="http://reddit.com/r/rails/.rss" htmlUrl="http://www.reddit.com/r/rails/"/>
@@ -86,6 +88,9 @@
             <outline text="Coding Horror" title="Coding Horror"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/codinghorror/" htmlUrl="http://www.codinghorror.com/blog/"/>
+            <outline text="Collective Idea Blog"
+                title="Collective Idea Blog" type="rss"
+                xmlUrl="http://feeds.feedburner.com/collectiveidea" htmlUrl="http://collectiveidea.com/blog/"/>
             <outline text="create. code. learn."
                 title="create. code. learn." type="rss"
                 xmlUrl="http://blakesmith.me/atom.xml" htmlUrl="http://blakesmith.me"/>
