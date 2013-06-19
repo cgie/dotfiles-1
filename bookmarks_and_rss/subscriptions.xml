@@ -31,8 +31,11 @@
             <outline text="Practicing Ruby" title="Practicing Ruby"
                 type="rss"
                 xmlUrl="http://blog.rubybestpractices.com/feed.xml" htmlUrl="http://blog.rubybestpractices.com/"/>
+<<<<<<< HEAD
             <outline text="RailsCasts" title="RailsCasts" type="rss"
                 xmlUrl="http://feeds.feedburner.com/railscasts" htmlUrl="http://railscasts.com"/>
+=======
+>>>>>>> 4e787d33fa057605ddb754a07911793fa0ee975d
             <outline text="Reddit for Rails hackers"
                 title="Reddit for Rails hackers" type="rss"
                 xmlUrl="http://reddit.com/r/rails/.rss" htmlUrl="http://www.reddit.com/r/rails/"/>
