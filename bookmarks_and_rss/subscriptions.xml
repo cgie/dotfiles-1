@@ -4,12 +4,14 @@
         <title>Google Reader</title>
     </head>
     <body>
-        <outline text="StarCast: The StarCraft Podcast"
-            title="StarCast: The StarCraft Podcast" type="rss"
-            xmlUrl="http://feeds.feedburner.com/starcast_rss" htmlUrl="http://starcastshow.blogspot.com/"/>
-        <outline text="Starcraft 2 Strategy : Day[9]TV"
-            title="Starcraft 2 Strategy : Day[9]TV" type="rss"
-            xmlUrl="http://day9.tv/d/b/starcraft-2-strategy/rss/" htmlUrl="http://day9.tv/d/b/starcraft-2-strategy/"/>
+        <outline title="Starcraft" text="Starcraft">
+            <outline text="StarCast: The StarCraft Podcast"
+                title="StarCast: The StarCraft Podcast" type="rss"
+                xmlUrl="http://feeds.feedburner.com/starcast_rss" htmlUrl="http://starcastshow.blogspot.com/"/>
+            <outline text="Starcraft 2 Strategy : Day[9]TV"
+                title="Starcraft 2 Strategy : Day[9]TV" type="rss"
+                xmlUrl="http://day9.tv/d/b/starcraft-2-strategy/rss/" htmlUrl="http://day9.tv/d/b/starcraft-2-strategy/"/>
+        </outline>
         <outline title="Ruby" text="Ruby">
             <outline text="A Fresh Cup" title="A Fresh Cup" type="rss"
                 xmlUrl="http://afreshcup.com/home/rss.xml" htmlUrl="http://afreshcup.com/home/"/>
@@ -31,11 +33,8 @@
             <outline text="Practicing Ruby" title="Practicing Ruby"
                 type="rss"
                 xmlUrl="http://blog.rubybestpractices.com/feed.xml" htmlUrl="http://blog.rubybestpractices.com/"/>
-<<<<<<< HEAD
             <outline text="RailsCasts" title="RailsCasts" type="rss"
                 xmlUrl="http://feeds.feedburner.com/railscasts" htmlUrl="http://railscasts.com"/>
-=======
->>>>>>> 4e787d33fa057605ddb754a07911793fa0ee975d
             <outline text="Reddit for Rails hackers"
                 title="Reddit for Rails hackers" type="rss"
                 xmlUrl="http://reddit.com/r/rails/.rss" htmlUrl="http://www.reddit.com/r/rails/"/>
