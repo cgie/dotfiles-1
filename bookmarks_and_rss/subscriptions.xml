@@ -5,6 +5,9 @@
     </head>
     <body>
         <outline title="Starcraft" text="Starcraft">
+            <outline text="SC2 Quote of the Day"
+                title="SC2 Quote of the Day" type="rss"
+                xmlUrl="http://www.sc2quoteoftheday.com/rssfeed" htmlUrl="http://www.sc2quoteoftheday.com/"/>
             <outline text="StarCast: The StarCraft Podcast"
                 title="StarCast: The StarCraft Podcast" type="rss"
                 xmlUrl="http://feeds.feedburner.com/starcast_rss" htmlUrl="http://starcastshow.blogspot.com/"/>
@@ -133,7 +136,7 @@
                 title="Literate Programming" type="rss"
                 xmlUrl="http://feeds.feedburner.com/SteveKlabnik" htmlUrl="http://www.google.com/reader/view/feed%2Fhttp%3A%2F%2Ffeeds.feedburner.com%2FSteveKlabnik"/>
             <outline text="Matt Aimonetti" title="Matt Aimonetti"
-                type="rss" xmlUrl="http://matt.aimonetti.net/atom.xml" htmlUrl="http://matt.aimonetti.net/"/>
+                type="rss" xmlUrl="http://matt.aimonetti.net/atom.xml" htmlUrl="http://mattetti.github.com/mattetti/"/>
             <outline text="Matthew Bass" title="Matthew Bass" type="rss"
                 xmlUrl="http://www.matthewbass.com/feed/" htmlUrl="http://www.matthewbass.com"/>
             <outline text="Mislav's blog" title="Mislav's blog"
@@ -190,7 +193,7 @@
                 xmlUrl="http://tonyarcieri.com/feed" htmlUrl="http://tonyarcieri.com"/>
             <outline text="Victor Savkin's Blog About Software Design"
                 title="Victor Savkin's Blog About Software Design"
-                type="rss" xmlUrl="http://victorsavkin.com/rss" htmlUrl="http://victorsavkin.com/"/>
+                type="rss" xmlUrl="http://victorsavkin.com/rss" htmlUrl="http://vsavkin.tumblr.com/"/>
             <outline text="Virtuous Code" title="Virtuous Code"
                 type="rss"
                 xmlUrl="http://feeds.feedburner.com/VirtuousCode" htmlUrl="http://devblog.avdi.org"/>
