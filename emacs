@@ -162,4 +162,13 @@ Position the cursor at it's beginning, according to the current mode."
 (global-set-key (kbd "M-o") 'smart-open-line)
 (global-set-key (kbd "M-O") 'smart-open-line-above)
 
+       ;; Interactively Do Things (highly recommended, but not strictly required)
+       (require 'ido)
+       (ido-mode t)
+     
+       ;; Rinari
+       (add-to-list 'load-path "~/.emacs.d/scripts/rinari")
+       (require 'rinari)
+
+(require 'dirtree)
 ;;
