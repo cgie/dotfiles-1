@@ -197,3 +197,4 @@
    17  echo `pwd`
    18  history >> ~/raspberry_history
    sudo apt-get install libv8-dev
+   wget http://download.redis.io/redis-stable.tar.gz ;tar xvzf redis-stable.tar.gz ;cd redis-stable ;make
