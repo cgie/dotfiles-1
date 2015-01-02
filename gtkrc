@@ -1,0 +1,10 @@
+style "default-text" {
+	 fontset = "-*-arial-medium-r-normal--8-120-*-*-*-*-iso10646-1,\
+	   -*-Nimbus Sans L-medium-r-normal--8-120-*-*-*-*-*-*"
+	 font_name = "Sans Condensed 8"
+}
+style "nautilus" {
+	 font_name = "Sans Condensed 8"
+}
+class "GtkWidget" style "default-text"
+# gtk-font-name="Sans Condensed 8"
