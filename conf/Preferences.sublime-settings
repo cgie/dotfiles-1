@@ -1,0 +1,66 @@
+{
+
+  // Font
+  // "font_face": "Mono",
+  // "font_face": "Source Code Pro",
+  "font_size": 8,
+  "font_options": ["subpixel_antialias", "no_bold"],
+
+  "line_numbers": true,
+  "match_brackets": true,
+  "match_tags": true,
+
+  // Cursor style - no blinking and slightly wider than default
+  "caret_style": "solid",
+  "wide_caret": true,
+
+  "line_padding_bottom": 0,
+  "line_padding_top": 0,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage",
+    "Markdown Preview"
+  ],
+  "open_files_in_new_window": false,
+  "tab_size": 2,
+
+  // Set to true to insert spaces when tab is pressed
+  "translate_tabs_to_spaces": true,
+  // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
+  // backspace insert/delete up to the next tabstop
+  "use_tab_stops": true,
+
+  // Word wrapping
+  "rulers": [ 72, 79 ],
+  "word_wrap": true,
+  "wrap_width": 80,
+
+  // Whitespace - no tabs, trimming, end files with \n
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+
+  "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+
+}
+
+// file: sublime-keymap
+// [
+//     // Rebind "go to file" to cmd+shift+O
+//     { "keys": ["super+shift+o"], "command": "show_overlay", "args": {
+//         "overlay": "goto",
+//         "show_files": true
+//     }},
+
+//     // Rebind swap line up/down to cmd+shift+up/down
+//     { "keys": ["super+shift+up"], "command": "swap_line_up" },
+//     { "keys": ["super+shift+down"], "command": "swap_line_down" },
+
+//     // Delete a line with cmd+delete
+//     { "keys": ["super+backspace"], "command": "run_macro_file", "args": {
+//         "file": "Packages/Default/Delete Line.sublime-macro"
+//     }},
+
+//     // Reindent selection with cmd+alt+L
+//     { "keys": ["super+alt+l"], "command": "reindent"}
+// ]
