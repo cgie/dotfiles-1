@@ -19,13 +19,19 @@
 		72,
 		79
 	],
+	"show_full_path": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
+
+	// "trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": false,
+	
 	"use_tab_stops": true,
 	"wide_caret": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
-	"word_wrap": true,
-	"wrap_width": 80,
-  "show_full_path": true
+	
+	// "word_wrap": true,
+	"word_wrap": false,
+	
+	"wrap_width": 80
 }
