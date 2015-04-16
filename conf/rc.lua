@@ -2,25 +2,54 @@
 require("awful")
 require("awful.autofocus")
 require("awful.rules")
+
 -- Theme handling library
 require("beautiful")
+
 -- Notification library
 require("naughty")
--- Widget library
-require("vicious")
 
 -- Load Debian menu entries
 require("debian.menu")
 
+require("wicked")
+
+vicious = require("vicious")
+
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = "Oops, there were errors during startup!",
+                     text = awesome.startup_errors })
+end
+
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.add_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = err })
+        in_error = false
+    end)
+end
+-- }}}
+
 -- {{{ Variable definitions
-terminal = "sakura"
-browser = "firefox"
 -- Themes define colours, icons, and wallpapers
 -- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
-beautiful.init("/home/eddie/.config/awesome/defaulttheme.lua")
+beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+theme.wallpaper_cmd = { "awsetbg /usr/share/awesome/themes/default/background.png" }
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
+terminal = "sakura"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -35,17 +64,17 @@ modkey = "Mod4"
 layouts =
 {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
---    awful.layout.suit.spiral,
---    awful.layout.suit.spiral.dwindle,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.floating,
     awful.layout.suit.max,
---    awful.layout.suit.max.fullscreen,
---    awful.layout.suit.magnifier
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -54,21 +83,56 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    -- tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5}, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
 end
 -- }}}
+
+ -- {{{ Tags
+ -- Define a tag table which will hold all screen tags.
+ -- tags = {
+ --   names  = { "shell", "www", "skype", "gimp", "office", "im", 7, 8, 9 },
+ --   layout = { layouts[1], layouts[2], layouts[1], layouts[5], layouts[6],
+ --              layouts[12], layouts[9], layouts[3], layouts[7]
+ -- }}
+ -- for s = 1, screen.count() do
+ --     -- Each screen has its own tag table.
+ --     tags[s] = awful.tag(tags.names, s, tags.layout)
+ -- end
+ -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
+appsmenu = {
+   { "urxvt", "urxvt" },
+   { "sakura", "sakura" },
+   { "ncmpcpp", terminal .. " -e ncmpcpp" },
+   { "luakit", "luakit" },
+   { "uzbl", "uzbl-browser" },
+   { "firefox", "firefox" },
+   { "chromium", "chromium" },
+   { "thunar", "thunar" },
+   { "ranger", terminal .. " -e ranger" },
+   { "nautilus", "nautilus" },
+   { "pwsafe", "pwsafe" },
+   { "evince", "evince" },
+   { "gvim", "gvim" },
+   { "leafpad", "leafpad" },
+   { "htop", terminal .. " -e htop" },
+   { "sysmonitor", "gnome-system-monitor" }
+}
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "apps", appsmenu },
+            --{ "games", gamesmenu },
+                                    { "terminal", terminal },
+            { "web browser", browser },
+            { "text editor", geditor },
                                     { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal }
                                   }
@@ -80,15 +144,10 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 
 -- {{{ Wibox
 -- Create a textclock widget
--- mytextclock = awful.widget.textclock({ align = "right" })
-
--- A widget showing the date.
--- It's a textbox and use vicious
--- Initialize widget
-datewidget = widget({ type = "textbox" })
--- Register widget
---vicious.register(datewidget, vicious.widgets.date, "%b %d, %R", 60)
-vicious.register(datewidget, vicious.widgets.date, "| %A %d %B %Y - %W:%j ~ %H:%M:%S | ", 1)
+--mytextclock = awful.widget.textclock({ align = "right" })
+local format = "%A, %B %d %Y (%V/52), %H:%M:%S %z "
+local timeout = 1
+mytextclock = awful.widget.textclock({ align = "right" },format,timeout)
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
@@ -99,21 +158,27 @@ mypromptbox = {}
 mylayoutbox = {}
 mytaglist = {}
 mytaglist.buttons = awful.util.table.join(
-                    awful.button({ }, 1, awful.tag.viewonly),
-                    awful.button({ modkey }, 1, awful.client.movetotag),
-                    awful.button({ }, 3, awful.tag.viewtoggle),
-                    awful.button({ modkey }, 3, awful.client.toggletag),
-                    awful.button({ }, 4, awful.tag.viewnext),
-                    awful.button({ }, 5, awful.tag.viewprev)
+                        awful.button({ }, 1, awful.tag.viewonly),
+                        awful.button({ modkey }, 1, awful.client.movetotag),
+                        awful.button({ }, 3, awful.tag.viewtoggle),
+                        awful.button({ modkey }, 3, awful.client.toggletag),
+                        awful.button({ }, 4, awful.tag.viewnext),
+                        awful.button({ }, 5, awful.tag.viewprev)
                     )
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
-                                              if not c:isvisible() then
-                                                  awful.tag.viewonly(c:tags()[1])
+                                              if c == client.focus then
+                                                  c.minimized = true
+                                              else
+                                                  if not c:isvisible() then
+                                                      awful.tag.viewonly(c:tags()[1])
+                                                  end
+                                                  -- This will also un-minimize
+                                                  -- the client, if needed
+                                                  client.focus = c
+                                                  c:raise()
                                               end
-                                              client.focus = c
-                                              c:raise()
                                           end),
                      awful.button({ }, 3, function ()
                                               if instance then
@@ -151,9 +216,89 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
+
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox - order matters
+
+    netwidget = widget({
+        type = 'textbox',
+        name = 'netwidget'
+    })
+
+    wicked.register(netwidget, wicked.widgets.net,
+        -- ' | <span color="white">net</span>: ${eth0 down} / ${eth0 up} [ ${eth0 rx} //  ${eth0 tx} ]',
+        ' | eth0: ${eth0 down}/${eth0 up} | ',
+        nil, nil, 3)
+
+    -- Create an ACPI widget
+    function GetBatteryState()
+      local command = "acpi -b |sed -e 's@.*\\([0-9]:\\) [^,]*,@\\1@' -e 's@remaining@@' | sed -e :a -e '$!N;s@\\n@| @;ta'"
+      local fh = assert(io.popen(command, "r"))
+      local text = " | " .. fh:read("*l") .. " | "
+      fh:close()
+      return text
+    end
+
+    batterywidget = widget({ type = "textbox" })
+    batterywidget.text = GetBatteryState()
+    batterywidgettimer = timer({ timeout = 60 })
+    batterywidgettimer:add_signal("timeout",
+      function()
+        batterywidget.text = GetBatteryState()
+      end
+    )
+    batterywidgettimer:start()
+
+     -- use widget({ type = "textbox" }) for awesome < 3.5
+     -- separator = wibox.widget.textbox()
+     -- use separator.text  = " :: " for awesome < 3.5
+     -- separator:set_text(" :: ")
+
+    volumewidget = widget({
+        type = 'textbox',
+        name = 'volumewidget'
+    })
+
+    function amixer_volume(format)
+       local f = io.popen('amixer get PCM')
+       local l = f:lines()
+       local v = ''
+
+       for line in l do
+           if line:find('Front Left:') ~= nil then
+                pend = line:find('%]', 0, true)
+                pstart = line:find('[', 0, true)
+                v = line:sub(pstart+1, pend)
+           end
+       end
+
+       f:close()
+
+       return {v}
+    end
+
+    wicked.register(volumewidget, amixer_volume, "<span color='white'>Volume</span>: $1", 4)
+
+    cpuwidget = widget({
+      type = 'textbox',
+      name = 'cpuwidget'
+    })
+
+    wicked.register(cpuwidget, wicked.widgets.cpu,
+        -- ' <span color="white">CPU:</span> $1%')
+        ' | cpu: $1%')
+
+    memwidget = widget({
+        type = 'textbox',
+        name = 'memwidget'
+    })
+
+    wicked.register(memwidget, wicked.widgets.mem,
+        -- ' <span color="white">Memory:</span> $1 ($2Mb/$3Mb)',
+        ' | memory: $1 ($2Mb/$3Mb)',
+    nil, nil, {2, 4, 4})
+
     mywibox[s].widgets = {
         {
             mylauncher,
@@ -163,7 +308,13 @@ for s = 1, screen.count() do
         },
         mylayoutbox[s],
         mytextclock,
-        datewidget,	
+        netwidget,
+        -- statwidget,
+        -- volumewidget,
+        cpuwidget,
+        memwidget,
+        batterywidget,
+        separator,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -225,6 +376,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
+    awful.key({ modkey, "Control" }, "n", awful.client.restore),
+    awful.key({ modkey,           }, "/", function () awful.util.spawn("xscreensaver-command -lock") end),
+    -- awful.key({ modkey, "Control" }, "/",
+    --       function ()
+    --           awful.util.spawn("sync")
+    --           awful.util.spawn("xautolock -locknow")
+    --       end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
@@ -245,13 +404,19 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-    awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
+    awful.key({ modkey,           }, "n",
+        function (c)
+            -- The client currently has the input focus, so it cannot be
+            -- minimized, since minimized clients can't have the focus.
+            c.minimized = true
+        end),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end),
-    awful.key({modkey}, "b", function(c) c.run_once("xscreensaver-command -lock") end)
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 2dB-") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 2dB+") end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -309,7 +474,6 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = true,
-                     floating = false,
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
@@ -355,26 +519,20 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-function run_once(cmd)
-  findme = cmd
-  firstspace = cmd:find(" ")
-  if firstspace then
-    findme = cmd:sub(0, firstspace-1)
-  end
-  awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || (" .. cmd .. ")")
-end
+awful.util.spawn_with_shell('sakura -x tmux')
+awful.util.spawn_with_shell('xscreensaver -nosplash')
+awful.util.spawn_with_shell('~/Dropbox/stuff/locker.sh')
 
--- globalkeys = awful.util.table.join(globalkeys, awful.key({ }, "#121",function () awful.util.spawn("alsamixer set Master toggle") end))
--- globalkeys = awful.util.table.join(
---   globalkeys, 
---     awful.key({ }, "#121", function() run_once("alsamixer set Master toggle") end),
---     awful.key({modkey}, "/", client.focus.resize))
--- root.keys(globalkeys)
--- run_once("sakura")
--- run_once("sakura")
--- run_once("sakura")
--- run_once("sakura")
-run_once("xscreensaver -no-splash")
--- run_once("firefox")
--- ["firefox"] = { screen = 1, tag = 2 }
--- awful.client.focus.movetotag(tags[client.focus.screen][2])
+local handle = io.popen("ps aux | grep wicd-client | sed \\$d | wc -l")
+local result = handle:read("*a")
+
+if tonumber(result) > 0 then
+    print("Wicd-client is running")
+else
+	print("Launching Wicd-client")
+    awful.util.spawn_with_shell('wicd-client -t')
+end
+handle:close()
+
+awful.util.spawn_with_shell('xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1')
+
