@@ -33,5 +33,10 @@
 	// "word_wrap": true,
 	"word_wrap": false,
 	
-	"wrap_width": 80
+	"wrap_width": 80,
+
+	// Sorry VI, I love you, but here it's different.
+	// It's not you, but me...
+	// http://www.sublimetext.com/docs/2/vintage.html
+	"ignored_packages": ["Vintage"]
 }
