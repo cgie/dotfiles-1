@@ -1,0 +1,34 @@
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export GT_USER="edoardo"
+export GT_KEY="*****"
+export GT_AWS_ZONE="us-west-2c"
+export GT_URL="https://gaptool-server.****.org"
+export TUNA_HOME=/Users/edoardo/Workspaces/tuna_src/Tuna
+export GOPATH=$HOME/Go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+export EDITOR=/usr/local/bin/vim
+
+# Do something good with my prompt
+. ~/.bash_prompt
+
+. ~/.bash_aliases
+
+config_docker() {
+    [ -z $DOCKER_HOST ] && boot2docker up && export DOCKER_HOST="tcp://$(boot2docker ip 2>/dev/null):2376"
+    export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
+    export DOCKER_TLS_VERIFY=1
+}
+
+docker() {
+    config_docker
+    /usr/local/bin/docker "$@"
+}
+
+fig() {
+    config_docker
+    /usr/local/bin/fig "$@"
+}
