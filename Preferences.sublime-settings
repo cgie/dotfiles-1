@@ -1,42 +1,41 @@
 {
-	"caret_style": "solid",
-	"ensure_newline_at_eof_on_save": true,
-	"font_options":
-	[
-		"subpixel_antialias",
-		"no_bold"
-	],
-	"font_size": 10,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-	],
-	"line_padding_bottom": 0,
-	"line_padding_top": 0,
-	"open_files_in_new_window": false,
-	"rulers":
-	[
-		72,
-		79
-	],
-	"show_full_path": true,
-	"tab_size": 2,
-	"translate_tabs_to_spaces": true,
-
-	// "trim_trailing_white_space_on_save": true,
-	"trim_trailing_white_space_on_save": false,
-	
-	"use_tab_stops": true,
-	"wide_caret": true,
-	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
-	
-	// "word_wrap": true,
-	"word_wrap": false,
-	
-	"wrap_width": 80,
-
-	// Sorry VI, I love you, but here it's different.
-	// It's not you, but me...
-	// http://www.sublimetext.com/docs/2/vintage.html
-	"ignored_packages": ["Vintage"]
+  "auto_complete": true,
+  "auto_complete_commit_on_tab": true,
+  
+  "copy_with_empty_selection": true,
+  
+  "ensure_newline_at_eof_on_save": true,
+  
+  "index_files": true,
+  
+  "caret_style": "solid",
+  "ensure_newline_at_eof_on_save": true,
+  "font_options":
+  [
+    "subpixel_antialias",
+    "no_bold"
+  ],
+  "font_size": 10,
+  "highlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "line_padding_bottom": 0,
+  "line_padding_top": 0,
+  "open_files_in_new_window": false,
+  "rulers":
+  [
+    72,
+    79
+  ],
+  "show_full_path": true,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": false,
+  "use_tab_stops": true,
+  "wide_caret": true,
+  "word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?",
+  "word_wrap": false,
+  "wrap_width": 80
 }
