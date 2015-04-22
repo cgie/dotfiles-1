@@ -1,0 +1,58 @@
+name: tuna-dev
+root: ~/
+windows:
+  - "[assets]":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-core-js"
+        - "clear && cd $TUNA_HOME/tuna-core-css"
+  - "[3100]api":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-api"
+        - "clear && cd $TUNA_HOME/tuna-api && script/boot"
+  - "[3010]sso":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/gild-sso"
+        - "clear && cd $TUNA_HOME/gild-sso && script/boot"
+  - "[3013]jobs":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-jobs"
+        - "clear && cd $TUNA_HOME/tuna-jobs && script/boot"
+  - "[3014]pin":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-pin-on-gild"
+        - "clear && cd $TUNA_HOME/tuna-pin-on-gild && script/boot"
+  - "[3015]people":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-people"
+        - "clear && cd $TUNA_HOME/tuna-people && script/boot"
+  - "[3016]pipelines":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-pipelines-rails"
+        - "clear && cd $TUNA_HOME/tuna-pipelines-rails && script/boot"
+  - "[3018]crm":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-crm"
+        - "clear && cd $TUNA_HOME/tuna-crm && script/boot"
+  - "[3019]cargo":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/tuna-cargo"
+        - "clear && cd $TUNA_HOME/tuna-cargo && script/boot"
+  - "[3021]distill":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/distill"
+        - "clear && cd $TUNA_HOME/distill && script/boot"
+  - "[3022]analytics":
+      layout: tiled
+      panes:
+        - "clear && cd $TUNA_HOME/gild-analytics"
+        - "clear && cd $TUNA_HOME/gild-analytics && script/boot"

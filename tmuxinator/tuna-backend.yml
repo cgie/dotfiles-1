@@ -1,0 +1,76 @@
+---
+name: tuna-backend
+root: ~/
+windows:
+- geocoder:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec geocoder
+- gild_doc_converter:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec gild-doc-conversion-service
+- gild_mail_resume_gateway:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec gild_mail_resume_gateway
+- linkedin:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec linkedin
+- linkedin-crawler:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec linkedin-crawler
+- linkedin-merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec linkedin-merger
+- merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec merger
+- pinongild:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec pin
+- queue-proxy-merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec queue-proxy merge merge_now
+- queue-proxy-linkedin-merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec queue-proxy backend:queue:linkedin_merger_now backend:queue:linkedin_merger
+- queue-proxy-evaluation:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec queue-proxy evaluation evaluation_now
+- queue-proxy-linkedin:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec queue-proxy linkedin backend:queue:linkedin
+- queue-proxy-geocoder:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec queue-proxy backend:queue:geocoder_now backend:queue:geocoder
+- scoring:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec sourcescore
+- source-merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec source-merger
+- talentpool-merger:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec talentpool-merger
+- textkernel:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec textkernel_resume_parser
+- userwriter-notifier:
+    layout: tiled
+    panes:
+    - clear && cd $TUNA_HOME/tuna-backend && ENVIRONMENT=development bundle exec userwriter-notifier
