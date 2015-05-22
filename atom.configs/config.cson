@@ -1,0 +1,30 @@
+"*":
+  "exception-reporting":
+    userId: "9fbbe9d9-fd2f-e487-61a9-6b7d7894652a"
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "atom-dark-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    invisibles:
+      {}
+    fontSize: 10
+    showIndentGuide: true
+  linter:
+    statusBar: "Show error of the selected line"
+  "autocomplete-plus":
+    {}
+  global:
+    whitespace:
+      removeTrailingWhitespace: true
+  "atom-beautify":
+    _analyticsUserId: "0ec1ab94-ee7f-40e7-85c5-663db71b9685"
+    js_preserve_newlines: false
+    js_end_with_newline: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
