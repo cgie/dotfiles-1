@@ -23,3 +23,27 @@ atom-text-editor {
 atom-text-editor::shadow .cursor {
 
 }
+
+// style the background color of the tree view
+.tree-view {
+    // font-family: "Inconsolata";
+    font-family: "Monaco";
+    font-size: 10px;
+}
+
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+    line-height:18px;
+}
+
+.list-group .selected:before,
+.list-tree .selected:before {
+    height:18px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+.list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+    padding-left:12px;
+}
