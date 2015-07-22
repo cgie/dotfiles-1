@@ -56,12 +56,15 @@ openssl
 pandoc
 pkg-config
 postgresql
+pstree
 python
+python3
 qt
 rake-completion
 readline
 redis
 rename
+s3cmd
 sqlite
 ssdeep
 tmux
