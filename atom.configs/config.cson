@@ -5,18 +5,20 @@
     showOnStartup: false
   core:
     themes: [
-      "atom-dark-ui"
-      "one-dark-syntax"
+      "atom-light-ui"
+      "one-light-syntax"
+    ]
+    disabledPackages: [
+      "linter-rubocop"
     ]
   editor:
-    invisibles:
-      {}
+    invisibles: {}
     fontSize: 10
     showIndentGuide: true
   linter:
     statusBar: "Show error of the selected line"
-  "autocomplete-plus":
-    {}
+    clearOnChange: true
+  "autocomplete-plus": {}
   global:
     whitespace:
       removeTrailingWhitespace: true
@@ -28,3 +30,12 @@
     showIconsInEditorGutter: true
   "tree-view":
     hideVcsIgnoredFiles: true
+  autosave:
+    enabled: true
+  "spell-check": {}
+  "go-plus":
+    goPath: "/Users/edoardo/Workspaces/go.sources"
+  "highlight-selected":
+    highlightBackground: true
+  "linter-rubocop":
+    executablePath: "/Users/edoardo/.rvm/gems/ruby-2.2.2/bin/rubocop"
