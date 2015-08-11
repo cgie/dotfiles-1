@@ -39,6 +39,9 @@
 ;;;; http://www.gnu.org/software/emacs/manual/html_node/emacs/Narrowing.html
 ;;  (put 'narrow-to-region 'disabled nil)
 
+;;;; Enable linun
+(global-linum-mode t)
+
 ;;;; Newline at end of file
 (setq require-final-newline t)
 
@@ -58,6 +61,12 @@
 ;;;; http://stackoverflow.com/questions
 ;;;;   /9472254/setting-emacs-24-color-theme-from-emacs
 (set-face-attribute 'default nil :height 100)
+
+;;;; Reduce tabbing
+(setq default-tab-width 2)
+
+;;;; Linum readable
+(setq linum-format "%4d \u2502 ")
 
 ;;;; Backups in .saves
 (setq backup-directory-alist `(("." . "~/.saves")))
@@ -83,7 +92,7 @@
 
 ;;;; Enable or disable the display of the current line number
 ;;;; http://www.emacswiki.org/emacs/LineNumbers
-(line-number-mode 1)
+;;;;  (line-number-modelinu 1)
 
 ;;;; Enable or disable the display of the current column number
 (column-number-mode 1)
@@ -215,6 +224,7 @@
     ;;  anzu
     ido
     multiple-cursors
+    neotree
     
     ;;;; Project and completion stuff
     ;;  projectile
@@ -245,6 +255,7 @@
 
     ;; go
     go-mode
+    golint
     ;;  go-projectile
     ;;  go-autocomplete
 
@@ -370,6 +381,12 @@
 ;;;; Install wanted packages
 (install-wanted-packages)
 
+;;;; PACKAGES configurations
+
+;;;; NEOTREE
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;;;; DIRED
 (require 'dired)
 (put 'dired-find-alternate-file 'disabled nil)
@@ -384,8 +401,6 @@
 ;;;; allow dired to be able to delete or copy a whole dir.
 ;;  (setq dired-recursive-copies (quote always)) ; “always” means no asking
 ;;  (setq dired-recursive-deletes (quote top)) ; “top” means ask once
-
-;;;; PACKAGES configurations
 
 ;;;; MULTIPLE CURSORS
 (require 'multiple-cursors)
