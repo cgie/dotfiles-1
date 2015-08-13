@@ -1,4 +1,4 @@
-;; -*- Mode: Emacs-Lisp -*-
+;gu -*- Mode: Emacs-Lisp -*-
 
 ;;; This is a sample .emacs file.
 ;;;
@@ -225,6 +225,7 @@
     ido
     multiple-cursors
     neotree
+    fill-column-indicator
     
     ;;;; Project and completion stuff
     projectile
@@ -235,7 +236,8 @@
     ;;  ignoramus
     ;;  ag
 
-    ;;;; Magit and diff
+    ;;;; Git and diff
+    git-gutter
     ;;  magit
     ;;  magit-gh-pulls
     ;;  git-timemachine
@@ -314,9 +316,15 @@
     ;;  gotham-theme
     ;;  obsidian-theme
     ;;  solarized-theme
+    leuven-theme
     ))
 
-;;;; Package manager and packages handler
+;;;; PACKAGE manager and packages handler
+;;;; Archives from which to fetch.
+;;  (setq package-archives
+;;    (append '(("melpa" . "http://melpa.milkbox.net/packages/"))
+;;                          package-archives))
+
 (defun install-wanted-packages ()
   "Install wanted packages according to a specific package manager."
 
@@ -384,6 +392,33 @@
 
 ;;;; PACKAGES configurations
 
+;;;; FILL-COLUMN-INDICATOR
+(require 'fill-column-indicator)
+(setq fci-rule-column 80)
+;;  (setq fci-rule-width 1)
+;;  (setq fci-rule-color "darkblue")
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
+
+;;;; GIT-GUTTER
+(require 'git-gutter)
+
+;; If you enable global minor mode
+(global-git-gutter-mode t)
+;; If you would like to use git-gutter.el and linum-mode
+(git-gutter:linum-setup)
+;; If you enable git-gutter-mode for some modes
+;;  (add-hook 'ruby-mode-hook 'git-gutter-mode)
+(global-set-key (kbd "C-x C-g") 'git-gutter:toggle)
+;;  (global-set-key (kbd "C-x v =") 'git-gutter:popup-hunk)
+;; Jump to next/previous hunk
+;;  (global-set-key (kbd "C-x p") 'git-gutter:previous-hunk)
+;;  (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
+;; Stage current hunk
+;;  (global-set-key (kbd "C-x v s") 'git-gutter:stage-hunk)
+;; Revert current hunk
+;;  (global-set-key (kbd "C-x v r") 'git-gutter:revert-hunk)
+
 ;;;; NEOTREE
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -433,6 +468,7 @@
 ;;;; SMARTPARENS
 ;; smart pairing for all
 (require 'smartparens-config)
+(smartparens-global-mode 1)
 (setq sp-base-key-bindings 'paredit)
 (setq sp-autoskip-closing-pair 'always)
 (setq sp-hybrid-kill-entire-symbol nil)
@@ -456,13 +492,13 @@
 ;;  (ignoramus-setup)
 
 ;;;; PROJECTILE
-;;  (projectile-global-mode)
+(projectile-global-mode)
 ;;  (setq projectile-completion-system 'helm)
 ;;;; ignore common temporary directories
-;;  (setq projectile-globally-ignored-directories
-;;    (append projectile-globally-ignored-directories
-;;      '("node_modules" "bower_components" ".bower-cache"
-;;        "public/assets" "tmp")))
+  (setq projectile-globally-ignored-directories
+    (append projectile-globally-ignored-directories
+      '("node_modules" "bower_components" ".bower-cache"
+        "public/assets" "tmp")))
 ;;  (helm-projectile-on)
 
 ;;;; YASNIPPET
