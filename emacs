@@ -77,7 +77,7 @@
   version-control t)
 
 ;;;; Goto-line short-cut key
-(global-set-key "\C-l" 'goto-line)
+;; (global-set-key "\C-l" 'goto-line)
 
 ;;;; Highlight current line
 ;;;; http://www.emacswiki.org/emacs/HighlightCurrentLine
@@ -109,21 +109,78 @@
 ;;;; http://www.emacswiki.org/emacs/ModeLineConfiguration
 (column-number-mode 1)
 
-;;;; Functions
-(defun move-line-up ()
-  "Move up the current line."
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2)
-  (indent-according-to-mode))
+;;;; FUNCTIONS
+(defun my-mark-current-word (&optional arg allow-extend)
+  "Put point at beginning of current word, set mark at end."
+  (interactive "p\np")
+  (setq arg (if arg arg 1))
+  (if (and allow-extend
+           (or (and (eq last-command this-command) (mark t))
+               (region-active-p)))
+      (set-mark
+       (save-excursion
+         (when (< (mark) (point))
+           (setq arg (- arg)))
+         (goto-char (mark))
+         (forward-word arg)
+         (point)))
+    (let ((wbounds (bounds-of-thing-at-point 'word)))
+      (unless (consp wbounds)
+        (error "No word at point"))
+      (if (>= arg 0)
+          (goto-char (car wbounds))
+        (goto-char (cdr wbounds)))
+      (push-mark (save-excursion
+                   (forward-word arg)
+                   (point)))
+              (activate-mark))))
 
-(defun move-line-down ()
-  "Move down the current line."
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1)
-  (indent-according-to-mode))
+(defun move-line (n)
+  "Move the current line up or down by N lines."
+  (interactive "p")
+  (setq col (current-column))
+  (beginning-of-line) (setq start (point))
+  (end-of-line) (forward-char) (setq end (point))
+  (let ((line-text (delete-and-extract-region start end)))
+    (forward-line n)
+    (insert line-text)
+    ;; restore point to original column in moved line
+    (forward-line -1)
+    (forward-char col)))
+
+(defun move-line-up (n)
+  "Move the current line up by N lines."
+  (interactive "p")
+  (move-line (if (null n) -1 (- n))))
+
+(defun move-line-down (n)
+  "Move the current line down by N lines."
+  (interactive "p")
+  (move-line (if (null n) 1 n)))
+
+(global-set-key (kbd "ESC <up>") 'move-line-up)
+(global-set-key (kbd "ESC <down>") 'move-line-down)
+
+(defun copy-line (arg)
+      "Copy lines (as many as prefix argument) in the kill ring.
+      Ease of use features:
+      - Move to start of next line.
+      - Appends the copy on sequential calls.
+      - Use newline as last char even on the last line of the buffer.
+      - If region is active, copy its lines."
+      (interactive "p")
+      (let ((beg (line-beginning-position))
+            (end (line-end-position arg)))
+        (when mark-active
+          (if (> (point) (mark))
+              (setq beg (save-excursion (goto-char (mark)) (line-beginning-position)))
+            (setq end (save-excursion (goto-char (mark)) (line-end-position)))))
+        (if (eq last-command 'copy-line)
+            (kill-append (buffer-substring beg end) (< end beg))
+          (kill-ring-save beg end)))
+      (kill-append "\n" nil)
+      (beginning-of-line (or (and arg (1+ arg)) 2))
+          (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
 (defun strip-smart-quotes (rStart rEnd)
   "Replace smart quotes with plain quotes in text"
@@ -176,12 +233,12 @@
 ;;  (setq auto-save-file-name-transforms
 ;;    `((".*" ,temporary-file-directory t)))
 
-;;  (defun top-join-line ()
-;;    "Join the current line with the line beneath it."
-;;    (interactive)
-;;    (delete-indentation 1))
+(defun top-join-line ()
+  "Join the current line with the line beneath it."
+  (interactive)
+  (delete-indentation 1))
 
-;;  (global-set-key (kbd "M-^") 'top-join-line)
+(global-set-key (kbd "M-^") 'top-join-line)
 
 ;;  (defun duplicate-line()
 ;;    (interactive)
@@ -217,7 +274,7 @@
 
     ;;;; Editor stuff
     ;;  popup
-    ;;  auto-complete
+    auto-complete
     ;;  whitespace-cleanup-mode
     smartparens
     ;;  diff-hl
@@ -230,11 +287,11 @@
     ;;;; Project and completion stuff
     projectile
     flx-ido    
-    ;;  helm
-    ;;  helm-ag
-    ;;  helm-projectile
+    helm
+    helm-ag
+    helm-projectile
     ;;  ignoramus
-    ;;  ag
+    ag
 
     ;;;; Git and diff
     git-gutter
@@ -259,8 +316,8 @@
     ;; go
     go-mode
     golint
-    ;;  go-projectile
-    ;;  go-autocomplete
+    go-projectile
+    go-autocomplete
 
     ;;;; web mode
     ;;  web-mode
@@ -400,6 +457,9 @@
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 
+;;;; AUTO-COMPLETE
+(require 'auto-complete)
+
 ;;;; GIT-GUTTER
 (require 'git-gutter)
 
@@ -488,7 +548,7 @@
 ;;  (setq whitespace-line-column 120) ;; limit line length
 ;;  (setq whitespace-style '(face tabs empty trailing lines-tail))
 
-;;;; IGNORAMUS
+;;;; Ignoramus
 ;;  (ignoramus-setup)
 
 ;;;; PROJECTILE
@@ -499,7 +559,7 @@
     (append projectile-globally-ignored-directories
       '("node_modules" "bower_components" ".bower-cache"
         "public/assets" "tmp")))
-;;  (helm-projectile-on)
+(helm-projectile-on)
 
 ;;;; YASNIPPET
 ;;;; should be loaded before auto complete so that they can work together
@@ -519,8 +579,9 @@
 ;;  (ac-set-trigger-key "<tab>")
 
 ;;;; HELM
+ (require 'helm)
 ;;  (global-set-key (kbd "C-x b") 'helm-mini)
-;;  (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "M-x") 'helm-M-x)
 ;;  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 ;;  (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;;  (global-set-key (kbd "C-x r") 'helm-recentf)
@@ -584,29 +645,29 @@
 ;;;; GO mode
 (require 'go-mode)
 
-;;;; gofmt
+;;;; GOFMT
 (setq exec-path (cons "/usr/local/bin/go" exec-path))
 (add-to-list 'exec-path "/Users/edoardo/Workspaces/go.sources/bin")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
-;;;; go-autocomplete
-;;  (require 'go-autocomplete)
-;;  (add-hook 'go-mode-hook
-;;    (lambda ()
-;;      ;; Use goimports instead of go-fmt
-;;      (setq gofmt-command "goimports")
-;;
-;;      ;; Call Gofmt before saving
-;;      (add-hook 'before-save-hook 'gofmt-before-save)
-;;
-;;      ;; Customize compile command to run go build
-;;      (if (not (string-match "go" compile-command))
-;;        (set (make-local-variable 'compile-command)
-;;          "go build -v && go test -v && go vet"))
-;;
-;;      ;; Godef jump key binding
-;;      (local-set-key (kbd "M-.") 'godef-jump)
-;;      (devel-modes-hook)))
+;;;; GO-AUTOCOMPLETE
+(require 'go-autocomplete)
+(add-hook 'go-mode-hook
+  (lambda ()
+    ;; Use goimports instead of go-fmt
+    (setq gofmt-command "goimports")
+  ;; Call Gofmt before saving
+
+    (add-hook 'before-save-hook 'gofmt-before-save)
+
+  ;; Customize compile command to run go build
+    (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+        "go build -v && go test -v && go vet"))
+
+  ;; Godef jump key binding
+    (local-set-key (kbd "M-.") 'godef-jump)
+    (devel-modes-hook)))
 
 ;;;; WEB mode
 ;;  (setq web-mode-enable-current-element-highlight t
@@ -780,6 +841,7 @@
 
 (provide '.emacs)
 ;;;; .emacs personal settings ends here
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; (show-paren-mode 1)
 (custom-set-variables
