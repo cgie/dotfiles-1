@@ -1,0 +1,4 @@
+apm login
+apm stars
+apm star --installed
+apm stars --install

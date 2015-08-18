@@ -1,0 +1,3447 @@
+actionmailer (4.2.3)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Email composition, delivery, and receiving framework (part of
+    Rails).
+
+actionpack (4.2.3, 3.2.22)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at (4.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.22): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Web-flow and rendering framework putting the VC in MVC (part of
+    Rails).
+
+actionview (4.2.3)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rendering framework putting the V in MVC (part of Rails).
+
+activejob (4.2.3)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Job framework with pluggable queues.
+
+activemodel (4.2.3, 4.0.13, 3.2.22)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at (4.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.0.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.22): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A toolkit for building modeling frameworks (part of Rails).
+
+activerecord (4.2.3)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Object-relational mapper framework (part of Rails).
+
+activesupport (4.2.3, 4.0.13, 3.2.22)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at (4.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.0.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.22): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A toolkit of support libraries and Ruby core extensions extracted
+    from the Rails framework.
+
+addressable (2.3.8, 2.3.5)
+    Author: Bob Aman
+    Homepage: https://github.com/sporkmonger/addressable
+    License: Apache License 2.0
+    Installed at (2.3.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.3.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    URI Implementation
+
+airbrake (4.3.0)
+    Author: Airbrake
+    Homepage: http://www.airbrake.io
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Send your application errors to our hosted service and reclaim your
+    inbox.
+
+ansi (1.5.0)
+    Authors: Thomas Sawyer, Florian Frank
+    Homepage: http://rubyworks.github.com/ansi
+    License: BSD-2-Clause
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    ANSI at your fingertips!
+
+appraisal (2.1.0)
+    Authors: Joe Ferris, Prem Sichanugrist
+    Homepage: http://github.com/thoughtbot/appraisal
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Find out what your Ruby gems are worth
+
+arel (6.0.3, 6.0.2)
+    Authors: Aaron Patterson, Bryan Helmkamp, Emilio Tagua, Nick Kallen
+    Homepage: https://github.com/rails/arel
+    License: MIT
+    Installed at (6.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (6.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Arel Really Exasperates Logicians  Arel is a SQL AST manager for
+    Ruby
+
+aruba (0.8.1, 0.4.6)
+    Authors: Aslak Hellesøy, David Chelimsky, Mike Sassak, Matt Wynne,
+    Jarl Friis, Dennis Günnewig
+    Homepage: http://github.com/cucumber/aruba
+    License: MIT
+    Installed at (0.8.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.4.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    aruba-0.8.1
+
+asposecloudsdk (0.0.1)
+    Author: Assad Mahmood Qazi
+    Homepage: http://www.aspose.com
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Aspose Cloud SDK for Ruby allows you to use Aspose API in your Ruby
+    applications
+
+ast (2.1.0, 2.0.0)
+    Author: whitequark
+    Homepage: https://whitequark.github.io/ast/
+    License: MIT
+    Installed at (2.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A library for working with Abstract Syntax Trees.
+
+astrolabe (1.3.1)
+    Author: Yuji Nakayama
+    Homepage: https://github.com/yujinakayama/astrolabe
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An object-oriented AST extension for Parser
+
+atomic (1.1.99, 1.1.14)
+    Authors: Charles Oliver Nutter, MenTaLguY, Sokolov Yura
+    Homepage: http://github.com/ruby-concurrency/ruby-atomic
+    License: Apache-2.0
+    Installed at (1.1.99): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.14): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An atomic reference implementation for JRuby, Rubinius, and MRI
+
+awesome_print (1.6.1)
+    Author: Michael Dvorkin
+    Homepage: http://github.com/michaeldv/awesome_print
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Pretty print Ruby objects with proper indentation and colors
+
+aws-s3 (0.6.3)
+    Author: Marcel Molina Jr.
+    Homepage: http://amazon.rubyforge.org
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Client library for Amazon's Simple Storage Service's REST API
+
+aws-sdk (2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7)
+    Author: Amazon Web Services
+    Homepage: http://github.com/aws/aws-sdk-ruby
+    License: Apache 2.0
+    Installed at (2.1.14): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    AWS SDK for Ruby
+
+aws-sdk-core (2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7)
+    Author: Amazon Web Services
+    Homepage: http://github.com/aws/aws-sdk-ruby
+    License: Apache 2.0
+    Installed at (2.1.14): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    AWS SDK for Ruby - Core
+
+aws-sdk-resources (2.1.14, 2.1.13, 2.1.12, 2.1.11, 2.1.10, 2.1.9, 2.1.8, 2.1.7)
+    Author: Amazon Web Services
+    Homepage: http://github.com/aws/aws-sdk-ruby
+    License: Apache 2.0
+    Installed at (2.1.14): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    AWS SDK for Ruby - Resources
+
+aws-ses (0.6.0, 0.5.0)
+    Authors: Drew Blas, Marcel Molina Jr.
+    Homepage: http://github.com/drewblas/aws-ses
+    License: MIT
+    Installed at (0.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Client library for Amazon's Simple Email Service's REST API
+
+axiom-types (0.1.1)
+    Author: Dan Kubb
+    Homepage: https://github.com/dkubb/axiom-types
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Abstract types for logic programming
+
+backup (4.1.11, 4.1.10)
+    Author: Michael van Rooijen
+    Homepage: https://github.com/backup/backup
+    License: MIT
+    Installed at (4.1.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.1.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Provides an elegant DSL in Ruby for performing backups on UNIX-like
+    systems.
+
+bcat (0.6.2)
+    Author: Ryan Tomayko
+    Homepage: http://rtomayko.github.com/bcat/
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Concatenate input from standard input, or one or more files, and
+    write progressive output to a browser.
+
+benchmark-ips (2.3.0, 2.2.0)
+    Author: Evan Phoenix
+    Homepage: https://github.com/evanphx/benchmark-ips
+    License: MIT
+    Installed at (2.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A iterations per second enhancement to Benchmark.
+
+bigdecimal (1.2.7, 1.2.6)
+    Authors: Kenta Murata, Zachary Scott, Shigeo Kobayashi
+    Homepage: http://www.ruby-lang.org
+    Installed at (1.2.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.6, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+
+    Arbitrary-precision decimal floating-point number library.
+
+blankslate (3.1.3, 2.1.2.4)
+    Authors: Jim Weirich, David Masover, Jack Danger Canty
+    Homepage: http://github.com/masover/blankslate
+    Installed at (3.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.2.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    BlankSlate extracted from Builder.
+
+bloom-filter (0.2.0)
+    Author: Bharanee Rathna
+    Homepage: http://github.com/deepfryed/bloom-filter
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A fast Bloom Filter library for Ruby.
+
+bloomfilter-rb (2.1.1)
+    Authors: Ilya Grigorik, Tatsuya Mori
+    Homepage: http://github.com/igrigorik/bloomfilter
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Counting Bloom Filter implemented in Ruby
+
+bourne (1.6.0, 1.4.0)
+    Author: Joe Ferris
+    Homepage: http://github.com/thoughtbot/bourne
+    Installed at (1.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.4.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Adds test spies to mocha.
+
+bson (3.2.1, 3.2.0, 3.1.2, 1.12.3, 1.10.2, 1.6.4)
+    Authors: Tyler Brock, Durran Jordan, Brandon Black, Emily Stolfo,
+    Gary Murakami
+    Homepage: http://bsonspec.org
+    License: Apache License Version 2.0
+    Installed at (3.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.1.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.12.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.10.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby Implementation of the BSON specification
+
+bson_ext (1.12.3, 1.10.2)
+    Authors: Emily Stolfo, Durran Jordan, Gary Murakami, Tyler Brock,
+    Brandon Black
+    Homepage: http://www.mongodb.org
+    License: Apache License Version 2.0
+    Installed at (1.12.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.10.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    C extensions for Ruby BSON.
+
+buftok (0.2.0)
+    Authors: Tony Arcieri, Martin Emde, Erik Michaels-Ober
+    Homepage: https://github.com/sferik/buftok
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    BufferedTokenizer extracts token delimited entities from a sequence
+    of arbitrary inputs
+
+builder (3.2.2, 3.1.4, 3.0.4)
+    Author: Jim Weirich
+    Homepage: http://onestepback.org
+    License: MIT
+    Installed at (3.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.1.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Builders for MarkUp.
+
+bundle (0.0.1)
+    Author: Will Leinweber
+    Homepage: http://gembundler.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    s/bundle/bundler
+
+bundler (1.10.6, 1.7.6)
+    Authors: André Arko, Terence Lee, Carl Lerche, Yehuda Katz
+    Homepage: http://bundler.io
+    License: MIT
+    Installed at (1.10.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.7.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    The best way to manage your application's dependencies
+
+bundler-unload (1.0.2)
+    Author: Michal Papis
+    Homepage: https://github.com/mpapis/bundler-unload
+    License: Apache 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Allow unloading bundler after Bundler.load
+
+capistrano (3.4.0, 2.15.6)
+    Authors: Tom Clements, Lee Hambley
+    Homepage: http://capistranorb.com/
+    License: MIT
+    Installed at (3.4.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.15.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Capistrano - Welcome to easy deployment with Ruby over SSH
+
+capybara (2.4.4)
+    Author: Jonas Nicklas
+    Homepage: http://github.com/jnicklas/capybara
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Capybara aims to simplify the process of integration testing Rack
+    applications, such as Rails, Sinatra or Merb
+
+cassandra-driver (2.1.4)
+    Authors: Theo Hultberg, Bulat Shakirzyanov
+    Homepage: http://datastax.github.io/ruby-driver
+    License: Apache License 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Datastax Ruby Driver for Apache Cassandra
+
+celluloid (0.17.1.1, 0.17.1, 0.17.0, 0.16.0, 0.15.2)
+    Authors: Tony Arcieri, Donovan Keme
+    Homepage: https://github.com/celluloid/celluloid
+    License: MIT
+    Installed at (0.17.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.17.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.17.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.16.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.15.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Actor-based concurrent object framework for Ruby
+
+celluloid-essentials (0.20.2, 0.20.1.1, 0.20.1, 0.20.0)
+    Authors: Tony Arcieri, Donovan Keme
+    Homepage: https://github.com/celluloid/celluloid-essentials
+    License: MIT
+    Installed at (0.20.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.20.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.20.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.20.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Internally used tools, and superstructural dependencies of Celluloid
+
+celluloid-extras (0.20.0)
+    Authors: digitalextremist //, Tony Arcieri
+    Homepage: https://github.com/celluloid/celluloid-extras
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Celluloid expansion, testing, and example classes.
+
+celluloid-fsm (0.20.0)
+    Authors: Tony Arcieri, Tim Carey-Smith, digitalextremist //
+    Homepage: https://github.com/celluloid/celluloid-fsm
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Celluloid Finite State Machines
+
+celluloid-pool (0.20.0)
+    Authors: Tony Arcieri, Tim Carey-Smith, digitalextremist //
+    Homepage: http://github.com/celluloid/celluloid-pool
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An implementation of an actor pool, based on the Celluloid
+    concurrent object framework.
+
+celluloid-supervision (0.20.1, 0.20.0)
+    Authors: Donovan Keme, Tony Arcieri, Tim Carey-Smith
+    Homepage: https://github.com/celluloid/
+    License: MIT
+    Installed at (0.20.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.20.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Celluloid Supervision
+
+CFPropertyList (2.3.1)
+    Author: Christian Kruse
+    Homepage: http://github.com/ckruse/CFPropertyList
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Read, write and manipulate both binary and XML property lists as
+    defined by apple
+
+childprocess (0.5.6)
+    Author: Jari Bakken
+    Homepage: http://github.com/jarib/childprocess
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This gem aims at being a simple and reliable solution for
+    controlling external programs running in the background on any Ruby
+    / OS combination.
+
+clamp (1.0.0, 0.6.5)
+    Author: Mike Williams
+    Homepage: http://github.com/mdub/clamp
+    License: MIT
+    Installed at (1.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    a minimal framework for command-line utilities
+
+classifier-reborn (2.0.3)
+    Authors: Lucas Carlson, Parker Moore
+    Homepage: https://github.com/jekyll/classifier-reborn
+    License: LGPL
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A general classifier module to allow Bayesian and other types of
+    classifications.
+
+coderay (1.1.0)
+    Author: Kornelius Kalnbach
+    Homepage: http://coderay.rubychan.de
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fast syntax highlighting for selected languages.
+
+coercible (1.0.0)
+    Author: Piotr Solnica
+    Homepage: https://github.com/solnic/coercible
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Powerful, flexible and configurable coercion library. And nothing
+    more.
+
+coffee-rails (4.1.0)
+    Author: Santiago Pastorino
+    Homepage: https://github.com/rails/coffee-rails
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    CoffeeScript adapter for the Rails asset pipeline.
+
+coffee-script (2.4.1)
+    Authors: Jeremy Ashkenas, Joshua Peek, Sam Stephenson
+    Homepage: http://github.com/josh/ruby-coffee-script
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby CoffeeScript Compiler
+
+coffee-script-source (1.9.1.1)
+    Author: Jeremy Ashkenas
+    Homepage: http://jashkenas.github.com/coffee-script/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    The CoffeeScript Compiler
+
+colorator (0.1)
+    Authors: Parker Moore, Brandon Mathis
+    Homepage: https://github.com/octopress/colorator
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    String core extensions for terminal coloring.
+
+colorize (0.7.7)
+    Author: Michał Kalbarczyk
+    Homepage: http://github.com/fazibear/colorize
+    License: GPL-2
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Add color methods to String class
+
+connection_pool (2.2.0, 1.2.0)
+    Authors: Mike Perham, Damian Janowski
+    Homepage: https://github.com/mperham/connection_pool
+    License: MIT
+    Installed at (2.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Generic connection pool for Ruby
+
+contracts (0.11.0)
+    Author: Aditya Bhargava
+    Homepage: http://github.com/egonSchiele/contracts.ruby
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Contracts for Ruby.
+
+corm (0.0.27)
+    Author: Stefano Fontanelli
+    Homepage: https://github.com/stefanofontanelli/corm
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Very basic Cassandrea ORM which is rails-deps-free
+
+coveralls (0.8.2)
+    Authors: Nick Merwin, Wil Gieseler
+    Homepage: https://coveralls.io
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby implementation of the Coveralls API.
+
+crack (0.4.2)
+    Author: John Nunemaker
+    Homepage: http://github.com/jnunemaker/crack
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Really simple JSON and XML parsing, ripped from Merb and Rails.
+
+crashlog-auth-hmac (1.1.7)
+    Author: Ivan Vanderbyl
+    Homepage: http://crashlog.io
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby Gem for authenticating HTTP requests using a HMAC
+
+css_parser (1.3.6)
+    Author: Alex Dunae
+    Homepage: https://github.com/premailer/css_parser
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby CSS parser.
+
+cucumber (2.0.2, 1.3.20)
+    Authors: Aslak Hellesøy, Matt Wynne, Steve Tooke
+    Homepage: http://cukes.info
+    License: MIT
+    Installed at (2.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.3.20): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    cucumber-2.0.2
+
+cucumber-core (1.2.0)
+    Authors: Aslak Hellesøy, Matt Wynne, Steve Tooke, Oleg Sukhodolsky,
+    Tom Brand
+    Homepage: http://cukes.info
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    cucumber-core-1.2.0
+
+cucumber-rails (1.4.2, 1.1.1)
+    Authors: Aslak Hellesøy, Dennis Blöte, Rob Holland
+    Homepage: http://cukes.info
+    License: MIT
+    Installed at (1.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    cucumber-rails-1.4.2
+
+daemons (1.2.3)
+    Author: Thomas Uehlinger
+    Homepage: https://github.com/thuehlinger/daemons
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A toolkit to create and control daemons in different ways
+
+descendants_tracker (0.0.4, 0.0.3)
+    Authors: Dan Kubb, Piotr Solnica, Markus Schirp
+    Homepage: https://github.com/dkubb/descendants_tracker
+    License: MIT
+    Installed at (0.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module that adds descendant tracking to a class
+
+diff-lcs (1.2.5, 1.1.3)
+    Author: Austin Ziegler
+    Homepage: http://diff-lcs.rubyforge.org/
+    Licenses: MIT, Perl Artistic v2, GNU GPL v2
+    Installed at (1.2.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Diff::LCS computes the difference between two Enumerable sequences
+    using the McIlroy-Hunt longest common subsequence (LCS) algorithm
+
+docile (1.1.5)
+    Author: Marc Siegel
+    Homepage: https://ms-ati.github.io/docile/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Docile keeps your Ruby DSLs tame and well-behaved
+
+dogapi (1.20.0, 1.19.0, 1.11.0)
+    Author: Datadog, Inc.
+    Homepage: http://datadoghq.com/
+    License: BSD
+    Installed at (1.20.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.19.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.11.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby bindings for Datadog's API
+
+domain_name (0.5.24)
+    Author: Akinori MUSHA
+    Homepage: https://github.com/knu/ruby-domain_name
+    License: BSD + MPL 1.1/GPL 2.0/LGPL 2.1
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Domain Name manipulation library for Ruby
+
+dotenv (2.0.2)
+    Author: Brandon Keepers
+    Homepage: https://github.com/bkeepers/dotenv
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Loads environment variables from `.env`.
+
+dropbox-sdk (1.6.5, 1.6.4, 1.5.1)
+    Author: Dropbox, Inc.
+    Homepage: http://www.dropbox.com/developers/
+    License: MIT
+    Installed at (1.6.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Dropbox REST API Client.
+
+easy_threadpool (0.0.2)
+    Author: Francesco Laurita
+    Homepage: https://github.com/taganaka/easy_threadpool_rb
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This gem has been written keeping semplicity in mind It implements
+    Thread Pool Pattern described here
+    http://en.wikipedia.org/wiki/Thread_pool_pattern Recommended for I/O
+    activities are easily parallelizable, such as downloading remote
+    resources, web scraping, bulk API calls, etc
+
+elasticsearch (1.0.12)
+    Author: Karel Minarik
+    Homepage: http://github.com/elasticsearch/elasticsearch-ruby
+    License: Apache 2
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby integrations for Elasticsearch
+
+elasticsearch-api (1.0.12)
+    Author: Karel Minarik
+    Homepage:
+    https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elas
+    ticsearch-api
+    License: Apache 2
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby API for Elasticsearch.
+
+elasticsearch-model (0.1.7)
+    Author: Karel Minarik
+    Homepage: https://github.com/elasticsearch/elasticsearch-rails/
+    License: Apache 2
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    ActiveModel/Record integrations for Elasticsearch.
+
+elasticsearch-transport (1.0.12)
+    Author: Karel Minarik
+    Homepage:
+    https://github.com/elasticsearch/elasticsearch-ruby/tree/master/elas
+    ticsearch-transport
+    License: Apache 2
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby client for Elasticsearch.
+
+em-proxy (0.1.8)
+    Author: Ilya Grigorik
+    Homepage: http://github.com/igrigorik/em-proxy
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    EventMachine Proxy DSL
+
+equalizer (0.0.11, 0.0.9)
+    Authors: Dan Kubb, Markus Schirp
+    Homepage: https://github.com/dkubb/equalizer
+    License: MIT
+    Installed at (0.0.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module to define equality, equivalence and inspection methods
+
+erector (0.10.0)
+    Authors: Alex Chaffee, Brian Takita, Jeff Dean, Jim Kingdon, John
+    Firebaugh
+    Homepage: http://erector.rubyforge.org/
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HTML/XML Builder library
+
+erubis (2.7.0)
+    Author: makoto kuwata
+    Homepage: http://www.kuwata-lab.com/erubis/
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    a fast and extensible eRuby implementation which supports
+    multi-language
+
+es_basiliscus (0.0.78, 0.0.77)
+    Authors: Luca Bonmassar, Francesco Laurita, Stefano Fontanelli,
+    Giacomo Bagnoli
+    Homepage: http://source.gild.com
+    Installed at (0.0.78): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.77): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby implementation of Basiliscus over Elastic Search
+
+ethon (0.7.4)
+    Author: Hans Hasselberg
+    Homepage: https://github.com/typhoeus/ethon
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Libcurl wrapper.
+
+eventmachine (1.0.8, 1.0.7, 1.0.5)
+    Authors: Francis Cianfrocca, Aman Gupta
+    Homepage: http://rubyeventmachine.com
+    Licenses: Ruby, GPL
+    Installed at (1.0.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby/EventMachine library
+
+excon (0.45.4, 0.44.4)
+    Authors: dpiddy (Dan Peterson), geemus (Wesley Beary), nextmat (Matt
+    Sanders)
+    Homepage: https://github.com/excon/excon
+    License: MIT
+    Installed at (0.45.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.44.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    speed, persistence, http(s)
+
+execjs (2.6.0, 2.5.2)
+    Authors: Sam Stephenson, Josh Peek
+    Homepage: https://github.com/rails/execjs
+    License: MIT
+    Installed at (2.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.5.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Run JavaScript code from Ruby
+
+executable-hooks (1.3.2)
+    Author: Michal Papis
+    Homepage: https://github.com/mpapis/executable-hooks
+    License: Apache 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Hook into rubygems executables allowing extra actions to be taken
+    before executable is run.
+
+fakeweb (1.3.0)
+    Authors: Chris Kampmeier, Blaine Cook
+    Homepage: http://github.com/chrisk/fakeweb
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A tool for faking responses to HTTP requests
+
+faraday (0.9.1, 0.8.9, 0.8.8)
+    Author: Rick Olson
+    Homepage: https://github.com/lostisland/faraday
+    License: MIT
+    Installed at (0.9.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.8.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.8.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HTTP/REST API client library.
+
+faraday_middleware (0.10.0, 0.8.6)
+    Authors: Erik Michaels-Ober, Wynn Netherland
+    Homepage: https://github.com/lostisland/faraday_middleware
+    License: MIT
+    Installed at (0.10.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.8.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Various middleware for Faraday
+
+fast-stemmer (1.0.2)
+    Author: Roman Shterenzon
+    Homepage: http://github.com/romanbsd/fast-stemmer
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fast Porter stemmer based on a C version of algorithm
+
+feed-normalizer (1.5.2)
+    Author: Andrew A. Smith
+    Homepage: http://github.com/aasmith/feed-normalizer
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Extensible Ruby wrapper for Atom and RSS parsers
+
+ffi (1.9.10)
+    Author: Wayne Meissner
+    Homepage: http://wiki.github.com/ffi/ffi
+    License: BSD
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby FFI
+
+fission (0.5.0)
+    Author: Tommy Bishop
+    Homepage: https://github.com/thbishop/fission
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Command line tool to manage VMware Fusion VMs
+
+flexmock (1.3.3)
+    Author: Jim Weirich
+    Homepage: https://github.com/jimweirich/flexmock
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple and Flexible Mock Objects for Testing
+
+flowdock (0.7.0, 0.6.0, 0.4.0)
+    Author: Antti Pitkänen
+    Homepage: http://github.com/flowdock/flowdock-api
+    License: MIT
+    Installed at (0.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.4.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby Gem for using Flowdock's API
+
+fog (1.33.0, 1.32.0, 1.28.0)
+    Author: geemus (Wesley Beary)
+    Homepage: http://github.com/fog/fog
+    License: MIT
+    Installed at (1.33.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.32.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.28.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    brings clouds to you
+
+fog-atmos (0.1.0)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Atmos.
+
+fog-aws (0.7.4, 0.7.3, 0.1.1)
+    Authors: Josh Lane, Wesley Beary
+    Homepage: http://github.com/fog/fog-aws
+    License: MIT
+    Installed at (0.7.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Amazon Web Services.
+
+fog-brightbox (0.8.0, 0.7.2, 0.7.1)
+    Author: Paul Thornthwaite
+    License: MIT
+    Installed at (0.8.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This library can be used as a module for `fog` or as standalone
+    provider to use the Brightbox Cloud in applications
+
+fog-core (1.32.1, 1.32.0, 1.29.0)
+    Authors: Evan Light, Wesley Beary
+    Homepage: https://github.com/fog/fog-core
+    License: MIT
+    Installed at (1.32.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.32.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.29.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Shared classes and tests for fog providers and services.
+
+fog-dynect (0.0.1)
+    Authors: Wesley Beary, The fog team
+    Homepage: http://github.com/fog/fog-dynect
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Dynect DNS.
+
+fog-ecloud (0.3.0, 0.1.1, 0.0.2)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Terremark EnterpriseCloud.
+
+fog-google (0.0.7)
+    Authors: Nat Welch, Daniel Broudy, Isaac Hollander McCreery
+    Homepage: https://github.com/fog/fog-google
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Google.
+
+fog-json (1.0.2, 1.0.0)
+    Authors: Wesley Beary (geemus), Paul Thornthwaite (tokengeek), The
+    fog team
+    Homepage: http://github.com/fog/fog-json
+    License: MIT
+    Installed at (1.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    JSON parsing for fog providers
+
+fog-local (0.2.1)
+    Authors: Wesley Beary, Ville Lautanala
+    Homepage: https://github.com/fog/fog-local
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support local filesystem storage.
+
+fog-powerdns (0.1.1)
+    Author: Chris Luo
+    Homepage: http://github.com/cluobah/fog-powerdns
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support PowerDNS DNS services.
+
+fog-profitbricks (0.0.5, 0.0.3, 0.0.2)
+    Author: Ethan Devenport
+    Homepage: https://github.com/fog/fog-profitbricks
+    License: MIT
+    Installed at (0.0.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support ProfitBricks.
+
+fog-radosgw (0.0.4, 0.0.3)
+    Author: Jon Kåre Hellan
+    Homepage: https://github.com/fog/fog-radosgw
+    License: MIT
+    Installed at (0.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fog backend for provisioning Ceph Radosgw.
+
+fog-riakcs (0.1.0)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Riakcs.
+
+fog-sakuracloud (1.0.1, 1.0.0)
+    Author: sawanoboly
+    License: MIT
+    Installed at (1.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Sakura no Cloud
+
+fog-serverlove (0.1.2, 0.1.1)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.1.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support ServerLove.
+
+fog-softlayer (0.4.7, 0.4.1)
+    Author: Matt Eldridge
+    Homepage: https://github.com/fog/fog-softlayer
+    License: MIT
+    Installed at (0.4.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.4.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This library can be used as a module for `fog` or as standalone
+    provider to use the SoftLayer Cloud in applications
+
+fog-storm_on_demand (0.1.1, 0.1.0)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support StormOnDemand.
+
+fog-terremark (0.1.0, 0.0.4)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Terremark vCloud.
+
+fog-vmfusion (0.1.0, 0.0.1)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support VMWARE FUSION.
+
+fog-voxel (0.1.0, 0.0.2)
+    Author: Paulo Henrique Lopes Ribeiro
+    License: MIT
+    Installed at (0.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Module for the 'fog' gem to support Voxel.
+
+fog-xml (0.1.2, 0.1.1)
+    Authors: Wesley Beary (geemus), Paul Thornthwaite (tokengeek), The
+    fog team
+    Homepage: https://github.com/fog/fog-xml
+    License: MIT
+    Installed at (0.1.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    XML parsing for fog providers
+
+foreman (0.78.0)
+    Author: David Dollar
+    Homepage: http://github.com/ddollar/foreman
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Process manager for applications with multiple components
+
+formatador (0.2.5)
+    Author: geemus (Wesley Beary)
+    Homepage: http://github.com/geemus/formatador
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby STDOUT text formatting
+
+fullcontact (0.12.0, 0.7.0)
+    Author: FullContact, Inc.
+    Homepage: https://github.com/fullcontact/fullcontact-api-ruby
+    License: MIT
+    Installed at (0.12.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby wrapper for the FullContact API
+
+gaptool-api (0.7.2, 0.7.1)
+    Authors: Matt Bailey, Giacomo Bagnoli
+    Homepage: http://github.com/Gild/gaptool-api
+    License: MIT
+    Installed at (0.7.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    gaptool-server ruby API
+
+gaptool-client (0.7.8, 0.7.7)
+    Authors: Francesco Laurita, Matt Bailey, Giacomo Bagnoli
+    Homepage: http://www.gild.com
+    License: MIT
+    Installed at (0.7.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    client for gaptool-server
+
+gem-wrappers (1.2.7)
+    Author: Michal Papis
+    Homepage: https://github.com/rvm/gem-wrappers
+    License: Apache 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Create gem wrappers for easy use of gems in cron and other system
+    locations.
+
+geocoder (1.2.9, 1.1.9)
+    Author: Alex Reisner
+    Homepage: http://www.rubygeocoder.com
+    License: MIT
+    Installed at (1.2.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Complete geocoding solution for Ruby.
+
+gherkin (2.12.2)
+    Authors: Mike Sassak, Gregory Hnatiuk, Aslak Hellesøy
+    Homepage: http://github.com/cucumber/gherkin
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    gherkin-2.12.2
+
+gild-torprivoxy (0.2.8, 0.2.6)
+    Author: Francesco Laurita
+    License: MIT
+    Installed at (0.2.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    TOR / Web Proxy lookup made easy
+
+gild_api (0.0.6, 0.0.4)
+    Author: Stefano Fontanelli
+    Homepage: http://www.gild.com
+    Installed at (0.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_blacklist (0.0.11, 0.0.10)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.0.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Blacklists related to Gild Source data.
+
+gild_communities (0.0.295, 0.0.291)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.295): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.291): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library containing a framework to import data from external
+    communities
+
+gild_community_bitbucket (0.0.379, 0.0.362)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.379): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.362): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Bitbucket Importer
+
+gild_community_blogs (0.0.255)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Blogs Importer
+
+gild_community_coderwall (0.0.132)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Coderwall Importer
+
+gild_community_dataquality (0.0.69)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_community_facebook (0.0.96)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Facebook Importer
+
+gild_community_fullcontact (0.0.178)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fullcontact Importer
+
+gild_community_geeklist (0.0.113)
+    Author: Neha Karajgikar
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Geeklist Importer
+
+gild_community_github (0.0.368, 0.0.355)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.368): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.355): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Github Importer
+
+gild_community_googlecode (0.0.220, 0.0.213)
+    Authors: Neha Karajgikar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.220): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.213): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    GoogleCode importer
+
+gild_community_googleplus (0.2.35)
+    Authors: Luca Bonmassar, Francesco Laurita, Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Google Plus community
+
+gild_community_gravatar (0.0.61)
+    Authors: Luca Bonmassar, Francesco Laurita, Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_community_klout (0.0.227)
+    Authors: Neha Karajgikar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Klout importer
+
+gild_community_lanyrd (0.0.162)
+    Author: Neha Karajgikar
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Lanyrd importer
+
+gild_community_linkedin (0.2.256, 0.2.243)
+    Authors: Luca Bonmassar, Francesco Laurita, Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.2.256): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.243): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Linkedin Importer
+
+gild_community_ohloh (0.0.53)
+    Authors: Luca Bonmassar, Francesco Laurita, Neha Karajgikar, Stefano
+    Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ohloh Importer
+
+gild_community_pipl (0.0.259)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Pipl Importer
+
+gild_community_skills (0.0.71)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_community_skype (0.0.73)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_community_slideshare (0.0.158)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Slideshare Importer
+
+gild_community_stackexchange (0.0.248, 0.0.239)
+    Author: Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.248): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.239): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    StackExchange data miner
+
+gild_community_textkernel (0.0.102)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_community_twitter (0.0.289)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Twitter Importer
+
+gild_data (0.2.6, 0.2.4, 0.2.3, 0.2.2, 0.2.1, 0.1.10, 0.1.9)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.2.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.10): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Libray containing data classes (Mongo, Redis) for Gild / GildSource
+    backend
+
+gild_ddg (0.0.3)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This gem can use Duck duck go as a search engine
+
+gild_deduplication (0.0.182)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Deduplication service
+
+gild_emails (0.0.158, 0.0.155, 0.0.154, 0.0.152)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.158): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.155): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.154): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.152): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Mail utilities + cracker
+
+gild_geocoder (0.0.77, 0.0.76, 0.0.73, 0.0.69)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.0.77): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.76): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.73): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.69): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Geocoding gem
+
+gild_indexer (0.0.101, 0.0.95, 0.0.93, 0.0.88)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.0.101): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.95): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.93): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.88): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Indexer gem
+
+gild_infrastructure (0.0.127, 0.0.125, 0.0.124, 0.0.121)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.127): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.125): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.124): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.121): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Libray containing infrastructure components (Daemons, Queues) for
+    Gild / GildSource backend
+
+gild_linkedin_intro (0.0.335)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_mail_resume_gateway (0.0.63)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Mail Gateway that converts emails into profiles
+
+gild_mturk_crawler (0.0.23)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_notifier (0.0.25)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_profile (0.0.21, 0.0.18)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.0.21): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.18): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_profile_doctor (0.0.322)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Profiles Doctor Service
+
+gild_profile_marshal (0.0.149)
+    Author: Giacomo Bagnoli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Service to export/import profiles with communities data
+
+gild_profile_refresh (0.0.141)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Profile Refresh logic
+
+gild_queue_proxy (0.0.32)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_redis_amqp (0.0.21)
+    Author: Francesco Laurita
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Redis as AMQP
+
+gild_scheduler (0.0.159, 0.0.157, 0.0.154, 0.0.151)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at (0.0.159): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.157): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.154): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.151): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_score (0.0.294)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Gild Score code
+
+gild_server_agent (0.0.22)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Libray containing server/service agent used by blizzard
+
+gild_skills_anthology (0.0.22, 0.0.21)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.22): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.21): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Libray containing utilities for a live antologies of skills and
+    technologies for Gild
+
+gild_source_code_analysis (0.0.116, 0.0.113, 0.0.111)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.0.116): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.113): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.111): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Tools to analyze source code
+
+gild_source_frontend_objects (0.0.8)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    List of FE objects that can be manipulated from the BE
+
+gild_spotlight (0.0.135)
+    Author: Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+gild_text_analysis (0.0.38)
+    Authors: Luca Bonmassar, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library containing text analysis components (Retrivial + Analysis)
+    for Gild / GildSource backend
+
+gild_track_hires (0.0.275)
+    Author: Francesco Laurita
+    Homepage: http://www.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Gild Track hires gem
+
+gild_users (0.0.33)
+    Authors: Luca Bonmassar, Francesco Laurita, Stefano Fontanelli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Users manipulation utilities
+
+gild_widget_dispatcher (0.0.153)
+    Author: Giacomo Bagnoli
+    Homepage: http://source.gild.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    
+
+girl_friday (0.11.2)
+    Author: Mike Perham
+    Homepage: https://github.com/mperham/girl_friday
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Background processing, simplified
+
+git (1.2.9.1)
+    Author: Scott Chacon
+    Homepage: http://github.com/schacon/ruby-git
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby/Git is a Ruby library that can be used to create, read and
+    manipulate Git repositories by wrapping system calls to the git
+    binary.
+
+globalid (0.3.6, 0.3.5)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at (0.3.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Refer to any model with a URI: gid://app/class/id
+
+gmail (0.5.0)
+    Author: Chris Kowalik
+    Homepage: http://github.com/gmailgem/gmail
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Rubyesque interface to Gmail, with all the tools you will need.
+
+gmail_xoauth (0.4.1)
+    Author: Nicolas Fouché
+    Homepage: https://github.com/nfo/gmail_xoauth
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Get access to Gmail IMAP and STMP via OAuth, using the standard Ruby
+    Net libraries
+
+google_plus (0.2.4)
+    Author: John Crepezzi
+    Homepage: http://github.com/seejohnrun/google_plus
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby Gem for the Google+ API
+
+grape (0.13.0, 0.12.0)
+    Author: Michael Bleigh
+    Homepage: https://github.com/ruby-grape/grape
+    License: MIT
+    Installed at (0.13.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.12.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A simple Ruby framework for building REST-like APIs.
+
+hashie (3.4.2, 2.0.5)
+    Authors: Michael Bleigh, Jerry Cheung
+    Homepage: https://github.com/intridea/hashie
+    License: MIT
+    Installed at (3.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Your friendly neighborhood hash library.
+
+hashr (0.0.22)
+    Author: Sven Fuchs
+    Homepage: http://github.com/svenfuchs/hashr
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple Hash extension to make working with nested hashes (e.g. for
+    configuration) easier and less error-prone
+
+highline (1.7.3)
+    Author: James Edward Gray II
+    Homepage: https://github.com/JEG2/highline
+    License: Ruby
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HighLine is a high-level command-line IO library.
+
+hike (2.1.3, 1.2.3)
+    Author: Sam Stephenson
+    Homepage: http://github.com/sstephenson/hike
+    License: MIT
+    Installed at (2.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Find files in a set of paths
+
+hipchat (1.5.2, 1.5.1, 1.0.1)
+    Author: HipChat/Atlassian
+    Homepage: https://github.com/hipchat/hipchat-rb
+    License: MIT
+    Installed at (1.5.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby library to interact with HipChat
+
+hiredis (0.6.0, 0.4.5)
+    Author: Pieter Noordhuis
+    Homepage: http://github.com/redis/hiredis-rb
+    License: BSD-3-Clause
+    Installed at (0.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.4.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby wrapper for hiredis (protocol serialization/deserialization and
+    blocking I/O)
+
+hitimes (1.2.2)
+    Author: Jeremy Hinegardner
+    Homepage: http://github.com/copiousfreetime/hitimes
+    License: ISC
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Hitimes is a fast, high resolution timer library for recording
+    performance metrics.  It uses the appropriate low method calls for
+    each system to get the highest granularity time increments possible.
+
+hpricot (0.8.6)
+    Author: why the lucky stiff
+    Homepage: http://code.whytheluckystiff.net/hpricot/
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    a swift, liberal HTML parser with a fantastic library
+
+http (0.9.1, 0.9.0, 0.8.12, 0.6.4, 0.5.1, 0.5.0)
+    Authors: Tony Arcieri, Erik Michaels-Ober, Alexey V. Zapparov,
+    Zachary Anker
+    Homepage: https://github.com/httprb/http.rb
+    License: MIT
+    Installed at (0.9.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.9.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.8.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HTTP should be easy
+
+http-cookie (1.0.2)
+    Authors: Akinori MUSHA, Aaron Patterson, Eric Hodel, Mike Dalessio
+    Homepage: https://github.com/sparklemotion/http-cookie
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby library to handle HTTP Cookies based on RFC 6265
+
+http-form_data (1.0.1)
+    Author: Aleksey V Zapparov
+    Homepage: https://github.com/httprb/form_data.rb
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    http-form_data-1.0.1
+
+http_parser.rb (0.6.0)
+    Authors: Marc-Andre Cournoyer, Aman Gupta
+    Homepage: http://github.com/tmm1/http_parser.rb
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple callback-based HTTP request/response parser
+
+httparty (0.13.5, 0.12.0)
+    Authors: John Nunemaker, Sandro Turriate
+    Homepage: http://jnunemaker.github.com/httparty
+    License: MIT
+    Installed at (0.13.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.12.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Makes http fun! Also, makes consuming restful web services dead
+    easy.
+
+httpclient (2.6.0.1, 2.3.4.1)
+    Author: Hiroshi Nakamura
+    Homepage: https://github.com/nahi/httpclient
+    License: ruby
+    Installed at (2.6.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.3.4.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    gives something like the functionality of libwww-perl (LWP) in Ruby
+
+i18n (0.7.0, 0.6.9)
+    Authors: Sven Fuchs, Joshua Harvey, Matt Aimonetti, Stephan Soller,
+    Saimon Moore
+    Homepage: http://github.com/svenfuchs/i18n
+    License: MIT
+    Installed at (0.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    New wave Internationalization support for Ruby
+
+ice_nine (0.11.1)
+    Author: Dan Kubb
+    Homepage: https://github.com/dkubb/ice_nine
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Deep Freeze Ruby Objects
+
+inflecto (0.0.2)
+    Authors: The rails, merb & datamapper team, Markus Schirp
+    Homepage: https://github.com/mbj/inflecto
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Inflector for strings
+
+io-console (0.4.3, 0.4.2)
+    Author: Nobu Nakada
+    Homepage: http://www.ruby-lang.org
+    License: ruby
+    Installed at (0.4.3, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+                 (0.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Console interface
+
+ione (1.2.1)
+    Author: Theo Hultberg
+    Homepage: http://github.com/iconara/ione
+    License: Apache License 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Reactive programming framework for Ruby
+
+ipaddress (0.8.0)
+    Author: Marco Ceresa
+    Homepage: http://github.com/bluemonk/ipaddress
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    IPv4/IPv6 addresses manipulation library
+
+jbuilder (2.3.1, 2.1.3)
+    Authors: David Heinemeier Hansson, Pavel Pravosud
+    Homepage: https://github.com/rails/jbuilder
+    License: MIT
+    Installed at (2.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Create JSON structures via a Builder-style DSL
+
+jekyll (2.5.3)
+    Author: Tom Preston-Werner
+    Homepage: https://github.com/jekyll/jekyll
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A simple, blog aware, static site generator.
+
+jekyll-coffeescript (1.0.1)
+    Author: Parker Moore
+    Homepage: https://github.com/jekyll/jekyll-coffeescript
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A CoffeeScript converter for Jekyll.
+
+jekyll-gist (1.3.1, 1.3.0, 1.2.1)
+    Author: Parker Moore
+    Homepage: https://github.com/jekyll/jekyll-gist
+    License: MIT
+    Installed at (1.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Liquid tag for displaying GitHub Gists in Jekyll sites.
+
+jekyll-paginate (1.1.0)
+    Author: Parker Moore
+    Homepage: https://github.com/jekyll/jekyll-paginate
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Built-in Pagination Generator for Jekyll
+
+jekyll-sass-converter (1.3.0)
+    Author: Parker Moore
+    Homepage: https://github.com/jekyll/jekyll-sass-converter
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A basic Sass converter for Jekyll.
+
+jekyll-watch (1.2.1)
+    Author: Parker Moore
+    Homepage: https://github.com/jekyll/jekyll-watch
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rebuild your Jekyll site when a file changes with the `--watch`
+    switch.
+
+jmespath (1.0.2)
+    Author: Trevor Rowe
+    Homepage: http://github.com/trevorrowe/jmespath.rb
+    License: Apache 2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    JMESPath - Ruby Edition
+
+journey (1.0.4)
+    Author: Aaron Patterson
+    Homepage: http://github.com/rails/journey
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Journey is a router
+
+jquery-rails (4.0.4)
+    Author: André Arko
+    Homepage: http://rubygems.org/gems/jquery-rails
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Use jQuery with Rails 4+
+
+json (1.8.3, 1.8.2, 1.8.1)
+    Author: Florian Frank
+    Homepage: http://flori.github.com/json
+    License: Ruby
+    Installed at (1.8.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.8.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.8.1, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+
+    JSON Implementation for Ruby
+
+json-schema (2.5.1, 1.0.12)
+    Author: Kenny Hoxworth
+    Homepage: http://github.com/ruby-json-schema/json-schema/tree/master
+    License: MIT
+    Installed at (2.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby JSON Schema Validator
+
+jwt (1.5.1, 1.2.1)
+    Author: Jeff Lindsay
+    Homepage: http://github.com/progrium/ruby-jwt
+    License: MIT
+    Installed at (1.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    JSON Web Token implementation in Ruby
+
+kramdown (1.8.0)
+    Author: Thomas Leitner
+    Homepage: http://kramdown.gettalong.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    kramdown is a fast, pure-Ruby Markdown-superset converter.
+
+levenshtein (0.2.2)
+    Author: Erik Veenstra
+    Homepage: http://www.erikveen.dds.nl/levenshtein/index.html
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Calculates the Levenshtein distance between two byte strings.
+
+liquid (3.0.6, 3.0.5, 3.0.4, 3.0.3, 2.6.2)
+    Author: Tobias Luetke
+    Homepage: http://www.liquidmarkup.org
+    License: MIT
+    Installed at (3.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A secure, non-evaling end user template engine with aesthetic
+    markup.
+
+listen (3.0.3, 3.0.2, 2.10.1)
+    Author: Thibaud Guillaume-Gentil
+    Homepage: https://github.com/guard/listen
+    License: MIT
+    Installed at (3.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.10.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Listen to file modifications
+
+log4r (1.1.10)
+    Author: Colby Gutierrez-Kraybill
+    Homepage: http://log4r.rubyforge.org
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Log4r, logging framework for ruby
+
+loofah (2.0.3, 2.0.2)
+    Authors: Mike Dalessio, Bryan Helmkamp
+    Homepage: https://github.com/flavorjones/loofah
+    License: MIT
+    Installed at (2.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Loofah is a general library for manipulating and transforming
+    HTML/XML documents and fragments
+
+lz4-ruby (0.3.3)
+    Author: KOMIYA Atsushi
+    Homepage: http://github.com/komiya-atsushi/lz4-ruby
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby bindings for LZ4 (Extremely Fast Compression algorithm).
+
+macaddr (1.7.1)
+    Author: Ara T. Howard
+    Homepage: https://github.com/ahoward/macaddr
+    License: Ruby
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    macaddr
+
+mail (2.6.3, 2.5.4)
+    Author: Mikel Lindsaar
+    Homepage: https://github.com/mikel/mail
+    License: MIT
+    Installed at (2.6.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.5.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Mail provides a nice Ruby DSL for making, sending and reading
+    emails.
+
+mailcatcher (0.6.1)
+    Author: Samuel Cochran
+    Homepage: http://mailcatcher.me
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Runs an SMTP server, catches and displays email in a web interface.
+
+maruku (0.7.2)
+    Authors: Andrea Censi, Nathan Weizenbaum, Ben Hollis
+    Homepage: http://github.com/bhollis/maruku
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Maruku is a Markdown-superset interpreter written in Ruby.
+
+mechanize (2.7.3, 2.7.2)
+    Authors: Eric Hodel, Aaron Patterson, Mike Dalessio, Akinori MUSHA,
+    Lee Jarvis
+    Homepage: http://mechanize.rubyforge.org
+    License: MIT
+    Installed at (2.7.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.7.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    The Mechanize library is used for automating interaction with
+    websites
+
+memoizable (0.4.2, 0.4.0)
+    Authors: Dan Kubb, Erik Michaels-Ober
+    Homepage: https://github.com/dkubb/memoizable
+    License: MIT
+    Installed at (0.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.4.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Memoize method return values
+
+mercenary (0.3.5)
+    Authors: Tom Preston-Werner, Parker Moore
+    Homepage: https://github.com/jekyll/mercenary
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Lightweight and flexible library for writing command-line apps in
+    Ruby.
+
+metaclass (0.0.4)
+    Author: James Mead
+    Homepage: http://github.com/floehopper/metaclass
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Adds a metaclass method to all Ruby objects
+
+method_source (0.8.2)
+    Author: John Mair (banisterfiend)
+    Homepage: http://banisterfiend.wordpress.com
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    retrieve the sourcecode for a method
+
+mime (0.4.2, 0.3.0)
+    Author: Clint Pachl
+    Homepage: http://ecentryx.com/gems/mime
+    License: ISC
+    Installed at (0.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Multipurpose Internet Mail Extensions (MIME) Library
+
+mime-types (2.6.1, 1.25.1)
+    Author: Austin Ziegler
+    Homepage: https://github.com/mime-types/ruby-mime-types/
+    Licenses: MIT, Artistic 2.0, GPL-2
+    Installed at (2.6.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.25.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    The mime-types library provides a library and registry for
+    information about MIME content type definitions
+
+mimemagic (0.3.0)
+    Author: Daniel Mendler
+    Homepage: https://github.com/minad/mimemagic
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fast mime detection by extension or content
+
+mini_portile (0.6.2)
+    Authors: Luis Lavena, Mike Dalessio
+    Homepage: http://github.com/flavorjones/mini_portile
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simplistic port-like solution for developers
+
+minitest (5.8.0, 5.7.0, 5.4.3, 4.7.5)
+    Author: Ryan Davis
+    Homepage: https://github.com/seattlerb/minitest
+    License: MIT
+    Installed at (5.8.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (5.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (5.4.3): /Users/edoardo/.rvm/gems/ruby-2.2.2@global
+                 (4.7.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    minitest provides a complete suite of testing facilities supporting
+    TDD, BDD, mocking, and benchmarking
+
+mocha (1.1.0, 0.13.3)
+    Author: James Mead
+    Homepage: http://gofreerange.com/mocha/docs
+    Installed at (1.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.13.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Mocking and stubbing library
+
+mock-aws-s3 (0.6.0)
+    Author: Joshua Krall
+    Homepage: http://github.com/jkrall/mock-aws-s3
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Mock AWS::S3 so you can use it in your tests without hitting the
+    network
+
+mongo (2.0.6, 1.12.3, 1.10.2, 1.6.4)
+    Authors: Tyler Brock, Emily Stolfo, Durran Jordan
+    Homepage: http://www.mongodb.org
+    License: Apache License Version 2.0
+    Installed at (2.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.12.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.10.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby driver for MongoDB
+
+mono_logger (1.1.0)
+    Author: Steve Klabnik
+    Homepage: http://github.com/steveklabnik/mono_logger
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A lock-free logger compatible with Ruby 2.0.
+
+moped (2.0.7, 2.0.6, 1.5.3, 1.5.2)
+    Authors: Durran Jordan, Bernerd Schaefer
+    Homepage: http://mongoid.org/en/moped
+    Installed at (2.0.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A MongoDB driver for Ruby.
+
+msgpack (0.6.2, 0.6.1, 0.5.12)
+    Authors: Sadayuki Furuhashi, Theo Hultberg
+    Homepage: http://msgpack.org/
+    License: Apache 2.0
+    Installed at (0.6.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.5.12): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    MessagePack, a binary-based efficient data interchange format.
+
+multi_json (1.11.2, 1.10.1)
+    Authors: Michael Bleigh, Josh Kalderimis, Erik Michaels-Ober, Pavel
+    Pravosud
+    Homepage: http://github.com/intridea/multi_json
+    License: MIT
+    Installed at (1.11.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.10.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A common interface to multiple JSON libraries.
+
+multi_test (0.1.2)
+    Authors: Matt Wynne, Steve Tooke
+    Homepage: http://cukes.info
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    multi-test-0.1.2
+
+multi_xml (0.5.5)
+    Author: Erik Michaels-Ober
+    Homepage: https://github.com/sferik/multi_xml
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A generic swappable back-end for XML parsing
+
+multipart-post (2.0.0, 1.2.0)
+    Author: Nick Sieger
+    Homepage: https://github.com/nicksieger/multipart-post
+    License: MIT
+    Installed at (2.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A multipart form post accessory for Net::HTTP.
+
+naught (1.0.0)
+    Author: Avdi Grimm
+    Homepage: https://github.com/avdi/naught
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Naught is a toolkit for building Null Objects
+
+nenv (0.2.0)
+    Author: Cezary Baginski
+    Homepage: https://github.com/e2/nenv
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Convenience wrapper for Ruby's ENV
+
+net-http-digest_auth (1.4)
+    Author: Eric Hodel
+    Homepage: http://github.com/drbrain/net-http-digest_auth
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An implementation of RFC 2617 - Digest Access Authentication
+
+net-http-persistent (2.9.4)
+    Author: Eric Hodel
+    Homepage: http://docs.seattlerb.org/net-http-persistent
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Manages persistent connections using Net::HTTP plus a speed fix for
+    Ruby 1.8
+
+net-scp (1.2.1)
+    Authors: Jamis Buck, Delano Mandelbaum
+    Homepage: https://github.com/net-ssh/net-scp
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A pure Ruby implementation of the SCP client protocol
+
+net-sftp (2.1.2)
+    Authors: Jamis Buck, Delano Mandelbaum
+    Homepage: https://github.com/net-ssh/net-sftp
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A pure Ruby implementation of the SFTP client protocol
+
+net-ssh (2.10.0, 2.9.2)
+    Authors: Jamis Buck, Delano Mandelbaum, Miklós Fazekas
+    Homepage: https://github.com/net-ssh/net-ssh
+    License: MIT
+    Installed at (2.10.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.9.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Net::SSH: a pure-Ruby implementation of the SSH2 client protocol.
+
+net-ssh-gateway (1.2.0)
+    Authors: Jamis Buck, Delano Mandelbaum
+    Homepage: https://github.com/net-ssh/net-scp
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A simple library to assist in establishing tunneled Net::SSH
+    connections
+
+netrc (0.10.3)
+    Authors: Keith Rarick, geemus (Wesley Beary)
+    Homepage: https://github.com/geemus/netrc
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library to read and write netrc files.
+
+nokogiri (1.6.6.2, 1.5.11)
+    Authors: Aaron Patterson, Mike Dalessio, Yoko Harada, Tim Elliott,
+    Akinori MUSHA
+    Homepage: http://nokogiri.org
+    License: MIT
+    Installed at (1.6.6.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.11): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
+
+ntlm-http (0.1.1)
+    Author: Kohei Kajimoto,Kingsley Hendrickse
+    Homepage: http://www.mindflowsolutions.net
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby/NTLM HTTP library.
+
+oauth (0.4.7)
+    Authors: Pelle Braendgaard, Blaine Cook, Larry Halff, Jesse Clark,
+    Jon Crosby, Seth Fitzsimmons, Matt Sanford, Aaron Quint
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    OAuth Core Ruby implementation
+
+oauth2 (1.0.0)
+    Authors: Michael Bleigh, Erik Michaels-Ober
+    Homepage: http://github.com/intridea/oauth2
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby wrapper for the OAuth 2.0 protocol.
+
+open4 (1.3.4, 1.3.0)
+    Author: Ara T. Howard
+    Homepage: https://github.com/ahoward/open4
+    License: Ruby
+    Installed at (1.3.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    open4
+
+optionable (0.2.0)
+    Author: Durran Jordan
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Robust options validation for methods.
+
+optparse-range (0.0.3)
+    Author: KITAITI Makoto
+    Homepage: https://github.com/KitaitiMakoto/optparse-range
+    Licenses: Ruby, BSDL
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Range command line arguments handling
+
+pagerduty (2.0.1, 2.0.0)
+    Authors: Charlie Somerville, Orien Madgwick
+    Homepage: http://github.com/envato/pagerduty
+    License: MIT
+    Installed at (2.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Pagerduty Integration API client library
+
+parallel (1.6.1, 1.6.0, 0.7.1)
+    Author: Michael Grosser
+    Homepage: https://github.com/grosser/parallel
+    License: MIT
+    Installed at (1.6.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Run any kind of code in parallel processes
+
+parser (2.2.2.6)
+    Author: Peter Zotov
+    Homepage: https://github.com/whitequark/parser
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby parser written in pure Ruby.
+
+parslet (1.7.0, 1.5.0)
+    Author: Kaspar Schiess
+    Homepage: http://kschiess.github.io/parslet
+    License: MIT
+    Installed at (1.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Parser construction library with great error reporting in Ruby.
+
+peach (0.5.1)
+    Author: Ben Hughes
+    Homepage: http://peach.rubyforge.org
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Parallel Each and other parallel things
+
+pg (0.18.2)
+    Authors: Michael Granger, Lars Kanis
+    Homepage: https://bitbucket.org/ged/ruby-pg
+    Licenses: BSD, Ruby, GPL
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Pg is the Ruby interface to the {PostgreSQL
+    RDBMS}[http://www.postgresql.org/]
+
+phashion (1.1.1, 1.0.6)
+    Author: Mike Perham
+    Homepage: http://github.com/westonplatter/phashion
+    Installed at (1.1.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple wrapper around the pHash library
+
+plissken (0.2.0)
+    Authors: Dave Hrycyszyn, Michael Chrisco
+    Homepage: http://github.com/futurechimp/plissken
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Snakify your camel keys when working with JSON APIs
+
+polipus (0.5.1, 0.5.0, 0.1.0)
+    Author: Francesco Laurita
+    Homepage: https://github.com/taganaka/polipus
+    License: MIT
+    Installed at (0.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Polipus distributed web-crawler framework
+
+polipus-elasticsearch (0.0.3, 0.0.2)
+    Author: Stefano Fontanelli
+    Homepage: https://github.com/stefanofontanelli/polipus-elasticsearch
+    License: MIT
+    Installed at (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Add support for ElasticSearch in Polipus crawler
+
+polyglot (0.3.5, 0.3.3)
+    Author: Clifford Heath
+    Homepage: http://github.com/cjheath/polyglot
+    License: MIT
+    Installed at (0.3.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Augment 'require' to load non-Ruby file types
+
+posix-spawn (0.3.11)
+    Authors: Ryan Tomayko, Aman Gupta
+    Homepage: https://github.com/rtomayko/posix-spawn
+    Licenses: MIT, LGPL
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    posix_spawnp(2) for ruby
+
+power_assert (0.2.4, 0.2.3, 0.2.2)
+    Author: Kazuki Tsujimoto
+    Homepage: https://github.com/k-tsj/power_assert
+    Licenses: 2-clause BSDL, Ruby's
+    Installed at (0.2.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2@global
+
+    Power Assert for Ruby
+
+powerpack (0.1.1)
+    Author: Bozhidar Batsov
+    Homepage: https://github.com/bbatsov/powerpack
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A few useful extensions to core Ruby classes.
+
+pry (0.10.1)
+    Authors: John Mair (banisterfiend), Conrad Irwin, Ryan Fitzgerald
+    Homepage: http://pryrepl.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An IRB alternative and runtime developer console
+
+psych (2.0.13, 2.0.8)
+    Author: Aaron Patterson
+    Homepage: http://github.com/tenderlove/psych
+    License: MIT
+    Installed at (2.0.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.0.8, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+
+    Psych is a YAML parser and emitter
+
+public_suffix (1.5.1, 1.3.3)
+    Author: Simone Carletti
+    Homepage: http://simonecarletti.com/code/publicsuffix
+    License: MIT
+    Installed at (1.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.3.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Domain name parser based on the Public Suffix List.
+
+puma (2.13.4, 2.12.3, 2.12.2, 2.12.1, 2.12.0, 2.11.3)
+    Author: Evan Phoenix
+    Homepage: http://puma.io
+    License: BSD-3-Clause
+    Installed at (2.13.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.12.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.12.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.12.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.12.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.11.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1
+    server for Ruby/Rack applications
+
+pusher (0.14.5, 0.12.0)
+    Author: Pusher
+    Homepage: http://github.com/pusher/pusher-http-ruby
+    License: MIT
+    Installed at (0.14.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.12.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Pusher API client
+
+pygments.rb (0.6.3)
+    Authors: Aman Gupta, Ted Nyman
+    Homepage: https://github.com/tmm1/pygments.rb
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    pygments wrapper for ruby
+
+rack (1.6.4, 1.4.7)
+    Author: Christian Neukirchen
+    Homepage: http://rack.github.io/
+    License: MIT
+    Installed at (1.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.4.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    a modular Ruby webserver interface
+
+rack-accept (0.4.5)
+    Author: Michael Jackson
+    Homepage: http://mjijackson.github.com/rack-accept
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HTTP Accept* for Ruby/Rack
+
+rack-cache (1.2)
+    Author: Ryan Tomayko
+    Homepage: http://tomayko.com/src/rack-cache/
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    HTTP Caching for Rack
+
+rack-mount (0.8.3)
+    Author: Joshua Peek
+    Homepage: https://github.com/josh/rack-mount
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Stackable dynamic tree based Rack router
+
+rack-protection (1.5.3)
+    Authors: Konstantin Haase, Alex Rodionov, Patrick Ellis, Jason
+    Staten, ITO Nobuaki, Jeff Welling, Matteo Centenaro, Egor Homakov,
+    Florian Gilcher, Fojas, Igor Bochkariov, Mael Clerambault, Martin
+    Mauch, Renne Nissinen, SAKAI, Kazuaki, Stanislav Savulchik, Steve
+    Agalloco, TOBY, Thais Camilo and Konstantin Haase, Vipul A M, Akzhan
+    Abdulin, brookemckim, Bjørge Næss, Chris Heald, Chris Mytton, Corey
+    Ward, Dario Cravero, David Kellum
+    Homepage: http://github.com/rkh/rack-protection
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    You should use protection!
+
+rack-ssl (1.4.1, 1.3.4)
+    Author: Joshua Peek
+    Homepage: https://github.com/josh/rack-ssl
+    License: MIT
+    Installed at (1.4.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.3.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Force SSL/TLS in your app.
+
+rack-test (0.6.3)
+    Author: Bryan Helmkamp
+    Homepage: http://github.com/brynary/rack-test
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple testing API built on Rack
+
+rails (4.2.3)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Full-stack web application framework.
+
+rails-deprecated_sanitizer (1.0.3)
+    Author: Kasper Timm Hansen
+    Homepage: https://github.com/rails/rails-deprecated_sanitizer
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Deprecated sanitizer API extracted from Action View.
+
+rails-dom-testing (1.0.7, 1.0.6)
+    Authors: Rafael Mendonça França, Kasper Timm Hansen
+    Homepage: https://github.com/rails/rails-dom-testing
+    License: MIT
+    Installed at (1.0.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Dom and Selector assertions for Rails applications
+
+rails-html-sanitizer (1.0.2)
+    Authors: Rafael Mendonça França, Kasper Timm Hansen
+    Homepage: https://github.com/rafaelfranca/rails-html-sanitizer
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This gem is responsible to sanitize HTML fragments in Rails
+    applications.
+
+rails_12factor (0.0.3)
+    Authors: Richard Schneeman, Terence Lee
+    Homepage: https://github.com/heroku/rails_12factor
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Following best practices from http://12factor.net run a
+    maintainable, clean, and scalable app on Rails
+
+rails_serve_static_assets (0.0.4)
+    Authors: Pedro Belo, Jonathan Dance
+    Homepage: https://github.com/heroku/rails_serve_static_assets
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Sets serve_static_assets to true so Rails will sere your static
+    assets
+
+rails_stdout_logging (0.0.3)
+    Authors: David Dollar, Jonathan Dance, Richard Schneeman
+    Homepage: https://github.com/heroku/rails_stdout_logging
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Overrides Rails' built in logger to send all logs to stdout
+
+railties (4.2.3, 3.2.22)
+    Author: David Heinemeier Hansson
+    Homepage: http://www.rubyonrails.org
+    License: MIT
+    Installed at (4.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.22): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Tools for creating, working with, and running Rails applications.
+
+rainbow (2.0.0)
+    Author: Marcin Kulik
+    Homepage: https://github.com/sickill/rainbow
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Colorize printed text on ANSI terminals
+
+rake (10.4.2, 10.0.4)
+    Author: 
+    Installed at (10.4.2, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+                 (10.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This rake is bundled with Ruby
+
+rash (0.4.0)
+    Author: tcocca
+    Homepage: http://github.com/tcocca/rash
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    simple extension to Hashie::Mash for rubyified keys
+
+rb-fsevent (0.9.5)
+    Authors: Thibaud Guillaume-Gentil, Travis Tilley
+    Homepage: http://rubygems.org/gems/rb-fsevent
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Very simple & usable FSEvents API
+
+rb-inotify (0.9.5)
+    Author: Nathan Weizenbaum
+    Homepage: http://github.com/nex3/rb-inotify
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby wrapper for Linux's inotify, using FFI
+
+rdiscount (2.1.8)
+    Authors: Ryan Tomayko, David Loren Parsons, Andrew White, David
+    Foster
+    Homepage: http://dafoster.net/projects/rdiscount/
+    License: BSD
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fast Implementation of Gruber's Markdown in C
+
+rdoc (4.2.0, 3.12.2)
+    Author: 
+    Installed at (4.2.0, default): /Users/edoardo/.rvm/rubies/ruby-2.2.2/lib/ruby/gems/2.2.0
+                 (3.12.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This rdoc is bundled with Ruby
+
+redcarpet (3.3.2)
+    Authors: Natacha Porté, Vicent Martí
+    Homepage: http://github.com/vmg/redcarpet
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Markdown that smells nice
+
+redis (3.2.1, 3.0.7)
+    Authors: Ezra Zygmuntowicz, Taylor Weibley, Matthew Clark, Brian
+    McKinney, Salvatore Sanfilippo, Luca Guidi, Michel Martens, Damian
+    Janowski, Pieter Noordhuis
+    Homepage: https://github.com/redis/redis-rb
+    License: MIT
+    Installed at (3.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.7): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby client library for Redis
+
+redis-bloomfilter (0.0.3, 0.0.2)
+    Author: Francesco Laurita
+    Homepage: https://github.com/taganaka/redis-bloomfilter
+    License: MIT
+    Installed at (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Distributed Bloom Filter implementation on Redis
+
+redis-namespace (1.5.2)
+    Authors: Chris Wanstrath, Terence Lee, Steve Klabnik, Ryan
+    Biesemeyer
+    Homepage: http://github.com/resque/redis-namespace
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Namespaces Redis commands.
+
+redis-queue (0.0.4, 0.0.3)
+    Author: Francesco Laurita
+    Homepage: https://github.com/taganaka/redis-queue
+    License: MIT
+    Installed at (0.0.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A distributed queue based on Redis
+
+redis-sentinel (1.5.0)
+    Author: Richard Huang
+    Homepage: https://github.com/flyerhzm/redis-sentinel
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    another redis automatic master/slave failover solution for ruby by
+    using built-in redis sentinel
+
+resque (1.25.2)
+    Authors: Chris Wanstrath, Steve Klabnik, Terence Lee
+    Homepage: http://github.com/defunkt/resque
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Resque is a Redis-backed queueing system.
+
+rest-client (1.8.0, 1.6.9)
+    Author: REST Client Team
+    Homepage: https://github.com/rest-client/rest-client
+    License: MIT
+    Installed at (1.8.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple HTTP and REST client for Ruby, inspired by microframework
+    syntax for specifying actions.
+
+rspec (3.3.0, 2.6.0)
+    Authors: Steven Baker, David Chelimsky, Myron Marston
+    Homepage: http://github.com/rspec
+    License: MIT
+    Installed at (3.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rspec-3.3.0
+
+rspec-core (3.3.2, 3.3.1, 2.6.4)
+    Authors: Steven Baker, David Chelimsky, Chad Humphries, Myron
+    Marston
+    Homepage: http://github.com/rspec/rspec-core
+    License: MIT
+    Installed at (3.3.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rspec-core-3.3.2
+
+rspec-expectations (3.3.1, 3.3.0, 2.6.0)
+    Authors: Steven Baker, David Chelimsky, Myron Marston
+    Homepage: http://github.com/rspec/rspec-expectations
+    License: MIT
+    Installed at (3.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rspec-expectations-3.3.1
+
+rspec-logsplit (0.1.3)
+    Authors: digitalextremist //, Tim Carey-Smith
+    Homepage: https://github.com/abstractive/rspec-logsplit
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Separate the logs between examples to allow for easier understanding
+
+rspec-mocks (3.3.2, 3.3.1, 2.6.0)
+    Authors: Steven Baker, David Chelimsky, Myron Marston
+    Homepage: http://github.com/rspec/rspec-mocks
+    License: MIT
+    Installed at (3.3.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rspec-mocks-3.3.2
+
+rspec-rails (3.3.3, 2.6.1)
+    Authors: David Chelimsky, Andy Lindeman
+    Homepage: http://github.com/rspec/rspec-rails
+    License: MIT
+    Installed at (3.3.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.6.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    RSpec for Rails
+
+rspec-support (3.3.0)
+    Authors: David Chelimsky, Myron Marson, Jon Rowe, Sam Phippen,
+    Xaviery Shay, Bradley Schaefer
+    Homepage: https://github.com/rspec/rspec-support
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rspec-support-3.3.0
+
+rturk (2.12.1)
+    Authors: Mark Percival, Zach Hale, David Balatero, Rob Hanlon
+    Homepage: http://github.com/mdp/rturk
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Mechanical Turk API Wrapper
+
+rubinius-actor (0.0.2)
+    Authors: Evan Phoenix, MenTaLguY
+    Homepage: http://github.com/rubinius/rubinius-actor
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rubinius's Actor implementation
+
+rubinius-core-api (0.0.1)
+    Author: Charles Oliver Nutter
+    Homepage: http://github.com/rubinius/rubinius-core-api
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Cross-impl versions of interesting Rubinius core classes
+
+rubocop (0.33.0, 0.32.1)
+    Authors: Bozhidar Batsov, Jonas Arvidsson, Yuji Nakayama
+    Homepage: http://github.com/bbatsov/rubocop
+    License: MIT
+    Installed at (0.33.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.32.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Automatic Ruby code style checking tool.
+
+ruby-gmail (0.3.1)
+    Author: BehindLogic
+    Homepage: http://dcparker.github.com/ruby-gmail
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Rubyesque interface to Gmail, with all the tools you'll need.
+
+ruby-hmac (0.4.0)
+    Authors: Daiki Ueno, Geoffrey Grosenbach
+    Homepage: http://ruby-hmac.rubyforge.org
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This module provides common interface to HMAC functionality
+
+ruby-prof (0.15.8, 0.15.1)
+    Author: Shugo Maeda, Charlie Savage, Roger Pack, Stefan Kaes
+    Homepage: https://github.com/ruby-prof/ruby-prof
+    License: BSD-2-Clause
+    Installed at (0.15.8): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.15.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Fast Ruby profiler
+
+ruby-progressbar (1.7.5)
+    Authors: thekompanee, jfelchner
+    Homepage: https://github.com/jfelchner/ruby-progressbar
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby/ProgressBar is a flexible text progress bar library for Ruby.
+
+rubygems-bundler (1.4.4)
+    Authors: Josh Hull, Michal Papis
+    Homepage: http://mpapis.github.com/rubygems-bundler
+    License: Apache-2.0
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Stop using bundle exec
+
+rubygems-update (2.4.8)
+    Authors: Jim Weirich, Chad Fowler, Eric Hodel
+    Homepage: http://rubygems.org
+    Licenses: Ruby, MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    RubyGems is a package management framework for Ruby
+
+rubyzip (1.1.7)
+    Author: Alexander Simonov
+    Homepage: http://github.com/rubyzip/rubyzip
+    License: BSD 2-Clause
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rubyzip is a ruby module for reading and writing zip files
+
+russdeep (1.2.1)
+    Author: Eric Monti
+    Homepage: http://github.com/emonti/russdeep
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby bindings for libfuzzy (from ssdeep)
+
+rvm (1.11.3.9)
+    Authors: Wayne E. Seguin, Michal Papis
+    Homepage: http://rvm.io/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    RVM Ruby Gem Library
+
+safe_yaml (1.0.4)
+    Author: Dan Tao
+    Homepage: https://github.com/dtao/safe_yaml
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    SameYAML provides an alternative implementation of YAML.load
+    suitable for accepting user input in Ruby applications.
+
+sass (3.4.16)
+    Authors: Natalie Weizenbaum, Chris Eppstein, Hampton Catlin
+    Homepage: http://sass-lang.com/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A powerful but elegant CSS compiler that makes CSS fun again.
+
+sass-rails (5.0.3)
+    Authors: wycats, chriseppstein
+    Homepage: https://github.com/rails/sass-rails
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Sass adapter for the Rails asset pipeline.
+
+sdoc (0.4.1)
+    Authors: Vladimir Kolesnikov, Nathan Broadbent, Jean Mertz, Zachary
+    Scott
+    Homepage: http://github.com/voloko/sdoc
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    rdoc html with javascript search index.
+
+sham_rack (1.3.6)
+    Author: Mike Williams
+    Homepage: http://github.com/mdub/sham_rack
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Net::HTTP-to-Rack plumbing
+
+shared-mime-info (0.2.5)
+    Author: Mael Clerambault
+    Homepage: http://shared-mime.rubyforge.org/
+    License: Public Domain
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library to guess the MIME type of a file with both filename lookup
+    and magic file detection
+
+shoulda-context (1.2.1)
+    Authors: thoughtbot, inc., Tammer Saleh, Joe Ferris, Ryan McGeary,
+    Dan Croak, Matt Jankowski
+    Homepage: http://thoughtbot.com/community/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Context framework extracted from Shoulda
+
+shoulda-matchers (2.8.0)
+    Authors: Tammer Saleh, Joe Ferris, Ryan McGeary, Dan Croak, Matt
+    Jankowski, Stafford Brunk, Elliot Winkler
+    Homepage: http://thoughtbot.com/community/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Making tests easy on the fingers and eyes
+
+signature (0.1.8)
+    Author: Martyn Loughran
+    Homepage: http://github.com/mloughran/signature
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple key/secret based authentication for apis
+
+simple-rss (1.3.1)
+    Author: Lucas Carlson
+    Homepage: https://github.com/cardmagic/simple-rss
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A simple, flexible, extensible, and liberal RSS and Atom reader for
+    Ruby. It is designed to be backwards compatible with the standard
+    RSS parser, but will never do RSS generation.
+
+simple_oauth (0.3.1, 0.2.0)
+    Authors: Steve Richert, Erik Michaels-Ober
+    Homepage: https://github.com/laserlemon/simple_oauth
+    License: MIT
+    Installed at (0.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simply builds and verifies OAuth headers
+
+simplecov (0.10.0)
+    Author: Christoph Olszowka
+    Homepage: http://github.com/colszowka/simplecov
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Code coverage for Ruby 1.9+ with a powerful configuration library
+    and automatic merging of coverage across test suites
+
+simplecov-html (0.10.0)
+    Author: Christoph Olszowka
+    Homepage: https://github.com/colszowka/simplecov-html
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Default HTML formatter for SimpleCov code coverage tool for ruby
+    1.9+
+
+sinatra (1.4.6)
+    Authors: Blake Mizerany, Ryan Tomayko, Simon Rozet, Konstantin Haase
+    Homepage: http://www.sinatrarb.com/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Classy web-development dressed in a DSL
+
+skinny (0.2.3)
+    Author: Samuel Cochran
+    Homepage: http://github.com/sj26/skinny
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Thin WebSockets
+
+slop (4.2.0, 3.6.0)
+    Author: Lee Jarvis
+    Homepage: http://github.com/leejarvis/slop
+    License: MIT
+    Installed at (4.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Simple Lightweight Option Parsing
+
+slowweb (0.1.1)
+    Author: Ben Johnson
+    Homepage: http://github.com/benbjohnson/slowweb
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    An HTTP Request Governor
+
+socksify (1.7.0, 1.6.0)
+    Authors: Stephan Maka, Andrey Kouznetsov, Christopher Thorpe, Musy
+    Bite, Yuichi Tateno, David Dollar
+    Homepage: http://socksify.rubyforge.org/
+    Installed at (1.7.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Redirect all TCPSockets through a SOCKS5 proxy
+
+source_search (0.11.4, 0.11.3, 0.11.2, 0.11.1)
+    Author: Jade Dominguez
+    Homepage: http://github.com/gild/source_search
+    License: http://www.opensource.org/licenses/MIT
+    Installed at (0.11.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.11.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.11.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.11.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    GildSource interface for elasticsearch mappings/indexing logic.
+
+spring (1.3.6)
+    Author: Jon Leighton
+    Homepage: http://github.com/rails/spring
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rails application preloader
+
+sprockets (3.3.1, 3.3.0, 3.2.0, 2.2.3)
+    Authors: Sam Stephenson, Joshua Peek
+    Homepage: https://github.com/rails/sprockets
+    License: MIT
+    Installed at (3.3.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.3.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.2.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (2.2.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rack-based asset packaging system
+
+sprockets-rails (2.3.2)
+    Author: Joshua Peek
+    Homepage: https://github.com/rails/sprockets-rails
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Sprockets Rails integration
+
+sqlite3 (1.3.10)
+    Authors: Jamis Buck, Luis Lavena, Aaron Patterson
+    Homepage: https://github.com/sparklemotion/sqlite3-ruby
+    License: BSD-3
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    This module allows Ruby programs to interface with the SQLite3
+    database engine (http://www.sqlite.org)
+
+sshkit (1.7.1)
+    Authors: Lee Hambley, Tom Clements
+    Homepage: http://github.com/capistrano/sshkit
+    License: GPL3
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    SSHKit makes it easy to write structured, testable SSH commands in
+    Ruby
+
+sucker_punch (1.5.0, 1.0.2)
+    Author: Brandon Hilkert
+    Homepage: https://github.com/brandonhilkert/sucker_punch
+    License: MIT
+    Installed at (1.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Sucker Punch is a Ruby asynchronous processing using Celluloid,
+    heavily influenced by Sidekiq and girl_friday.
+
+symbolize (4.5.2, 4.3.4)
+    Author: Marcos Piccinini
+    Homepage: http://github.com/nofxx/symbolize
+    License: MIT
+    Installed at (4.5.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.3.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Object enums with i18n in AR or Mongoid
+
+systemu (2.6.5)
+    Author: Ara T. Howard
+    Homepage: https://github.com/ahoward/systemu
+    License: Ruby
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    systemu
+
+term-ansicolor (1.3.2, 1.2.2)
+    Author: Florian Frank
+    Homepage: http://flori.github.com/term-ansicolor
+    License: GPL-2
+    Installed at (1.3.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby library that colors strings using ANSI escape sequences
+
+test-unit (3.1.3, 3.1.2, 3.0.8)
+    Authors: Kouhei Sutou, Haruka Yoshihara
+    Homepage: http://test-unit.github.io/
+    Licenses: Ruby, PSFL
+    Installed at (3.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.1.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (3.0.8): /Users/edoardo/.rvm/gems/ruby-2.2.2@global
+
+    An xUnit family unit testing framework for Ruby.
+
+thin (1.6.3, 1.5.1)
+    Author: Marc-Andre Cournoyer
+    Homepage: http://code.macournoyer.com/thin/
+    Licenses: GPLv2+, Ruby 1.8
+    Installed at (1.6.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A thin and fast web server
+
+thor (0.19.1, 0.18.1)
+    Authors: Yehuda Katz, José Valim
+    Homepage: http://whatisthor.com/
+    License: MIT
+    Installed at (0.19.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.18.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Thor is a toolkit for building powerful command-line interfaces.
+
+thread (0.2.2, 0.2.1, 0.0.4.2)
+    Author: meh.
+    Homepage: http://github.com/meh/ruby-thread
+    License: WTFPL
+    Installed at (0.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.2.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.4.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Various extensions to the base thread library.
+
+thread_safe (0.3.5, 0.1.3)
+    Authors: Charles Oliver Nutter, thedarkone
+    Homepage: https://github.com/ruby-concurrency/thread_safe
+    License: Apache-2.0
+    Installed at (0.3.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A collection of data structures and utilities to make thread-safe
+    programming in Ruby easier
+
+tilt (2.0.1, 1.4.1)
+    Author: Ryan Tomayko
+    Homepage: http://github.com/rtomayko/tilt/
+    License: MIT
+    Installed at (2.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.4.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Generic interface to multiple Ruby template engines
+
+timers (4.1.0, 4.0.2, 4.0.1, 1.1.0)
+    Author: Tony Arcieri
+    Homepage: https://github.com/celluloid/timers
+    License: MIT
+    Installed at (4.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.0.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (4.0.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Schedule procs to run after a certain time, or at periodic
+    intervals, using any API that accepts a timeout
+
+tins (1.6.0, 1.5.4, 0.13.2)
+    Author: Florian Frank
+    Homepage: https://github.com/flori/tins
+    License: MIT
+    Installed at (1.6.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.5.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.13.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Useful stuff.
+
+tire (0.6.2)
+    Author: Karel Minarik
+    Homepage: http://github.com/karmi/tire
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby client for Elasticsearch
+
+tmuxinator (0.6.11)
+    Authors: Allen Bargi, Christopher Chow
+    Homepage: https://github.com/tmuxinator/tmuxinator
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Create and manage complex tmux sessions easily.
+
+toml (0.1.2)
+    Authors: Jeremy McAnally, Dirk Gadsden
+    Homepage: http://github.com/jm/toml
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Parse your TOML.
+
+treetop (1.6.3, 1.4.15)
+    Authors: Nathan Sobo, Clifford Heath
+    Homepage: https://github.com/cjheath/treetop
+    License: MIT
+    Installed at (1.6.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.4.15): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby-based text parsing and interpretation DSL
+
+tuna-rest-client (0.0.90, 0.0.89, 0.0.88)
+    Author: Luca Bonmassar
+    Homepage: http://www.gild.com
+    Installed at (0.0.90): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.89): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.88): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Rest API client for Gild Tuna Melt
+
+turbolinks (2.5.3)
+    Author: David Heinemeier Hansson
+    Homepage: https://github.com/rails/turbolinks/
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Turbolinks makes following links in your web application faster (use
+    with Rails Asset Pipeline)
+
+twitter (5.14.0, 5.5.1, 5.5.0)
+    Authors: Erik Michaels-Ober, John Nunemaker, Wynn Netherland, Steve
+    Richert, Steve Agalloco
+    Homepage: http://sferik.github.com/twitter/
+    License: MIT
+    Installed at (5.14.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (5.5.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (5.5.0): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby interface to the Twitter API.
+
+typhoeus (0.7.3, 0.7.2, 0.6.9)
+    Authors: David Balatero, Paul Dix, Hans Hasselberg
+    Homepage: https://github.com/typhoeus/typhoeus
+    License: MIT
+    Installed at (0.7.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.7.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.6.9): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Parallel HTTP library on top of libcurl multi.
+
+tzinfo (1.2.2, 0.3.44)
+    Author: Philip Ross
+    Homepage: http://tzinfo.github.io
+    License: MIT
+    Installed at (1.2.2): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.44): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Daylight savings aware timezone library
+
+uglifier (2.7.1)
+    Author: Ville Lautanala
+    Homepage: http://github.com/lautis/uglifier
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby wrapper for UglifyJS JavaScript compressor
+
+unf (0.1.4, 0.1.3)
+    Author: Akinori MUSHA
+    Homepage: https://github.com/knu/ruby-unf
+    License: 2-clause BSDL
+    Installed at (0.1.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.1.3): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A wrapper library to bring Unicode Normalization Form support to
+    Ruby/JRuby
+
+unf_ext (0.0.7.1, 0.0.6)
+    Authors: Takeru Ohta, Akinori MUSHA
+    Homepage: https://github.com/knu/ruby-unf_ext
+    License: MIT
+    Installed at (0.0.7.1): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.0.6): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Unicode Normalization Form support library for CRuby
+
+user_writer (0.3.18, 0.3.17, 0.3.15, 0.3.13)
+    Authors: Luca Bonmassar, Stefano Fontanelli, Francesco Laurita
+    Homepage: http://source.gild.com
+    Installed at (0.3.18): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.17): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.15): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (0.3.13): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library to write Profile objects and initiate crawling feedback on
+    changes.
+
+uuid (2.3.8)
+    Authors: Assaf Arkin, Eric Hodel
+    Homepage: http://github.com/assaf/uuid
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    UUID generator
+
+vcr (2.9.3)
+    Author: Myron Marston
+    Homepage: https://github.com/vcr/vcr
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Record your test suite's HTTP interactions and replay them during
+    future test runs for fast, deterministic, accurate tests.
+
+vegas (0.1.11)
+    Author: Aaron Quint
+    Homepage: http://code.quirkey.com/vegas
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Vegas aims to solve the simple problem of creating executable
+    versions of Sinatra/Rack apps.
+
+virtus (1.0.5)
+    Author: Piotr Solnica
+    Homepage: https://github.com/solnic/virtus
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Attributes on Steroids for Plain Old Ruby Objects
+
+webmock (1.21.0)
+    Author: Bartosz Blimke
+    Homepage: http://github.com/bblimke/webmock
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Library for stubbing HTTP requests in Ruby.
+
+webrobots (0.1.1)
+    Author: Akinori MUSHA
+    Homepage: https://github.com/knu/webrobots
+    License: 2-clause BSDL
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A Ruby library to help write robots.txt compliant web robots
+
+xml-simple (1.1.5, 1.1.4)
+    Author: Maik Schmidt
+    Homepage: https://github.com/maik/xml-simple
+    License: Ruby
+    Installed at (1.1.5): /Users/edoardo/.rvm/gems/ruby-2.2.2
+                 (1.1.4): /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    A simple API for XML processing.
+
+xpath (2.0.0)
+    Author: Jonas Nicklas
+    Homepage: http://github.com/jnicklas/xpath
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Generate XPath expressions from Ruby
+
+yajl-ruby (1.2.1)
+    Authors: Brian Lopez, Lloyd Hilaiel
+    Homepage: http://github.com/brianmario/yajl-ruby
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Ruby C bindings to the excellent Yajl JSON stream-based parser
+    library.
+
+yard (0.8.7.6)
+    Author: Loren Segal
+    Homepage: http://yardoc.org
+    License: MIT
+    Installed at: /Users/edoardo/.rvm/gems/ruby-2.2.2
+
+    Documentation tool for consistent and usable documentation in Ruby.
