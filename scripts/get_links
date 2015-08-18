@@ -1,1 +1,0 @@
-$ lynx -dump http://www.domain.com | grep http| awk '{print $2}'

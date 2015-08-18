@@ -1,5 +1,0 @@
-#Encryption and Decrtyption with GPG
-
-gpg --symmetric Documents.tar.gz 
-gpg -v --output Documents.tar.gz --decrypt Documents.tar.gz.gpg
-

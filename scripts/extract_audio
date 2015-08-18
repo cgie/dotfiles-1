@@ -1,4 +1,0 @@
-mencoder Recording.mpg  -oac mp3lame -ovc frameno -o tmp.avi
-
-mplayer tmp.avi -dumpaudio -dumpfile audio.mp3
-
