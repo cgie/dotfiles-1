@@ -1,3 +1,0 @@
-iptables -I INPUT 5 --source 127.0.0.1 -p tcp --dport 8005 -j ACCEPT;iptables -I INPUT 6 --source 127.0.0.1 -p tcp --dport 8009 -j ACCEPT;iptables -I INPUT 7 --source 127.0.0.1 -p tcp --dport 8080 -j ACCEPT;
-iptables -I INPUT 8 --source 127.0.0.1 -p tcp --dport 8686 -j ACCEPT;iptables -I INPUT 9 --source 127.0.0.1 -p tcp --dport 4713 -j ACCEPT;
-iptables -I INPUT 8 --source 127.0.0.1 -p tcp --dport 8686 -j ACCEPT;iptables -I INPUT 9 --source 127.0.0.1 -p tcp --dport 4713 -j ACCEPT;

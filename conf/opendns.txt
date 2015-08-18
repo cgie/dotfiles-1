@@ -1,5 +1,0 @@
-# /etc/resolvconf/resolv.conf.d/base 
-# https://store.opendns.com/setup/
-
-nameserver 208.67.222.222
-nameserver 208.67.220.220

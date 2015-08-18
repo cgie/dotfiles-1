@@ -1,1 +1,0 @@
-$ echo -e "12 morning\n15 afternoon\n24 evening" | awk '{if ('`date +%H`' < $1) print "Good " $2}'

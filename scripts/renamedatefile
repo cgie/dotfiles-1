@@ -1,2 +1,0 @@
-zero@turtle [~/testfield]$ 
-for file in *; do mv "$file" `echo $file | sed -e 's/test\(..\)-\(..\)-\(..\)/toast\3-\2-\1/g'`; done
