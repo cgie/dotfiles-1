@@ -8,7 +8,8 @@
 
 # Save the status of brew
 # => $
-brew info --json=v1 --all | jq "map(select(.installed != []))" > ~/Downloads
+brew info --json=v1 --all | jq "map(select(.installed != []))" > ~/Downloads/brew_installed.json
+
 # => $
-brew deps --tree --installed > ~/Downloads
+brew deps --tree --installed > ~/Downloads/brew_tree
 ```
