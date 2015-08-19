@@ -53,6 +53,11 @@ freetype (required dependencies)
 └── libpng
     └── xz
 
+fzf (required dependencies)
+└── :git
+└── go
+    └── :git
+
 homebrew/versions/gcc49 (required dependencies)
 ├── gmp4
 ├── libmpc08

@@ -236,6 +236,10 @@
       {
         "option": "--without-docs",
         "description": "Don't build man pages"
+      },
+      {
+        "option": "--with-completion",
+        "description": "Install Bash completion (Has potential problems with system bash)"
       }
     ]
   },
@@ -583,6 +587,44 @@
         "description": "Disable sub-pixel rendering (a.k.a. LCD rendering, or ClearType)"
       }
     ]
+  },
+  {
+    "name": "fzf",
+    "full_name": "fzf",
+    "desc": "Fuzzy finder for your shell",
+    "homepage": "https://github.com/junegunn/fzf",
+    "oldname": null,
+    "versions": {
+      "stable": "0.10.2",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "installed": [
+      {
+        "version": "HEAD",
+        "used_options": [],
+        "built_as_bottle": null,
+        "poured_from_bottle": false
+      }
+    ],
+    "linked_keg": "HEAD",
+    "keg_only": null,
+    "dependencies": [
+      "go"
+    ],
+    "conflicts_with": [],
+    "caveats": "To install useful keybindings and fuzzy completion:\n  /usr/local/Cellar/fzf/0.10.2/install\n\nTo use fzf in Vim, add the following line to your .vimrc:\n  set rtp+=/usr/local/Cellar/fzf/0.10.2\n",
+    "requirements": [
+      {
+        "name": "git",
+        "default_formula": "git",
+        "cask": null,
+        "download": null
+      }
+    ],
+    "options": []
   },
   {
     "name": "gdbm",
