@@ -1,6 +1,9 @@
 ;gu -*- Mode: Emacs-Lisp -*-
 
 ;;; This is a sample .emacs file.
+;;; Well, it's not that simple.
+;;; Heavily inspired by https://github.com/maur8ino/dotfiles
+;;; Thanks @maur8ino
 ;;;
 ;;; The .emacs file, which should reside in your home directory, allows you to
 ;;; customize the behavior of Emacs.  In general, changes to your .emacs file
@@ -42,8 +45,8 @@
 ;;;; Enable linun
 (global-linum-mode t)
 
-;;;; Newline at end of file
 (setq require-final-newline t)
+;;;; Newline at end of file
 
 ;;;; delete the selection with a keypress
 (delete-selection-mode t)
@@ -109,6 +112,9 @@
 ;;;; http://www.emacswiki.org/emacs/ModeLineConfiguration
 (column-number-mode 1)
 
+;;;; Uncomment region
+;;  (global-set-key (kbd "C-_") 'uncomment-region)
+
 ;;;; FUNCTIONS
 (defun my-mark-current-word (&optional arg allow-extend)
   "Put point at beginning of current word, set mark at end."
@@ -133,7 +139,9 @@
       (push-mark (save-excursion
                    (forward-word arg)
                    (point)))
-              (activate-mark))))
+      (activate-mark))))
+
+(global-set-key (kbd "C-d") 'my-mark-current-word)
 
 (defun move-line (n)
   "Move the current line up or down by N lines."
@@ -215,8 +223,8 @@
 ;;     buffer is not visiting a file."
 ;;    (interactive "P")
 ;;    (if (or arg (not buffer-file-name))
-;;        (find-file (concat "/sudo:root@localhost:"
-;;                           (ido-read-file-name "Find file(as root): ")))
+;;      (find-file (concat "/sudo:root@localhost:"
+;;        (ido-read-file-name "Find file(as root): ")))
 ;;      (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 ;;;; the CamelCase issue
@@ -240,31 +248,33 @@
 
 (global-set-key (kbd "M-^") 'top-join-line)
 
-;;  (defun duplicate-line()
-;;    (interactive)
-;;    (move-beginning-of-line 1)
-;;    (kill-line)
-;;    (yank)
-;;    (open-line 1)
-;;    (next-line 1)
-;;    (yank))
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank))
 
-;;  (defun smart-open-line-above ()
-;;    "
-;;      Insert an empty line above the current line.
-;;      Position the cursor at it's beginning, according to the current mode.
-;;    "
-;;    (interactive)
-;;    (move-beginning-of-line nil)
-;;    (newline-and-indent)
-;;    (forward-line -1)
-;;    (indent-according-to-mode))
+(global-set-key (kbd "C-c d") 'duplicate-line)
+
+(defun smart-open-line-above ()
+  "
+  Insert an empty line above the current line.
+  Position the cursor at it's beginning, according to the current mode.
+  "
+  (interactive)
+  (move-beginning-of-line nil)
+  (newline-and-indent)
+  (forward-line -1)
+  (indent-according-to-mode))
 
 ;;  (global-set-key [(control shift return)] 'smart-open-line-above)
-;;  (global-set-key (kbd "M-o") 'smart-open-line)
 ;;  (global-set-key (kbd "M-O") 'smart-open-line-above)
+(global-set-key (kbd "M-o") 'smart-open-line-above)
 
-;;;; Package managers
+;;;; PACKAGE MANAGERS
 ;;;; List of all wanted packages
 (setq
  wanted-packages
@@ -273,7 +283,7 @@
     exec-path-from-shell
 
     ;;;; Editor stuff
-    ;;  popup
+    popup
     auto-complete
     ;;  whitespace-cleanup-mode
     smartparens
@@ -283,10 +293,10 @@
     multiple-cursors
     neotree
     fill-column-indicator
-    
+
     ;;;; Project and completion stuff
     projectile
-    flx-ido    
+    flx-ido
     helm
     helm-ag
     helm-projectile
@@ -385,7 +395,6 @@
 (defun install-wanted-packages ()
   "Install wanted packages according to a specific package manager."
 
-  ;; package.el
   (require 'package)
   (add-to-list 'package-archives
     '("gnu" . "http://elpa.gnu.org/packages/"))
@@ -548,18 +557,8 @@
 ;;  (setq whitespace-line-column 120) ;; limit line length
 ;;  (setq whitespace-style '(face tabs empty trailing lines-tail))
 
-;;;; Ignoramus
+;;;; IGNORAMUS
 ;;  (ignoramus-setup)
-
-;;;; PROJECTILE
-(projectile-global-mode)
-;;  (setq projectile-completion-system 'helm)
-;;;; ignore common temporary directories
-  (setq projectile-globally-ignored-directories
-    (append projectile-globally-ignored-directories
-      '("node_modules" "bower_components" ".bower-cache"
-        "public/assets" "tmp")))
-(helm-projectile-on)
 
 ;;;; YASNIPPET
 ;;;; should be loaded before auto complete so that they can work together
@@ -586,10 +585,10 @@
 ;;  (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;;  (global-set-key (kbd "C-x r") 'helm-recentf)
 ;;;; definitions
-;;  (define-key helm-map (kbd "<tab>")
-;;    'helm-execute-persistent-action) ; rebind tab to do persistent action
-;;  (define-key helm-map (kbd "C-i")
-;;    'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "<tab>")
+  'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i")
+  'helm-execute-persistent-action) ; make TAB works in terminal
 ;;  (define-key helm-map (kbd "C-z")
 ;;    'helm-select-action) ; list actions using C-z
 ;;;; fuzzy matching everywhere
@@ -597,10 +596,20 @@
 ;;    helm-recentf-fuzzy-match t
 ;;    helm-M-x-fuzzy-match t)
 ;; widen buffer name length
-;; (setq helm-buffer-max-length 40)
+(setq helm-buffer-max-length 40)
 ;; makes helm-ag use the platinum searcher
 ;;(setq helm-ag-base-command "pt --nocolor --nogroup")
-;; (helm-autoresize-mode t)
+(helm-autoresize-mode t)
+
+;;;; PROJECTILE
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+;;;; ignore common temporary directories
+  (setq projectile-globally-ignored-directories
+    (append projectile-globally-ignored-directories
+      '("node_modules" "bower_components" ".bower-cache"
+        "public/assets" "tmp")))
+(helm-projectile-on)
 
 ;;;; GIT-TIMEMACHINE
 ;;  (global-set-key (kbd "C-x t") 'git-timemachine-toggle)
@@ -656,11 +665,11 @@
   (lambda ()
     ;; Use goimports instead of go-fmt
     (setq gofmt-command "goimports")
-  ;; Call Gofmt before saving
 
+    ;; Call Gofmt before saving
     (add-hook 'before-save-hook 'gofmt-before-save)
 
-  ;; Customize compile command to run go build
+    ;; Customize compile command to run go build
     (if (not (string-match "go" compile-command))
       (set (make-local-variable 'compile-command)
         "go build -v && go test -v && go vet"))
@@ -826,9 +835,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;;  (require 'color-theme)
 ;;  (eval-after-load "color-theme"
-;;    '(progn
-;;       (color-theme-initialize)
-;;       (color-theme-hober)))
+;;     '(progn
+;;        (color-theme-initialize)
+;;        (color-theme-hober)))
 ;;  (load-theme 'gotham t)
 ;;  (load-theme 'obsidian t)
 ;;  (load-theme 'solarized-dark t)
@@ -840,6 +849,8 @@
 ;;  (sml/apply-theme 'automatic)
 
 (provide '.emacs)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; .emacs personal settings ends here
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
