@@ -1,60 +1,502 @@
-syntax on
+"" This vimrc is heavily inspired by the one of @tejo and @gbagnoli,
+"" to which I give credit and my warm thanks.
+
+"" be iMproved, required
+set nocompatible
+
+"" Vundle required
+" filetype off
+
+" set guifont=Monaco\ 12
+
+"" Minimalist Vim Plugin Manager
+"" https://github.com/junegunn/vim-plug
+if empty(glob("~/.vim/autoload/plug.vim"))
+  execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
+
+call plug#begin('~/.vim/plugged')
+
+  "" https://github.com/VundleVim/Vundle.vim
+  "" Vundle, the plug-in manager for Vim
+  " Plug 'vundlevim/vundle.vim'
+
+  "" https://github.com/Peeja/vim-cdo
+  "" Vim commands to run a command over every entry in the quickfix list (:Cdo) or location list (:Ldo).
+  Plug 'Peeja/vim-cdo'
+
+  "" https://github.com/Raimondi/delimitMate
+  "" Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
+  Plug 'Raimondi/delimitMate'
+ 
+  "" https://github.com/SirVer/ultisnips
+  "" UltiSnips - The ultimate snippet solution for Vim.
+  " Plug 'SirVer/ultisnips'
+
+  "" https://github.com/bling/vim-airline
+  "" lean & mean status/tabline for vim that's light as air
+  Plug 'bling/vim-airline'
+
+  "" https://github.com/bronson/vim-visual-star-search
+  "" Start a * or # search from a visual block
+  " Plug 'bronson/vim-visual-star-search'
+
+  "" https://github.com/ervandew/supertab
+  "" Perform all your vim insert mode completions with Tab
+  Plug 'ervandew/supertab'
+  
+  "" https://github.com/fatih/vim-go
+  "" Go development plugin for Vim
+  Plug 'fatih/vim-go'
+
+  "" https://github.com/godlygeek/tabular
+  "" Vim script for text filtering and alignment
+  Plug 'godlygeek/tabular'
+
+  "" https://github.com/honza/vim-snippets
+  "" vim-snipmate default snippets (Previously snipmate-snippets)
+  Plug 'honza/vim-snippets'
+
+  "" https://github.com/kien/ctrlp.vim
+  "" Fuzzy file, buffer, mru, tag, etc finder.
+  Plug 'kien/ctrlp.vim'
+
+  "" https://github.com/majutsushi/tagbar
+  "" Vim plugin that displays tags in a window, ordered by scope
+  Plug 'majutsushi/tagbar'
+
+  "" https://github.com/rking/ag.vim
+  "" Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module / CLI script 'ack'
+  Plug 'rking/ag.vim'
+
+  "" https://github.com/scrooloose/nerdtree
+  "" A tree explorer plugin for vim
+  Plug 'scrooloose/nerdtree'
+
+  "" https://github.com/jistr/vim-nerdtree-tabs
+  "" NERDTree and tabs together in Vim, painlessly
+  Plug 'jistr/vim-nerdtree-tabs'
+
+  "" https://github.com/scrooloose/syntastic
+  "" Syntax checking hacks for vim
+  Plug 'scrooloose/syntastic'
+  
+  "" https://github.com/terryma/vim-multiple-cursors
+  Plug 'terryma/vim-multiple-cursors'
+
+  "" https://github.com/tpope/vim-commentary
+  "" commentary.vim: comment stuff out
+  Plug 'tpope/vim-commentary'
+
+  "" https://github.com/tpope/vim-endwise
+  "" wisely add 'end' in ruby, endfunction/endif/more in vim script, etc
+  Plug 'tpope/vim-endwise'
+  
+  "" https://github.com/tpope/vim-fugitive
+  "" fugitive.vim: a Git wrapper so awesome, it should be illegal 
+  Plug 'tpope/vim-fugitive'
+  
+  "" 
+  ""
+  " Plug 'tpope/vim-rails'
+  
+  "" 
+  ""
+  Plug 'tpope/vim-surround'
+  
+  "" 
+  ""
+  Plug 'https://github.com/idanarye/vim-merginal'
+  
+  "" 
+  ""
+  Plug 'gregsexton/gitv'
+  
+  "" 
+  ""
+  Plug 'vim-ruby/vim-ruby'
+  
+  "" 
+  ""
+  Plug 'vim-scripts/ZoomWin'
+  
+  "" https://github.com/mhinz/vim-startify
+  "" A fancy start screen for Vim.
+  Plug 'mhinz/vim-startify'
+  
+  "" 
+  ""
+  Plug 'myusuf3/numbers.vim'
+  
+  "" 
+  ""
+  Plug 'kassio/neoterm'
+
+  "" Plugin outside ~/.vim/plugged with post-update hook
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+  
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+
+  "" colors
+  Plug 'w0ng/vim-hybrid'
+  Plug 'sickill/vim-monokai'
+  Plug 'twerth/ir_black'
+
+call plug#end()
+
+syntax enable
+set encoding=utf-8
+
+" nerdtree
+let NERDTreeMouseMode=2
+map - :NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:nerdtree_tabs_focus_on_files = 1
+let g:nerdtree_tabs_startup_cd = 0
+
+autocmd VimEnter *
+      \   if !argc()
+      \ |   Startify
+      \ |   wincmd w
+      \ | endif
+
+let g:startify_change_to_dir = 0
+autocmd User Startified setlocal buftype=
+
+
+filetype plugin indent on
+colorscheme hybrid
+
+nnoremap <F9> :Dispatch<CR>
+
+" tree view
+let g:netrw_liststyle=3
 
 set number
-set tabstop=2
-set incsearch
-set hlsearch
-set numberwidth=4
-
-" set cursorline
-set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
-
-" retab
-set background=dark
-
-colorscheme evening
-
-:nmap <C-n> :bnext<CR>
-:nmap <C-p> :bprev<CR>
-:nmap \q :nohlsearch<CR>
-:nmap Y y$
-
-" autocmd VimEnter * NERDTree
-" autocmd VimEnter * wincmd p
-
-" encodinf
-set fileencoding=utf-8
-
-" indentation and tab settings
-set autoindent
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-
-" set expandtab for Python file
-autocmd FileType python setlocal expandtab
-autocmd FileType php setlocal expandtab
-
-" line numbers
-
-:hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
-" synrax highlighting
-syntax on
-
-" highlight trailing spaces
-set listchars=eol:¶,tab:>-,trail:.,extends:>,precedes:<
-
-" current line highlight
-set ruler
+" set relativenumber
+set ruler       " show the cursor position all the time
 set cursorline
+set showcmd     " display incomplete commands
+set shell=bash  " avoids munging PATH under zsh
+let g:is_bash=1 " default shell syntax
+set history=200 " remember more Ex commands
 
-" status line
-set laststatus=2
-:hi StatusLine ctermbg=None ctermfg=DarkGrey
+" Allow backgrounding buffers without writing them, and remember marks/undo
+" for backgrounded buffers
+set hidden
 
-" 80 char
-highlight OverLength ctermbg=LightMagenta ctermfg=LightGrey guibg=#592929
-match OverLength /\%80v.\+/
+
+"lamer mouse things
+set mouse=a
+" set ttymouse=xterm2
+
+"" Whitespace
+set wrap                        " don't wrap lines
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " an autoindent (with <<) is two spaces
+set expandtab                     " use spaces, not tabs
+set list                          " Show invisible characters
+set backspace=indent,eol,start    " backspace through everything in insert mode
+" List chars
+set listchars=""                  " Reset the listchars
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+set listchars+=trail:.            " show trailing spaces as dots
+set listchars+=extends:>          " The character to show in the last column when wrap is
+                                  " off and the line continues beyond the right of the screen
+set listchars+=precedes:<         " The character to show in the first column when wrap is
+                                  " off and the line continues beyond the left of the screen
+"" Searching
+set hlsearch                      " highlight matches
+set incsearch                     " incremental searching
+set ignorecase                    " searches are case insensitive...
+set smartcase                     " ... unless they contain at least one capital letter
+
+" wildmode
+set wildmenu
+set wildmode=longest:full,full
+
+function! s:setupWrapping()
+  set wrap
+  set wrapmargin=2
+  set textwidth=80
+endfunction
+
+if has("autocmd")
+  " In Makefiles, use real tabs, not tabs expanded to spaces
+  au FileType make set noexpandtab
+
+  " Make sure all markdown files have the correct filetype set and setup wrapping
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+
+  " Treat JSON files like JavaScript
+  au BufNewFile,BufRead *.json set ft=javascript
+
+  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+  " Remember last location in file, but not for commit messages.
+  " see :help last-position-jump
+  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g`\"" | endif
+
+  " mark Jekyll YAML frontmatter as comment
+  au BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
+endif
+
+
+" go stuff
+au BufRead,BufNewFile *.go set filetype=go
+
+
+let g:go_fmt_command = "goimports"
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+" au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+" au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap gd <Plug>(go-def-tab)
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+autocmd FileType * call UltiSnips#FileTypeChanged()
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+
+
+
+" provide some context when editing
+set scrolloff=3
+
+" don't use Ex mode, use Q for formatting
+map Q gq
+
+" commentary
+vmap \\ gc
+nmap \\ gcc
+
+" clear the search buffer when hitting return
+function! MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+
+let mapleader=","
+noremap \ ,
+
+nmap F :Ag<cr>
+map <leader>f :FZF<cr>
+map <leader>b ::CtrlPBuffer<cr>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+  \ }
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+let g:ctrlp_clear_cache_on_exit = 0
+
+" use ag for recursive searching
+nnoremap <leader>* :call ag#Ag('grep', '--literal ' .  shellescape(expand("<cword>")))<CR>
+vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
+
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+" ignore Rubinius, Sass cache files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
+
+" folding
+set foldmethod=indent
+set foldlevelstart=20
+noremap <silent> <Space> za
+vnoremap <silent> <Space> za<Esc>
+map <Leader>fs :set foldmethod=syntax<cr>
+map <Leader>fm :set foldmethod=manual<cr>
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
+set synmaxcol=300
+set re=1
+
+
+nnoremap <leader><leader> <c-^>
+
+" find merge conflict markers
+nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" disable cursor keys in normal mode
+map <Left>  gT
+map <Right> gt
+map <Up>    :echo "no!"<cr>
+map <Down>  :echo "no!"<cr>
+
+
+" mappings
+map! jj <esc>
+map! ii <esc>
+nmap oo o<esc>k
+nmap OO O<esc>j
+nmap /" cs'"
+nmap /' cs"'
+nmap <silent> <Leader>w :write<CR>
+nmap <silent> <Leader>q :quit<CR>
+nmap <silent> <Leader>d :bd!<CR>
+command! Q q
+command! W w
+
+
+" ctag
+nnoremap <f5> :!ctags -R<CR>
+nnoremap <f6> :!open -a Google\ Chrome % <CR>
+"map <leader>j g<c-]>
+nnoremap <silent><Leader>j <C-w><C-]><C-w>T
+map <leader>tt <c-t>
+set tags+=gems.tags
+map _ :TagbarToggle<CR>
+
+nnoremap <leader>. :CtrlPTag<cr>
+
+" command-t tmux fix
+map <Esc>[B <Down>
+
+" copy to system keyboard
+map <leader>y "*y
+
+set nobackup
+set nowritebackup
+set noswapfile
+
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  " Start the status line
+  set statusline=%f\ %m\ %r
+
+  " Add fugitive
+  set statusline+=%{fugitive#statusline()}
+
+  " Finish the statusline
+  set statusline+=Line:%l/%L[%p%%]
+  set statusline+=Col:%v
+  set statusline+=Buf:#%n
+  set statusline+=[%b][0x%B]
+endif
+
+
+" test stuff
+map <Leader>TT :call neoterm#test#run('suite')<CR>
+map <Leader>T :call neoterm#test#run('file')<CR>
+map <Leader>t :call neoterm#test#run('current')<CR>
+map <leader>r :NERDTreeFind<cr>
+
+" file:line
+" Avoid installing twice or when in unsupported Vim version.
+if exists('g:loaded_file_line') || (v:version < 701)
+  finish
+endif
+let g:loaded_file_line = 1
+
+function! s:gotoline()
+  let file = bufname("%")
+
+  " :e command calls BufRead even though the file is a new one.
+  " As a workarround Jonas Pfenniger<jonas@pfenniger.name> added an
+  " AutoCmd BufRead, this will test if this file actually exists before
+  " searching for a file and line to goto.
+  if (filereadable(file))
+    return
+  endif
+
+  " Accept file:line:column: or file:line:column and file:line also
+  let names =  matchlist( file, '\(.\{-1,}\):\%(\(\d\+\)\%(:\(\d*\):\?\)\?\)\?$')
+
+  if empty(names)
+    return
+  endif
+
+  let file_name = names[1]
+  let line_num  = names[2] == ''? '0' : names[2]
+  let  col_num  = names[3] == ''? '0' : names[3]
+
+  if filereadable(file_name)
+    let l:bufn = bufnr("%")
+
+    exec "keepalt edit " . fnameescape(file_name)
+    exec ":" . line_num
+    exec "normal! " . col_num . '|'
+    if foldlevel(line_num) > 0
+      exec "normal! zv"
+    endif
+    exec "normal! zz"
+
+    exec ":bwipeout " l:bufn
+    exec ":filetype detect"
+  endif
+
+endfunction
+
+autocmd! BufNewFile *:* nested call s:gotoline()
+autocmd! BufRead *:* nested call s:gotoline()
+
+
+" tagbar
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
 
