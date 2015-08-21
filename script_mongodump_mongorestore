@@ -1,0 +1,31 @@
+##
+## Prefer mongodump/mongorestore instead of mongoexport/mongoimport,
+## as it will "export" additional metadata, like indexes etc.
+##
+
+### Mongodump example
+
+# Required: host, db, collection, out
+# Optional: query (limit results)
+mongodump --host mongodb1.example.net \
+          --db db_name \
+          --collection collection_name \
+          --query '{ _id: { $gte: ObjectId("537c3ca7cfefc541c4a41a8e") } }' \
+          --out /tmp/mongodump-XXX-2014-07-14
+
+
+### Mongorestore example
+
+mongorestore --host mongodb1.example.net \
+             /path/to/mongodump-XXX-2014-07-14
+
+
+# Optional:
+#   Select a "desired slice" of documents from the collection.
+#   For this we need to find the "_id" of the starting document in the collection to dump.
+
+total_count = db.collection.count();
+desired_slice = 500000
+
+db.collection.find({}, { _id: 1 }).sort({ _id: 1 }).skip(total_count - desired_slice).limit(1)
+# => { "_id" : ObjectId("537c3ca7cfefc541c4a41a8e") }
