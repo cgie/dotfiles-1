@@ -1,9 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" This vimrc is heavily inspired by the one of @tejo and @gbagnoli,
-"" to which I give credit and my warm thanks.
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -17,7 +12,7 @@ syntax enable
 set history=700
 
 "" Enable filetype plugins
-filetype plugin on 
+filetype plugin on
 filetype indent on
 
 "" Set to auto read when a file is changed from the outside
@@ -45,6 +40,15 @@ set encoding=utf8
 "" Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" provide some context when editing
+set scrolloff=3
+
+" don't use Ex mode, use Q for formatting
+map Q gq
+
+set colorcolumn=80
+" :highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
 "" Mappings
 "" Commands                        Mode
 "" --------                        ----
@@ -55,6 +59,80 @@ set ffs=unix,dos,mac
 "" smap, snoremap, sunmap          Select mode
 "" cmap, cnoremap, cunmap          Command-line mode
 "" omap, onoremap, ounmap          Operator pending mode
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Ignore Rubinius, Sass cache files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
+
+" folding
+set foldmethod=indent
+set foldlevelstart=20
+noremap <silent> <Space> za
+vnoremap <silent> <Space> za<Esc>
+map <Leader>fs :set foldmethod=syntax<cr>
+map <Leader>fm :set foldmethod=manual<cr>
+set nocursorcolumn
+set nocursorline
+syntax sync minlines=256
+set synmaxcol=300
+set re=1
+
+nnoremap <leader><leader> <c-^>
+
+" find merge conflict markers
+nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" disable cursor keys in normal mode
+map <Left>  gT
+map <Right> gt
+map <Up>    :echo "no!"<cr>
+map <Down>  :echo "no!"<cr>
+
+" mappings
+map! jj <esc>
+map! ii <esc>
+nmap oo o<esc>k
+nmap OO O<esc>j
+nmap /" cs'"
+nmap /' cs"'
+nmap <silent> <Leader>w :write<CR>
+nmap <silent> <Leader>q :quit<CR>
+nmap <silent> <Leader>d :bd!<CR>
+command! Q q
+command! W w
+
+
+" ctag
+nnoremap <f5> :!ctags -R<CR>
+nnoremap <f6> :!open -a Google\ Chrome % <CR>
+"map <leader>j g<c-]>
+nnoremap <silent><Leader>j <C-w><C-]><C-w>T
+map <leader>tt <c-t>
+set tags+=gems.tags
+map _ :TagbarToggle<CR>
+
+nnoremap <leader>. :CtrlPTag<cr>
+
+" command-t tmux fix
+map <Esc>[B <Down>
+
+" copy to system keyboard
+map <leader>y "*y
+
+set nobackup
+set nowritebackup
+set noswapfile
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Helpers
@@ -169,9 +247,13 @@ call plug#begin('~/.vim/plugged')
   "" Vim script for text filtering and alignment
   Plug 'godlygeek/tabular'
 
+  "" https://github.com/bling/vim-bufferline
+  "" Super simple vim plugin to show the list of buffers in the command bar
+  " Plug 'bling/vim-bufferline'
+
   "" https://github.com/honza/vim-snippets
   "" vim-snipmate default snippets (Previously snipmate-snippets)
-  Plug 'honza/vim-snippets'
+  " Plug 'honza/vim-snippets'
 
   "" https://github.com/kien/ctrlp.vim
   "" Fuzzy file, buffer, mru, tag, etc finder
@@ -184,7 +266,7 @@ call plug#begin('~/.vim/plugged')
   "" https://github.com/rking/ag.vim
   "" Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl
   "" module / CLI script 'ack'
-  Plug 'rking/ag.vim'
+  " Plug 'rking/ag.vim'
 
   "" https://github.com/scrooloose/nerdtree
   "" A tree explorer plugin for vim
@@ -214,6 +296,11 @@ call plug#begin('~/.vim/plugged')
   "" fugitive.vim: a Git wrapper so awesome, it should be illegal
   Plug 'tpope/vim-fugitive'
 
+  "" https://github.com/airblade/vim-gitgutter
+  "" A Vim plugin which shows a git diff in the gutter (sign column) and
+  "" stages/reverts hunks.
+  Plug 'airblade/vim-gitgutter'
+
   "" https://github.com/tpope/vim-rails
   "" rails.vim: Ruby on Rails power tools
   " Plug 'tpope/vim-rails'
@@ -222,13 +309,17 @@ call plug#begin('~/.vim/plugged')
   "" dispatch.vim: asynchronous build and test dispatcher
   " Plug 'tpope/vim-dispatch'
 
+  "" http://github.com/bronson/vim-trailing-whitespace
+  "" Highlights trailing whitespace in red and :FixWhitespace to fix it.
+  Plug 'bronson/vim-trailing-whitespace'
+
   "" https://github.com/tpope/vim-surround
   "" surround.vim: quoting/parenthesizing made simple
   Plug 'tpope/vim-surround'
 
   "" https://github.com/idanarye/vim-merginal
   "" Fugitive extension to manage and merge Git branches
-  " Plug 'https://github.com/idanarye/vim-merginal'
+  " Plug 'idanarye/vim-merginal'
 
   "" https://github.com/gregsexton/gitv
   "" gitk for Vim
@@ -265,6 +356,18 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/Valloric/YouCompleteMe
   "" A code-completion engine for Vim
+  "
+  " function! BuildYCM(info)
+  "    "  info is a dictionary with 3 fields
+  "    "  - name:   name of the plugin
+  "    "  - status: 'installed', 'updated', or 'unchanged'
+  "    "  - force:  set on PlugInstall! or PlugUpdate!
+  "   if a:info.status == 'installed' || a:info.force
+  "     !./install.sh
+  "   endif
+  " endfunction
+
+  " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 
   "" https://github.com/tpope/vim-repeat
@@ -275,7 +378,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/altercation/vim-colors-solarized
   "" precision colorscheme for the vim text editor
-  Plug 'altercation/vim-colors-solarized'
+  " Plug 'altercation/vim-colors-solarized'
 
   "" https://github.com/w0ng/vim-hybrid
   "" A dark colour scheme for Vim & gVim
@@ -291,16 +394,37 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+"" vim-plug it automatically generates help tags for all of your plugins
+"" whenever you run PlugInstall or PlugUpdate.
+"" But you can regenerate help tags only with plug#helptags() function.
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Theme selection
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" solarized options
 " set background=dark
-" let g:solarized_visibility = "high"
-" let g:solarized_contrast = "high"
+" let g:solarized_visibility = 'high'
+" let g:solarized_contrast = 'high'
 " colorscheme solarized
 colorscheme hybrid
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Windows rotations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" To change two vertically split windows to horizonally split
+"
+"" Ctrl-w t Ctrl-w K
+"
+"" Horizontally to vertically:
+"
+"" Ctrl-w t Ctrl-w H
+"
+
+"" Ctrl-w t makes the first (topleft) window current Ctrl-w K moves the
+"" current window to full-width at the very top Ctrl-w H moves the current
+"" window to full-height at far left
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Startup
@@ -311,6 +435,30 @@ autocmd VimEnter *
       \ |   Startify
       \ |   wincmd w
       \ | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Startify configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_list_order = ['files', 'dir', 'bookmarks', 'sessions']
+let g:startify_bookmarks = [
+      \  '~/Workspaces',
+      \  '~/Workspaces/go.sources/src/github.com/zeroed/',
+      \  '~/Workspaces/gildsource',
+      \  '~/Downloads'
+      \  ]
+
+" let g:startify_list_order = [
+"   \ ['   My most recently', '   used files'],
+"   \ 'files',
+"   \ ['   My most recently used files in the current directory:'],
+"   \ 'dir',
+"   \ ['   These are my sessions:'],
+"   \ 'sessions',
+"   \ ['   These are my bookmarks:'],
+"   \ 'bookmarks',
+"   \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => NerdTree configuration
@@ -356,7 +504,7 @@ set shiftwidth=2
 set tabstop=2
 
 "" Set Linebreak on 500 characters
-set lbr 
+set lbr
 
 set tw=72
 
@@ -511,6 +659,14 @@ set hidden
 set mouse=a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Multiple-cursor configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Default highlighting (see help :highlight and help :highlight-link)
+highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
+highlight link multiple_cursors_visual Visual
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Searching configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -523,79 +679,106 @@ set smartcase                     " ... unless they contain at least one capital
 set wildmenu
 set wildmode=longest:full,full
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Autocmd configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" You can specify commands to be executed automatically when reading or writing
+"" a file, when entering or leaving a buffer or window, and when exiting Vim.
+"" For example, you can create an autocommand to set the 'cindent' option for
+"" files matching *.c.  You can also use autocommands to implement advanced
+"" features, such as editing compressed files (see |gzip-example|).  The usual
+"" place to put autocommands is in your .vimrc or .exrc file.
+
 if has("autocmd")
   " In Makefiles, use real tabs, not tabs expanded to spaces
-  au FileType make set noexpandtab
+  autocmd FileType make set noexpandtab
 
   " Make sure all markdown files have the correct filetype set and setup wrapping
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
 
   " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
+  autocmd BufNewFile,BufRead *.json set ft=javascript
 
   " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-  au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+  autocmd FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
-  au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+  autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 
   " mark Jekyll YAML frontmatter as comment
-  au BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
+  autocmd BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => FZF configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" go stuff
-au BufRead,BufNewFile *.go set filetype=go
+" fzf --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
+" fzf --color info:144,prompt:161,spinner:135,pointer:135,marker:118
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => GOLANG configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:go_fmt_command = "goimports"
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
 
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+if has("autocmd")
+  autocmd BufRead,BufNewFile *.go set filetype=go
 
-" au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>gb <Plug>(go-build)
-au FileType go nmap <leader>gt <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+  autocmd FileType go nmap <Leader>s <Plug>(go-implements)
+  autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-" au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap gd <Plug>(go-def-tab)
+  autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+  autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+  autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+
+  " autocmd FileType go nmap <leader>r <Plug>(go-run)
+  autocmd FileType go nmap <leader>gb <Plug>(go-build)
+  autocmd FileType go nmap <leader>gt <Plug>(go-test)
+  autocmd FileType go nmap <leader>c <Plug>(go-coverage)
+
+  autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+  autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  " autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
+  autocmd FileType go nmap gd <Plug>(go-def-tab)
+endif
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => UltiSnips configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " autocmd FileType * call UltiSnips#FileTypeChanged()
 
 "" Make YCM compatible with UltiSnips (using supertab)
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "" better key bindings for UltiSnipsExpandTrigger
-" let g:UltiSnipsExpandTrigger = "<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" provide some context when editing
-set scrolloff=3
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Commentary configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" don't use Ex mode, use Q for formatting
-map Q gq
-
-" commentary
 vmap \\ gc
 nmap \\ gcc
 
-nmap F :Ag<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Fuzzers configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" nmap F :Ag<cr>
 map <leader>f :FZF<cr>
 map <leader>b ::CtrlPBuffer<cr>
 let g:ctrlp_custom_ignore = {
@@ -613,154 +796,110 @@ let g:ctrlp_clear_cache_on_exit = 0
 nnoremap <leader>* :call ag#Ag('grep', '--literal ' .  shellescape(expand("<cword>")))<CR>
 vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Insert filename configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ignore Rubinius, Sass cache files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
+"" http://vim.wikia.com/wiki/Insert_current_filename
+"" It inserts the current filename without the extension at the cursor position, when you are in insert mode.
+" inoremap \fn <C-R>=expand("%:t:r")<CR>
 
-" folding
-set foldmethod=indent
-set foldlevelstart=20
-noremap <silent> <Space> za
-vnoremap <silent> <Space> za<Esc>
-map <Leader>fs :set foldmethod=syntax<cr>
-map <Leader>fm :set foldmethod=manual<cr>
-set nocursorcolumn
-set nocursorline
-syntax sync minlines=256
-set synmaxcol=300
-set re=1
+"" To keep the extension use:
+" inoremap \fn <C-R>=expand("%:t")<CR>
 
+"" To insert the absolute path of the directory the file is in use:
+" inoremap \fn <C-R>=expand("%:p:h")<CR>
 
-nnoremap <leader><leader> <c-^>
+"" To insert the relative path of the directory the file is in use:
+" inoremap \fn <C-R>=expand("%:h")<CR>
+" cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" find merge conflict markers
-nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Trailing whitespaces configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+"" Now provided by the plugin bronson/vim-trailing-whitespace, otherwise:
+"" Strip trailing whitespace (,ss)
+" function! StripWhitespace()
+"   let save_cursor = getpos(".")
+"   let old_query = getreg('/')
+"   :%s/\s\+$//e
+"   call setpos('.', save_cursor)
+"   call setreg('/', old_query)
+" endfunction
 
-" easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+" noremap <leader>ss :call StripWhitespace()<CR>
 
-" disable cursor keys in normal mode
-map <Left>  gT
-map <Right> gt
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Statusline configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" if has("statusline") && !&cp
+"   set laststatus=2  " always show the status bar
+"
+"   " Start the status line
+"   set statusline=%f\ %m\ %r
+"
+"   " Add fugitive
+"   set statusline+=%{fugitive#statusline()}
+"
+"   " Finish the statusline
+"   set statusline+=Line:%l/%L[%p%%]
+"   set statusline+=Col:%v
+"   set statusline+=Buf:#%n
+"   set statusline+=[%b][0x%B]
+" endif
 
-" mappings
-map! jj <esc>
-map! ii <esc>
-nmap oo o<esc>k
-nmap OO O<esc>j
-nmap /" cs'"
-nmap /' cs"'
-nmap <silent> <Leader>w :write<CR>
-nmap <silent> <Leader>q :quit<CR>
-nmap <silent> <Leader>d :bd!<CR>
-command! Q q
-command! W w
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" =>Testing Shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-" ctag
-nnoremap <f5> :!ctags -R<CR>
-nnoremap <f6> :!open -a Google\ Chrome % <CR>
-"map <leader>j g<c-]>
-nnoremap <silent><Leader>j <C-w><C-]><C-w>T
-map <leader>tt <c-t>
-set tags+=gems.tags
-map _ :TagbarToggle<CR>
-
-nnoremap <leader>. :CtrlPTag<cr>
-
-" command-t tmux fix
-map <Esc>[B <Down>
-
-" copy to system keyboard
-map <leader>y "*y
-
-set nobackup
-set nowritebackup
-set noswapfile
-
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
-
-  " Start the status line
-  set statusline=%f\ %m\ %r
-
-  " Add fugitive
-  set statusline+=%{fugitive#statusline()}
-
-  " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
-endif
-
-
-" test stuff
 " map <Leader>TT :call neoterm#test#run('suite')<CR>
 " map <Leader>T :call neoterm#test#run('file')<CR>
 " map <Leader>t :call neoterm#test#run('current')<CR>
 
 map <leader>r :NERDTreeFind<cr>
 
-" file:line
-" Avoid installing twice or when in unsupported Vim version.
-if exists('g:loaded_file_line') || (v:version < 701)
-  finish
-endif
-let g:loaded_file_line = 1
+"" file:line
+"" Avoid installing twice or when in unsupported Vim version.
+" if exists('g:loaded_file_line') || (v:version < 701)
+"   finish
+" endif
+" let g:loaded_file_line = 1
 
-function! s:gotoline()
-  let file = bufname("%")
-
-  " :e command calls BufRead even though the file is a new one.
-  " As a workarround Jonas Pfenniger<jonas@pfenniger.name> added an
-  " AutoCmd BufRead, this will test if this file actually exists before
-  " searching for a file and line to goto.
-  if (filereadable(file))
-    return
-  endif
-
-  " Accept file:line:column: or file:line:column and file:line also
-  let names =  matchlist( file, '\(.\{-1,}\):\%(\(\d\+\)\%(:\(\d*\):\?\)\?\)\?$')
-
-  if empty(names)
-    return
-  endif
-
-  let file_name = names[1]
-  let line_num  = names[2] == ''? '0' : names[2]
-  let  col_num  = names[3] == ''? '0' : names[3]
-
-  if filereadable(file_name)
-    let l:bufn = bufnr("%")
-
-    exec "keepalt edit " . fnameescape(file_name)
-    exec ":" . line_num
-    exec "normal! " . col_num . '|'
-    if foldlevel(line_num) > 0
-      exec "normal! zv"
-    endif
-    exec "normal! zz"
-
-    exec ":bwipeout " l:bufn
-    exec ":filetype detect"
-  endif
-
-endfunction
-
-autocmd! BufNewFile *:* nested call s:gotoline()
-autocmd! BufRead *:* nested call s:gotoline()
-
+" function! s:gotoline()
+"   let file = bufname("%")
+"
+"   " :e command calls BufRead even though the file is a new one.
+"   " As a workarround Jonas Pfenniger<jonas@pfenniger.name> added an
+"   " AutoCmd BufRead, this will test if this file actually exists before
+"   " searching for a file and line to goto.
+"   if (filereadable(file))
+"     return
+"   endif
+"   " Accept file:line:column: or file:line:column and file:line also
+"   let names =  matchlist( file, '\(.\{-1,}\):\%(\(\d\+\)\%(:\(\d*\):\?\)\?\)\?$')
+"   if empty(names)
+"     return
+"   endif
+"   let file_name = names[1]
+"   let line_num  = names[2] == ''? '0' : names[2]
+"   let  col_num  = names[3] == ''? '0' : names[3]
+"   if filereadable(file_name)
+"     let l:bufn = bufnr("%")
+"     exec 'keepalt edit ' . fnameescape(file_name)
+"     exec ':' . line_num
+"     exec 'normal! ' . col_num . '|'
+"     if foldlevel(line_num) > 0
+"       exec 'normal! zv'
+"     endif
+"     exec 'normal! zz'
+"     exec ':bwipeout ' l:bufn
+"     exec ':filetype detect'
+"   endif
+" endfunction
+" autocmd! BufNewFile *:* nested call s:gotoline()
+" autocmd! BufRead *:* nested call s:gotoline()
 
 " tagbar
 let g:tagbar_type_go = {
@@ -791,13 +930,3 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-  let save_cursor = getpos(".")
-  let old_query = getreg('/')
-  :%s/\s\+$//e
-  call setpos('.', save_cursor)
-  call setreg('/', old_query)
-endfunction
-
-noremap <leader>ss :call StripWhitespace()<CR>
