@@ -40,11 +40,15 @@ set encoding=utf8
 "" Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" provide some context when editing
+"" Provide some context when editing
+"" The 'scrolloff' (scroll offset) option determines the minimum number of
+"" screen lines that you would like above and below the cursor. By default,
+"" "'scrolloff' is 0 which means that you can move the cursor to any line in
+"" the window without causing scrolling.
 set scrolloff=3
 
-" don't use Ex mode, use Q for formatting
-map Q gq
+"" don't use Ex mode, use Q for formatting
+" map Q gq
 
 set colorcolumn=80
 " :highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
@@ -61,44 +65,140 @@ set colorcolumn=80
 "" omap, onoremap, ounmap          Operator pending mode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Backup files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" set nobackup
+set backupdir=~/.vim.backup,/tmp
+set directory=~/.vim.backup,/tmp
+
+"" Where nowritebackup changes the default 'save' behavior of Vim, which is:
+""  - write buffer to new file
+""  - delete the original file
+""  - rename the new file
+"" and makes Vim write the buffer to the original file (resulting in the risk
+"" of destroying it in case of an I/O error)
+set nowritebackup
+
+"" Vim stores the things you changed in a swap file.  Using the original file
+"" you started from plus the swap file you can mostly recover your work.
+"" You can see the name of the current swap file being used with the command:
+""  :sw[apname]
+" set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Ignore Rubinius, Sass cache files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
 
-" folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Folding configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" The 'foldmethod' option (abbreviated to 'fdm') is local to each window.
+"" It determines what kind of folding applies in the current window.
+"" Commonly used values are:
+"" manual – folds must be defined by entering commands (such as zf)
+"" indent – groups of lines with the same indent form a fold
+"" syntax – folds are defined by syntax highlighting
+"" expr – folds are defined by a user-defined expression
 set foldmethod=indent
+
+"" When you set foldmethod to something like indent or syntax, which
+"" defines folds as soon as you open the file, all folds are closed by
+"" default. If you set the foldlevel to a high setting, files are always
+"" loaded with opened folds. For example, you could put the settings below
+"" in your vimrc: set foldmethod=indent set foldlevel=20 This is not ideal,
+"" however, as the foldlevel option is local to the window, and
+"" additionally gets modified every time you use a command that adjusts the
+"" fold level, like zm, zr, and their friends.  A better method is to set
+"" the foldlevel whenever you load a buffer into a window. You could use
+"" autocommands for this, but there is a built-in option that does this for
+"" you automatically:
 set foldlevelstart=20
-noremap <silent> <Space> za
-vnoremap <silent> <Space> za<Esc>
-map <Leader>fs :set foldmethod=syntax<cr>
-map <Leader>fm :set foldmethod=manual<cr>
+
+" noremap <silent> <Space> za
+" vnoremap <silent> <Space> za<Esc>
+" map <Leader>fs :set foldmethod=syntax<cr>
+" map <Leader>fm :set foldmethod=manual<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Highlight the screen column/line
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 set nocursorcolumn
 set nocursorline
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Limit the syntax highlight to check
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Vim supports highlighting synchronization by searching a variable amount
+"" backwards from the current position for a recognized syntax state.
 syntax sync minlines=256
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Long lines problem
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Syntax coloring lines that are too long just slows down the world
 set synmaxcol=300
+
+"" you got a fast terminal
+" set ttyfast
+" set ttyscroll=3
+"" to avoid scrolling problems
+" set lazyredraw
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Regex engine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Any version older than and including Vim 7.3.969 has the old regex
+"" engine. Add in set re=1 to your vimrc to force the old regex engine on
+"" any version newer.
 set re=1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" =>  Switch to AlternateFile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader><leader> <c-^>
 
-" find merge conflict markers
-nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" =>  Find merge conflict marker
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+" nmap <silent> <leader>cf <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
-" easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Highlight the screen column of the cursor with CursorColum
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" disable cursor keys in normal mode
-map <Left>  gT
+" command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Easier navigation between split windows
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" nnoremap <c-j> <c-w>j
+" nnoremap <c-k> <c-w>k
+" nnoremap <c-h> <c-w>h
+" nnoremap <c-l> <c-w>l
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Disable cursor keys in normal mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Left> gT
 map <Right> gt
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+map <Up> :echo "no!"<cr>
+map <Down> :echo "no!"<cr>
 
-" mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Mapping
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 map! jj <esc>
 map! ii <esc>
 nmap oo o<esc>k
@@ -108,31 +208,27 @@ nmap /' cs"'
 nmap <silent> <Leader>w :write<CR>
 nmap <silent> <Leader>q :quit<CR>
 nmap <silent> <Leader>d :bd!<CR>
-command! Q q
-command! W w
+" command! Q q
+" command! W w
 
+"" Command-t Tmux fix
+" map <Esc>[B <Down>
 
-" ctag
-nnoremap <f5> :!ctags -R<CR>
-nnoremap <f6> :!open -a Google\ Chrome % <CR>
-"map <leader>j g<c-]>
-nnoremap <silent><Leader>j <C-w><C-]><C-w>T
-map <leader>tt <c-t>
-set tags+=gems.tags
-map _ :TagbarToggle<CR>
-
-nnoremap <leader>. :CtrlPTag<cr>
-
-" command-t tmux fix
-map <Esc>[B <Down>
-
-" copy to system keyboard
+" Copy to system keyboard
 map <leader>y "*y
 
-set nobackup
-set nowritebackup
-set noswapfile
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Ctag
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" nnoremap <f5> :!ctags -R<CR>
+" nnoremap <f6> :!open -a Google\ Chrome % <CR>
+" map <leader>j g<c-]>
+" nnoremap <silent><Leader>j <C-w><C-]><C-w>T
+" map <leader>tt <c-t>
+" set tags+=gems.tags
+" map _ :TagbarToggle<CR>
+" nnoremap <leader>. :CtrlPTag<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Helpers
@@ -443,22 +539,22 @@ autocmd VimEnter *
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_list_order = ['files', 'dir', 'bookmarks', 'sessions']
 let g:startify_bookmarks = [
-      \  '~/Workspaces',
-      \  '~/Workspaces/go.sources/src/github.com/zeroed/',
-      \  '~/Workspaces/gildsource',
-      \  '~/Downloads'
-      \  ]
+   \  '~/Workspaces',
+   \  '~/Workspaces/go.sources/src/github.com/zeroed/',
+   \  '~/Workspaces/gildsource',
+   \  '~/Downloads'
+   \  ]
 
-" let g:startify_list_order = [
-"   \ ['   My most recently', '   used files'],
-"   \ 'files',
-"   \ ['   My most recently used files in the current directory:'],
-"   \ 'dir',
-"   \ ['   These are my sessions:'],
-"   \ 'sessions',
-"   \ ['   These are my bookmarks:'],
-"   \ 'bookmarks',
-"   \ ]
+let g:startify_list_order = [
+  \ ['   Recently used files'],
+  \ 'files',
+  \ ['   Recently used files in the current directory:'],
+  \ 'dir',
+  \ ['   Sessions:'],
+  \ 'sessions',
+  \ ['   Bookmarks:'],
+  \ 'bookmarks',
+  \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => NerdTree configuration
@@ -472,9 +568,9 @@ let NERDTreeMouseMode=2
 
 map - :NERDTreeTabsToggle<CR>
 
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_focus_on_files = 1
-let g:nerdtree_tabs_startup_cd = 0
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_focus_on_files=1
+let g:nerdtree_tabs_startup_cd=0
 
 "" open NERDTree when vim starts up if no files were specified
 " autocmd StdinReadPre * let s:std_in=1
@@ -667,17 +763,30 @@ highlight multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
 highlight link multiple_cursors_visual Visual
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Autosave configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" :au FocusLost * :wa
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Searching configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set hlsearch                      " highlight matches
-set incsearch                     " incremental searching
-set ignorecase                    " searches are case insensitive...
-set smartcase                     " ... unless they contain at least one capital letter
+" highlight matches
+set hlsearch
+" incremental searching
+set incsearch
+" searches are case insensitive...
+set ignorecase
+" ... unless they contain at least one capital letter
+set smartcase
 
 " wildmode
 set wildmenu
 set wildmode=longest:full,full
+
+"" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Autocmd configuration
@@ -691,25 +800,28 @@ set wildmode=longest:full,full
 "" place to put autocommands is in your .vimrc or .exrc file.
 
 if has("autocmd")
-  " In Makefiles, use real tabs, not tabs expanded to spaces
+  "" In Makefiles, use real tabs, not tabs expanded to spaces
   autocmd FileType make set noexpandtab
 
-  " Make sure all markdown files have the correct filetype set and setup wrapping
+  "" Make sure all markdown files have the correct filetype set and setup wrapping
   autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
 
-  " Treat JSON files like JavaScript
+  "" Treat JSON files like JavaScript
   autocmd BufNewFile,BufRead *.json set ft=javascript
 
-  " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+  "" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   autocmd FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
-  " Remember last location in file, but not for commit messages.
-  " see :help last-position-jump
+  "" Remember last location in file, but not for commit messages.
+  "" see :help last-position-jump
   autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 
-  " mark Jekyll YAML frontmatter as comment
+  "" mark Jekyll YAML frontmatter as comment
   autocmd BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
+
+  "" Remove whitespaces on save
+  autocmd BufWrite * FixWhitespace
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -851,7 +963,7 @@ vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('gr
 " endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" =>Testing Shortcuts
+"" => Testing Shortcuts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " map <Leader>TT :call neoterm#test#run('suite')<CR>
@@ -860,7 +972,17 @@ vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('gr
 
 map <leader>r :NERDTreeFind<cr>
 
-" tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => TagBar configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => GoTag configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" https://github.com/jstemmer/gotags
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
@@ -889,3 +1011,7 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => End File
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
