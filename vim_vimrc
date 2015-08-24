@@ -5,8 +5,13 @@
 "" be iMproved, required
 set nocompatible
 
+cd $WORKSPACES
+
 "" Enable syntax highlighting
 syntax enable
+
+"" Endofline (that's an $, not the emty line)
+" set endofline
 
 "" Sets how many lines of history VIM has to remember
 set history=700
@@ -64,6 +69,19 @@ set colorcolumn=80
 "" cmap, cnoremap, cunmap          Command-line mode
 "" omap, onoremap, ounmap          Operator pending mode
 
+"" Sometimes it is helpful if your working directory is always the same as
+"" the file you are editing. To achieve this, put the following in your
+"" vimrc:
+
+set autochdir
+
+"" Unfortunately, when this option is set
+"" some plugins may not work correctly if they make assumptions about the
+"" current directory. Sometimes, as an alternative to setting autochdir,
+"" the following command gives better results:
+
+autocmd BufEnter * silent! lcd %:p:hj
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Backup files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,6 +110,8 @@ set nowritebackup
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
+set wildignore+=*/Applications/*
+set wildignore+=*/Library/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Folding configuration
@@ -233,6 +253,15 @@ map <leader>y "*y
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Helpers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Toggle wrap
+" function! AutoWrapToggle()
+"   if &formatoptions =~ 't'
+"     set fo-=t
+"   else
+"     set fo+=t
+"   endif
+" endfunction
 
 "" Clear the search buffer when hitting return
 " function! MapCR()
@@ -450,6 +479,10 @@ call plug#begin('~/.vim/plugged')
   "" Vim Markdown runtime files
   " Plug 'tpope/vim-markdown'
 
+  "" https://github.com/plasticboy/vim-markdown
+  "" Markdown Vim Mode
+  Plug 'plasticboy/vim-markdown'
+
   "" https://github.com/Valloric/YouCompleteMe
   "" A code-completion engine for Vim
   "
@@ -510,13 +543,10 @@ colorscheme hybrid
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "" To change two vertically split windows to horizonally split
-"
 "" Ctrl-w t Ctrl-w K
 "
 "" Horizontally to vertically:
-"
 "" Ctrl-w t Ctrl-w H
-"
 
 "" Ctrl-w t makes the first (topleft) window current Ctrl-w K moves the
 "" current window to full-width at the very top Ctrl-w H moves the current
@@ -529,7 +559,7 @@ colorscheme hybrid
 autocmd VimEnter *
       \   if !argc()
       \ |   Startify
-      \ |   wincmd w
+      " \ |   wincmd w
       \ | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -887,14 +917,36 @@ vmap \\ gc
 nmap \\ gcc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Alternate file helper
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" Ctrl-^ is very handy command in normal mode. Ctrl-^
+"" switches to 'alternate file'. When there is no 'alternate file',
+"" I wanted Ctrl-^ to jump to next file in the list.
+"" Insert following commands into your vimrc, then
+"" Ctrl-^ will be enhanced so that when there is no alternate file
+"" but there is next file, it will jump to the next file.
+"" My remapping of <C-^>. If there is no alternate file, then switch to next
+"" file.
+" function! MySwitch()
+"   if expand('#')=="" | silent! next
+"   else
+"     exe "normal! \<c-^>"
+"   endif
+" endfu
+" map <C-^> :call MySwitch()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Fuzzers configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " nmap F :Ag<cr>
 map <leader>f :FZF<cr>
-map <leader>b ::CtrlPBuffer<cr>
+" map <leader>b :CtrlPBuffer ~/Workspaces<cr>
+map <leader>b :CtrlPBuffer<cr>
+
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
@@ -905,8 +957,49 @@ endif
 let g:ctrlp_clear_cache_on_exit = 0
 
 " use ag for recursive searching
-nnoremap <leader>* :call ag#Ag('grep', '--literal ' .  shellescape(expand("<cword>")))<CR>
-vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
+" nnoremap <leader>* :call ag#Ag('grep',g'--literal ' .  shellescape(expand("<cword>")))<CR>
+nnoremap <leader>* :call ag#Ag('grep',g'--literal ' .  shellescape(expand("<cword>")))<CR>
+" vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Syntastic configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+" let g:syntastic_aggregate_errors=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+" let g:syntastic_enable_ballons=has('ballon_eval')
+let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+" let g:syntastic_loc_list_height=3
+" let g:syntastic_ignore_files = ['^/usr/', '*node_modules*', '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
+" let g:syntastic_mode_map = { 'mode': 'active' }
+" let g:syntastic_javascript_checkers=['jshint', 'jscs']
+" let g:syntastic_json_checkers=['jsonlint', 'jsonval']
+" let g:syntastic_ruby_checkers=['rubocop','mri']
+" let g:syntastic_perl_checkers=['perl','perlcritic','podchecker']
+" let g:syntastic_python_checkers=['pylint','pep8','python']
+" let g:syntastic_cpp_checkers=['gcc','cppcheck','cpplint','ycm','clang_tidy','clang_check']
+" let g:syntastic_c_checkers=['gcc','make','cppcheck','clang_tidy','clang_check']
+" let g:syntastic_haml_checkers=['haml_lint', 'haml']
+" let g:syntastic_html_checkers=['jshint']
+" let g:syntastic_yaml_checkers=['jsyaml']
+" let g:syntastic_sh_checkers=['sh','shellcheck','checkbashisms']
+" let g:syntastic_vim_checkers=['vimlint']
+" let g:syntastic_enable_perl_checker=1
+" let g:syntastic_c_clang_tidy_sort=1
+" let g:syntastic_c_clang_check_sort=1
+" let g:syntastic_c_remove_include_errors=1
+" let g:syntastic_quiet_messages = { 'level': '[]', 'file': ['*_LOCAL_*', '*_BASE_*', '*_REMOTE_*']  }
+" let g:syntastic_stl_format = '[%E{E: %fe #%e}%B{, }%W{W: %fw #%w}]'
+" let g:syntastic_java_javac_options = '-g:none -source 8 -Xmaxerrs 5 -Xmaswarns 5'
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Insert filename configuration
