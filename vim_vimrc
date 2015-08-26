@@ -110,8 +110,8 @@ set nowritebackup
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
-set wildignore+=*/Applications/*
-set wildignore+=*/Library/*
+set wildignore+=*~/Applications/*
+set wildignore+=*~/Library/*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Folding configuration
@@ -389,9 +389,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'majutsushi/tagbar'
 
   "" https://github.com/rking/ag.vim
+  "" OR https://github.com/mileszs/ack.vim
   "" Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl
   "" module / CLI script 'ack'
-  " Plug 'rking/ag.vim'
+  Plug 'rking/ag.vim'
 
   "" https://github.com/scrooloose/nerdtree
   "" A tree explorer plugin for vim
@@ -556,10 +557,10 @@ colorscheme hybrid
 "" => Startup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"" For multi-pane on startup: |   wincmd w
 autocmd VimEnter *
       \   if !argc()
       \ |   Startify
-      " \ |   wincmd w
       \ | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -861,6 +862,20 @@ endif
 " fzf --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
 " fzf --color info:144,prompt:161,spinner:135,pointer:135,marker:118
 
+"" Respecting .gitignore, .hgignore, and svn:ignore
+"" Let's do the job to AG
+"" # Feed the output of ag into fzf
+"" ag -l -g '' | fzf
+""
+"" # Setting ag as the default source for fzf
+"" export FZF_DEFAULT_COMMAND='ag -l -g ""'
+""
+"" # Now fzf (w/o pipe) will use ag instead of find
+"" fzf
+""
+"" # To apply the command to CTRL-T as well
+"" export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GOLANG configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -931,22 +946,29 @@ nmap \\ gcc
 " function! MySwitch()
 "   if expand('#')=="" | silent! next
 "   else
-"     exe "normal! \<c-^>"
+"     exe 'normal! \<c-^>'
 "   endif
 " endfu
 " map <C-^> :call MySwitch()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" => Fuzzers configuration
+"" => FZF configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " nmap F :Ag<cr>
 map <leader>f :FZF<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => CtrlP configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " map <leader>b :CtrlPBuffer ~/Workspaces<cr>
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 map <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$|Applications/*|Library/*',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
@@ -956,9 +978,30 @@ if executable('ag')
 endif
 let g:ctrlp_clear_cache_on_exit = 0
 
-" use ag for recursive searching
+"" When invoked, unless a starting directory is specified, CtrlP will set its
+"" local working directory according to this variable:
+""  - 'c' - the directory of the current file.
+""  - 'r' - the nearest ancestor that contains one of these directories or
+""          files: .git .hg .svn .bzr _darcs
+""  - 'a' - like c, but only if the current working directory outside of
+""          CtrlP is not a direct ancestor of the directory of the current
+""          file.
+""  - 0 or '' (empty string) - disable this feature.
+let g:ctrlp_working_path_mode = 'ra'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Ag configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" You can specify a custom ag name and path
+" let g:agprg="<custom-ag-path-goes-here> --vimgrep"
+
+"" You can configure ag.vim to always start searching from your project
+"" root instead of the cwd
+let g:ag_working_path_mode="r"
+
+"" use ag for recursive searching
 " nnoremap <leader>* :call ag#Ag('grep',g'--literal ' .  shellescape(expand("<cword>")))<CR>
-nnoremap <leader>* :call ag#Ag('grep',g'--literal ' .  shellescape(expand("<cword>")))<CR>
 " vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
