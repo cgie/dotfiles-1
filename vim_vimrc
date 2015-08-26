@@ -20,6 +20,9 @@ set history=700
 filetype plugin on
 filetype indent on
 
+"" Vundle required
+" filetype off
+
 "" Set to auto read when a file is changed from the outside
 set autoread
 
@@ -33,9 +36,6 @@ let g:mapleader = ","
 
 "" Fast saving
 " nmap <leader>w :w!<cr>
-
-"" Vundle required
-" filetype off
 
 " set guifont=Monaco\ 12
 
@@ -79,8 +79,7 @@ set autochdir
 "" some plugins may not work correctly if they make assumptions about the
 "" current directory. Sometimes, as an alternative to setting autochdir,
 "" the following command gives better results:
-
-autocmd BufEnter * silent! lcd %:p:hj
+" autocmd BufEnter * silent! lcd %:p:hj
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Backup files
@@ -108,10 +107,12 @@ set nowritebackup
 "" => Ignore Rubinius, Sass cache files
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore=*.swp
+set wildignore+=*/tmp/*,*.so,*.zip
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
-set wildignore+=*~/Applications/*
-set wildignore+=*~/Library/*
+set wildignore+=*.so,*.swp,*.zip
+set wildignore+=*/.Trash/**,*.pdf,*.dmg,*/Library/**,*/.rbenv/**
+set wildignore+=*DS_Store*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Folding configuration
@@ -219,22 +220,22 @@ map <Down> :echo "no!"<cr>
 "" => Mapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map! jj <esc>
-map! ii <esc>
+" map! jj <esc>
+" map! ii <esc>
 nmap oo o<esc>k
 nmap OO O<esc>j
-nmap /" cs'"
-nmap /' cs"'
-nmap <silent> <Leader>w :write<CR>
-nmap <silent> <Leader>q :quit<CR>
-nmap <silent> <Leader>d :bd!<CR>
+" nmap /" cs'"
+" nmap /' cs"'
+" nmap <silent> <Leader>w :write<CR>
+" nmap <silent> <Leader>q :quit<CR>
+" nmap <silent> <Leader>d :bd!<CR>
 " command! Q q
 " command! W w
 
 "" Command-t Tmux fix
 " map <Esc>[B <Down>
 
-" Copy to system keyboard
+"" Copy to system clipboard
 map <leader>y "*y
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -486,17 +487,6 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/Valloric/YouCompleteMe
   "" A code-completion engine for Vim
-  "
-  " function! BuildYCM(info)
-  "    "  info is a dictionary with 3 fields
-  "    "  - name:   name of the plugin
-  "    "  - status: 'installed', 'updated', or 'unchanged'
-  "    "  - force:  set on PlugInstall! or PlugUpdate!
-  "   if a:info.status == 'installed' || a:info.force
-  "     !./install.sh
-  "   endif
-  " endfunction
-
   " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 
@@ -607,6 +597,8 @@ let g:nerdtree_tabs_startup_cd=0
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+let NERDTreeIgnore=['\.swp$', '\.DS_Store']
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Startify configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -631,18 +623,25 @@ set shiftwidth=2
 set tabstop=2
 
 "" Set Linebreak on 500 characters
-set lbr
+set linebreak
 
-set tw=72
+"" Set textwidth
+set textwidth=72
 
 "" Set Auto indent
-set ai
+set autoindent
 
 "" Set Smart indent
-set si
+set smartindent
 
 "" Set Wrap
 set wrap
+
+"" Paste toggle
+"" http://vim.wikia.com/wiki/VimTip906
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Show invisible characterst
@@ -780,7 +779,8 @@ let g:is_bash=1
 set hidden
 
 "" Lamer mouse things
-"" mouse=a prevents the ability of copying and pasting out of vim with readable characters.
+"" mouse=a prevents the ability of copying and pasting out of vim with
+"" readable characters.
 "" In this way numbers won't be selected.
 "" Change mouse=a to mouse=r and that should fix your issue with that.
 set mouse=a
@@ -812,16 +812,16 @@ set mouse=a
 "" => Searching configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" highlight matches
+"" highlight matches
 set hlsearch
-" incremental searching
+"" incremental searching
 set incsearch
-" searches are case insensitive...
+"" searches are case insensitive...
 set ignorecase
-" ... unless they contain at least one capital letter
+"" ... unless they contain at least one capital letter
 set smartcase
 
-" wildmode
+"" wildmode
 set wildmenu
 set wildmode=longest:full,full
 
@@ -849,6 +849,9 @@ if has("autocmd")
   "" Treat JSON files like JavaScript
   autocmd BufNewFile,BufRead *.json set ft=javascript
 
+  "" Vim file
+  " autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
+
   "" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
   autocmd FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
@@ -857,7 +860,7 @@ if has("autocmd")
   autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g`\"" | endif
 
-  "" mark Jekyll YAML frontmatter as comment
+  "" Mark Jekyll YAML frontmatter as comment
   autocmd BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
 
   "" Remove whitespaces on save
@@ -937,8 +940,8 @@ let g:go_highlight_structs = 1
 "" => Commentary configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-vmap \\ gc
-nmap \\ gcc
+" vmap \\ gc
+" nmap \\ gcc
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Alternate file helper
@@ -952,6 +955,7 @@ nmap \\ gcc
 "" but there is next file, it will jump to the next file.
 "" My remapping of <C-^>. If there is no alternate file, then switch to next
 "" file.
+
 " function! MySwitch()
 "   if expand('#')=="" | silent! next
 "   else
@@ -977,7 +981,7 @@ let g:ctrlp_cmd = 'CtrlP'
 map <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$|Applications/*|Library/*',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$|Applications/.*|Library/.*',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
   \ }
@@ -1027,7 +1031,8 @@ let g:syntastic_always_populate_loc_list=1
 " let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
 " let g:syntastic_loc_list_height=3
-" let g:syntastic_ignore_files = ['^/usr/', '*node_modules*', '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
+" let g:syntastic_ignore_files = ['^/usr/', '*node_modules*',
+"   '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
 " let g:syntastic_mode_map = { 'mode': 'active' }
 " let g:syntastic_javascript_checkers=['jshint', 'jscs']
 " let g:syntastic_json_checkers=['jsonlint', 'jsonval']
@@ -1122,6 +1127,20 @@ map <leader>r :NERDTreeFind<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nmap <F8> :TagbarToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => YuCompleteme configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" function! BuildYCM(info)
+"    "  info is a dictionary with 3 fields
+"    "  - name:   name of the plugin
+"    "  - status: 'installed', 'updated', or 'unchanged'
+"    "  - force:  set on PlugInstall! or PlugUpdate!
+"   if a:info.status == 'installed' || a:info.force
+"     !./install.sh
+"   endif
+" endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GoTag configuration
