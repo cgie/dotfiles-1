@@ -4,7 +4,7 @@ export GT_KEY="*******************************"
 export GT_AWS_ZONE="us-west-2c"
 export GT_URL="https://*******************.com"
 export WORKSPACES="/Users/edoardo/Workspaces"
-export TUNA_HOME=$WORKSPACES/tuna_src/tuna
+export TUNA_HOME=$WORKSPACES/tuna_src/Tuna
 export GOPATH=$WORKSPACES/go.sources
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
@@ -25,12 +25,12 @@ export EDITOR=/usr/local/bin/vim
 #    export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
 #    export DOCKER_TLS_VERIFY=1
 # }
-
+#
 # docker() {
 #    config_docker
 #    /usr/local/bin/docker "$@"
 # }
-
+#
 # fig() {
 #    config_docker
 #    /usr/local/bin/fig "$@"
@@ -43,3 +43,10 @@ then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--extended --cycle"
+# Use ~~ as the trigger sequence instead of the default **
+# export FZF_COMPLETION_TRIGGER='~~'
+# Options to fzf command
+# export FZF_COMPLETION_OPTS='+c -x'
