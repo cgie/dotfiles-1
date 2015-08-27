@@ -668,8 +668,9 @@ set list
 "" Reset the listchars
 set listchars=""
 
-"" A tab should display as "  ", trailing whitespace as "."
+"" A tab should display as "  "
 set listchars=tab:\ \
+" set listchars=tab:\|\<Space>
 
 "' Show trailing spaces as dots
 set listchars+=trail:.
