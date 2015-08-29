@@ -319,6 +319,20 @@ map <leader>y "*y
 "
 "" %   jump to matching bracket { } [ ] ( )
 
+"" The % command jumps to the match of the item under the cursor. Position
+"" the cursor on the opening (or closing) paren and use y% for yanking or
+"" d% for deleting everything from the cursor to the matching paren.
+""
+"" This works because % is a 'motion command', so it can be used anywhere
+"" vim expects such a command. From :help y:
+""
+"" ["x]y{motion}       Yank {motion} text [into register x].  When no
+""                     characters are to be yanked (e.g., 'y0' in column 1),
+""                     this is an error when 'cpoptions' includes the 'E'
+""                     flag.
+"" By default, 'item' includes brackets, braces, parens, C-style comments
+"" and various precompiler statements (#ifdef, etc.).
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Packages
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
