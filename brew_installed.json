@@ -314,6 +314,35 @@
     ]
   },
   {
+    "name": "ctags",
+    "full_name": "ctags",
+    "desc": "Reimplementation of ctags(1)",
+    "homepage": "http://ctags.sourceforge.net/",
+    "oldname": null,
+    "versions": {
+      "stable": "5.8",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 1,
+    "installed": [
+      {
+        "version": "5.8_1",
+        "used_options": [],
+        "built_as_bottle": null,
+        "poured_from_bottle": true
+      }
+    ],
+    "linked_keg": "5.8_1",
+    "keg_only": null,
+    "dependencies": [],
+    "conflicts_with": [],
+    "caveats": "Under some circumstances, emacs and ctags can conflict. By default,\nemacs provides an executable `ctags` that would conflict with the\nexecutable of the same name that ctags provides. To prevent this,\nHomebrew removes the emacs `ctags` and its manpage before linking.\n\nHowever, if you install emacs with the `--keep-ctags` option, then\nthe `ctags` emacs provides will not be removed. In that case, you\nwon't be able to install ctags successfully. It will build but not\nlink.\n",
+    "requirements": [],
+    "options": []
+  },
+  {
     "name": "curl",
     "full_name": "curl",
     "desc": "Get a file from an HTTP, HTTPS or FTP server",
@@ -424,92 +453,6 @@
       }
     ],
     "options": []
-  },
-  {
-    "name": "emacs",
-    "full_name": "emacs",
-    "desc": "GNU Emacs text editor",
-    "homepage": "https://www.gnu.org/software/emacs/",
-    "oldname": null,
-    "versions": {
-      "stable": "24.5",
-      "bottle": true,
-      "devel": "24.5-dev",
-      "head": "HEAD"
-    },
-    "revision": 0,
-    "installed": [
-      {
-        "version": "24.5",
-        "used_options": [],
-        "built_as_bottle": null,
-        "poured_from_bottle": true
-      }
-    ],
-    "linked_keg": "24.5",
-    "keg_only": null,
-    "dependencies": [
-      "xz",
-      "pkg-config",
-      "d-bus",
-      "gnutls",
-      "librsvg",
-      "imagemagick",
-      "mailutils",
-      "glib"
-    ],
-    "conflicts_with": [],
-    "caveats": null,
-    "requirements": [
-      {
-        "name": "x11",
-        "default_formula": null,
-        "cask": "xquartz",
-        "download": "https://xquartz.macosforge.org"
-      }
-    ],
-    "options": [
-      {
-        "option": "--with-cocoa",
-        "description": "Build a Cocoa version of emacs"
-      },
-      {
-        "option": "--with-ctags",
-        "description": "Don't remove the ctags executable that emacs provides"
-      },
-      {
-        "option": "--without-libxml2",
-        "description": "Don't build with libxml2 support"
-      },
-      {
-        "option": "--with-x11",
-        "description": "Build with x11 support"
-      },
-      {
-        "option": "--with-d-bus",
-        "description": "Build with d-bus support"
-      },
-      {
-        "option": "--with-gnutls",
-        "description": "Build with gnutls support"
-      },
-      {
-        "option": "--with-librsvg",
-        "description": "Build with librsvg support"
-      },
-      {
-        "option": "--with-imagemagick",
-        "description": "Build with imagemagick support"
-      },
-      {
-        "option": "--with-mailutils",
-        "description": "Build with mailutils support"
-      },
-      {
-        "option": "--with-glib",
-        "description": "Build with glib support"
-      }
-    ]
   },
   {
     "name": "fontconfig",
@@ -745,7 +688,7 @@
     "homepage": "https://git-scm.com",
     "oldname": null,
     "versions": {
-      "stable": "2.5.0",
+      "stable": "2.5.1",
       "bottle": true,
       "devel": null,
       "head": "HEAD"
@@ -753,13 +696,13 @@
     "revision": 0,
     "installed": [
       {
-        "version": "2.5.0",
+        "version": "2.5.1",
         "used_options": [],
         "built_as_bottle": null,
         "poured_from_bottle": true
       }
     ],
-    "linked_keg": "2.5.0",
+    "linked_keg": "2.5.1",
     "keg_only": null,
     "dependencies": [
       "xz",
@@ -925,21 +868,21 @@
     "homepage": "https://golang.org",
     "oldname": null,
     "versions": {
-      "stable": "1.4.2",
+      "stable": "1.5",
       "bottle": true,
-      "devel": "1.5rc1",
+      "devel": null,
       "head": "HEAD"
     },
     "revision": 0,
     "installed": [
       {
-        "version": "1.4.2",
+        "version": "1.5",
         "used_options": [],
         "built_as_bottle": null,
         "poured_from_bottle": true
       }
     ],
-    "linked_keg": "1.4.2",
+    "linked_keg": "1.5",
     "keg_only": null,
     "dependencies": [],
     "conflicts_with": [],
@@ -953,14 +896,6 @@
       }
     ],
     "options": [
-      {
-        "option": "--with-cc-all",
-        "description": "Build with cross-compilers and runtime support for all supported platforms"
-      },
-      {
-        "option": "--with-cc-common",
-        "description": "Build with cross-compilers and runtime support for darwin, linux and windows"
-      },
       {
         "option": "--without-cgo",
         "description": "Build without cgo"
@@ -976,13 +911,44 @@
     ]
   },
   {
+    "name": "gotags",
+    "full_name": "gotags",
+    "desc": "ctags-compatible tag generator for Go",
+    "homepage": "https://github.com/jstemmer/gotags",
+    "oldname": null,
+    "versions": {
+      "stable": "1.3.0",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "installed": [
+      {
+        "version": "1.3.0",
+        "used_options": [],
+        "built_as_bottle": null,
+        "poured_from_bottle": true
+      }
+    ],
+    "linked_keg": "1.3.0",
+    "keg_only": null,
+    "dependencies": [
+      "go"
+    ],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": []
+  },
+  {
     "name": "heroku-toolbelt",
     "full_name": "heroku-toolbelt",
     "desc": "Everything you need to get started with Heroku",
     "homepage": "https://toolbelt.heroku.com/other",
     "oldname": null,
     "versions": {
-      "stable": "3.41.3",
+      "stable": "3.41.4",
       "bottle": false,
       "devel": null,
       "head": "HEAD"
@@ -990,13 +956,13 @@
     "revision": 0,
     "installed": [
       {
-        "version": "3.41.3",
+        "version": "3.41.4",
         "used_options": [],
         "built_as_bottle": null,
         "poured_from_bottle": false
       }
     ],
-    "linked_keg": "3.41.3",
+    "linked_keg": "3.41.4",
     "keg_only": null,
     "dependencies": [],
     "conflicts_with": [],
@@ -1306,9 +1272,6 @@
     "keg_only": null,
     "dependencies": [
       "oniguruma",
-      "autoconf",
-      "automake",
-      "libtool",
       "bison"
     ],
     "conflicts_with": [],
@@ -1786,9 +1749,7 @@
     ],
     "linked_keg": "3.5",
     "keg_only": null,
-    "dependencies": [
-      "openssl"
-    ],
+    "dependencies": [],
     "conflicts_with": [],
     "caveats": null,
     "requirements": [],
@@ -2074,6 +2035,35 @@
     ]
   },
   {
+    "name": "phantomjs",
+    "full_name": "phantomjs",
+    "desc": "Headless WebKit scriptable with a JavaScript API",
+    "homepage": "http://www.phantomjs.org/",
+    "oldname": null,
+    "versions": {
+      "stable": "2.0.0",
+      "bottle": true,
+      "devel": null,
+      "head": "HEAD"
+    },
+    "revision": 0,
+    "installed": [
+      {
+        "version": "2.0.0",
+        "used_options": [],
+        "built_as_bottle": null,
+        "poured_from_bottle": true
+      }
+    ],
+    "linked_keg": "2.0.0",
+    "keg_only": null,
+    "dependencies": [],
+    "conflicts_with": [],
+    "caveats": null,
+    "requirements": [],
+    "options": []
+  },
+  {
     "name": "pkg-config",
     "full_name": "pkg-config",
     "desc": "Manage compile and link flags for libraries",
@@ -2326,68 +2316,6 @@
       {
         "option": "--without-xz",
         "description": "Build without xz support"
-      }
-    ]
-  },
-  {
-    "name": "qt",
-    "full_name": "qt",
-    "desc": "Cross-platform application and UI framework",
-    "homepage": "https://www.qt.io/",
-    "oldname": null,
-    "versions": {
-      "stable": "4.8.7",
-      "bottle": true,
-      "devel": null,
-      "head": "HEAD"
-    },
-    "revision": 0,
-    "installed": [
-      {
-        "version": "4.8.7",
-        "used_options": [],
-        "built_as_bottle": null,
-        "poured_from_bottle": true
-      }
-    ],
-    "linked_keg": "4.8.7",
-    "keg_only": null,
-    "dependencies": [
-      "d-bus",
-      "mysql",
-      "postgresql"
-    ],
-    "conflicts_with": [],
-    "caveats": "We agreed to the Qt opensource license for you.\nIf this is unacceptable you should uninstall.\n",
-    "requirements": [],
-    "options": [
-      {
-        "option": "--universal",
-        "description": "Build a universal binary"
-      },
-      {
-        "option": "--with-qt3support",
-        "description": "Build with deprecated Qt3Support module support"
-      },
-      {
-        "option": "--with-docs",
-        "description": "Build documentation"
-      },
-      {
-        "option": "--with-developer",
-        "description": "Build and link with developer options"
-      },
-      {
-        "option": "--with-d-bus",
-        "description": "Build with d-bus support"
-      },
-      {
-        "option": "--with-mysql",
-        "description": "Build with mysql support"
-      },
-      {
-        "option": "--with-postgresql",
-        "description": "Build with postgresql support"
       }
     ]
   },
@@ -2755,12 +2683,12 @@
     "homepage": "http://www.vim.org/",
     "oldname": null,
     "versions": {
-      "stable": "7.4.712",
+      "stable": "7.4.826",
       "bottle": false,
       "devel": null,
       "head": "HEAD"
     },
-    "revision": 1,
+    "revision": 0,
     "installed": [
       {
         "version": "HEAD",
@@ -3060,12 +2988,6 @@
     "revision": 0,
     "installed": [
       {
-        "version": "1",
-        "used_options": [],
-        "built_as_bottle": null,
-        "poured_from_bottle": false
-      },
-      {
         "version": "2",
         "used_options": [],
         "built_as_bottle": null,
@@ -3094,26 +3016,33 @@
     "homepage": "https://github.com/mernen/completion-ruby",
     "oldname": null,
     "versions": {
-      "stable": "1",
+      "stable": "2",
       "bottle": false,
       "devel": null,
-      "head": null
+      "head": "HEAD"
     },
     "revision": 0,
     "installed": [
       {
-        "version": "1",
+        "version": "2",
         "used_options": [],
         "built_as_bottle": null,
         "poured_from_bottle": false
       }
     ],
-    "linked_keg": "1",
+    "linked_keg": "2",
     "keg_only": null,
     "dependencies": [],
     "conflicts_with": [],
     "caveats": null,
-    "requirements": [],
+    "requirements": [
+      {
+        "name": "git",
+        "default_formula": "git",
+        "cask": null,
+        "download": null
+      }
+    ],
     "options": []
   },
   {
@@ -3152,26 +3081,33 @@
     "homepage": "https://github.com/mernen/completion-ruby",
     "oldname": null,
     "versions": {
-      "stable": "1",
+      "stable": "2",
       "bottle": false,
       "devel": null,
-      "head": null
+      "head": "HEAD"
     },
     "revision": 0,
     "installed": [
       {
-        "version": "1",
+        "version": "2",
         "used_options": [],
         "built_as_bottle": null,
         "poured_from_bottle": false
       }
     ],
-    "linked_keg": "1",
+    "linked_keg": "2",
     "keg_only": null,
     "dependencies": [],
     "conflicts_with": [],
     "caveats": null,
-    "requirements": [],
+    "requirements": [
+      {
+        "name": "git",
+        "default_formula": "git",
+        "cask": null,
+        "download": null
+      }
+    ],
     "options": []
   },
   {

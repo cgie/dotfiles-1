@@ -11,11 +11,12 @@ cloog018
 cmake
 colordiff
 coreutils
+ctags
 curl
 elasticsearch
-emacs
 fontconfig
 freetype
+fzf
 gcc49
 gdbm
 gem-completion
@@ -27,6 +28,7 @@ gmp
 gmp4
 gnupg
 go
+gotags
 heroku-toolbelt
 htop-osx
 imagemagick
@@ -59,12 +61,12 @@ oniguruma
 openssl
 pandoc
 pcre
+phantomjs
 pkg-config
 postgresql
 pstree
 python
 python3
-qt
 rake-completion
 readline
 redis

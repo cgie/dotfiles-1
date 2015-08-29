@@ -34,14 +34,12 @@ colordiff (required dependencies)
 coreutils (required dependencies)
 └── xz
 
+ctags (required dependencies)
+
 curl (required dependencies)
 └── pkg-config
 
 elasticsearch (required dependencies)
-
-emacs (required dependencies)
-├── xz
-└── pkg-config
 
 fontconfig (required dependencies)
 ├── pkg-config
@@ -77,6 +75,7 @@ homebrew/versions/gcc49 (required dependencies)
 gdbm (required dependencies)
 
 homebrew/completions/gem-completion (required dependencies)
+└── :git
 
 gettext (required dependencies)
 └── xz
@@ -104,6 +103,10 @@ gnupg (required dependencies)
 
 go (required dependencies)
 └── :git
+
+gotags (required dependencies)
+└── go
+    └── :git
 
 heroku-toolbelt (required dependencies)
 └── :ruby
@@ -149,12 +152,6 @@ homebrew/versions/isl011 (required dependencies)
 jpeg (required dependencies)
 
 jq (required dependencies)
-├── autoconf
-├── automake
-|   ├── xz
-|   └── autoconf
-├── libtool
-|   └── xz
 ├── bison
 └── oniguruma
 
@@ -208,9 +205,6 @@ memcached (required dependencies)
             └── pkg-config
 
 mercurial (required dependencies)
-└── openssl
-    └── makedepend
-        └── pkg-config
 
 homebrew/versions/mongodb26 (required dependencies)
 └── scons
@@ -274,6 +268,8 @@ pandoc (required dependencies)
 
 pcre (required dependencies)
 
+phantomjs (required dependencies)
+
 pkg-config (required dependencies)
 
 postgresql (required dependencies)
@@ -307,8 +303,6 @@ python3 (required dependencies)
 ├── gdbm
 └── xz
 
-qt (required dependencies)
-
 homebrew/completions/rake-completion (required dependencies)
 
 readline (required dependencies)
@@ -318,6 +312,7 @@ redis (required dependencies)
 rename (required dependencies)
 
 homebrew/completions/ruby-completion (required dependencies)
+└── :git
 
 s3cmd (required dependencies)
 
@@ -359,7 +354,7 @@ transmission (required dependencies)
 tree (required dependencies)
 
 vim (required dependencies)
-├── :mercurial
+├── :git
 ├── :python
 └── :python3
 
