@@ -377,7 +377,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/ervandew/supertab
   "" Perform all your vim insert mode completions with Tab
-  Plug 'ervandew/supertab'
+  " Plug 'ervandew/supertab'
 
   "" https://github.com/fatih/vim-go
   "" Go development plugin for Vim
@@ -419,7 +419,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/scrooloose/syntastic
   "" Syntax checking hacks for vim
-  Plug 'scrooloose/syntastic'
+  " Plug 'scrooloose/syntastic'
 
   "" https://github.com/terryma/vim-multiple-cursors
   "" True Sublime Text style multiple selections for Vim
@@ -503,6 +503,7 @@ call plug#begin('~/.vim/plugged')
   "" A code-completion engine for Vim
   " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+  Plug 'Valloric/YouCompleteMe'
 
   "" https://github.com/tpope/vim-repeat
   "" repeat.vim: enable repeating supported plugin maps with '.'
@@ -950,7 +951,7 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" => UltiSnips configuration
+"" => UltiSnips and SuperTab configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " autocmd FileType * call UltiSnips#FileTypeChanged()
@@ -1053,40 +1054,41 @@ let g:ag_working_path_mode="r"
 
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
-" let g:syntastic_aggregate_errors=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-" let g:syntastic_enable_ballons=has('ballon_eval')
 let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
-" let g:syntastic_loc_list_height=3
-" let g:syntastic_ignore_files = ['^/usr/', '*node_modules*',
-"   '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
-" let g:syntastic_mode_map = { 'mode': 'active' }
-" let g:syntastic_javascript_checkers=['jshint', 'jscs']
-" let g:syntastic_json_checkers=['jsonlint', 'jsonval']
-" let g:syntastic_ruby_checkers=['rubocop','mri']
-" let g:syntastic_perl_checkers=['perl','perlcritic','podchecker']
-" let g:syntastic_python_checkers=['pylint','pep8','python']
-" let g:syntastic_cpp_checkers=['gcc','cppcheck','cpplint','ycm','clang_tidy','clang_check']
-" let g:syntastic_c_checkers=['gcc','make','cppcheck','clang_tidy','clang_check']
-" let g:syntastic_haml_checkers=['haml_lint', 'haml']
-" let g:syntastic_html_checkers=['jshint']
-" let g:syntastic_yaml_checkers=['jsyaml']
-" let g:syntastic_sh_checkers=['sh','shellcheck','checkbashisms']
-" let g:syntastic_vim_checkers=['vimlint']
-" let g:syntastic_enable_perl_checker=1
-" let g:syntastic_c_clang_tidy_sort=1
-" let g:syntastic_c_clang_check_sort=1
-" let g:syntastic_c_remove_include_errors=1
-" let g:syntastic_quiet_messages = { 'level': '[]', 'file': ['*_LOCAL_*', '*_BASE_*', '*_REMOTE_*']  }
-" let g:syntastic_stl_format = '[%E{E: %fe #%e}%B{, }%W{W: %fw #%w}]'
-" let g:syntastic_java_javac_options = '-g:none -source 8 -Xmaxerrs 5 -Xmaswarns 5'
 
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+"" let g:syntastic_aggregate_errors=1
+"" let g:syntastic_enable_ballons=has('ballon_eval')
+"" let g:syntastic_auto_jump=1
+""" let g:syntastic_loc_list_height=3
+"" let g:syntastic_ignore_files = ['^/usr/', '*node_modules*',
+""   '*vendor*', '*build*', '*LOCAL*', '*BASE', '*REMOTE*']
+"" let g:syntastic_mode_map = { 'mode': 'active' }
+"" let g:syntastic_javascript_checkers=['jshint', 'jscs']
+"" let g:syntastic_json_checkers=['jsonlint', 'jsonval']
+"" let g:syntastic_ruby_checkers=['rubocop','mri']
+"" let g:syntastic_perl_checkers=['perl','perlcritic','podchecker']
+"" let g:syntastic_python_checkers=['pylint','pep8','python']
+"" let g:syntastic_cpp_checkers=['gcc','cppcheck','cpplint','ycm','clang_tidy','clang_check']
+"" let g:syntastic_c_checkers=['gcc','make','cppcheck','clang_tidy','clang_check']
+"" let g:syntastic_haml_checkers=['haml_lint', 'haml']
+"" let g:syntastic_html_checkers=['jshint']
+"" let g:syntastic_yaml_checkers=['jsyaml']
+"" let g:syntastic_sh_checkers=['sh','shellcheck','checkbashisms']
+"" let g:syntastic_vim_checkers=['vimlint']
+"" let g:syntastic_enable_perl_checker=1
+"" let g:syntastic_c_clang_tidy_sort=1
+"" let g:syntastic_c_clang_check_sort=1
+"" let g:syntastic_c_remove_include_errors=1
+"" let g:syntastic_quiet_messages = { 'level': '[]', 'file': ['*_LOCAL_*', '*_BASE_*', '*_REMOTE_*']  }
+"" let g:syntastic_stl_format = '[%E{E: %fe #%e}%B{, }%W{W: %fw #%w}]'
+"" let g:syntastic_java_javac_options = '-g:none -source 8 -Xmaxerrs 5 -Xmaswarns 5'
+
+"" set statusline+=%#warningmsg#
+"" set statusline+=%{SyntasticStatuslineFlag()}
+"" set statusline+=%*
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Insert filename configuration
@@ -1171,6 +1173,58 @@ nmap <F8> :TagbarToggle<CR>
 "     !./install.sh
 "   endif
 " endfunction
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_min_num_identifier_candidate_chars = 0
+let g:ycm_auto_trigger = 1
+let g:ycm_filetype_whitelist = { '*': 1 }
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1
+      \}
+let g:ycm_show_diagnostics_ui = 1
+let g:ycm_error_symbol='✗'
+let g:ycm_warning_symbol='⚠'
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>>'
+let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_echo_current_diagnostic = 1
+let g:ycm_always_populate_location_list = 0
+let g:ycm_open_loclist_on_ycm_diags = 1
+let g:ycm_allow_changing_updatetime = 1
+let g:ycm_complete_in_comments = 0
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 0
+let g:ycm_seed_identifiers_with_syntax = 0
+let g:ycm_extra_conf_vim_data = []
+let g:ycm_path_to_python_interpreter = ''
+let g:ycm_server_use_vim_stdout = 0
+let g:ycm_server_keep_logfiles = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_autoclose_preview_window_after_insertion = 0
+let g:ycm_max_diagnostics_to_display = 30
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_detailed_diagnostics = '<leader>d'
+let g:ycm_global_ycm_extra_conf = ''
+let g:ycm_confirm_extra_conf = 1
+let g:ycm_use_ultisnips_completer = 1
+let g:ycm_goto_buffer_command = 'same-buffer'
+let g:ycm_disable_for_files_larger_than_kb = 1000
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GoTag configuration
