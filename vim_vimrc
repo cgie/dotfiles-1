@@ -107,24 +107,24 @@ set nowritebackup
 "" => Leadering the Space
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = "\<Space>"
+" let mapleader = "\<Space>"
 
 "" Type <Space>o to open a new file:
-nnoremap <Leader>o :CtrlP<CR>
+" nnoremap <Leader>o :CtrlP<CR>
 
 "" Type <Space>w to save file:
-nnoremap <Leader>w :w<CR>
+" nnoremap <Leader>w :w<CR>
 
 "" Copy & paste to system clipboard with <Space>p and <Space>y:
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+" vmap <Leader>y "+y
+" vmap <Leader>d "+d
+" nmap <Leader>p "+p
+" nmap <Leader>P "+P
+" vmap <Leader>p "+p
+" vmap <Leader>P "+P
 
 "" Enter visual line mode with <Space><Space>:
-nmap <Leader><Leader> V
+" nmap <Leader><Leader> V
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Ignore Rubinius, Sass cache files
@@ -749,8 +749,8 @@ set backspace=indent,eol,start
 "" This way v replaces viw, vaw, vi", va", vi(, va(, vi[, va[, vi{, va{,
 "" vip, vap, vit, vat, ... you get the idea.<F37>
 
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+" vmap v <Plug>(expand_region_expand)
+" vmap <C-v> <Plug>(expand_region_shrink)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Netrw configuration
