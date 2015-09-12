@@ -8,4 +8,4 @@ alias dir_usage_sorted='du -d 1 . | sort -rn'
 alias brew_installed_json='brew info --json=v1 --all | jq "map(select(.installed != []))"'
 alias brew_dependencies='brew deps --tree --installed'
 alias bookmarks_dump='cp "/Users/edoardo/Library/Application Support/Google/Chrome/Default/Bookmarks" "/Users/edoardo/Drive/bookmarks_$(date +%Y%m%d).json"'
-
+alias go_convey_start="$GOPATH/bin/goconvey"
