@@ -484,6 +484,10 @@ call plug#begin('~/.vim/plugged')
   "" dispatch.vim: asynchronous build and test dispatcher
   " Plug 'tpope/vim-dispatch'
 
+   "" https://github.com/mattn/emmet-vim
+   "" the essential toolkit for web-developers
+   " Plug 'mattn/emmet-vim'
+
   "" http://github.com/bronson/vim-trailing-whitespace
   "" Highlights trailing whitespace in red and :FixWhitespace to fix it.
   Plug 'bronson/vim-trailing-whitespace'
