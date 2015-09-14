@@ -364,6 +364,31 @@ map <leader>y "*y
 "" and various precompiler statements (#ifdef, etc.).
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Reformatting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" These are useful to reformat text paragraphs or chunks of code
+""
+""     V=  - select text, then reformat with =
+""     =   - will correct alignment of code
+""     ==  - one line;
+""     gq  - reformat paragraph
+"" Options to change how automatic formatting is done:
+""
+""     :set formatoptions (default 'tcq')
+""         t - textwidth
+""         c - comments (plus leader -- see :help comments)
+""         q - allogw 'gq' to work
+""         n - numbered lists
+""         2 - keep second line indent
+""         1 - single letter words on next line
+""         r - (in mail) comment leader after
+"" Other related options:
+""
+""     :set wrapmargin
+""     :set textwidth
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Packages
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
