@@ -14,7 +14,7 @@ export MONGOLAB_HOST="********"
 export MONGOLAB_USER="********"
 export MONGOLAB_PASS="********"
 
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/nvim
 
 # Do something good with my prompt
 . ~/.bash_prompt
