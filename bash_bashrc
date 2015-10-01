@@ -13,7 +13,8 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export MONGOLAB_HOST="********"
 export MONGOLAB_USER="********"
 export MONGOLAB_PASS="********"
-
+export HOMEBREW_GITHUB_API_TOKEN="********"
+export DEVELOPMENT_PROXY="********"
 export EDITOR=/usr/local/bin/nvim
 
 # Do something good with my prompt
