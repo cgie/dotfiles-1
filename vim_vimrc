@@ -590,6 +590,9 @@ call plug#begin('~/.vim/plugged')
   "" The original IR_Black color scheme for vim
   " Plug 'twerth/ir_black'
 
+  "" https://github.com/morhetz/gruvbox
+  "" Retro groove color scheme for Vim
+  "" Plug 'morhetz/gruvbox'
 call plug#end()
 
 "" vim-plug it automatically generates help tags for all of your plugins
@@ -600,8 +603,8 @@ call plug#end()
 "" => Theme selection
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" solarized options
-" set background=dark
+let g:hybrid_use_Xresources = 1
+set background=dark
 " let g:solarized_visibility = 'high'
 " let g:solarized_contrast = 'high'
 " colorscheme solarized
