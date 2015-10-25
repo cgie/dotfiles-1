@@ -743,14 +743,32 @@ set showmode
 "" Show invisible characterst
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" Show invisible characterst
+"" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+"" Show all tabs:
+"" /\t
+"
+"" Show trailing whitespace:
+"" /\s\+$
+"
+"" Show trailing whitespace only after some text (ignores blank lines):
+"" /\S\zs\s\+$
+"
+"" Show spaces before a tab:
+"" / \+\ze\t
+
+"" Show invisible characters
+"" In Vim, 'list' is a boolean option that defaults to off. If 'list' is
+"" on, whitespace characters are made visible. The 'listchars' option can
+"" be used to customize the way whitespace characters are shown. The
+"" default displays "^I" for each tab, and "$" at each EOL (end of line, so
+"" trailing whitespace can be seen). :help 'list'
 set list
 
 "" Reset the listchars
 set listchars=""
 
 "" A tab should display as "  "
-set listchars=tab:\ \
+set listchars=tab:\ \ ,trail:.
 " set listchars=tab:\|\<Space>
 
 "' Show trailing spaces as dots
@@ -766,6 +784,12 @@ set listchars+=precedes:<
 
 "" Backspace through everything in insert mode
 set backspace=indent,eol,start
+
+"" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+"" Use the same symbols as TextMate for tabstops and EOLs
+" set listchars=tab:▸\ ,eol:¬
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Dispatch configuration
