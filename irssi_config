@@ -63,6 +63,8 @@ chatnets = {
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
+    nick = "zeroed";
+    autosendcmd = "/msg nickserv identify ********; wait 2000";
   };
   GameSurge = {
     type = "IRC";
