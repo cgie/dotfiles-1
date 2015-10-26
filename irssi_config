@@ -125,7 +125,7 @@ channels = (
   { name = "silc"; chatnet = "SILC"; autojoin = "no"; },
   { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#hackenews"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#hackernews"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#haskell"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
@@ -456,7 +456,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#hackenews";
+        name = "#hackernews";
         tag = "Freenode";
       }
     );
