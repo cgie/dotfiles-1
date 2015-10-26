@@ -8,7 +8,7 @@ servers = (
     port = "6697";
     use_ssl = "yes";
     ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
+    ssl_capath = "/System/Library/OpenSSL/certs";
     autoconnect = "yes";
   },
   {
@@ -25,27 +25,18 @@ servers = (
   },
   { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
   { address = "irc.oftc.net"; chatnet = "OFTC"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
   },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
-  {
-    address = "irc.freenode.net";
-    chatnet = "Freenode";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    ssl_capath = "/etc/ssl/certs";
-    autoconnect = "yes";
-  }
 );
 
 chatnets = {
@@ -55,7 +46,7 @@ chatnets = {
     max_msgs = "20";
     max_whois = "30";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "4";
@@ -79,7 +70,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  IRCnet = { 
+  IRCnet = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
@@ -97,20 +88,27 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
+  OFTC = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
   QuakeNet = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
     max_whois = "1";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "1";
     max_whois = "1";
   };
-  SILC = { type = "SILC"; };
+  SILC = {
+    type = "SILC";
+  };
   Undernet = {
     type = "IRC";
     max_kicks = "1";
@@ -129,9 +127,9 @@ channels = (
   { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
   { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
-  { name = "#go-nuts"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#git"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#haskell"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#git"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#haskell"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -379,13 +377,41 @@ statusbar = {
     };
   };
 };
+
 settings = {
   core = {
     real_name = "Edoardo Rossi";
     user_name = "zeroed";
     nick = "zeroed";
+    timestamp_format = "%H:%M";
+    recode = "yes";
+    recode_autodetect_utf8 = "yes";
+    recode_out_default_charset = "= UTF-8";
+    recode_transliterate = "no";
+    log_timestamp = "%H:%M:%S ";
   };
-  "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { theme = "xchat"; autolog = "no"; };
+  "fe-text" = {
+    actlist_sort = "refnum";
+  };
+  "fe-common/core" = {
+    theme = "xchat";
+    autolog = "yes";
+    term_charset = "ISO-8859-15";
+    activity_hide_level = "= JOINS QUITS";
+  };
 };
+
 logs = { };
+
+highlights = (
+  {
+    text = "http(s)?://[A-Za-z0-9_/&?=%.;~#)(+-]*";
+    color = "%G";
+    act_color = "%n";
+    nick = "no";
+    word = "yes";
+    regexp = "yes";
+  },
+  { text = "my_cool_nick"; nick = "yes"; word = "yes"; },
+  { text = "free beer"; nick = "no"; word = "yes"; }
+);
