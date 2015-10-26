@@ -64,7 +64,7 @@ chatnets = {
     max_msgs = "4";
     max_whois = "1";
     nick = "zeroed";
-    autosendcmd = "/msg nickserv identify ********; wait 2000";
+    autosendcmd = "/msg nickserv identify ********;wait 2000";
     # autosendcmd = "/script load hilightwin.pl";
   };
   GameSurge = {
@@ -91,12 +91,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  OFTC = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
+  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
   QuakeNet = {
     type = "IRC";
     max_kicks = "1";
@@ -109,9 +104,7 @@ chatnets = {
     max_msgs = "1";
     max_whois = "1";
   };
-  SILC = {
-    type = "SILC";
-  };
+  SILC = { type = "SILC"; };
   Undernet = {
     type = "IRC";
     max_kicks = "1";
@@ -376,10 +369,7 @@ statusbar = {
         topicbarstart = { priority = "100"; };
         topic = { };
         topic_empty = { };
-        topicbarend = {
-          priority = "100";
-          alignment = "right";
-        };
+        topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
   };
@@ -416,14 +406,71 @@ hilights = (
     word = "yes";
     regexp = "yes";
   },
-  {
-    text = "zeroed";
-    nick = "yes";
-    word = "yes";
-  },
-  {
-    text = "free beer";
-    nick = "no";
-    word = "yes";
-  }
+  { text = "zeroed"; nick = "yes"; word = "yes"; },
+  { text = "free beer"; nick = "no"; word = "yes"; }
 );
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "QUERY";
+        chat_type = "IRC";
+        name = "nickserv";
+        tag = "Freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#freenode";
+        tag = "Freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#go-nuts";
+        tag = "Freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#git";
+        tag = "Freenode";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#hackenews";
+        tag = "Freenode";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#haskell";
+        tag = "Freenode";
+      }
+    );
+  };
+  8 = { name = "hilight"; };
+};
+mainwindows = { 1 = { first_line = "1"; lines = "48"; }; };
