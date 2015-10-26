@@ -8,7 +8,7 @@ servers = (
     port = "6697";
     use_ssl = "yes";
     ssl_verify = "yes";
-    ssl_capath = "/System/Library/OpenSSL/certs";
+    # ssl_capath = "/System/Library/OpenSSL/certs";
     autoconnect = "yes";
   },
   {
@@ -36,7 +36,7 @@ servers = (
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
-  },
+  }
 );
 
 chatnets = {
@@ -372,7 +372,10 @@ statusbar = {
         topicbarstart = { priority = "100"; };
         topic = { };
         topic_empty = { };
-        topicbarend = { priority = "100"; alignment = "right"; };
+        topicbarend = {
+          priority = "100";
+          alignment = "right";
+        };
       };
     };
   };
@@ -386,13 +389,10 @@ settings = {
     timestamp_format = "%H:%M";
     recode = "yes";
     recode_autodetect_utf8 = "yes";
-    recode_out_default_charset = "= UTF-8";
     recode_transliterate = "no";
     log_timestamp = "%H:%M:%S ";
   };
-  "fe-text" = {
-    actlist_sort = "refnum";
-  };
+  "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
     theme = "xchat";
     autolog = "yes";
