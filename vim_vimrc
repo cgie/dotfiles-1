@@ -268,6 +268,9 @@ nmap OO O<esc>j
 "" Copy to system clipboard
 map <leader>y "*y
 
+"" Yank from cursor to end of line
+nnoremap Y y$
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Ctag
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
