@@ -149,11 +149,11 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECcw
-	LjExNzY0NzA1ODggMC4xMjE1Njg2Mjc1IDAuMTMzMzMzMzMzMwAQAYAC0hAREhNaJGNs
-	YXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
-	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
-	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECkw
+	LjA3NjkxMTczMzcgMC4wNzk0ODA0OTkzMiAwLjA4NzE4Njc5NjE3ABABgALSEBESE1ok
+	Y2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tleWVkQXJj
+	aGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYo6Qkpeiq7O2v9HU2QAAAAAAAAEBAAAA
+	AAAAABkAAAAAAAAAAAAAAAAAAADb
 	</data>
 	<key>Bell</key>
 	<false/>
@@ -176,6 +176,15 @@
 	<real>1</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.04</real>
+	<key>SelectionColor</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECcw
+	LjEzMjczODkwNDkgMC4xMzczOTIwMTY1IDAuMTUxMzUxMzUxMwAQAYAC0hAREhNaJGNs
+	YXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
+	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
+	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	</data>
 	<key>ShowCommandKeyInTitle</key>
 	<true/>
 	<key>ShowComponentsWhenTabHasCustomTitle</key>
@@ -210,6 +219,8 @@
 	</data>
 	<key>UseBrightBold</key>
 	<false/>
+	<key>VisualBell</key>
+	<true/>
 	<key>VisualBellOnlyWhenMuted</key>
 	<false/>
 	<key>columnCount</key>
