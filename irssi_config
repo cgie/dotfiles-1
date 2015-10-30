@@ -126,7 +126,13 @@ channels = (
   { name = "#go-nuts"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#git"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#hackernews"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#neovim"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#vim"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#wikipedia"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#haskell"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "##opensource"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#fsf"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "##juggling"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -392,6 +398,9 @@ settings = {
     autolog = "yes";
     term_charset = "ISO-8859-15";
     activity_hide_level = "= JOINS QUITS";
+  };
+  "perl/core/scripts" = {
+    nickcolor_colors = "2 3 4 5 6 7 9 10 11 12 13";
   };
 };
 
