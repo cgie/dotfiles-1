@@ -16,6 +16,7 @@ export MONGOLAB_PASS="********"
 export HOMEBREW_GITHUB_API_TOKEN="********"
 export DEVELOPMENT_PROXY="********"
 export EDITOR=/usr/local/bin/nvim
+export LANG=en_US.UTF-8
 
 # Do something good with my prompt
 . ~/.bash_prompt
