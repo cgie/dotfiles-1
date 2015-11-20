@@ -168,6 +168,22 @@ set foldlevelstart=20
 " map <Leader>fs :set foldmethod=syntax<cr>
 " map <Leader>fm :set foldmethod=manual<cr>
 
+"" Indent folding with manual folds
+"" If you like the convenience of having Vim define folds automatically by
+"" indent level, but would also like to create folds manually, you can get
+"" both by putting this in your vimrc:
+
+"" augroup vimrc
+""   au BufReadPre * setlocal foldmethod=indent
+""   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+"" augroup END
+
+"" The first autocommand sets 'indent' as the fold method before a file is
+"" loaded, so that indent-based folds will be defined. The second one allows
+"" you to manually create folds while editing. It's executed after the modeline
+"" is read, so it won't change the fold method if the modeline set the fold
+"" method to something else like 'marker' or 'syntax'.
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Highlight the screen column/line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -584,6 +600,11 @@ call plug#begin('~/.vim/plugged')
   "" https://github.com/w0ng/vim-hybrid
   "" A dark colour scheme for Vim & gVim
   Plug 'w0ng/vim-hybrid'
+
+  "" https://github.com/zenorocha/dracula-theme
+  "" A dark theme for Atom, Alfred, Chrome DevTools, iTerm, Sublime Text,
+  "" Textmate, Terminal.app, Vim, Xcode, Zsh
+  "" Plug 'zenorocha/dracula-theme'
 
   "" https://github.com/sickill/vim-monokai
   "" Monokai color scheme for Vim converted with coloration.ku1ik.com
