@@ -173,10 +173,10 @@ set foldlevelstart=20
 "" indent level, but would also like to create folds manually, you can get
 "" both by putting this in your vimrc:
 
-"" augroup vimrc
-""   au BufReadPre * setlocal foldmethod=indent
-""   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-"" augroup END
+" augroup vimrc
+"   au BufReadPre * setlocal foldmethod=indent
+"   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+" augroup END
 
 "" The first autocommand sets 'indent' as the fold method before a file is
 "" loaded, so that indent-based folds will be defined. The second one allows
