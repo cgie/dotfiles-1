@@ -577,6 +577,10 @@ call plug#begin('~/.vim/plugged')
   "" Vim Markdown runtime files
   " Plug 'tpope/vim-markdown'
 
+  "" https://github.com/easymotion/vim-easymotion
+  "" Vim motions on speed!
+  " Plug 'easymotion/vim-easymotion'
+
   "" https://github.com/plasticboy/vim-markdown
   "" Markdown Vim Mode
   Plug 'plasticboy/vim-markdown'
