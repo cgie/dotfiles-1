@@ -597,6 +597,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/Shougo/deoplete.nvim
   "" Dark powered asynchronous completion framework for neovim
+  "" Requires Python3 : 'pip3 install neovim'
   Plug 'shougo/deoplete.nvim'
 
   "" https://github.com/tpope/vim-repeat
