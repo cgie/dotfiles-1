@@ -1051,6 +1051,10 @@ endif
 "" => FZF configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+:nmap <C-p> :Files<CR>
+:nmap <C-l> :Buffers<CR>
+:nmap <C-i> :Lines<CR>
+
 " fzf --color fg:252,bg:233,hl:67,fg+:252,bg+:235,hl+:81
 " fzf --color info:144,prompt:161,spinner:135,pointer:135,marker:118
 
