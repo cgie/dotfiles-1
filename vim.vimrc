@@ -495,6 +495,10 @@ call plug#begin('~/.vim/plugged')
   "" Syntax checking hacks for vim
   " Plug 'scrooloose/syntastic'
 
+  "" https://github.com/benekastah/neomake
+  "" A plugin for asynchronous :make using Neovim's job-control functionality
+  Plug 'benekastah/neomake'
+
   "" https://github.com/terryma/vim-multiple-cursors
   "" True Sublime Text style multiple selections for Vim
   Plug 'terryma/vim-multiple-cursors'
