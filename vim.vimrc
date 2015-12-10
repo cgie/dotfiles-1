@@ -471,7 +471,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/kien/ctrlp.vim
   "" Fuzzy file, buffer, mru, tag, etc finder
-  Plug 'kien/ctrlp.vim'
+  "" Plug 'kien/ctrlp.vim'
 
   "" https://github.com/majutsushi/tagbar
   "" Vim plugin that displays tags in a window, ordered by scope
@@ -1145,21 +1145,22 @@ map <leader>f :FZF<cr>
 "" => CtrlP configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" map <leader>b :CtrlPBuffer ~/Workspaces<cr>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-map <leader>b :CtrlPBuffer<cr>
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\$|Applications/.*|Library/.*',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
-  \ }
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-let g:ctrlp_clear_cache_on_exit = 0
+" map <leader>b :CtrlPBuffer<cr>
+"" map <leader>b :CtrlPBuffer ~/Workspaces<cr>
+" let g:ctrlp_map = '<c-p>'
+" let g:ctrlp_cmd = 'CtrlP'
+"
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\.git$\|\.hg$\|\.svn$\$|Applications/.*|Library/.*',
+"   \ 'file': '\v\.(exe|so|dll)$',
+"   \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+"   \ }
+" let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" if executable('ag')
+"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" endif
+" let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_working_path_mode = 'ra'
 
 "" When invoked, unless a starting directory is specified, CtrlP will set its
 "" local working directory according to this variable:
@@ -1170,7 +1171,6 @@ let g:ctrlp_clear_cache_on_exit = 0
 ""          CtrlP is not a direct ancestor of the directory of the current
 ""          file.
 ""  - 0 or '' (empty string) - disable this feature.
-let g:ctrlp_working_path_mode = 'ra'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Ag configuration
