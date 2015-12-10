@@ -593,7 +593,11 @@ call plug#begin('~/.vim/plugged')
   "" A code-completion engine for Vim
   " Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-  Plug 'Valloric/YouCompleteMe'
+  " Plug 'Valloric/YouCompleteMe'
+
+  "" https://github.com/Shougo/deoplete.nvim
+  "" Dark powered asynchronous completion framework for neovim
+  Plug 'shougo/deoplete.nvim'
 
   "" https://github.com/tpope/vim-repeat
   "" repeat.vim: enable repeating supported plugin maps with '.'
@@ -1304,70 +1308,76 @@ map <leader>r :NERDTreeFind<cr>
 nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" => YuCompleteme configuration
+"" => Deoplete configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" function! BuildYCM(info)
-"    "  info is a dictionary with 3 fields
-"    "  - name:   name of the plugin
-"    "  - status: 'installed', 'updated', or 'unchanged'
-"    "  - force:  set on PlugInstall! or PlugUpdate!
-"   if a:info.status == 'installed' || a:info.force
-"     !./install.sh
-"   endif
-" endfunction
-let g:ycm_min_num_of_chars_for_completion = 2
-let g:ycm_min_num_identifier_candidate_chars = 0
-let g:ycm_auto_trigger = 1
-let g:ycm_filetype_whitelist = { '*': 1 }
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-      \}
-let g:ycm_filetype_specific_completion_to_disable = {
-      \ 'gitcommit': 1
-      \}
-let g:ycm_show_diagnostics_ui = 1
-let g:ycm_error_symbol='✗'
-let g:ycm_warning_symbol='⚠'
-let g:ycm_error_symbol = '>>'
-let g:ycm_warning_symbol = '>>'
-let g:ycm_enable_diagnostic_highlighting = 1
-let g:ycm_enable_diagnostic_signs = 1
-let g:ycm_echo_current_diagnostic = 1
-let g:ycm_always_populate_location_list = 0
-let g:ycm_open_loclist_on_ycm_diags = 1
-let g:ycm_allow_changing_updatetime = 1
-let g:ycm_complete_in_comments = 0
-let g:ycm_collect_identifiers_from_comments_and_strings = 0
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_seed_identifiers_with_syntax = 0
-let g:ycm_extra_conf_vim_data = []
-let g:ycm_path_to_python_interpreter = ''
-let g:ycm_server_use_vim_stdout = 0
-let g:ycm_server_keep_logfiles = 0
-let g:ycm_server_log_level = 'info'
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 0
-let g:ycm_max_diagnostics_to_display = 30
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_key_detailed_diagnostics = '<leader>d'
-let g:ycm_global_ycm_extra_conf = ''
-let g:ycm_confirm_extra_conf = 1
-let g:ycm_use_ultisnips_completer = 1
-let g:ycm_goto_buffer_command = 'same-buffer'
-let g:ycm_disable_for_files_larger_than_kb = 1000
+let g:deoplete#enable_at_startup = 1
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => YouCompleteme configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"" function! BuildYCM(info)
+""    "  info is a dictionary with 3 fields
+""    "  - name:   name of the plugin
+""    "  - status: 'installed', 'updated', or 'unchanged'
+""    "  - force:  set on PlugInstall! or PlugUpdate!
+""   if a:info.status == 'installed' || a:info.force
+""     !./install.sh
+""   endif
+"" endfunction
+
+" let g:ycm_min_num_of_chars_for_completion = 2
+" let g:ycm_min_num_identifier_candidate_chars = 0
+" let g:ycm_auto_trigger = 1
+" let g:ycm_filetype_whitelist = { '*': 1 }
+" let g:ycm_filetype_blacklist = {
+"       \ 'tagbar' : 1,
+"       \ 'qf' : 1,
+"       \ 'notes' : 1,
+"       \ 'markdown' : 1,
+"       \ 'unite' : 1,
+"       \ 'text' : 1,
+"       \ 'vimwiki' : 1,
+"       \ 'pandoc' : 1,
+"       \ 'infolog' : 1,
+"       \ 'mail' : 1
+"       \}
+" let g:ycm_filetype_specific_completion_to_disable = {
+"       \ 'gitcommit': 1
+"       \}
+" let g:ycm_show_diagnostics_ui = 1
+" let g:ycm_error_symbol='✗'
+" let g:ycm_warning_symbol='⚠'
+" let g:ycm_error_symbol = '>>'
+" let g:ycm_warning_symbol = '>>'
+" let g:ycm_enable_diagnostic_highlighting = 1
+" let g:ycm_enable_diagnostic_signs = 1
+" let g:ycm_echo_current_diagnostic = 1
+" let g:ycm_always_populate_location_list = 0
+" let g:ycm_open_loclist_on_ycm_diags = 1
+" let g:ycm_allow_changing_updatetime = 1
+" let g:ycm_complete_in_comments = 0
+" let g:ycm_collect_identifiers_from_comments_and_strings = 0
+" let g:ycm_collect_identifiers_from_tags_files = 0
+" let g:ycm_seed_identifiers_with_syntax = 0
+" let g:ycm_extra_conf_vim_data = []
+" let g:ycm_path_to_python_interpreter = ''
+" let g:ycm_server_use_vim_stdout = 0
+" let g:ycm_server_keep_logfiles = 0
+" let g:ycm_server_log_level = 'info'
+" let g:ycm_autoclose_preview_window_after_completion = 0
+" let g:ycm_autoclose_preview_window_after_insertion = 0
+" let g:ycm_max_diagnostics_to_display = 30
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" let g:ycm_key_detailed_diagnostics = '<leader>d'
+" let g:ycm_global_ycm_extra_conf = ''
+" let g:ycm_confirm_extra_conf = 1
+" let g:ycm_use_ultisnips_completer = 1
+" let g:ycm_goto_buffer_command = 'same-buffer'
+" let g:ycm_disable_for_files_larger_than_kb = 1000
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GoTag configuration
