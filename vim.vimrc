@@ -40,7 +40,7 @@ let g:mapleader = ","
 " set guifont=Monaco\ 12
 
 "" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+" set encoding=utf8
 
 "" Use Unix as the standard file type
 set ffs=unix,dos,mac
