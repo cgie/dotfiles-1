@@ -577,6 +577,10 @@ call plug#begin('~/.vim/plugged')
   "" Plugin outside ~/.vim/plugged with post-update hook
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+  "" https://github.com/junegunn/fzf.vim
+  "" Things you can do with fzf and Vim.
+  Plug 'junegunn/fzf.vim'
+
   "" https://github.com/tpope/vim-markdown
   "" Vim Markdown runtime files
   " Plug 'tpope/vim-markdown'
@@ -1063,6 +1067,21 @@ endif
 ""
 "" # To apply the command to CTRL-T as well
 "" export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+"" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+"" Default fzf layout
+"" - down / up / left / right
+"" - window (nvim only)
+let g:fzf_layout = { 'down': '~40%' }
+
+"" Advanced customization using autoload functions
+autocmd VimEnter * command! Colors
+  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'})
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GOLANG configuration
