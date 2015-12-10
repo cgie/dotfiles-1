@@ -571,7 +571,7 @@ call plug#begin('~/.vim/plugged')
   "" https://github.com/junegunn/fzf
   "" A command-line fuzzy finder written in Go
   "" Plugin outside ~/.vim/plugged with post-update hook
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
   "" https://github.com/tpope/vim-markdown
   "" Vim Markdown runtime files
