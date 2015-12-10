@@ -1336,6 +1336,10 @@ nmap <F8> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_ignore_case = 'ignorecase'
+inoremap <silent><expr> <Tab>
+  \ pumvisible() ? "\<C-n>" :
+  \ deoplete#mappings#manual_complete()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => YouCompleteme configuration
