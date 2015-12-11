@@ -1084,8 +1084,8 @@ let g:fzf_action = {
 let g:fzf_layout = { 'down': '~40%' }
 
 "" Advanced customization using autoload functions
-autocmd VimEnter * command! Colors
-  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'})
+" autocmd VimEnter * command! Colors
+"   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'})
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => GOLANG configuration
@@ -1220,6 +1220,12 @@ let g:ag_working_path_mode="r"
 " vnoremap <leader>* :<C-u>call VisualStarSearchSet('/', 'raw')<CR>:call ag#Ag('grep', '--literal ' . shellescape(@/))<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Neomake configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+autocmd! BufWritePost * Neomake
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Syntastic configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -1314,6 +1320,12 @@ let g:ag_working_path_mode="r"
 "   set statusline+=Buf:#%n
 "   set statusline+=[%b][0x%B]
 " endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" => Airline configuration
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline_powerline_fonts=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Testing Shortcuts
