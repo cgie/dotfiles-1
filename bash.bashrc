@@ -4,6 +4,7 @@ export GT_KEY="*******************************"
 export GT_AWS_ZONE="us-west-2c"
 export GT_URL="https://*******************.com"
 export WORKSPACES="/Users/edoardo/Workspaces"
+export DOWNLOADS="/Users/edoardo/Downloads"
 export TUNA_HOME=$WORKSPACES/tuna_src/Tuna
 export GOPATH=$WORKSPACES/go.sources
 export GOROOT=/usr/local/opt/go/libexec
@@ -48,7 +49,9 @@ fi
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--extended --cycle"
+
 # Use ~~ as the trigger sequence instead of the default **
 # export FZF_COMPLETION_TRIGGER='~~'
 # Options to fzf command
 # export FZF_COMPLETION_OPTS='+c -x'
+
