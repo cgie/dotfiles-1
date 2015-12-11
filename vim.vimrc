@@ -5,7 +5,8 @@
 "" be iMproved, required
 set nocompatible
 
-cd $WORKSPACES
+" cd $WORKSPACES
+cd $DOWNLOADS
 
 "" Enable syntax highlighting
 syntax enable
@@ -1335,7 +1336,7 @@ let g:airline_powerline_fonts=1
 " map <Leader>T :call neoterm#test#run('file')<CR>
 " map <Leader>t :call neoterm#test#run('current')<CR>
 
-map <leader>r :NERDTreeFind<cr>
+" map <leader>r :NERDTreeFind<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => TagBar configuration
