@@ -1226,6 +1226,26 @@ let g:ag_working_path_mode="r"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd! BufWritePost * Neomake
+let g:neomake_open_list = 0
+"" *g:neomake_open_list*
+"" This setting will open the |loclist| or |quickfix| list (depending on whether
+"" it is operating on a file) when adding entries. A value of 2 will preserve the
+"" cursor position when the |loclist| or |quickfix| window is opened. Defaults to 0.
+"
+"" *g:neomake_list_height*
+"" The height of the |loclist| or |quickfix| list opened by neomake.
+"" Defaults to 10.
+
+
+" let g:neomake_warning_sign = {
+"   \ 'text': 'W',
+"   \ 'texthl': 'WarningMsg',
+"   \ }
+
+" let g:neomake_error_sign = {
+"   \ 'text': 'E',
+"   \ 'texthl': 'ErrorMsg',
+"   \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => Syntastic configuration
