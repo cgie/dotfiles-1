@@ -1,0 +1,9 @@
+name: es
+root: ~/
+windows:
+  - elasticsearch:
+      layout: even-vertical
+      panes:
+        - "clear && elasticsearch --node.name=spider"
+        - "clear && elasticsearch --node.name=spider"
+        - "clear && elasticsearch --node.name=spider"

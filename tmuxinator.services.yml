@@ -1,0 +1,29 @@
+name: services
+root: ~/
+windows:
+  - redis:
+      layout: tiled
+      panes:
+        - "clear && redis-server /usr/local/etc/redis.conf"
+  - mongo:
+      layout: tiled
+      panes:
+        - "clear && ulimit -n 2048 && mongod --config /usr/local/etc/mongod.conf"
+  - elasticsearch:
+      layout: even-vertical
+      panes:
+        - "clear && elasticsearch --node.name=spider"
+        - "clear && elasticsearch --node.name=spider"
+        - "clear && elasticsearch --node.name=spider"
+  - postgresql:
+      layout: tiled
+      panes:
+        - "clear && postgres -D /usr/local/var/postgres"
+  - cassandra:
+      layout: tiled
+      panes:
+        - "clear && cassandra -f"
+  - memcached:
+      layout: tiled
+      panes:
+        - "clear && memcached -vvv"
