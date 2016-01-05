@@ -1,18 +1,18 @@
 #######################################################################
 #
 # xchat.theme for irssi - http://waxman.org/irssi/xchat.theme (xchat.png)
-# 
+#
 # xchat.theme, Public Beta, 1.5.1 2004/08/06
 #
 # Copyright 2004 Dave Waxman
 #
 # Please report any bugs to xchattheme@waxman.org
 #
-# For best results it is suggested you do the following:                                                                  
-# /set show_nickmode_empty on                                     
-# /set hide_server_tag on                                          
-# /set timestamp %H:%M:%S                                            
-# /set indent 28                                        
+# For best results it is suggested you do the following:
+# /set show_nickmode_empty on
+# /set hide_server_tag on
+# /set timestamp %H:%M:%S
+# /set indent 28
 #
 # This theme is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this theme; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-#           
+#
 #######################################################################
 
 
