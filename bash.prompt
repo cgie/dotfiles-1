@@ -23,8 +23,8 @@
 
 # The various escape codes that we can use to color our prompt.
 RED="\[\033[0;31m\]"
-YELLOW_BOLD="\[\033[1;33m\]"
 YELLOW="\[\033[0;33m\]"
+YELLOW_BOLD="\[\033[1;33m\]"
 GREEN="\[\033[0;32m\]"
 BLUE="\[\033[1;34m\]"
 LIGHT_RED="\[\033[1;31m\]"
@@ -101,11 +101,10 @@ function set_virtualenv () {
 }
 
 # function
-function set_rvm () {
-	# PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
-	RUBY_RVM="`~/.rvm/bin/rvm-prompt`"
-
-}
+# function set_rvm () {
+# 	# PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+# 	RUBY_RVM="`~/.rvm/bin/rvm-prompt`"
+# }
 
 # Set the full bash prompt.
 # function
@@ -116,7 +115,9 @@ function set_bash_prompt () {
 
     # Set the PYTHON_VIRTUALENV variable.
     set_virtualenv
-	set_rvm
+
+    # Set RVM
+	  # set_rvm
 
     # Set the BRANCH variable.
     if is_git_repository ; then

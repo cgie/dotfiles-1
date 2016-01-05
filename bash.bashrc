@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GT_USER="edoardo"
 export GT_KEY="*******************************"
 export GT_AWS_ZONE="us-west-2c"
