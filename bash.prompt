@@ -200,5 +200,5 @@ function print_before_the_prompt () {
   printf "$txtwht%s $txtgrn%s@%s $txtylw%s $txtrst \n" "$NOW" "$USER" "$HOSTNAME" "$PWD"
 }
 
-PROMPT_COMMAND=print_before_the_prompt
-PS1="~> ${PROMPT_SYMBOL} "
+# PROMPT_COMMAND=print_before_the_prompt
+# PS1="~> ${PROMPT_SYMBOL} "
