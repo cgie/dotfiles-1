@@ -19,6 +19,7 @@ export MONGOLAB_USER="********"
 export MONGOLAB_PASS="********"
 export HOMEBREW_GITHUB_API_TOKEN="********"
 export TELEGRAM_API_KEY="*********"
+export GOOGLE_API_KEY="*********"
 export DEVELOPMENT_PROXY="********"
 export EDITOR=/usr/local/bin/nvim
 export LANG=en_US.UTF-8
