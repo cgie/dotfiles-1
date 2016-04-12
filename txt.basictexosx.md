@@ -79,6 +79,7 @@ $ /Library/TeX/texbin/tlmgr version
 tlmgr revision 39298 (2016-01-07 03:44:29 +0100)
 tlmgr using installation: /usr/local/texlive/2015basic
 TeX Live (http://tug.org/texlive) version 2015
+```
 
 ### TLMGR - conf
 ```
@@ -158,13 +159,13 @@ When you got an error like:
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
 ! fontspec error: "font-not-found"
-! 
+!
 ! The font "latinmodern-math.otf" cannot be found.
-! 
+!
 ! See the fontspec documentation for further information.
-! 
+!
 ! For immediate help type H <return>.
-!...............................................  
+!...............................................
 ```
 
 Look for the missing font `latinmodern-math.otf`:
