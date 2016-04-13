@@ -608,7 +608,7 @@ call plug#begin('~/.vim/plugged')
 
   "" https://github.com/zchee/deoplete-go
   "" deoplete.nvim source for Go
-  Plug 'zchee/deoplete-go'
+  Plug 'zchee/deoplete-go', { 'do': 'make' }
 
   "" https://github.com/tpope/vim-repeat
   "" repeat.vim: enable repeating supported plugin maps with '.'
@@ -1403,6 +1403,12 @@ let g:deoplete#enable_ignore_case = 'ignorecase'
 inoremap <silent><expr> <Tab>
   \ pumvisible() ? "\<C-n>" :
   \ deoplete#mappings#manual_complete()
+let g:deoplete#sources#go#align_class = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+let g:deoplete#sources#go#package_dot = 1
+let g:deoplete#sources#go#gocode_binary = '/Users/edoardo/Workspaces/go.sources/bin/gocode'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => YouCompleteme configuration
