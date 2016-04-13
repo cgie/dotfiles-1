@@ -606,6 +606,10 @@ call plug#begin('~/.vim/plugged')
   "" Requires Python3 : 'pip3 install neovim'
   Plug 'shougo/deoplete.nvim'
 
+  "" https://github.com/zchee/deoplete-go
+  "" deoplete.nvim source for Go
+  Plug 'zchee/deoplete-go'
+
   "" https://github.com/tpope/vim-repeat
   "" repeat.vim: enable repeating supported plugin maps with '.'
   " Plug 'tpope/vim-repeat'
@@ -1115,10 +1119,11 @@ if has("autocmd")
   " autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
   autocmd FileType go nmap gd <Plug>(go-def-tab)
 
-
   autocmd FileType go setlocal commentstring=//\ %s
 endif
 
+"" I don't like the preview pane
+set completeopt-=preview
 
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_functions = 1
