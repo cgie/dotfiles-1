@@ -12,3 +12,5 @@ alias brew_installed_json='brew info --json=v1 --all | jq "map(select(.installed
 alias brew_dependencies='brew deps --tree --installed'
 alias bookmarks_dump='cp "/Users/edoardo/Library/Application Support/Google/Chrome/Default/Bookmarks" "/Users/edoardo/Drive/bookmarks_$(date +%Y%m%d).json"'
 alias go_convey_start="$GOPATH/bin/goconvey"
+alias dms='docker-machine start default && eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-machine ip default)'
+alias dme='eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-machine ip default)'
