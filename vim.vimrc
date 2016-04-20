@@ -604,7 +604,11 @@ call plug#begin('~/.vim/plugged')
   "" https://github.com/Shougo/deoplete.nvim
   "" Dark powered asynchronous completion framework for neovim
   "" Requires Python3 : 'pip3 install neovim'
-  Plug 'shougo/deoplete.nvim'
+  "" Plug 'shougo/deoplete.nvim'
+  function! DoRemote(arg)
+    UpdateRemotePlugins
+  endfunction
+  Plug 'shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
   "" https://github.com/zchee/deoplete-go
   "" deoplete.nvim source for Go
@@ -1408,7 +1412,6 @@ let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 let g:deoplete#sources#go#package_dot = 1
 let g:deoplete#sources#go#gocode_binary = '/Users/edoardo/Workspaces/go.sources/bin/gocode'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" => YouCompleteme configuration
