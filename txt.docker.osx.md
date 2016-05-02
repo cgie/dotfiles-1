@@ -371,3 +371,19 @@ $ docker run -p 27017:27017 --name mmongo mongo
 # terminal .2
 $ mongo --verbose 192.168.64.4:27017/test
 ```
+
+## Create an Elasticsearch cluster
+
+using an image with the KOPF plugin
+
+```
+# https://github.com/lmenezes/elasticsearch-kopf
+$ ./elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
+docker commit elasticsearch elasticsearchkopfed
+```
+
+```
+docker run -d -p 9200:9200 -p 9300:9300 --name es0 elasticsearchkopfed elasticsearch -Des.node.name="spider"
+docker run -d --name es1 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="ant" -Des.discovery.zen.ping.unicast.hosts="es0"
+docker run -d --name es2 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="grasshopper" -Des.discovery.zen.ping.unicast.hosts="es0"
+```
