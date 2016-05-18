@@ -104,11 +104,11 @@
 	<key>ANSIGreenColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECcw
-	LjY1Mjc3MDkzNjUgMC42OTcyMTgxMjAxIDAuMzM0ODUxNzQxOAAQAYAC0hAREhNaJGNs
-	YXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohIUWE5TT2JqZWN0XxAPTlNLZXllZEFyY2hp
-	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
-	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECYw
+	LjU0NDA5OTY3MTMgMC42OTcyMTgxMjAxIDAuMjQ0NDk4NDI3ABABgALSEBESE1okY2xh
+	c3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tleWVkQXJjaGl2
+	ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYouNj5SfqLCzvM7R1gAAAAAAAAEBAAAAAAAA
+	ABkAAAAAAAAAAAAAAAAAAADY
 	</data>
 	<key>ANSIMagentaColor</key>
 	<data>
@@ -163,7 +163,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AiAAAAAAAAEBCAAoADVEhhY2vSExQVFlokY2xhc3NuYW1lWCRjbGFzc2VzVk5T
+	YXNzI0AuAAAAAAAAEBCAAoADVEhhY2vSExQVFlokY2xhc3NuYW1lWCRjbGFzc2VzVk5T
 	Rm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRBcmNoaXZlctEaG1Ryb290gAEIERojLTI3
 	PEJLUltiaXJ0dnh9go2WnaCpu77DAAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAA
 	AMU=
@@ -171,9 +171,9 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>FontHeightSpacing</key>
-	<real>0.89162975721784776</real>
+	<real>0.90000000000000002</real>
 	<key>FontWidthSpacing</key>
-	<real>1</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.04</real>
 	<key>SelectionColor</key>
@@ -220,11 +220,11 @@
 	<key>UseBrightBold</key>
 	<false/>
 	<key>VisualBell</key>
-	<true/>
+	<false/>
 	<key>VisualBellOnlyWhenMuted</key>
 	<false/>
 	<key>columnCount</key>
-	<integer>250</integer>
+	<integer>238</integer>
 	<key>name</key>
 	<string>FooBar</string>
 	<key>noWarnProcesses</key>
@@ -243,7 +243,7 @@
 		</dict>
 	</array>
 	<key>rowCount</key>
-	<integer>50</integer>
+	<integer>58</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
