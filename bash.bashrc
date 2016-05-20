@@ -63,3 +63,4 @@ export FZF_DEFAULT_OPTS="--extended --cycle"
 # Options to fzf command
 # export FZF_COMPLETION_OPTS='+c -x'
 
+# eval "$(stack --bash-completion-script *****)"
