@@ -601,6 +601,10 @@ call plug#begin('~/.vim/plugged')
   " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
   " Plug 'Valloric/YouCompleteMe'
 
+  "" https://github.com/shougo/vimproc.vim
+  "" Interactive command execution in Vim.
+  Plug 'shougo/vimproc.vim'
+
   "" https://github.com/Shougo/deoplete.nvim
   "" Dark powered asynchronous completion framework for neovim
   "" Requires Python3 : 'pip3 install neovim'
@@ -617,6 +621,10 @@ call plug#begin('~/.vim/plugged')
   "" https://github.com/tpope/vim-repeat
   "" repeat.vim: enable repeating supported plugin maps with '.'
   " Plug 'tpope/vim-repeat'
+
+  "" https://github.com/eagletmt/ghcmod-vim
+  "" Happy Haskell programming on Vim, powered by ghc-mod
+  Plug 'eagletmt/ghcmod-vim'
 
   "" Colors
 
