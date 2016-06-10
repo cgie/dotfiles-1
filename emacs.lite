@@ -1,11 +1,16 @@
 (require 'package)
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Packages
 ;;
+
+;; https://github.com/emacs-helm/helm
+(require 'helm)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(helm-mode 1)
 
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
@@ -67,7 +72,7 @@
 
 ;; https://www.emacswiki.org/emacs/highline.el
 (require 'highline)
-(global-highline-mode 1)
+(global-highline-mode 0)
 (set-face-background 'highline-face "#5a5a5a")
 
 ;; https://github.com/milkypostman/powerline
