@@ -13,9 +13,16 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (helm-mode 1)
 
+;; http://auto-complete.org/doc/manual.html
+;; https://github.com/auto-complete/auto-complete
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (ac-config-default)
+(ac-linum-workaround)
+(setq ac-use-quick-help nil)
+;; (set-face-background 'ac-candidate-face "lightgray")
+;; (set-face-underline 'ac-candidate-face "darkgray")
+;; (set-face-background 'ac-selection-face "steelblue")
 
 (require 'fill-column-indicator)
 (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
