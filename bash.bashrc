@@ -26,6 +26,7 @@ export VIBE_API_KEY="*********"
 export DEVELOPMENT_PROXY="********"
 export EDITOR=/usr/local/bin/nvim
 export LANG=en_US.UTF-8
+export TERM=xterm-256color
 
 # Do something good with my prompt
 . ~/.bash_prompt
