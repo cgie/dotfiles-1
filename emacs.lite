@@ -10,6 +10,7 @@
 (require 'helm)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (helm-mode 1)
 
 (require 'auto-complete-config)
@@ -38,7 +39,7 @@
 (linum-relative-global-mode)
 
 ;;;; Linum readable
-(setq linum-format "%4d \u2502 ")
+;; (setq linum-format "%4d \u2502 ")
 (setq linum-relative-current-symbol ">")
 (setq linum-relative-format "%4s \u2502 ")
 
@@ -71,27 +72,43 @@
 (show-paren-mode 1)
 
 ;; https://www.emacswiki.org/emacs/highline.el
-(require 'highline)
-(global-highline-mode 0)
-(set-face-background 'highline-face "#5a5a5a")
+;; (require 'highline)
+;; (global-highline-mode 0)
+;; (set-face-background 'highline-face "#5a5a5a")
 
 ;; https://github.com/milkypostman/powerline
 (require 'powerline)
 (powerline-default-theme)
 
 ;; https://github.com/syohex/emacs-git-gutter
-;; (require 'git-gutter)
+(require 'git-gutter)
 ;; (global-git-gutter-mode t)
 ;; (git-gutter:linum-setup)
 ;; (custom-set-variables
 ;;  '(git-gutter:separator-sign "|"))
 ;; (set-face-foreground 'git-gutter:separator "yellow")
 
+;; https://github.com/syohex/emacs-git-gutter-fringe
+;; (require 'git-gutter-fringe)
+;; (setq git-gutter-fr:side 'right-fringe)
+;; (setq-default left-fringe-width  20)
+;; (setq-default right-fringe-width 20)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Themes
+;;
+;; https://github.com/bbatsov/zenburn-emacs
+;; (load-theme 'zenburn t)
+;; https://github.com/oneKelvinSmith/monokai-emac
+;; (load-theme 'monokai t)
+;; https://github.com/purcell/color-theme-sanityinc-tomorrow
+;; (require 'color-theme-sanityinc-tomorrow)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Hooks
 ;;
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-lines)
 (add-hook 'c-mode-hook
 	  (lambda ()
 	    (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
@@ -136,7 +153,7 @@
     (comment-or-uncomment-region beg end)
             (next-line)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -153,7 +170,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(custom-safe-themes
    (quote
-    ("b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("9a9e75c15d4017c81a2fe7f83af304ff52acfadd7dde3cb57595919ef2e8d736" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "222113f148cd70d99c44d84bf4e3a76795f001bd6cfd449b7ff27aeda65ffd78" "b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(fci-rule-color "#073642")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
@@ -179,6 +196,9 @@
    (quote
     ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
  '(magit-diff-use-overlays nil)
+ '(nrepl-message-colors
+   (quote
+    ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-archives
    (quote
     (("elpa" . "http://elpa.gnu.org/packages/")
@@ -213,10 +233,14 @@
  '(vc-annotate-very-old-color nil)
  '(weechat-color-list
    (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83"))))
+    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
+ '(xterm-color-names
+   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
+ '(xterm-color-names-bright
+   ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
