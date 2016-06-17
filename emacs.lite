@@ -1,10 +1,16 @@
-(require 'package)
-(setq package-enable-at-startup nil)
-(package-initialize)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Options
+;;
+
+(setq x-select-enable-clipboard t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Packages
 ;;
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(package-initialize)
 
 ;; https://github.com/emacs-helm/helm
 (require 'helm)
@@ -88,7 +94,7 @@
 (powerline-default-theme)
 
 ;; https://github.com/syohex/emacs-git-gutter
-(require 'git-gutter)
+;; (require 'git-gutter)
 ;; (global-git-gutter-mode t)
 ;; (git-gutter:linum-setup)
 ;; (custom-set-variables
@@ -100,6 +106,10 @@
 ;; (setq git-gutter-fr:side 'right-fringe)
 ;; (setq-default left-fringe-width  20)
 ;; (setq-default right-fringe-width 20)
+
+;; https://github.com/nonsequitur/git-gutter-plus
+;; https://github.com/nonsequitur/git-gutter-fringe-plus
+;; (require 'git-gutter-fringe+)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Themes
@@ -161,6 +171,8 @@
             (next-line)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Custom
+;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -177,7 +189,8 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(custom-safe-themes
    (quote
-    ("9a9e75c15d4017c81a2fe7f83af304ff52acfadd7dde3cb57595919ef2e8d736" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "222113f148cd70d99c44d84bf4e3a76795f001bd6cfd449b7ff27aeda65ffd78" "b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("40f6a7af0dfad67c0d4df2a1dd86175436d79fc69ea61614d668a635c2cd94ab" "6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "9a9e75c15d4017c81a2fe7f83af304ff52acfadd7dde3cb57595919ef2e8d736" "dd4db38519d2ad7eb9e2f30bc03fba61a7af49a185edfd44e020aa5345e3dca7" "222113f148cd70d99c44d84bf4e3a76795f001bd6cfd449b7ff27aeda65ffd78" "b97a01622103266c1a26a032567e02d920b2c697ff69d40b7d9956821ab666cc" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+ '(electric-indent-mode nil)
  '(fci-rule-color "#073642")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
