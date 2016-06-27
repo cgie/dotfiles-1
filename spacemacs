@@ -252,6 +252,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (turn-on-fci-mode)
+  (add-hook 'prog-mode-hook #'linum-mode)
+  (setq-default dotspacemacs-line-numbers 'relative)
+  (setq linum-format (if (not window-system) "%4d " "%4d"))
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
