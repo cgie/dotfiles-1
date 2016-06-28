@@ -103,6 +103,7 @@ values."
                          solarized-light
                          solarized-dark
                          leuven
+                         material
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -256,6 +257,8 @@ you should place your code here."
   (add-hook 'prog-mode-hook #'linum-mode)
   (setq-default dotspacemacs-line-numbers 'relative)
   (setq linum-format (if (not window-system) "%4d " "%4d"))
+  (setq linum-relative-current-symbol ">")
+  (setq linum-relative-format "%4s \u2502 ")
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   )
 
