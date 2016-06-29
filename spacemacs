@@ -253,8 +253,11 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (turn-on-fci-mode)
-  (add-hook 'prog-mode-hook #'linum-mode)
+  (add-hook 'prog-mode-hook #'linum-relative-mode)
+  ;; (add-hook 'prog-mode-hook 'highlight-indentation-mode)
+  (add-hook 'prog-mode-hook 'turn-on-fci-mode)
+  (add-hook 'text-mode-hook 'turn-on-fci-mode)
+  ;; (add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
   (setq-default dotspacemacs-line-numbers 'relative)
   (setq linum-format (if (not window-system) "%4d " "%4d"))
   (setq linum-relative-current-symbol ">")
