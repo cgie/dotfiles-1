@@ -23,21 +23,39 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ;; --- General Layers
      auto-completion
-     ;; better-defaults
-     emacs-lisp
-     git
-     markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     shell
      spell-checking
      syntax-checking
-     ;; version-control
-     (ruby :variables ruby-test-runner 'rspec)
-     haskell
+     ;; better-defaults
+     ;; org
+     ;; osx
+     ;; --- Configuration Files
+     dockerfile
+     ;; --- Languages
+     emacs-lisp
      go
+     haskell
+     html
+     java
+     javascript
+     latex
+     markdown
+     (ruby :variables ruby-test-runner 'rspec)
+     ruby-on-rails
+     scala
+     shell-scripts
+     yaml
+     ;; --- Source Control
+     git
+     github
+     ;; version-control
+     ;; --- Tools
+     ;; tmux
+     ;; --- Vim
+     evil-cleverparens
+     evil-commentary
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
