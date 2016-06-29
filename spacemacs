@@ -281,6 +281,10 @@ you should place your code here."
   (setq linum-relative-current-symbol ">")
   (setq linum-relative-format "%4s \u2502 ")
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (defun pbcopy()
+    (interactive)
+    (call-process-region (point) (mark) "pbcopy")
+      (setq deactivate-mark t))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
