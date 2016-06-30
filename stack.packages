@@ -1,0 +1,15 @@
+$ stack install stylish-haskell hlint hasktags ghc-mod hspec
+Run from outside a project, using implicit global project config
+Using resolver: lts-5.17 from implicit global project's config file: /Users/edoardo/.stack/global-project/stack.yaml
+Copying from /Users/edoardo/.stack/snapshots/x86_64-osx/lts-5.17/7.10.3/bin/ghc-mod to /Users/edoardo/.local/bin/ghc-mod
+Copying from /Users/edoardo/.stack/snapshots/x86_64-osx/lts-5.17/7.10.3/bin/ghc-modi to /Users/edoardo/.local/bin/ghc-modi
+Copying from /Users/edoardo/.stack/global-project/.stack-work/install/x86_64-osx/lts-5.17/7.10.3/bin/hasktags to /Users/edoardo/.local/bin/hasktags
+Copying from /Users/edoardo/.stack/snapshots/x86_64-osx/lts-5.17/7.10.3/bin/hlint to /Users/edoardo/.local/bin/hlint
+Copying from /Users/edoardo/.stack/snapshots/x86_64-osx/lts-5.17/7.10.3/bin/stylish-haskell to /Users/edoardo/.local/bin/stylish-haskell
+
+Copied executables to /Users/edoardo/.local/bin:
+- ghc-mod
+- ghc-modi
+- hasktags
+- hlint
+- stylish-haskell
