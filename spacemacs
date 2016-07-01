@@ -281,6 +281,8 @@ you should place your code here."
   (setq linum-relative-current-symbol ">")
   (setq linum-relative-format "%4s \u2502 ")
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  (setq-default dotspacemacs-configuration-layers
+    '((spell-checking :variables spell-checking-enable-by-default nil)))
   (defun pbcopy()
     (interactive)
     (call-process-region (point) (mark) "pbcopy")
