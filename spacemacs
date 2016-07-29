@@ -287,6 +287,10 @@ you should place your code here."
     (interactive)
     (call-process-region (point) (mark) "pbcopy")
       (setq deactivate-mark t))
+  (defun pbpaste()
+    (shell-command-to-string "pbpaste"))
+  (setq-default dotspacemacs-configuration-layers
+    '((syntax-checking :variables syntax-checking-enable-by-default nil)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
