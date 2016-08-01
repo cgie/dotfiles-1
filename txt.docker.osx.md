@@ -387,3 +387,61 @@ docker run -d -p 9200:9200 -p 9300:9300 --name es0 elasticsearchkopfed elasticse
 docker run -d --name es1 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="ant" -Des.discovery.zen.ping.unicast.hosts="es0"
 docker run -d --name es2 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="grasshopper" -Des.discovery.zen.ping.unicast.hosts="es0"
 ```
+
+## Create development containers
+
+- mongo
+```
+docker run -d --name mongo -p 27017:27017 mongo
+```
+
+- redis
+```
+docker run -d --name redis -p 6379:6379 redis
+```
+
+- cassandra
+```
+docker run -d --name cassandra -p 9042:9042 cassandra
+```
+
+- memcached
+```
+docker run -d --name memcached -p 11211:11211 memcached
+```
+
+- elasticsearch (cluster of 3 nodes, with Kopf)
+```
+docker run -d -p 9200:9200 -p 9300:9300 --name esTemp elasticsearch
+$ docker exec -i -t esTemp /bin/bash
+root@2836addc9d94:/usr/share/elasticsearch# ./bin/plugin install lmenezes/elasticsearch-kopf/v2.1.1
+$ docker commit esTemp elasticsearchkopfed
+sha256:c9277c3e731045895bebd3444edac3e39d4210511f4185b75d611334cabb5
+$ docker stop esTemp && docker rm esTemp
+
+docker run -d -p 9200:9200 -p 9300:9300 --name es0 elasticsearchkopfed elasticsearch -Des.node.name="spider"
+docker run -d --name es1 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="ant" -Des.discovery.zen.ping.unicast.hosts="es0"
+docker run -d --name es2 --link es0 elasticsearchkopfed elasticsearch -Des.node.name="grasshopper" -Des.discovery.zen.ping.unicast.hosts="es0"
+```
+
+- postgresql (with dev user)
+```
+docker run -d --name postgres -p 5432:5432 postgres
+
+$ docker exec -i -t postgres /bin/bash
+root@7b47c4bbd748:/# su - postgres
+$ bash
+postgres@7b47c4bbd748:/$ createuser -s development
+postgres@7b47c4bbd748:/$ psql
+psql (9.5.2)
+Type "help" for help.
+postgres=# \password development
+Enter new password:
+Enter it again:
+postgres=# \q
+postgres@7b47c4bbd748:/$ exit
+exit
+$ exit
+root@7b47c4bbd748:/# exit
+exit
+```
