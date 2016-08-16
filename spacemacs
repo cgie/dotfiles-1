@@ -61,7 +61,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+     '(vimish-fold)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -128,8 +129,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Hack"
+                               :size 17
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -210,7 +211,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -283,14 +284,14 @@ you should place your code here."
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (setq-default dotspacemacs-configuration-layers
     '((spell-checking :variables spell-checking-enable-by-default nil)))
+  (setq-default dotspacemacs-configuration-layers
+    '((spell-checking :variables spell-checking-enable-auto-dictionary nil)))
   (defun pbcopy()
     (interactive)
     (call-process-region (point) (mark) "pbcopy")
       (setq deactivate-mark t))
   (defun pbpaste()
     (shell-command-to-string "pbpaste"))
-  (setq-default dotspacemacs-configuration-layers
-    '((syntax-checking :variables syntax-checking-enable-by-default nil)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
