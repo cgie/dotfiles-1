@@ -1,8 +1,16 @@
 [user]
 	name = Edoardo Rossi
 	email = edd.rossi@gmail.com
+	signingkey = ********
 [color]
 	ui = true
 [alias]
 	tree = log --graph --oneline --all --decorate
         treelog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+[push]
+    default = matching
+
+[core]
+	excludesfile = /home/zeroed/.gitignore_global
+[commit]
+	gpgsign = false
