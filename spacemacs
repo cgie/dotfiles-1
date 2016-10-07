@@ -286,6 +286,10 @@ you should place your code here."
     '((spell-checking :variables spell-checking-enable-by-default nil)))
   (setq-default dotspacemacs-configuration-layers
     '((spell-checking :variables spell-checking-enable-auto-dictionary nil)))
+  (remove-hook 'text-mode-hook 'enable-flyspell-mode)
+  (remove-hook 'markdown-mode-hook 'enable-flyspell-mode)
+  (remove-hook 'ruby-mode-hook 'enable-flyspell-mode)
+  (remove-hook 'haskell-mode-hook 'enable-flyspell-mode)
   (defun pbcopy()
     (interactive)
     (call-process-region (point) (mark) "pbcopy")
@@ -309,6 +313,9 @@ you should place your code here."
    (quote
     ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "1a504c62038a2a10503dcd27a0b74ff7dfdc63da1e4f4fbef50bfc5612e27c6d" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
  '(hl-sexp-background-color "#efebe9")
+ '(package-selected-packages
+   (quote
+    (sbt-mode iedit smartparens undo-tree go-mode projectile helm helm-core haskell-mode flycheck markdown-mode magit git-commit js2-mode f s uuidgen toc-org org-plus-contrib org-bullets livid-mode skewer-mode simple-httpd link-hint intero hlint-refactor helm-hoogle github-search with-editor flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-shell company-ghci company-emacs-eclim column-enforce-mode zenburn-theme yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimish-fold vi-tilde-fringe use-package tagedit spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa projectile-rails popwin persp-mode paradox page-break-lines orgit open-junk-file noflet neotree multi-term move-text monokai-theme mmm-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-eldoc github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md flycheck-pos-tip flycheck-haskell flx-ido fish-mode fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-commentary evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav eclim dockerfile-mode define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company-auctex coffee-mode cmm-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(rcirc-server-alist
    (quote
     (("irc.freenode.net" :channels
