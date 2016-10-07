@@ -37,10 +37,9 @@ usage() { [ "$0" = "bash" ] || sed '2,/^##/p;d' "$0"; echo "$*"; exit 1; }
 
 # >>>> PUT YOUR SCRIPT HERE <<<<
 out "Dumping brew list"
-brew list > ~/Drive/brew.list.txt
+brew list > ~/Downloads/brew.list.txt
 out "Dumping brew installed JSON"
-brew info --json=v1 --all | jq "map(select(.installed != []))" > ~/Drive/brew.installed.json
+brew info --json=v1 --all | jq "map(select(.installed != []))" > ~/Downloads/brew.installed.json
 out "Dumping brew dependencies"
-brew deps --tree --installed > $HOME/Drive/brew.dependencies.tree.txt
+brew deps --tree --installed > $HOME/Downloads/brew.dependencies.tree.txt
 out "bye"
-
