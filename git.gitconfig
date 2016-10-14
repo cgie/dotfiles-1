@@ -14,3 +14,5 @@
 	excludesfile = /home/zeroed/.gitignore_global
 [commit]
 	gpgsign = false
+[rerere]
+	enabled = true
