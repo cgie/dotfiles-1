@@ -57,8 +57,8 @@ values."
      evil-cleverparens
      evil-commentary
      ;; -- Chat
-     ;; erc
-     rcirc
+     erc
+     ;; rcirc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -257,6 +257,19 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-line-numbers 'relative
+   dotspacemacs-configuration-layers
+     '((spell-checking :variables spell-checking-enable-by-default nil))
+   dotspacemacs-configuration-layers
+     '((spell-checking :variables spell-checking-enable-auto-dictionary nil))
+   dotspacemacs-configuration-layers
+     '((erc :variables
+          erc-server-list
+          '(("irc.freenode.net"
+             :port "6697"
+             :ssl t
+             :nick "************"
+             :password "*********************"))))
    ))
 
 (defun dotspacemacs/user-init ()
@@ -280,15 +293,10 @@ you should place your code here."
   (add-hook 'prog-mode-hook 'turn-on-fci-mode)
   (add-hook 'text-mode-hook 'turn-on-fci-mode)
   ;; (add-hook 'org-mode-hook 'turn-off-fci-mode 'append)
-  (setq-default dotspacemacs-line-numbers 'relative)
   (setq linum-format (if (not window-system) "%4d " "%4d"))
   (setq linum-relative-current-symbol ">")
   (setq linum-relative-format "%4s \u2502 ")
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (setq-default dotspacemacs-configuration-layers
-    '((spell-checking :variables spell-checking-enable-by-default nil)))
-  (setq-default dotspacemacs-configuration-layers
-    '((spell-checking :variables spell-checking-enable-auto-dictionary nil)))
   (remove-hook 'text-mode-hook 'enable-flyspell-mode)
   (remove-hook 'markdown-mode-hook 'enable-flyspell-mode)
   (remove-hook 'ruby-mode-hook 'enable-flyspell-mode)
@@ -299,21 +307,13 @@ you should place your code here."
       (setq deactivate-mark t))
   (defun pbpaste()
     (shell-command-to-string "pbpaste"))
-  (setq rcirc-server-alist
-        '(("irc.freenode.net"
-           :user "**************"
-           :port "6697"
-           :encryption tls
-           :password "*******"
-           :channels ("#rcirc" "#lesswrong" "#freenode" "#haskell"))))
-  ;; (setq-default dotspacemacs-configuration-layers
-  ;;   '((erc :variables
-  ;;          erc-server-list
-  ;;          '(("irc.freenode.net"
-  ;;             :port "6697"
-  ;;             :ssl t
-  ;;             :nick "************"
-  ;;             :password "*********************")))))
+  ;; (setq rcirc-server-alist
+  ;;       '(("irc.freenode.net"
+  ;;          :user "**************"
+  ;;          :port "6697"
+  ;;          :encryption tls
+  ;;          :password "*******"
+  ;;          :channels ("#rcirc" "#lesswrong" "#freenode" "#haskell"))))
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
