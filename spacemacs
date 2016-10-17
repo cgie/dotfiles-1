@@ -26,7 +26,8 @@ values."
      ;; --- General Layers
      auto-completion
      shell
-     spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil
+                                spell-checking-enable-auto-dictionary nil)
      syntax-checking
      ;; better-defaults
      ;; org
@@ -57,9 +58,15 @@ values."
      evil-cleverparens
      evil-commentary
      ;; -- Chat
-     erc
+     (erc :variables
+            erc-server-list
+            '(("irc.freenode.net"
+               :port "6697"
+               :ssl t
+               :nick "*********"
+               :password "*****")))
      ;; rcirc
-     )
+   )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -258,18 +265,6 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    dotspacemacs-line-numbers 'relative
-   dotspacemacs-configuration-layers
-     '((spell-checking :variables spell-checking-enable-by-default nil))
-   dotspacemacs-configuration-layers
-     '((spell-checking :variables spell-checking-enable-auto-dictionary nil))
-   dotspacemacs-configuration-layers
-     '((erc :variables
-          erc-server-list
-          '(("irc.freenode.net"
-             :port "6697"
-             :ssl t
-             :nick "************"
-             :password "*********************"))))
    ))
 
 (defun dotspacemacs/user-init ()
