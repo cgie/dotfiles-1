@@ -9,6 +9,14 @@ set -o pipefail
 SAFER_IFS=$'\n\t,'
 IFS="$SAFER_IFS"
 
+# eval export DOCKER_TLS_VERIFY="1"
+# export DOCKER_HOST="tcp://192.168.64.4:2376"
+# export DOCKER_CERT_PATH="/Users/edoardo/.docker/machine/machines/default"
+# export DOCKER_MACHINE_NAME="default"
+# # Run this command to configure your shell:
+# # eval $(docker-machine env) && export DOCKER_HOST_IP=192.168.64.4
+# eval $(docker-machine env) && export DOCKER_HOST_IP=$(docker-machine ip default)
+
 ##
 # Basic helpers
 out() { echo "$(date +%Y%m%dT%H%M%SZ): $*"; }
@@ -70,30 +78,31 @@ into_docker_machine() {
   docker-machine ssh default
 }
 
-echo "Starting DockerMachine"
-end=$((SECONDS+60))
-
-if ! is_docker_running true; then
-  start_docker_machine
-fi
-
-while ! is_docker_running false; do
-  echo -n .
-  sleep 2
-  if [ $SECONDS -gt $end ]; then
-    echo "DockerMachine is taking too long; I give up"
-    exit 1
+main() {
+  echo "Starting DockerMachine"
+  end=$((SECONDS+60))
+  if ! is_docker_running true; then
+    start_docker_machine
   fi
-done
+  while ! is_docker_running false; do
+    echo -n .
+    sleep 2
+    if [ $SECONDS -gt $end ]; then
+      echo "DockerMachine is taking too long; I give up"
+      exit 1
+    fi
+  done
+  echo -ne '*****                     (33%)\r'
+  sleep 0.3
+  echo -ne '*************             (66%)\r'
+  sleep 0.3
+  echo -ne '***********************   (100%)\r'
+  sleep 0.3
+  echo -ne '\n'
+  set_docker_environment
+  echo "Enjoy Docker"
+  return 0
+}
 
-echo -ne '*****                     (33%)\r'
-sleep 0.3
-echo -ne '*************             (66%)\r'
-sleep 0.3
-echo -ne '***********************   (100%)\r'
-sleep 0.3
-echo -ne '\n'
+main "$@"
 
-set_docker_environment
-echo "Enjoy Docker"
-return
