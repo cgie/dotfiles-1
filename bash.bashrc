@@ -65,4 +65,7 @@ export FZF_DEFAULT_OPTS="--extended --cycle"
 # Options to fzf command
 # export FZF_COMPLETION_OPTS='+c -x'
 
-# eval "$(stack --bash-completion-script *****)"
+eval "$(stack --bash-completion-script stack)"
+
+# Show GPG prompt
+export GPG_TTY=$(tty)
