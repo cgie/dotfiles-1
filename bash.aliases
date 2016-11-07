@@ -16,3 +16,5 @@ alias go_convey_start="$GOPATH/bin/goconvey"
 alias dms='docker-machine start default && eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-machine ip default) && echo "docker-machine: $(docker-machine status)"'
 alias dme='eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-machine ip default) && echo "docker-machine IP: $DOCKER_HOST_IP"'
 alias dmt='docker-machine active && for c in $(docker ps --format "{{.Names}}"); do echo "stopping $c" && docker stop "$c"; done && docker-machine stop default'
+alias docker_stop_all='docker stop $(docker ps -a -q)'
+alias docker_remove_all='docker rm $(docker ps -a -q)'
