@@ -18,3 +18,4 @@ alias dme='eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-
 alias dmt='docker-machine active && for c in $(docker ps --format "{{.Names}}"); do echo "stopping $c" && docker stop "$c"; done && docker-machine stop default'
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_remove_all='docker rm $(docker ps -a -q)'
+alias pull_all='for d in ~/workspaces/*/ ; do cd "$d" ; if [ -d ".git/" ]; then echo "into $(pwd)/ and git pull $(git symbolic-ref HEAD 2>/dev/null)" ; git pull ; fi ; done'
