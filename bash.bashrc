@@ -27,6 +27,8 @@ export DEVELOPMENT_PROXY="********"
 export EDITOR=/usr/local/bin/nvim
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
+export POSTGRESQL_USERNAME='**********************'
+export POSTGRESQL_PASSWORD='**********************'
 export PATH=$PATH:/Users/edoardo/.local/bin
 
 # Do something good with my prompt
