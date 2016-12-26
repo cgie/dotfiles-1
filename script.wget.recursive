@@ -1,0 +1,468 @@
+
+#!/usr/bin/env bash
+
+# ##################################################
+# Generic BASH script template
+# template author: https://github.com/natelandau/shell-scripts
+#
+version="1.0.0"               # Sets version variable
+#
+scriptTemplateVersion="1.3.0"
+# Version of scriptTemplate.sh that this script is based on
+#
+# HISTORY:
+#
+# * 2016/12/26 - v1.0.0  - First Creation
+#
+# ##################################################
+
+############## SharedFunctions #########################
+
+# Traps
+# ------------------------------------------------------
+# These functions are for use with different trap scenarios
+# ------------------------------------------------------
+
+# Non destructive exit for when script exits naturally.
+# Usage: Add this function at the end of every script
+function safeExit() {
+    # Delete temp files, if any
+    if is_dir "${tmpDir}"; then
+        rm -r "${tmpDir}"
+    fi
+    trap - INT TERM EXIT
+    exit
+}
+
+# Join
+# ----------------------------------------------
+# This function joins items together with a user specified separator
+# Taken whole cloth from: http://stackoverflow.com/questions/1527049/bash-join-elements-of-an-array
+#
+# Usage:
+#   join , a "b c" d #a,b c,d
+#   join / var local tmp #var/local/tmp
+#   join , "${FOO[@]}" #a,b,c
+# ----------------------------------------------
+function join() { local IFS="${1}"; shift; echo "${*}"; }
+
+# File Checks
+# ------------------------------------------------------
+# A series of functions which make checks against the filesystem. For
+# use in if/then statements.
+#
+# Usage:
+#    if is_file "file"; then
+#       ...
+#    fi
+# ------------------------------------------------------
+
+function is_exists() {
+  if [[ -e "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_not_exists() {
+  if [[ ! -e "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_file() {
+  if [[ -f "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_not_file() {
+  if [[ ! -f "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_dir() {
+  if [[ -d "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_not_dir() {
+  if [[ ! -d "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_symlink() {
+  if [[ -L "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_not_symlink() {
+  if [[ ! -L "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_empty() {
+  if [[ -z "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+function is_not_empty() {
+  if [[ -n "$1" ]]; then
+    return 0
+  fi
+  return 1
+}
+
+# Logging and Colors
+# ------------------------------------------------------
+# Here we set the colors for our script feedback.
+# Example usage: success "sometext"
+#------------------------------------------------------
+
+# Set Colors
+bold=$(tput bold)
+underline=$(tput sgr 0 1)
+reset=$(tput sgr0)
+purple=$(tput setaf 171)
+red=$(tput setaf 1)
+green=$(tput setaf 76)
+tan=$(tput setaf 3)
+blue=$(tput setaf 38)
+
+function _alert() {
+  if [ "${1}" = "emergency" ]; then
+    local color="${bold}${red}"
+  fi
+  if [ "${1}" = "error" ]; then local color="${bold}${red}"; fi
+  if [ "${1}" = "warning" ]; then local color="${red}"; fi
+  if [ "${1}" = "success" ]; then local color="${green}"; fi
+  if [ "${1}" = "debug" ]; then local color="${purple}"; fi
+  if [ "${1}" = "header" ]; then local color="${bold}""${tan}"; fi
+  if [ "${1}" = "input" ]; then local color="${bold}"; printLog="false"; fi
+  if [ "${1}" = "info" ] || [ "${1}" = "notice" ]; then local color=""; fi
+  # Don't use colors on pipes or non-recognized terminals
+  if [[ "${TERM}" != "xterm"* ]] || [ -t 1 ]; then color=""; reset=""; fi
+
+  # Print to $logFile
+  if [[ ${printLog} = "true" ]] || [ "${printLog}" == "1" ]; then
+    echo -e "$(date +"%m-%d-%Y %r") $(printf "[%9s]" "${1}") ${_message}" >> "${logFile}";
+  fi
+
+  # Print to console when script is not 'quiet'
+  if [[ "${quiet}" = "true" ]] || [ "${quiet}" == "1" ]; then
+   return
+  else
+   echo -e "$(date +"%r") ${color}$(printf "[%9s]" "${1}") ${_message}${reset}";
+  fi
+
+}
+
+function die ()       { local _message="${*} Exiting."; echo "$(_alert emergency)"; safeExit;}
+function error ()     { local _message="${*}"; echo "$(_alert error)"; }
+function warning ()   { local _message="${*}"; echo "$(_alert warning)"; }
+function notice ()    { local _message="${*}"; echo "$(_alert notice)"; }
+function info ()      { local _message="${*}"; echo "$(_alert info)"; }
+function debug ()     { local _message="${*}"; echo "$(_alert debug)"; }
+function success ()   { local _message="${*}"; echo "$(_alert success)"; }
+function input()      { local _message="${*}"; echo -n "$(_alert input)"; }
+function header()     { local _message="========== ${*} ==========  "; echo "$(_alert header)"; }
+
+# Log messages when verbose is set to "true"
+verbose() {
+  if [[ "${verbose}" = "true" ]] || [ "${verbose}" == "1" ]; then
+    debug "$@"
+  fi
+}
+############## SharedFunctions #########################
+
+# Provide a variable with the location of this script.
+scriptPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Source Scripting Utilities
+# -----------------------------------
+# These shared utilities provide many functions which are needed to provide
+# the functionality in this boilerplate. This script will fail if they can
+# not be found.
+# -----------------------------------
+
+# Update this path to find the utilities.
+utilsLocation="${scriptPath}/lib/utils.sh"
+
+if [ -f "${utilsLocation}" ]; then
+  source "${utilsLocation}"
+else
+  echo "Running without utils.sh. Just saying..."
+  # exit 1
+fi
+
+# trapCleanup Function
+# -----------------------------------
+# Any actions that should be taken if the script is prematurely
+# exited.  Always call this function at the top of your script.
+# -----------------------------------
+function trapCleanup() {
+  echo ""
+  if is_dir "${tmpDir}"; then
+    rm -r "${tmpDir}"
+  fi
+  die "Exit trapped."  # Edit this if you like.
+}
+
+# Set Flags
+# -----------------------------------
+# Flags which can be overridden by user input.
+# Default values are below
+# -----------------------------------
+quiet=0
+printLog=0
+verbose=0
+force=0
+strict=0
+debug=0
+args=()
+
+# Set Temp Directory
+# -----------------------------------
+# Create temp directory with three random numbers and the process ID
+# in the name.  This directory is removed automatically at exit.
+# -----------------------------------
+tmpDir="/tmp/${scriptName}.$RANDOM.$RANDOM.$RANDOM.$$"
+(umask 077 && mkdir "${tmpDir}") || {
+  die "Could not create temporary directory! Exiting."
+}
+
+# Logging
+# -----------------------------------
+# Log is only used when the '-l' flag is set.
+#
+# To never save a logfile change variable to '/dev/null'
+# Save to Desktop use: $HOME/Desktop/${scriptBasename}.log
+# Save to standard user log location use:
+#   $HOME/Library/Logs/${scriptBasename}.log
+# -----------------------------------
+logFile="$HOME/Library/Logs/${scriptBasename}.log"
+
+# Check for Dependencies
+# -----------------------------------
+# Arrays containing package dependencies needed to execute this script.
+# The script will fail if dependencies are not installed.  For Mac users,
+# most dependencies can be installed automatically using the package
+# manager 'Homebrew'.
+# -----------------------------------
+homebrewDependencies=()
+
+############## Begin Script Here ###################
+function mainScript() {
+    wget \
+        --recursive \
+        --no-clobber \
+        --page-requisites \
+        --html-extension \
+        --convert-links \
+        --continue \
+        --restrict-file-names=windows \
+        --domains "${target}" \
+        --no-parent "http://${target}"
+####################################################
+
+    echo -n
+
+####################################################
+############### End Script Here ####################
+}
+
+############## Begin Options and Usage ###################
+
+
+# Print usage
+usage() {
+  echo -n "${scriptName} [OPTION]... [FILE]...
+
+WGet a website
+
+ Options:
+  -t, --target      Website URL to download
+  -u, --username    Username for script
+  -p, --password    User password
+  --force           Skip all user interaction.  Implied 'Yes' to all actions.
+  -q, --quiet       Quiet (no output)
+  -l, --log         Print log to file
+  -s, --strict      Exit script with null variables.  i.e 'set -o nounset'
+  -v, --verbose     Output more information. (Items echoed to 'verbose')
+  -d, --debug       Runs script in BASH debug mode (set -x)
+  -h, --help        Display this help and exit
+      --version     Output version information and exit
+"
+}
+
+# Iterate over options breaking -ab into -a -b when needed and --foo=bar into
+# --foo bar
+optstring=h
+unset options
+while (($#)); do
+  case $1 in
+    # If option is of type -ab
+    -[!-]?*)
+      # Loop over each character starting with the second
+      for ((i=1; i < ${#1}; i++)); do
+        c=${1:i:1}
+
+        # Add current char to options
+        options+=("-$c")
+
+        # If option takes a required argument, and it's not the last char make
+        # the rest of the string its argument
+        if [[ $optstring = *"$c:"* && ${1:i+1} ]]; then
+          options+=("${1:i+1}")
+          break
+        fi
+      done
+      ;;
+
+    # If option is of type --foo=bar
+    --?*=*) options+=("${1%%=*}" "${1#*=}") ;;
+    # add --endopts for --
+    --) options+=(--endopts) ;;
+    # Otherwise, nothing special
+    *) options+=("$1") ;;
+  esac
+  shift
+done
+set -- "${options[@]}"
+unset options
+
+# Print help if no arguments were passed.
+# Uncomment to force arguments when invoking the script
+# [[ $# -eq 0 ]] && set -- "--help"
+
+# Read the options and set stuff
+while [[ $1 = -?* ]]; do
+  case $1 in
+    -h|--help) usage >&2; safeExit ;;
+    --version) echo "$(basename $0) ${version}"; safeExit ;;
+    -t|--target) shift; target=${1} ;;
+    -u|--username) shift; username=${1} ;;
+    -p|--password) shift; echo "Enter Pass: "; stty -echo; read PASS; stty echo;
+      echo ;;
+    -v|--verbose) verbose=1 ;;
+    -l|--log) printLog=1 ;;
+    -q|--quiet) quiet=1 ;;
+    -s|--strict) strict=1;;
+    -d|--debug) debug=1;;
+    --force) force=1 ;;
+    --endopts) shift; break ;;
+    *) die "invalid option: '$1'." ;;
+  esac
+  shift
+done
+
+# Store the remaining part as arguments.
+args+=("$@")
+
+# Dependencies
+# -----------------------------------
+# Arrays containing package dependencies needed to execute this script.
+# The script will fail if dependencies are not installed.  For Mac users,
+# most dependencies can be installed automatically using the package
+# manager 'Homebrew'.
+# Usage in script:  $ homebrewDependencies=(package1 package2)
+# -----------------------------------
+
+function checkDependencies() {
+  saveIFS=$IFS
+  IFS=$' \n\t'
+  if [ -n "${homebrewDependencies}" ]; then
+    LISTINSTALLED="brew list"
+    INSTALLCOMMAND="brew install"
+    RECIPES=("${homebrewDependencies[@]}")
+    # Invoke functions from setupScriptFunctions.sh
+    hasHomebrew
+    doInstall
+  fi
+  if [ -n "$caskDependencies" ]; then
+    LISTINSTALLED="brew cask list"
+    INSTALLCOMMAND="brew cask install --appdir=/Applications"
+    RECIPES=("${caskDependencies[@]}")
+
+    # Invoke functions from setupScriptFunctions.sh
+    hasHomebrew
+    hasCasks
+    doInstall
+  fi
+  if [ -n "$gemDependencies" ]; then
+    LISTINSTALLED="gem list | awk '{print $1}'"
+    INSTALLCOMMAND="gem install"
+    RECIPES=("${gemDependencies[@]}")
+    # Invoke functions from setupScriptFunctions.sh
+    doInstall
+  fi
+  IFS=$saveIFS
+}
+
+# pauseScript
+# -----------------------------------
+# A simple function used to pause a script at any point and
+# only continue on user input
+# -----------------------------------
+
+function pauseScript() {
+  seek_confirmation "Ready to continue?"
+  if is_confirmed; then
+    info "Continuing"
+  else
+    warning "Exiting Script."
+    safeExit
+  fi
+}
+
+############## End Options and Usage ###################
+
+# ############# ############# #############
+# ##       TIME TO RUN THE SCRIPT        ##
+# ##                                     ##
+# ## You shouldn't need to edit anything ##
+# ## beneath this line                   ##
+# ##                                     ##
+# ############# ############# #############
+
+# Trap bad exits with your cleanup function
+trap trapCleanup EXIT INT TERM
+
+# Exit on error. Append '||true' when you run the script if you expect an error.
+set -o errexit
+
+# Run in debug mode, if set
+if [ "${debug}" == "1" ]; then
+  set -x
+fi
+
+# Exit on empty variable
+if [ "${strict}" == "1" ]; then
+  set -o nounset
+fi
+
+# Bash will remember & return the highest exitcode in a chain of pipes.
+# This way you can catch the error in case mysqldump fails in `mysqldump |gzip`, for example.
+set -o pipefail
+
+# Invoke the checkDependenices function to test for Bash packages
+checkDependencies
+
+# Run your script
+mainScript
+
+safeExit # Exit cleanly
