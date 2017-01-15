@@ -30,6 +30,7 @@ export TERM=xterm-256color
 export POSTGRESQL_USERNAME='**********************'
 export POSTGRESQL_PASSWORD='**********************'
 export PATH=$PATH:/Users/edoardo/.local/bin
+export HISTCONTROL=ignoreboth:erasedups
 
 # Do something good with my prompt
 . ~/.bash_prompt
