@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Dry run
+rename -nv 's/^([a-z]{4})\.(\d{8}).(.*)$/$2.$1.$2.$3/' data.*
+# Interactive
+rename -iv 's/^([a-z]{4})\.(\d{8}).(.*)$/$2.$1.$2.$3/' data.*
+
+# Example
+# Rename 'data.20161023.drive.tar.gz.gpg' to '20161023.data.20161023.drive.tar.gz.gpg'? [n] y
+# 'data.20161023.drive.tar.gz.gpg' renamed to '20161023.data.20161023.drive.tar.gz.gpg'
+
+# Example
+# $ rename -v 's/^(google)\.([a-z]{4}).takeout-(\d{8})T(.*)$/$3.$1.$2.$3T$4/' google.*
+# 'google.keep.takeout-20151106T075214Z.tgz.gpg' renamed to '20151106.google.keep.20151106T075214Z.tgz.gpg'
