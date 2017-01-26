@@ -1,0 +1,2 @@
+#!/bin/bash
+lsof -i | grep -E "(LISTEN|ESTABLISHED)" | awk '{print $1, $8, $9}'
