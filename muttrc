@@ -3,6 +3,21 @@
 # === ESSENTIALS
 set imap_user = 'yourusername@gmail.com'
 set imap_pass = 'yourpassword'
+# Secure IMAP password
+# http://unix.stackexchange.com/a/20572
+# https://wiki.archlinux.org/index.php/Mutt#Passwords_management
+# set imap_pass = `getpassword email_id`
+# where you use pwsafe or passwords to fetch the passwords.
+# If mutt is built with IMAP support (--enable-imap), then mutt should prompt
+# you for the password if you do not set it in the config file. From the manual:
+# imap_pass
+# Type: string Default: ""
+# Specifies the password for your IMAP account. If unset, Mutt will prompt you
+# for your password when you invoke the fetch-mail function. Warning: you should
+# only use this option when you are on a fairly secure machine, because the
+# superuser can read your muttrc even if you are the only one who can read the
+# file.
+
 set certificate_file = "~/.mutt/certificates"
 set charset = "utf-8"
 set editor = "vim"
