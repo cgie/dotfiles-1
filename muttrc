@@ -1,8 +1,22 @@
 # Source: https://dev.mutt.org/trac/wiki/UseCases/Gmail
 
 # === ESSENTIALS
-set imap_user = 'yourusername@gmail.com'
-set imap_pass = 'yourpassword'
+set imap_user = "***********@gmail.com"
+set from = "***********@gmail.com"
+set realname = "****************"
+set certificate_file = "~/.mutt/certificates"
+set charset = "utf-8"
+set editor = "vim"
+set header_cache = "~/.mutt/cache/headers"
+# looks like you must explicitly do this to make sure you
+# don't save local copies of sent mail.
+# unset record
+set message_cachedir = "~/.mutt/cache/bodies"
+set move = no
+
+# === PASSWORD
+set imap_pass = "*************************"
+# set imap_pass = 'yourpassword'
 # Secure IMAP password
 # http://unix.stackexchange.com/a/20572
 # https://wiki.archlinux.org/index.php/Mutt#Passwords_management
@@ -17,14 +31,20 @@ set imap_pass = 'yourpassword'
 # only use this option when you are on a fairly secure machine, because the
 # superuser can read your muttrc even if you are the only one who can read the
 # file.
+# === GPG
+# protect imap and sendmail passwords with GPG
+# source "gpg -d ~/.mutt/muttpasswd.gpg |"
 
-set certificate_file = "~/.mutt/certificates"
-set charset = "utf-8"
-set editor = "vim"
-set header_cache = "~/.mutt/cache/headers"
+# === SYNC AND CHECK INTERVALS
 set imap_keepalive = 900
-set message_cachedir = "~/.mutt/cache/bodies"
-set move = no
+# set imap_keepalive = 60
+set imap_passive = no
+set imap_check_subscribed = yes
+set imap_idle = yes
+set mail_check = 60
+set read_inc = 100
+set mail_check = 90
+set timeout = 15
 
 # === FOLDERS
 set folder = "imaps://imap.gmail.com:993"
@@ -56,6 +76,13 @@ set spoolfile = "+INBOX"
 # === SSL
 set ssl_force_tls = yes
 set ssl_starttls = yes
+set ssl_use_sslv2 = no
+set ssl_use_sslv3 = no
+set ssl_use_tlsv1 = no
+set ssl_use_tlsv1_1 = no
+set ssl_use_tlsv1_2 = yes
+set ssl_verify_dates = yes
+set ssl_verify_host = yes
 
 # === MACRO
 # bind index G imap-fetch-mail
@@ -73,14 +100,46 @@ set mailcap_path = "~/.mutt/mailcap"
 set abort_nosubject = ask-yes
 set abort_unmodified = yes
 set delete = ask-yes
-set editor = "$EDITOR"
+# set editor = "$EDITOR"
 set content_type = 'text/plain'
 set mark_old = no
 set sort = threads
 set sort_aux = reverse-last-date-received
 set pager_index_lines = 15
-
-# === SYNC AND CHECK INTERVALS
-set read_inc = 100
-set mail_check = 90
-set timeout = 15
+# set move = no
+# set hostname = "box" # Name of our local host.
+# set hidden_host # Hide host details.
+# set envelope_from # set the envelope-from information
+# set reverse_name = yes # build From: in the reply based on the To: address (must have
+# set alias_file = ~/.mutt/aliases # Keep aliases in this file.
+# set postpone = ask-no # Ask about postponing.
+# set print = ask-yes # Ask before printing.
+# set delete = yes Ask before doing a delete.
+# set include # Include the message in replies.
+# set sort = threads # always sort by thread
+# set sort_aux = date-received # Sort threads by date received.
+# set charset = iso-8859-1 # One of those days in England...
+# set noallow_8bit # 8bit isn't safe via Demon.
+# set ascii_chars = yes # use ascii characters when displaying trees
+# set meta_key = yes # allow to use alt or ESC
+# set attribution = "* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
+# set edit_headers # I want to edit the message headers.
+# set fast_reply # skip initial prompts when replying
+# set nohelp # don't show the help line at the top
+# set editor = "vim +13 -c 'set nobackup' -c 'set noswapfile' -c 'set nowritebackup' -c 'set tw=72 ft=mail noautoindent'"
+# set nomark_old # Don't mark unread new msgs as old.
+# set nobeep # We don't need no beeping software.
+# set nosmart_wrap # Don't want smart wrapping.
+# set nomarkers # Don't want any wrap markers.
+# set mime_forward # Forward message as MIME attachments.
+# set pager_context = 3 # Display 3 lines of context in pager.
+# set pager_index_lines = 20
+# set nostrict_threads # Lets have some fuzzy threading.
+# set nopipe_decode # Don't decode messages when piping.
+# set text_flowed # label messages as format-flowed
+# set print_command = "enscript --font=Curier-New10 --pretty-print"
+# set tilde # Fill out messages with '~'.
+# set read_inc = 100 # Read counter ticks every 100 msgs.
+# set write_inc = 100 # Write counter ticks every 100 msgs.
+# set noconfirmappend # Just append, don't hassle me.
+# set pager_stop # Don't skip msgs on next page.
