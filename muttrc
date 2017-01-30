@@ -1,0 +1,71 @@
+# Source: https://dev.mutt.org/trac/wiki/UseCases/Gmail
+
+# === ESSENTIALS
+set imap_user = 'yourusername@gmail.com'
+set imap_pass = 'yourpassword'
+set certificate_file = "~/.mutt/certificates"
+set charset = "utf-8"
+set editor = "vim"
+set header_cache = "~/.mutt/cache/headers"
+set imap_keepalive = 900
+set message_cachedir = "~/.mutt/cache/bodies"
+set move = no
+
+# === FOLDERS
+set folder = "imaps://imap.gmail.com:993"
+set postponed = "+[Gmail]/Drafts"
+# set postponed = "imaps://imap.gmail.com/[Gmail]/Drafts"
+set record = "+[Gmail]/Sent Mail"
+set spoolfile = "+INBOX"
+# set spoolfile = imaps://imap.gmail.com/INBOX
+
+# === SMTP
+# If you want to use GMail SMTP server, set record to an empty string as it
+# handles saving the sent mail anyway.
+# set record=""
+# set smtp_pass = "<gmail password>"
+# set smtp_pass = "yourpassword"
+# set smtp_url = "smtps://<gmail username>@gmail.com@smtp.gmail.com:465/"
+# set smtp_url = "smtps://yourusername@smtp.gmail.com"
+
+# === MBOX
+# You can also set the mbox: which means that when you exit mutt, it will prompt
+# you to archive your read messages.
+# set mbox="imaps://imap.gmail.com/[Gmail]/All Mail"
+
+# === TRASH
+# If you are using the trash_folder patch
+# http://cedricduval.free.fr/mutt/patches/#trash
+# set trash="imaps://imap.gmail.com/[Gmail]/Trash"
+
+# === SSL
+set ssl_force_tls = yes
+set ssl_starttls = yes
+
+# === MACRO
+# bind index G imap-fetch-mail
+bind editor <space> noop
+macro index,pager y "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+# === FURTHER CONFIG
+set tmpdir = "~/.mutt/tmp"
+set mailcap_path = "~/.mutt/mailcap"
+set abort_nosubject = ask-yes
+set abort_unmodified = yes
+set delete = ask-yes
+set editor = "$EDITOR"
+set content_type = 'text/plain'
+set mark_old = no
+set sort = threads
+set sort_aux = reverse-last-date-received
+set pager_index_lines = 15
+
+# === SYNC AND CHECK INTERVALS
+set read_inc = 100
+set mail_check = 90
+set timeout = 15
