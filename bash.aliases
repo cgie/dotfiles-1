@@ -18,5 +18,5 @@ alias dme='eval $(docker-machine env default) && export DOCKER_HOST_IP=$(docker-
 alias dmt='docker-machine active && for c in $(docker ps --format "{{.Names}}"); do echo "stopping $c" && docker stop "$c"; done && docker-machine stop default'
 alias docker_stop_all='docker stop $(docker ps -a -q)'
 alias docker_remove_all='docker rm $(docker ps -a -q)'
-alias pull_all='DATE=`date +%Y%m%d` ; FILE="$HOME/Downloads/$DATE.workspaces.list.$DATE.txt" ; touch "$FILE" ; for d in "$HOME/workspaces/"*/ ; do cd "$d" ; if [ -d ".git/" ]; then echo "into $(pwd)/ and git pull $(git symbolic-ref HEAD 2>/dev/null)" ; repo="$(git remote -v | sed -n -e '1p' | awk '{print $2}')" ; echo "$(pwd),$repo" >> "$FILE" ; git pull ; fi ; done ;'
+alias pull_all='/bin/bash $SCRIPTSDIR/scripts.pullandlog'
 alias mongothis='clear && ulimit -n 2048 && mongod --config /usr/local/etc/mongod.conf --verbose --pidfilepath ~/Downloads/mongod.pid --fork'
