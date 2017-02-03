@@ -2,9 +2,6 @@
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
-;; Clear the kill ring
-;; M-: (progn (setq kill-ring nil) (garbage-collect))
-
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration.
 You should not put any user code in this function besides modifying the variable
@@ -21,6 +18,8 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     csv
+     nginx
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -66,8 +65,8 @@ values."
             '(("irc.freenode.net"
                :port "6697"
                :ssl t
-               :nick "*********"
-               :password "*****")))
+               :nick "***********************"
+               :password "*******************")))
      ;; rcirc
    )
    ;; List of additional packages that will be installed without being
@@ -143,7 +142,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Hack"
-                               :size 15
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -268,6 +267,9 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
    dotspacemacs-line-numbers 'relative
+   ;; Code folding method. Possible values are `evil' and `origami'.
+   ;; (default 'evil)
+   dotspacemacs-folding-method 'origami
    ))
 
 (defun dotspacemacs/user-init ()
@@ -330,7 +332,7 @@ you should place your code here."
  '(hl-sexp-background-color "#efebe9")
  '(package-selected-packages
    (quote
-    (rcirc-notify rcirc-color erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks pug-mode docker tablist docker-tramp sbt-mode iedit smartparens undo-tree go-mode projectile helm helm-core haskell-mode flycheck markdown-mode magit git-commit js2-mode f s uuidgen toc-org org-plus-contrib org-bullets livid-mode skewer-mode simple-httpd link-hint intero hlint-refactor helm-hoogle github-search with-editor flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-shell company-ghci company-emacs-eclim column-enforce-mode zenburn-theme yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimish-fold vi-tilde-fringe use-package tagedit spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa projectile-rails popwin persp-mode paradox page-break-lines orgit open-junk-file noflet neotree multi-term move-text monokai-theme mmm-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-eldoc github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md flycheck-pos-tip flycheck-haskell flx-ido fish-mode fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-commentary evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav eclim dockerfile-mode define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company-auctex coffee-mode cmm-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (auctex-latexmk origami csv-mode nginx-mode powerline rake inflections pcre2el spinner org multiple-cursors hydra parent-mode request haml-mode go-guru gitignore-mode gh marshal logito pcache ht pos-tip pkg-info epl flx paredit anzu evil goto-chg highlight scala-mode magit-popup json-snatcher json-reformat diminish web-completion-data dash-functional tern ghc company inf-ruby bind-map bind-key yasnippet packed dash auctex avy async auto-complete popup package-build minitest insert-shebang hide-comnt rcirc-notify rcirc-color erc-yt erc-view-log erc-terminal-notifier erc-social-graph erc-image erc-hl-nicks pug-mode docker tablist docker-tramp sbt-mode iedit smartparens undo-tree go-mode projectile helm helm-core haskell-mode flycheck markdown-mode magit git-commit js2-mode f s uuidgen toc-org org-plus-contrib org-bullets livid-mode skewer-mode simple-httpd link-hint intero hlint-refactor helm-hoogle github-search with-editor flyspell-correct-helm flyspell-correct eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump company-shell company-ghci company-emacs-eclim column-enforce-mode zenburn-theme yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vimish-fold vi-tilde-fringe use-package tagedit spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shm shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs rbenv rainbow-delimiters quelpa projectile-rails popwin persp-mode paradox page-break-lines orgit open-junk-file noflet neotree multi-term move-text monokai-theme mmm-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum linum-relative leuven-theme less-css-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flyspell helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio go-eldoc github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gist gh-md flycheck-pos-tip flycheck-haskell flx-ido fish-mode fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-commentary evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav eclim dockerfile-mode define-word company-web company-tern company-statistics company-quickhelp company-go company-ghc company-cabal company-auctex coffee-mode cmm-mode clean-aindent-mode chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(rcirc-server-alist
    (quote
     (("irc.freenode.net" :channels
@@ -341,4 +343,6 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil))))
+ '(org-level-1 ((t (:foreground "#4f97d7"))))
+ '(org-level-2 ((t (:inherit bold :foreground "#2d9574")))))
