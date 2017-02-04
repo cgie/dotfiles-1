@@ -307,6 +307,8 @@ function backup() {
 #     return 0
 # }
 
+function printSize() {
+    SIZE=$(stat -f%z "$1")
     if [ $SIZE -ge 1048576 ]
     then
         SIZE=$(awk 'BEGIN {printf "%.2f",'$SIZE'/1048576}')M
@@ -314,8 +316,7 @@ function backup() {
     then
         SIZE=$(awk 'BEGIN {printf "%.2f",'$SIZE'/1024}')K
     fi
-    pretty_print "Snapshot finished BOX ($SIZE)"
-    pretty_print "File is not encrypted!" "$fg_yellow"
+    echo "$SIZE"
 }
 
 function pullAndLog() {
