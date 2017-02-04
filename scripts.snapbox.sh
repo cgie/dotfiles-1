@@ -273,7 +273,19 @@ function backup() {
     # Test for zero-length string.
     # [ -z "$variable" ] || variable='foo'
     tar zcf "$DES" "$SRC"
-    SIZE=$(stat -f%z "$DES")
+    SIZE=$(printSize "$DES")
+    pretty_print "Snapshot finished BOX ($SIZE)"
+    pretty_print "File is not encrypted!" "$fg_yellow"
+    # gpg --batch --passphrase-file $PWDFILE -o "$CIP" $DES
+    gpg --symmetric -o "$CIP" "$DES"
+    pretty_print "File is now encrypted"
+    rm -v "$DES"
+    pretty_print "File is now removed" "$fg_cyan"
+    cp -v "$CIP" "$STO"
+    pretty_print "File is now stored" "$fg_cyan"
+    mv -v "$CIP" "$DOC"
+    pretty_print "File is now availabe" "$fg_cyan"
+}
     if [ $SIZE -ge 1048576 ]
     then
         SIZE=$(awk 'BEGIN {printf "%.2f",'$SIZE'/1048576}')M
