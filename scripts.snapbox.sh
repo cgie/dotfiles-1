@@ -266,7 +266,10 @@ function backup() {
     DATE=`date +%Y%m%d%H%M%S`
     echo "Start snapshotting BOX ($DATE)"
     SRC="$HOME/box/"
+    STO="$HOME/storage/"
+    DOC="$HOME/Documents/"
     DES="$HOME/Downloads/$DATE.box.$DATE.tar.gz"
+    CIP="$DES.gpg"
     # Test for zero-length string.
     # [ -z "$variable" ] || variable='foo'
     tar zcf "$DES" "$SRC"
