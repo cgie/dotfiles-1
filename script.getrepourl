@@ -1,0 +1,1 @@
+find . -name 'somewhere\.*' -type d -exec cat "{}/.git/config" \; | grep url
