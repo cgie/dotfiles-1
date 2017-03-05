@@ -29,3 +29,5 @@ alias lockme='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resou
 alias postgresup='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias postgresdie='echo "killing PostgreS" && pg_ctl -D /usr/local/var/postgres stop -s -m fast && echo "bye"'
 alias postgresstatus='pg_ctl -D /usr/local/var/postgres status'
+alias speedtest_curl='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias speedtest_wget='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
