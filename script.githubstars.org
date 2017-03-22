@@ -1,0 +1,29 @@
+* GitHub starred repos
+
+Get my Github starred repos.
+
+> it's an uglu hack but I don't care
+
+#+BEGIN_EXAMPLE
+curl --silent --head --include https://api.github.com/users/zeroed/starred | grep Link:
+
+  Link:
+    <https://api.github.com/user/456318/starred?page=2>; rel="next",
+    <https://api.github.com/user/456318/starred?page=21>; rel="last"
+#+END_EXAMPLE
+
+#+BEGIN_SRC bash
+#!/bin/bash
+
+DATE=`date +%Y%m%d%H%M%S`
+FILE="$HOME/Downloads/$DATE.github.stars.list.$DATE.txt"
+STARSURL="https://api.github.com/users/zeroed/starred"
+touch "$FILE"
+for i in {1..23}
+do
+   echo "$STARSURL?per_page=100&page=$i"
+   DATA=`curl --user "zeroed:$GHPWD" -s "$STARSURL?per_page=100&page=$i"`
+   echo "$DATA" | jq '.[] | .full_name + " : " + .html_url'
+done
+echo "done"
+#+END_SRC
