@@ -1,5 +1,6 @@
 alias ls='ls -G'
 alias rm='rm -i'
+alias mv='mv -i'
 alias go_zeroed='cd ~/Workspaces/go.sources/src/github.com/zeroed/go.dojo'
 alias go_walker='cd ~/Workspaces/go.sources/src/github.com/zeroed/walker'
 alias go_escli='cd ~/Workspaces/go.sources/src/github.com/zeroed/escli'
