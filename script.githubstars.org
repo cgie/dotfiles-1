@@ -2,7 +2,7 @@
 
 Get my Github starred repos.
 
-> it's an uglu hack but I don't care
+> it's an ugly hack but I don't care
 
 #+BEGIN_EXAMPLE
 curl --silent --head --include https://api.github.com/users/zeroed/starred | grep Link:
