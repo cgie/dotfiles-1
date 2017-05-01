@@ -290,3 +290,8 @@ color body          color160        color234        "([a-z][a-z0-9+-]*://(((([a-
 #folder-hook gmail/inbox        "color status        J_black         color136        "
 #folder-hook gmail/important    "color status        J_black         color136        "
 #
+
+# http://brianbuccola.com/how-to-mark-all-emails-as-read-in-mutt/
+macro index A \
+    "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" \
+    "mark all new as read"
