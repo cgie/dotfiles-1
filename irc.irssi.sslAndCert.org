@@ -1,0 +1,100 @@
+* Connect to IRC with a certificate
+
+Freenode in this example.
+
+** Generate the cert
+
+#+BEGIN_EXAMPLE
+$ openssl req -nodes -newkey rsa:2048 -keyout nick.user.pem -x509 -days 3650 -out nick.user.pem -subj "/CN=<$NICKNAME>"
+
+Generating a 2048 bit RSA private key
+...
+...
+writing new private key to 'nick.user.pem'
+-----
+#+END_EXAMPLE
+
+** Add the fingerprint
+
+#+BEGIN_EXAMPLE
+$ chmod 600 nick.user.pem
+$ openssl x509 -sha1 -noout -fingerprint -in nick.user.pem | sed -e 's/^.*=//;s/://g;y/ABCDEF/abcdef/'
+  **********
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+/disconnect Freenode
+/server add -ssl_cert ~/.irssi/nick.user.pem -ssl_pass <irssi.pem_password> -network freenode chat.freenode.net 6697
+#+END_EXAMPLE
+
+Omit the -ssl_pass option if your certificate was built without a password
+
+#+BEGIN_EXAMPLE
+/server add -ssl_cert ~/.irssi/nick.user.pem -network freenode chat.freenode.net 6697
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+/connect Freenode
+/msg NickServ identify YOUR_PASSWORD
+/msg NickServ cert add YOUR_FINGERPRINT
+/msg NickServ cert add **********
+
+[08:32]            --- | Query: Starting query with nickserv on Freenode
+[10:15] <      ******> | cert add **********
+[10:15] -    NickServ- | (NickServ@services.) Added fingerprint ********** to your fingerprint list.
+#+END_EXAMPLE
+
+** Configure the client
+
+#+BEGIN_EXAMPLE
+## Server
+servers = (
+  {
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    ssl_capath = "/etc/ssl/certs";
+    autoconnect = "yes";
+    ssl_cert = "~/.irssi/nick.user.pem";
+  }
+)
+#+END_EXAMPLE
+
+An instead of
+
+#+BEGIN_EXAMPLE
+## Network
+  Freenode = {
+    type = "IRC";
+    nick = "**********";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+    sasl_mechanism = "PLAIN";
+    sasl_username = "**********";
+    sasl_password = "**********";
+  };
+#+END_EXAMPLE
+
+add
+
+#+BEGIN_EXAMPLE
+  Freenode = {
+    type = "IRC";
+    nick = "**********";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+    sasl_mechanism = "EXTERNAL";
+    sasl_username = "**********";
+  };
+#+END_EXAMPLE
+
+Because
+
+- EXTERNAL: TLS certificate, for use with the *cert module. Cert must be setup,
+  and the network must support this mechanism.
+- PLAIN: Plain text negotiation; this should always work if the network
+  supports SASL
