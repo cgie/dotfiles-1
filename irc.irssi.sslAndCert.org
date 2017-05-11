@@ -27,7 +27,7 @@ $ openssl x509 -sha1 -noout -fingerprint -in nick.user.pem | sed -e 's/^.*=//;s/
 /server add -ssl_cert ~/.irssi/nick.user.pem -ssl_pass <irssi.pem_password> -network freenode chat.freenode.net 6697
 #+END_EXAMPLE
 
-Omit the -ssl_pass option if your certificate was built without a password
+Omit the ~-ssl_pass~ option if your certificate was built without a password
 
 #+BEGIN_EXAMPLE
 /server add -ssl_cert ~/.irssi/nick.user.pem -network freenode chat.freenode.net 6697
@@ -62,7 +62,7 @@ servers = (
 )
 #+END_EXAMPLE
 
-An instead of
+And instead of
 
 #+BEGIN_EXAMPLE
 ## Network
