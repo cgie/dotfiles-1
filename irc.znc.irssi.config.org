@@ -1,0 +1,187 @@
+* IRC: ZNC with certificate(s)
+
+*** Send commands
+
+Commands are given to ZNC by messaging the virtual user ~*status~. Likewise,
+modules are communicated to by messaging ~*modname~ as well. Alternatively you
+can use ~/znc~ command instead of ~/msg *status~ command and ~/znc *module~
+command instead of ~/msg *module~ command.
+
+*** Generate a fingerprint
+
+#+BEGIN_EXAMPLE
+$ openssl x509 -sha1 -noout -fingerprint -in ~/.irssi/znc.user.pem | sed -e 's/^.*=//;s/://g;y/ABCDEF/abcdef/'
+***********************************
+#+END_EXAMPLE
+
+*** Load/Unload modules
+
+#+BEGIN_EXAMPLE
+<   someAdmin> | LoadMod --type=global log -sanitize
+<     *status> | Loaded module [log] Logging to [/home/someUser/.znc/moddata/log/$USER/$NETWORK/$WINDOW/%Y-%m-%d.log]. [/usr/lib/znc/log.so]
+<   someAdmin> | LoadMod --type=global certauth
+<     *status> | Loaded module [certauth] [/usr/lib/znc/certauth.so]
+#+END_EXAMPLE
+
+*** Certauth module
+
+#+BEGIN_EXAMPLE
+<   someAdmin> | help
+<   *certauth> | +=========+===========+====================================================+
+<   *certauth> | | Command | Arguments | Description                                        |
+<   *certauth> | +=========+===========+====================================================+
+<   *certauth> | | Add     | [pubkey]  | If pubkey is not provided will use the current key |
+<   *certauth> | +---------+-----------+----------------------------------------------------+
+<   *certauth> | | Del     | id        |                                                    |
+<   *certauth> | +---------+-----------+----------------------------------------------------+
+<   *certauth> | | Help    | search    | Generate this output                               |
+<   *certauth> | +---------+-----------+----------------------------------------------------+
+<   *certauth> | | List    |           | List your public keys                              |
+<   *certauth> | +---------+-----------+----------------------------------------------------+
+<   *certauth> | | Show    |           | Print your current key                             |
+<   *certauth> | +=========+===========+====================================================+
+#+END_EXAMPLE
+
+*** Add a certificate signature
+
+The user who owns the certificate must log in ZNC (using his password) and add
+the signature.
+
+#+BEGIN_EXAMPLE
+<   someAdmin> | add ****************************************
+<   *certauth> | '****************************************' added.
+<   someAdmin> | list
+<   *certauth> | +====+==========================================+
+<   *certauth> | | Id | Key                                      |
+<   *certauth> | +====+==========================================+
+<   *certauth> | | 1  | **************************************** |
+<   *certauth> | +====+==========================================+
+<   someAdmin> | help add
+<   *certauth> | +=========+===========+====================================================+
+<   *certauth> | | Command | Arguments | Description                                        |
+<   *certauth> | +=========+===========+====================================================+
+<   *certauth> | | Add     | [pubkey]  | If pubkey is not provided will use the current key |
+<   *certauth> | +=========+===========+====================================================+
+#+END_EXAMPLE
+
+*** Status module: List modules
+
+#+BEGIN_EXAMPLE
+/msg *status listmods
+
+<   someAdmin> | UnloadMod --type=global webadmin
+<     *status> | Module [webadmin] unloaded
+<   someAdmin> | listmods
+<     *status> | Global modules:
+<     *status> | +==========+===========+
+<     *status> | | Name     | Arguments |
+<     *status> | +==========+===========+
+<     *status> | | log      | -sanitize |
+<     *status> | +----------+-----------+
+<     *status> | | certauth |           |
+<     *status> | +==========+===========+
+<     *status> | User modules:
+<     *status> | +==============+===========+
+<     *status> | | Name         | Arguments |
+<     *status> | +==============+===========+
+<     *status> | | chansaver    |           |
+<     *status> | +--------------+-----------+
+<     *status> | | controlpanel |           |
+<     *status> | +==============+===========+
+#+END_EXAMPLE
+
+*** Status module: Load modules
+
+#+BEGIN_EXAMPLE
+<   someAdmin> | UnloadMod --type=global webadmin
+<     *status> | Module [webadmin] not loaded.
+<   someAdmin> | loadmod --type=global schat
+<     *status> | Module [schat] does not support module type [Global].
+<   someAdmin> | loadmod schat
+<     *status> | Unable to load network module [schat] Not connected with a network.
+<   someAdmin> | loadmod sasl
+<     *status> | Unable to load network module [sasl] Not connected with a network.
+<   someAdmin> | loadmod cert
+<     *status> | Unable to load network module [cert] Not connected with a network.
+<   someAdmin> | loadmod controlpanel
+<     *status> | Loaded module [controlpanel] [/usr/lib/znc/controlpanel.so]
+<   someAdmin> | loadmod buffextra
+<     *status> | Unable to find modinfo [buffextra] [Unable to find module [buffextra]]
+<   someAdmin> | loadmod buffextras
+<     *status> | Loaded module [buffextras] [/usr/lib/znc/buffextras.so]
+<   someAdmin> | saveconfig
+<     *status> | Wrote config to [/home/someUser/.znc/configs/znc.conf]
+<   someAdmin> | listmods
+<     *status> | Global modules:
+<     *status> | +==========+===========+
+<     *status> | | Name     | Arguments |
+<     *status> | +==========+===========+
+<     *status> | | log      | -sanitize |
+<     *status> | +----------+-----------+
+<     *status> | | certauth |           |
+<     *status> | +==========+===========+
+<     *status> | User modules:
+<     *status> | +==============+===========+
+<     *status> | | Name         | Arguments |
+<     *status> | +==============+===========+
+<     *status> | | controlpanel |           |
+<     *status> | +--------------+-----------+
+<     *status> | | buffextras   |           |
+<     *status> | +==============+===========+
+#+END_EXAMPLE
+
+*** Controlpanel module
+
+(Shortened) list of commands
+
+#+BEGIN_EXAMPLE
+           --- | Query: Starting query with *controlpanel on 34
+<   someAdmin> | help
+<*controlpane> | +=================+==============================+===========================================================+
+<*controlpane> | | Command         | Arguments                    | Description                                               |
+<*controlpane> | +=================+==============================+===========================================================+
+<*controlpane> | | AddCTCP         | <username> <ctcp> [reply]    | Configure a new CTCP reply                                |
+<*controlpane> | +-----------------+------------------------------+-----------------------------------------------------------+
+<*controlpane> | | AddChan         | <username> <network> <chan>  | Adds a new channel                                        |
+<*controlpane> | +-----------------+------------------------------+-----------------------------------------------------------+
+<*controlpane> | | AddNetwork      | [username] <network>         | Add a network for a user                                  |
+<*controlpane> | +-----------------+------------------------------+-----------------------------------------------------------+
+<*controlpane> | | AddServer       | <username> <network>         | Adds a new IRC server for the given or current user       |
+<*controlpane> | |                 | <server>                     |                                                           |
+<*controlpane> | +-----------------+------------------------------+-----------------------------------------------------------+
+<*controlpane> | | AddUser         | <username> <password>        | Adds a new user                                           |
+<*controlpane> | +-----------------+------------------------------+-----------------------------------------------------------+
+<*controlpane> | | CloneUser       | <old username> <new          | Clones a user                                             |
+<*controlpane> | |                 | username>                    |                                                           |
+<*controlpane> | +---
+...
+<*controlpane> | Usage: Set <variable> <username> <value>
+#+END_EXAMPLE
+
+*** Add an user (and admin)
+
+#+BEGIN_EXAMPLE
+/msg *controlpanel adduser anotherUser **********************
+/msg *controlpanel set admin anotherUser true
+#+END_EXAMPLE
+
+*** Connect
+
+#+BEGIN_EXAMPLE
+/server -ssl 127.0.0.1 +6666 anotherUser:********************
+/server -ssl -ssl_cert ~/.irssi/znc.user.pem 127.0.0.1 +6664 anotherUser
+#+END_EXAMPLE
+
+*** Configure the Network
+
+- http://wiki.znc.in/Configuration#Network
+
+#+BEGIN_EXAMPLE
+        <Network freenode>
+                FloodBurst = 4
+                FloodRate = 1.00
+                IRCConnectEnabled = true
+                JoinDelay = 0
+                Server = irc.freenode.net +6667
+        </Network>
+#+END_EXAMPLE
