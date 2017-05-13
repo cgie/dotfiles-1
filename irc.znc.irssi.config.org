@@ -165,11 +165,13 @@ the signature.
 /msg *controlpanel set admin anotherUser true
 #+END_EXAMPLE
 
-*** Connect
+*** Connect (to ZNC)
+
+(127.0.0.1 is supposed to be your ZNC server (+6666 is the (SSL) port)).
 
 #+BEGIN_EXAMPLE
 /server -ssl 127.0.0.1 +6666 anotherUser:********************
-/server -ssl -ssl_cert ~/.irssi/znc.user.pem 127.0.0.1 +6664 anotherUser
+/server -ssl -ssl_cert ~/.irssi/znc.user.pem 127.0.0.1 +6666 anotherUser
 #+END_EXAMPLE
 
 *** Configure the Network
@@ -182,6 +184,71 @@ the signature.
                 FloodRate = 1.00
                 IRCConnectEnabled = true
                 JoinDelay = 0
-                Server = irc.freenode.net +6667
+                Server = irc.freenode.net +6697
         </Network>
 #+END_EXAMPLE
+
+*** Zcn config
+
+#+BEGIN_EXAMPLE
+AnonIPLimit = 10
+ConnectDelay = 5
+HideVersion = false
+LoadModule = log -sanitize
+LoadModule = certauth
+MaxBufferSize = 50000
+ProtectWebSessions = true
+SSLCertFile = /home/someUser/.znc/znc.pem
+ServerThrottle = 30
+Version = 1.6.3
+
+<Listener listener0>
+        AllowIRC = true
+        AllowWeb = false
+        IPv4 = true
+        IPv6 = true
+        Port = 6666
+        SSL = true
+        URIPrefix = /
+</Listener>
+<User someUser>
+        Admin = true
+        AltNick = someUser
+        AppendTimestamp = true
+        AutoClearChanBuffer = true
+        AutoClearQueryBuffer = true
+        Buffer = 50000
+        KeepBuffer = true
+        DenyLoadMod = false
+        DenySetBindHost = false
+        Ident = someUser
+        JoinTries = 10
+        LoadModule = controlpanel
+        LoadModule = buffextras
+        MaxJoins = 0
+        MaxNetworks = 1
+        MaxQueryBuffers = 50
+        MultiClients = true
+        Nick = someUser
+        PrependTimestamp = true
+        QuitMsg = "farewell"
+        RealName = someUser
+        StatusPrefix = *
+        TimestampFormat = [%H:%M:%S]
+
+        <Network freenode>
+                FloodBurst = 4
+                FloodRate = 1.00
+                IRCConnectEnabled = true
+                JoinDelay = 0
+                Server = chat.freenode.net +6697
+                <Chan #freenode>
+                </Chan>
+        </Network>
+
+        <Pass password>
+                Hash = ********
+                Method = SHA256
+                Salt = ********
+        </Pass>
+</User>
