@@ -10,7 +10,10 @@ command instead of ~/msg *module~ command.
 *** Generate a fingerprint
 
 #+BEGIN_EXAMPLE
+$ openssl req -nodes -newkey rsa:2048 -keyout user.pem -x509 -days 3650 -out user.pem -subj "/CN=YourNickname"
+
 $ openssl x509 -sha1 -noout -fingerprint -in ~/.irssi/znc.user.pem | sed -e 's/^.*=//;s/://g;y/ABCDEF/abcdef/'
+
 ***********************************
 #+END_EXAMPLE
 
@@ -252,3 +255,13 @@ Version = 1.6.3
                 Salt = ********
         </Pass>
 </User>
+#+END_EXAMPLE
+
+*** User's certificate
+
+If your user is connecting using a per certificate (~-ssl -ssl_cert~ options)
+than that certificate must be placed in
+
+#+BEGIN_EXAMPLE
+~/.znc/users/someUser/networks/freenode/moddata/cert/user.pem
+#+END_EXAMPLE
