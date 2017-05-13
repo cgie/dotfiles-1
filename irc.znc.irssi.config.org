@@ -226,6 +226,7 @@ Version = 1.6.3
         DenySetBindHost = false
         Ident = someUser
         JoinTries = 10
+        LoadModule = cert
         LoadModule = controlpanel
         LoadModule = buffextras
         MaxJoins = 0
@@ -245,6 +246,7 @@ Version = 1.6.3
                 IRCConnectEnabled = true
                 JoinDelay = 0
                 Server = chat.freenode.net +6697
+                LoadModule = sasl
                 <Chan #freenode>
                 </Chan>
         </Network>
@@ -264,4 +266,14 @@ than that certificate must be placed in
 
 #+BEGIN_EXAMPLE
 ~/.znc/users/someUser/networks/freenode/moddata/cert/user.pem
+#+END_EXAMPLE
+
+*** Load SASL
+
+#+BEGIN_EXAMPLE
+<    someUser> | Mechanism EXTERNAL
+<       *sasl> | Current mechanisms set: EXTERNAL
+<    someUser> | RequireAuth yes
+<       *sasl> | We require SASL negotiation to connect
+<       *sasl> | Disabling network, we require authentication.
 #+END_EXAMPLE
