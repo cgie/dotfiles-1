@@ -226,7 +226,6 @@ Version = 1.6.3
         DenySetBindHost = false
         Ident = someUser
         JoinTries = 10
-        LoadModule = cert
         LoadModule = controlpanel
         LoadModule = buffextras
         MaxJoins = 0
@@ -246,6 +245,7 @@ Version = 1.6.3
                 IRCConnectEnabled = true
                 JoinDelay = 0
                 Server = chat.freenode.net +6697
+                LoadModule = cert
                 LoadModule = sasl
                 <Chan #freenode>
                 </Chan>
@@ -276,4 +276,34 @@ than that certificate must be placed in
 <    someUser> | RequireAuth yes
 <       *sasl> | We require SASL negotiation to connect
 <       *sasl> | Disabling network, we require authentication.
+#+END_EXAMPLE
+
+*** List of modules
+
+#+BEGIN_EXAMPLE
+<   someUser-> | listmods
+<     *status> | Global modules:
+<     *status> | +==========+===========+
+<     *status> | | Name     | Arguments |
+<     *status> | +==========+===========+
+<     *status> | | log      | -sanitize |
+<     *status> | +----------+-----------+
+<     *status> | | certauth |           |
+<     *status> | +==========+===========+
+<     *status> | User modules:
+<     *status> | +==============+===========+
+<     *status> | | Name         | Arguments |
+<     *status> | +==============+===========+
+<     *status> | | controlpanel |           |
+<     *status> | +--------------+-----------+
+<     *status> | | buffextras   |           |
+<     *status> | +==============+===========+
+<     *status> | Network modules:
+<     *status> | +======+===========+
+<     *status> | | Name | Arguments |
+<     *status> | +======+===========+
+<     *status> | | sasl |           |
+<     *status> | +------+-----------+
+<     *status> | | cert |           |
+<     *status> | +======+===========+
 #+END_EXAMPLE
