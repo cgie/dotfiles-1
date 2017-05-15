@@ -307,3 +307,22 @@ than that certificate must be placed in
 <     *status> | | cert |           |
 <     *status> | +======+===========+
 #+END_EXAMPLE
+
+*** Adminlog
+
+#+BEGIN_EXAMPLE
+[12:16] <    someUser> | target both
+[12:16] <   *adminlog> | Now logging to file and syslog
+[12:16] <    someUser> | help
+[12:16] <   *adminlog> | +=========+====================+=========================+
+[12:16] <   *adminlog> | | Command | Arguments          | Description             |
+[12:16] <   *adminlog> | +=========+====================+=========================+
+[12:16] <   *adminlog> | | Help    | search             | Generate this output    |
+[12:16] <   *adminlog> | +---------+--------------------+-------------------------+
+[12:16] <   *adminlog> | | Show    |                    | Show the logging target |
+[12:16] <   *adminlog> | +---------+--------------------+-------------------------+
+[12:16] <   *adminlog> | | Target  | <file|syslog|both> | Set the logging target  |
+[12:16] <   *adminlog> | +=========+====================+=========================+
+[12:16] <    someUser> | show
+[12:16] <   *adminlog> | Logging is enabled for both, file and syslog
+#+END_EXAMPLE
