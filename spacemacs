@@ -43,6 +43,9 @@ values."
      haskell
      html
      java
+     ;; npm install -g tern
+     ;; npm install -g js-beautify
+     ;; npm install -g eslint
      javascript
      latex
      markdown
@@ -307,8 +310,8 @@ you should place your code here."
     (interactive)
     (call-process-region (point) (mark) "pbcopy")
       (setq deactivate-mark t))
-  ;; (defun pbpaste()
-  ;;   (shell-command-to-string "pbpaste"))
+  (defun pbpaste()
+    (shell-command-to-string "pbpaste"))
   ;; (setq rcirc-server-alist
   ;;       '(("irc.freenode.net"
   ;;          :user "**************"
@@ -316,6 +319,9 @@ you should place your code here."
   ;;          :encryption tls
   ;;          :password "*******"
   ;;          :channels ("#rcirc" "#lesswrong" "#freenode" "#haskell"))))
+  ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/javascript
+  (setq-default js2-basic-offset 2)
+  (setq-default js-indent-level 2)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
