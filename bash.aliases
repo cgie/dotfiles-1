@@ -32,3 +32,5 @@ alias postgresdie='echo "killing PostgreS" && pg_ctl -D /usr/local/var/postgres 
 alias postgresstatus='pg_ctl -D /usr/local/var/postgres status'
 alias speedtest_curl='curl -o /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
 alias speedtest_wget='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias awsServer0='ssh -i ~/.ssh/aws.user.pem  user@***.***.***.***'
+alias npm-exec='PATH=$(npm bin):$PATH'
