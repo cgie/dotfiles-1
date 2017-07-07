@@ -1,36 +1,18 @@
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export GT_USER="edoardo"
-export GT_KEY="*******************************"
-export GT_AWS_ZONE="us-west-2c"
-export GT_URL="https://*******************.com"
-export WORKSPACES="/Users/edoardo/Workspaces"
-export DOWNLOADS="/Users/edoardo/Downloads"
-export TUNA_HOME=$WORKSPACES/tuna_src/Tuna
+# export A_LOT_OF_KEYS="ThatAreMySecrets!"
+
+export EDITOR=/usr/local/bin/vim
 export GOPATH=$WORKSPACES/go.sources
 export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export BONSAIO_HOST="*********"
-export BONSAIO_KEY="**********"
-export BONSAIO_SECRET="*******"
-export MONGOLAB_HOST="********"
-export MONGOLAB_USER="********"
-export MONGOLAB_PASS="********"
-export HOMEBREW_GITHUB_API_TOKEN="********"
-export TELEGRAM_API_KEY="*********"
-export GOOGLE_API_KEY="*********"
-export OPENWEATHERMAP_API_KEY="********"
-export CLEARBIT_API_KEY="*********"
-export VIBE_API_KEY="*********"
-export DEVELOPMENT_PROXY="********"
-export EDITOR=/usr/local/bin/nvim
+export HISTCONTROL=ignoreboth:erasedups
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export POSTGRESQL_USERNAME='**********************'
-export POSTGRESQL_PASSWORD='**********************'
-export PATH=$PATH:/Users/edoardo/.local/bin
-export HISTCONTROL=ignoreboth:erasedups
+
+export PATH=$PATH:$HOME/.rvm/bin
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:/Users/user/.symlinks/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:/Users/user/.local/bin
 
 # Do something good with my prompt
 . ~/.bash_prompt
@@ -62,12 +44,10 @@ fi
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--extended --cycle"
-
 # Use ~~ as the trigger sequence instead of the default **
 # export FZF_COMPLETION_TRIGGER='~~'
 # Options to fzf command
 # export FZF_COMPLETION_OPTS='+c -x'
-
 eval "$(stack --bash-completion-script stack)"
 
 # Show GPG prompt
