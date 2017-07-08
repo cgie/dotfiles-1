@@ -292,6 +292,8 @@ function dotfiles() {
     cp -r ~/.irssi/            $DOT/dot.irssi/ ;
     cp -r ~/.convox/           $DOT/dot.convox/ ;
     cp -r ~/.ssh/              $DOT/dot.ssh ;
+    cp -r ~/.aws/              $DOT/dot.aws ;
+    cp -r ~/.aws/credentials   $DOT/dot.aws.credentials ;
 
     cp ~/Library/autojump/autojump.txt $DOT/autojump.txt;
 
