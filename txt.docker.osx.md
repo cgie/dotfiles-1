@@ -445,3 +445,26 @@ $ exit
 root@7b47c4bbd748:/# exit
 exit
 ```
+
+- mysql
+```
+$ docker run -d --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=$DB_PWD mysql
+...
+$ docker exec -i -t mysql /bin/bash
+...
+root@f8a5df300fa7:~# mysql -h localhost -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 6
+Server version: 5.7.18 MySQL Community Server (GPL)
+...
+mysql> select host, user from mysql.user ;
++-----------|-----------+
+| host      | user      |
++-----------|-----------+
+| %         | root      |
+| localhost | mysql.sys |
+| localhost | root      |
++-----------|-----------+
+3 rows in set (0.00 sec)
+```
