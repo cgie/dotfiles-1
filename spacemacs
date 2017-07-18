@@ -329,6 +329,7 @@ you should place your code here."
   ;; https://github.com/syl20bnr/spacemacs/tree/master/layers/%2Blang/javascript
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+  (setq-default js2-strict-trailing-comma-warning nil)
   ;; --- Flow (JS) flycheck config (http://flowtype.org)
   ;;                               (https://github.com/facebook/flow)
   ;; requires:
