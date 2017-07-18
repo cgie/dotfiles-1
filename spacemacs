@@ -337,37 +337,38 @@ you should place your code here."
   ;; Options to install it are:
   ;; - https://github.com/lbolla/emacs-flycheck-flow/blob/master/flycheck-flow.el
   ;; - https://github.com/bodil/emacs.d/blob/master/bodil/bodil-js.el
-  (require 'f)
-  (require 'json)
-  (require 'flycheck)
-  (defun flycheck-parse-flow (output checker buffer)
-    (let ((json-array-type 'list))
-      (let ((o (json-read-from-string output)))
-        (mapcar #'(lambda (errp)
-                    (let ((err (cadr (assoc 'message errp)))
-                          (err2 (cadr (cdr (assoc 'message errp)))))
-                      (flycheck-error-new
-                      :line (cdr (assoc 'line err))
-                      :column (cdr (assoc 'start err))
-                      :level 'error
-                      :message (concat (cdr (assoc 'descr err)) ". " (cdr (assoc 'descr err2)))
-                      :filename (f-relative
-                                  (cdr (assoc 'path err))
-                                  (f-dirname (file-truename
-                                              (buffer-file-name))))
-                      :buffer buffer
-                      :checker checker)))
-                (cdr (assoc 'errors o))))))
-  (flycheck-define-checker javascript-flow
-    "Javascript static type checking using Flow."
-    :command ("flow" "--json" source-original)
-    :error-parser flycheck-parse-flow
-    :modes js2-mode
-    ;; :modes react-mode
-    ;; :next-checkers ((error . javascript-eslint))
-    )
-  (add-to-list 'flycheck-checkers 'javascript-flow)
-  ;; disable linters:
+  ;; (require 'f)
+  ;; (require 'json)
+  ;; (require 'flycheck)
+  ;; (defun flycheck-parse-flow (output checker buffer)
+  ;;   (let ((json-array-type 'list))
+  ;;     (let ((o (json-read-from-string output)))
+  ;;       (mapcar #'(lambda (errp)
+  ;;                   (let ((err (cadr (assoc 'message errp)))
+  ;;                         (err2 (cadr (cdr (assoc 'message errp)))))
+  ;;                     (flycheck-error-new
+  ;;                     :line (cdr (assoc 'line err))
+  ;;                     :column (cdr (assoc 'start err))
+  ;;                     :level 'error
+  ;;                     :message (concat (cdr (assoc 'descr err)) ". " (cdr (assoc 'descr err2)))
+  ;;                     :filename (f-relative
+  ;;                                 (cdr (assoc 'path err))
+  ;;                                 (f-dirname (file-truename
+  ;;                                             (buffer-file-name))))
+  ;;                     :buffer buffer
+  ;;                     :checker checker)))
+  ;;               (cdr (assoc 'errors o))))))
+  ;; (flycheck-define-checker javascript-flow
+  ;;   "Javascript static type checking using Flow."
+  ;;   :command ("flow" "--json" source-original)
+  ;;   :error-parser flycheck-parse-flow
+  ;;   :modes js2-mode
+  ;;   ;; :modes react-mode
+  ;;   ;; :next-checkers ((error . javascript-eslint))
+  ;;   )
+  ;; (add-to-list 'flycheck-checkers 'javascript-flow)
+  ;;
+  ;; Disable linters:
   ;; (with-eval-after-load 'flycheck
   ;;   (setq-default flycheck-disabled-checkers
   ;;                 (append flycheck-disabled-checkers
@@ -375,6 +376,25 @@ you should place your code here."
   ;;                           )))
   ;;   )
   ;; (setq-default flycheck-check-syntax-automatically '(mode-enabled save))
+  ;;
+  ;; Or use the NPM libraries with ESLint:
+  ;;   ├── babel@6.23.0
+  ;;   ├── babel-cli@6.24.1
+  ;;   ├── babel-eslint@7.2.3
+  ;;   ├── babel-preset-flow@6.23.0
+  ;;   ├── claudia@2.14.1
+  ;;   ├── eslint@3.19.0
+  ;;   ├── eslint-config@0.3.0
+  ;;   ├── eslint-config-airbnb@15.0.2
+  ;;   ├── eslint-plugin-flowtype@2.35.0
+  ;;   ├── eslint-plugin-import@2.7.0
+  ;;   ├── eslint-plugin-jsx-a11y@5.1.1
+  ;;   ├── eslint-plugin-react@7.1.0
+  ;;   ├── flow@0.2.3
+  ;;   ├── flow-bin@0.50.0
+  ;;   ├── js-beautify@1.6.14
+  ;;   ├── npm@5.3.0
+  ;;   └── tern@0.21.0
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
