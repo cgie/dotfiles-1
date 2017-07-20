@@ -399,14 +399,6 @@ you should place your code here."
   ;;  ├── npm@5.3.0
   ;;  └── tern@0.21.0
   ;;
-  (defun reset-eslint-rc ()
-    (let ((rc-path (if (projectile-project-p)
-                       (concat (projectile-project-root) ".eslintrc"))))
-      (if (file-exists-p rc-path)
-          (progn
-            (message rc-path)
-            (setq flycheck-eslintrc rc-path)))))
-  (add-hook 'flycheck-mode-hook 'reset-eslint-rc)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
