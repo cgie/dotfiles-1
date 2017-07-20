@@ -379,23 +379,34 @@ you should place your code here."
   ;; (setq-default flycheck-check-syntax-automatically '(mode-enabled save))
   ;;
   ;; Or use the NPM libraries with ESLint:
-  ;;   ├── babel@6.23.0
-  ;;   ├── babel-cli@6.24.1
-  ;;   ├── babel-eslint@7.2.3
-  ;;   ├── babel-preset-flow@6.23.0
-  ;;   ├── claudia@2.14.1
-  ;;   ├── eslint@3.19.0
-  ;;   ├── eslint-config@0.3.0
-  ;;   ├── eslint-config-airbnb@15.0.2
-  ;;   ├── eslint-plugin-flowtype@2.35.0
-  ;;   ├── eslint-plugin-import@2.7.0
-  ;;   ├── eslint-plugin-jsx-a11y@5.1.1
-  ;;   ├── eslint-plugin-react@7.1.0
-  ;;   ├── flow@0.2.3
-  ;;   ├── flow-bin@0.50.0
-  ;;   ├── js-beautify@1.6.14
-  ;;   ├── npm@5.3.0
-  ;;   └── tern@0.21.0
+  ;;$ npm list --global --depth=0
+  ;;
+  ;;  ├── babel@6.23.0
+  ;;  ├── babel-cli@6.24.1
+  ;;  ├── babel-eslint@7.2.3
+  ;;  ├── babel-preset-flow@6.23.0
+  ;;  ├── claudia@2.14.1
+  ;;  ├── eslint@3.19.0
+  ;;  ├── eslint-config@0.3.0
+  ;;  ├── eslint-config-airbnb@15.0.2
+  ;;  ├── eslint-plugin-flowtype@2.35.0
+  ;;  ├── eslint-plugin-import@2.7.0
+  ;;  ├── eslint-plugin-jsx-a11y@5.1.1
+  ;;  ├── eslint-plugin-react@7.1.0
+  ;;  ├── flow@0.2.3
+  ;;  ├── flow-bin@0.50.0
+  ;;  ├── js-beautify@1.6.14
+  ;;  ├── npm@5.3.0
+  ;;  └── tern@0.21.0
+  ;;
+  (defun reset-eslint-rc ()
+    (let ((rc-path (if (projectile-project-p)
+                       (concat (projectile-project-root) ".eslintrc"))))
+      (if (file-exists-p rc-path)
+          (progn
+            (message rc-path)
+            (setq flycheck-eslintrc rc-path)))))
+  (add-hook 'flycheck-mode-hook 'reset-eslint-rc)
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
