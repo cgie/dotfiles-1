@@ -4,7 +4,8 @@ export EDITOR=/usr/local/bin/vim
 export GOPATH=$WORKSPACES/go.sources
 export GOROOT=/usr/local/opt/go/libexec
 export HISTCONTROL=ignoreboth:erasedups
-export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
+export LANG=C
 export TERM=xterm-256color
 
 export PATH=$PATH:$HOME/.rvm/bin
