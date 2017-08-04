@@ -381,23 +381,35 @@ you should place your code here."
   ;; Or use the NPM libraries with ESLint:
   ;;$ npm list --global --depth=0
   ;;
-  ;;  ├── babel@6.23.0
-  ;;  ├── babel-cli@6.24.1
-  ;;  ├── babel-eslint@7.2.3
-  ;;  ├── babel-preset-flow@6.23.0
-  ;;  ├── claudia@2.14.1
-  ;;  ├── eslint@3.19.0
-  ;;  ├── eslint-config@0.3.0
-  ;;  ├── eslint-config-airbnb@15.0.2
-  ;;  ├── eslint-plugin-flowtype@2.35.0
-  ;;  ├── eslint-plugin-import@2.7.0
-  ;;  ├── eslint-plugin-jsx-a11y@5.1.1
-  ;;  ├── eslint-plugin-react@7.1.0
-  ;;  ├── flow@0.2.3
-  ;;  ├── flow-bin@0.50.0
-  ;;  ├── js-beautify@1.6.14
-  ;;  ├── npm@5.3.0
-  ;;  └── tern@0.21.0
+  ;; ├── async@2.5.0
+  ;; ├── aws-sdk@2.93.0
+  ;; ├── babel@6.23.0
+  ;; ├── babel-cli@6.24.1
+  ;; ├── babel-eslint@7.2.3
+  ;; ├── babel-preset-flow@6.23.0
+  ;; ├── bluebird@3.5.0
+  ;; ├── claudia@2.14.1
+  ;; ├── eslint@3.19.0
+  ;; ├── eslint-config@0.3.0
+  ;; ├── eslint-config-airbnb@15.1.0
+  ;; ├── eslint-plugin-flowtype@2.35.0
+  ;; ├── eslint-plugin-flowtype-errors@3.3.1
+  ;; ├── eslint-plugin-import@2.7.0
+  ;; ├── eslint-plugin-jsx-a11y@5.1.1
+  ;; ├── eslint-plugin-react@7.1.0
+  ;; ├── flow@0.2.3
+  ;; ├── flow-bin@0.50.0
+  ;; ├── jasmine@2.7.0
+  ;; ├── jasmine-node@1.14.5
+  ;; ├── joi@10.6.0
+  ;; ├── js-beautify@1.6.14
+  ;; ├── json-env@1.0.1
+  ;; ├── md5@2.2.1
+  ;; ├── npm@5.3.0
+  ;; ├── pg@6.4.1
+  ;; ├── restify@5.0.1
+  ;; ├── tern@0.21.0
+  ;; └── winston@2.3.1
   ;;
 )
 ;; Do not write anything past this comment. This is where Emacs will
