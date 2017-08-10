@@ -7,6 +7,9 @@
 [alias]
 	tree = log --graph --oneline --all --decorate
         treelog = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  deleteMerged = git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+  deleteRemoteMerged = git branch --merged | egrep -v "(^\*|master|dev)" | xargs git push --delete origin
+  pruneOrigin = git remote prune origin
 [push]
     default = matching
 
