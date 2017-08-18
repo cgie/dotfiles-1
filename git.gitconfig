@@ -10,6 +10,7 @@
   deleteMerged = git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
   deleteRemoteMerged = git branch --merged | egrep -v "(^\*|master|dev)" | xargs git push --delete origin
   pruneOrigin = git remote prune origin
+  last10files = git log --name-only --pretty=oneline --full-index HEAD~10..HEAD | grep -vE '^[0-9a-f]{40} ' | sort | uniq
 [push]
     default = matching
 
