@@ -411,6 +411,7 @@ you should place your code here."
   ;; ├── tern@0.21.0
   ;; └── winston@2.3.1
   ;;
+  (setq haskell-program-name "stack ghci")
 )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
