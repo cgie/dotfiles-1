@@ -36,10 +36,8 @@ function bp_define_helpers () {
 # gitprompt configuration
 if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
-
     # Set config variables first
     GIT_PROMPT_ONLY_IN_REPO=0
-
     # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
     # GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
     # GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
@@ -51,14 +49,22 @@ if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
     # GIT_PROMPT_THEME=Default
     GIT_PROMPT_THEME="Custom"
-
     # GIT_PROMPT_START="_LAST_COMMAND_INDICATOR_ ${Cyan}${User}@${Hostname} ${Yellow}${PathShort}${ResetColor}"
     # GIT_PROMPT_END=" \n${White}${Time24h}${ResetColor} $ "
-
     source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
+## AutoEnv
+## https://github.com/kennethreitz/autoenv
 source "/usr/local/opt/autoenv/activate.sh"
 
-#
-#- end
+export PATH="/usr/local/sbin:$PATH"
+
+## NVM - Node Version Manager
+## https://github.com/creationix/nvm
+export NVM_DIR=~/.nvm
+source ~/.nvm/nvm.sh
+
+## Git Radar
+## https://github.com/michaeldfallen/git-radar/blob/master/README.md
+# export PS1="$PS1\$(git-radar --bash --fetch)"
