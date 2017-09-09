@@ -90,7 +90,6 @@ function is_git_repository () {
 function set_git_branch () {
     # Capture the output of the "git status" command.
     git_status="$(git status 2> /dev/null)"
-
     # Set color based on clean/staged/dirty.
     if [[ ${git_status} =~ "working directory clean" ]]; then
         state="${GREEN}"
@@ -99,7 +98,6 @@ function set_git_branch () {
     else
         state="${LIGHT_RED}"
     fi
-
     # Set arrow icon based on status against remote.
     remote_pattern="# Your branch is (ahead|behind)+ "
     if [[ ${git_status} =~ ${remote_pattern} ]]; then
@@ -111,17 +109,14 @@ function set_git_branch () {
     else
         remote=""
     fi
-
     diverge_pattern="# Your branch and (.*) have diverged"
     if [[ ${git_status} =~ ${diverge_pattern} ]]; then
         remote="↕"
     fi
-
     branch_pattern="^(# )?On branch ([^${IFS}]*)"
     if [[ ${git_status} =~ ${branch_pattern} ]]; then
         branch=${BASH_REMATCH[2]}
     fi
-
     # Set the final branch string.
     BRANCH="${state}(${branch})${remote}${COLOR_NONE} "
 }
@@ -147,52 +142,30 @@ function set_virtualenv () {
     fi
 }
 
-# function
-# function set_rvm () {
-# 	# PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
-# 	RUBY_RVM="`~/.rvm/bin/rvm-prompt`"
-# }
-
-if [ -e ~/.rvm/bin/rvm-prompt ]; then
-  RUBY_ENV=$(~/.rvm/bin/rvm-prompt i v g)
-else
-  if which rbenv &> /dev/null; then
-    RUBY_ENV=$(rbenv version | sed -e 's/ (set.*$//' -e 's/^ruby-//')
-  fi
-fi
-
 # Set the full bash prompt.
 # function
 function set_bash_prompt () {
     # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
     # return value of the last command.
     set_prompt_symbol $?
-
     # Set the PYTHON_VIRTUALENV variable.
     set_virtualenv
-
     # Set RVM
 	  # set_rvm
-
     # Set the BRANCH variable.
     if is_git_repository ; then
         set_git_branch
     else
         BRANCH=''
     fi
-
     # Set the bash prompt variable.
     # PS1="
     # ${PYTHON_VIRTUALENV}${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE} ${BRANCH}
     # ${PROMPT_SYMBOL} "
-
     # one liner version
     # PS1="${PYTHON_VIRTUALENV}${RED}${RUBY_RVM} - ${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE} ${BRANCH}${PROMPT_SYMBOL} "
     PS1="${GREEN}\u@\h ${YELLOW}\w${COLOR_NONE} ${BRANCH}${PROMPT_SYMBOL} "
 }
-
-# Tell bash to execute this function just before displaying its prompt.
-# PROMPT_COMMAND=set_bash_prompt
 
 # function
 function print_before_the_prompt () {
@@ -200,9 +173,6 @@ function print_before_the_prompt () {
   NOW=$(date +"%T")
   printf "$txtwht%s $txtgrn%s@%s $txtylw%s $txtrst \n" "$NOW" "$USER" "$HOSTNAME" "$PWD"
 }
-
-# PROMPT_COMMAND=print_before_the_prompt
-# PS1="~> ${PROMPT_SYMBOL} "
 
 #
 # bash prompt support for docker-machine
@@ -213,7 +183,6 @@ function print_before_the_prompt () {
 #  1a. Copy this file somewhere and source it in your .bashrc
 #      source /some/where/docker-machine-prompt.bash
 #  1b. Alternatively, just copy this file into into /etc/bash_completion.d
-
 #
 # Configuration:
 #
@@ -223,7 +192,7 @@ function print_before_the_prompt () {
 #
 # SAUCE:
 # https://github.com/docker/machine/blob/master/contrib/completion/bash/docker-machine-prompt.bash
-__docker_machine_ps1 () {
+function docker_machine_ps1 () {
     local format=${1:- [%s]}
     if test ${DOCKER_MACHINE_NAME}; then
         local status
@@ -251,3 +220,23 @@ __docker_machine_ps1 () {
         printf -- "${format}" "${DOCKER_MACHINE_NAME}${status}"
     fi
 }
+
+# function
+# function set_rvm () {
+# 	# PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
+# 	RUBY_RVM="`~/.rvm/bin/rvm-prompt`"
+# }
+
+if [ -e ~/.rvm/bin/rvm-prompt ]; then
+    RUBY_ENV=$(~/.rvm/bin/rvm-prompt i v g)
+else
+    if which rbenv &> /dev/null; then
+        RUBY_ENV=$(rbenv version | sed -e 's/ (set.*$//' -e 's/^ruby-//')
+    fi
+fi
+
+# Tell bash to execute this function just before displaying its prompt.
+# PROMPT_COMMAND=set_bash_prompt
+
+# PROMPT_COMMAND=print_before_the_prompt
+# PS1="~> ${PROMPT_SYMBOL} "
