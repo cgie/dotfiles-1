@@ -1,13 +1,17 @@
-# export A_LOT_OF_KEYS="ThatAreMySecrets!"
-
+# a lot of environment variables that it's better keep "classified"
+################################################################################
+# a lot of environment variables that it's better keep "classified"
+################################################################################
+# a lot of environment variables that it's better keep "classified"
+################################################################################
 export EDITOR=/usr/local/bin/vim
+export LANG=C
+# export LANG=en_US.UTF-8
+export HISTCONTROL=ignoreboth:erasedups
+export NODE_ENV='development'
+export TERM=xterm-256color
 export GOPATH=$WORKSPACES/go.sources
 export GOROOT=/usr/local/opt/go/libexec
-export HISTCONTROL=ignoreboth:erasedups
-# export LANG=en_US.UTF-8
-export LANG=C
-export TERM=xterm-256color
-
 export PATH=$PATH:$HOME/.rvm/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
@@ -24,23 +28,23 @@ export PATH=$PATH:/Users/user/.local/bin
 #    export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
 #    export DOCKER_TLS_VERIFY=1
 # }
-#
 # docker() {
 #    config_docker
 #    /usr/local/bin/docker "$@"
 # }
-#
 # fig() {
 #    config_docker
 #    /usr/local/bin/fig "$@"
 # }
 
-# git tab completion (homebrew)
+## git tab completion (homebrew)
 if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ];
 then
   . `brew --prefix`/etc/bash_completion.d/git-completion.bash
 fi
 
+## FZF
+## https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -51,5 +55,12 @@ export FZF_DEFAULT_OPTS="--extended --cycle"
 # export FZF_COMPLETION_OPTS='+c -x'
 eval "$(stack --bash-completion-script stack)"
 
-# Show GPG prompt
+## GPG - GPG-Agent:
+## https://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html
 export GPG_TTY=$(tty)
+
+## NVM (Node Version Manager)
+## https://github.com/creationix/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
